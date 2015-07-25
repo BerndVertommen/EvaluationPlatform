@@ -8,7 +8,7 @@ namespace EvaluationPlatformDomain.Models
 {
     public class Student : Entity
     {
-        public Person Person { get; set; }
+        public virtual Person Person { get; set; }
 
         public Student(Person person)
         {

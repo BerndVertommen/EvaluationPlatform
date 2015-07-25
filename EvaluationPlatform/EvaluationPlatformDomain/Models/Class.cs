@@ -11,10 +11,16 @@ namespace EvaluationPlatformDomain.Models
     /// </summary>
     public class Class : Entity
     {
+        public virtual string Name { get; set; }
         public virtual SchoolYear SchoolYear { get; set; }
 
-        public virtual IEnumerable<Student> Students { get; set; }
+        public virtual ICollection<Student> Students { get; set; }
 
-
+        public Class(string name, SchoolYear schoolYear, ICollection<Student> students )
+        {
+            Name = name;
+            SchoolYear = schoolYear;
+            Students = students;
+        }
     }
 }

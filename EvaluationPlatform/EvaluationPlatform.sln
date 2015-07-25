@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvaluationPlatformWebApi", "EvaluationPlatformWebApi\EvaluationPlatformWebApi.csproj", "{78FA7B9B-B018-4782-8842-2E61965F03E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvaluationPlatformWebPage", "EvaluationPlatformWebSite\EvaluationPlatformWebPage.csproj", "{8B3B050E-054F-4AEE-9F18-29643DD63061}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvaluationPlatformWebSite", "EvaluationPlatformWebSite\EvaluationPlatformWebSite.csproj", "{8B3B050E-054F-4AEE-9F18-29643DD63061}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvaluationPlatformDomain", "EvaluationPlatformDomain\EvaluationPlatformDomain.csproj", "{C8F2A69B-3B3C-4B8C-A493-E2C13F7C03F8}"
 EndProject

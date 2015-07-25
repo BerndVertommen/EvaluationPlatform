@@ -104,6 +104,16 @@
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EvaluationPlatformDAL\EvaluationPlatformDAL.csproj">
+      <Project>{f3d2484e-28f6-4c8b-9421-d1e2a3b741cb}</Project>
+      <Name>EvaluationPlatformDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EvaluationPlatformDomain\EvaluationPlatformDomain.csproj">
+      <Project>{c8f2a69b-3b3c-4b8c-a493-e2c13f7c03f8}</Project>
+      <Name>EvaluationPlatformDomain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

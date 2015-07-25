@@ -46,7 +46,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EPDatabase.cs" />
+    <Compile Include="Generators\ClassGenerator.cs" />
+    <Compile Include="IEPDatabase.cs" />
+    <Compile Include="Migrations\201507251222198_CreateMigrations.cs" />
+    <Compile Include="Migrations\201507251222198_CreateMigrations.Designer.cs">
+      <DependentUpon>201507251222198_CreateMigrations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507251253257_ChangedToCollections.cs" />
+    <Compile Include="Migrations\201507251253257_ChangedToCollections.Designer.cs">
+      <DependentUpon>201507251253257_ChangedToCollections.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Generators\StudentGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -57,6 +70,14 @@
       <Project>{c8f2a69b-3b3c-4b8c-a493-e2c13f7c03f8}</Project>
       <Name>EvaluationPlatformDomain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201507251222198_CreateMigrations.resx">
+      <DependentUpon>201507251222198_CreateMigrations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507251253257_ChangedToCollections.resx">
+      <DependentUpon>201507251253257_ChangedToCollections.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
