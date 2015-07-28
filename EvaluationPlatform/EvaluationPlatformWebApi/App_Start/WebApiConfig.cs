@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using EvaluationPlatformWebApi.App_Start;
 
 namespace EvaluationPlatformWebApi
 {
@@ -10,6 +11,10 @@ namespace EvaluationPlatformWebApi
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+
+                // Configure inversion of control.
+            IocConfig.RegisterDependencies(config);
+
 
             // Web API routes
             config.MapHttpAttributeRoutes();
