@@ -10,5 +10,8 @@ namespace EvaluationPlatformDomain.Models
     {
         public virtual ICollection<Class> Classes { get; set; }
 
+        public Teacher()
+        {
+        }
     }
 }

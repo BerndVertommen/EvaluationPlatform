@@ -14,5 +14,9 @@ namespace EvaluationPlatformDomain.Models
         {
             Person = person;
         }
+
+        public Student()
+        {
+        }
     }
 }

@@ -4,6 +4,7 @@ using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformWebApi.Authentication;
 using EvaluationPlatformWebApi.Identity;
 using Microsoft.Owin;
+using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 
@@ -23,7 +24,7 @@ namespace EvaluationPlatformWebApi
 
             // Enable the application to use a cookie to store information for the signed in user
             // and to use a cookie to temporarily store information about a user logging in with a third party login provider
-            //app.UseCookieAuthentication(new CookieAuthenticationOptions());
+           // app.UseCookieAuthentication(new CookieAuthenticationOptions());
             //app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             // Configure the application for OAuth based flow

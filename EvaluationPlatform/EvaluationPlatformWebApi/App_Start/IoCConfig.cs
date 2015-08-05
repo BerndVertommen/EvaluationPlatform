@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Http;
+﻿using System.Web.Http;
 using Autofac;
 using Autofac.Integration.WebApi;
 using EvaluationPlatformDAL;
 using EvaluationPlatformDAL.CommandAndQuery;
+using EvaluationPlatformWebApi.DataAccesors.Class;
 
-namespace EvaluationPlatformWebApi.App_Start
+namespace EvaluationPlatformWebApi
 {
     public class IocConfig
     {
@@ -28,13 +24,14 @@ namespace EvaluationPlatformWebApi.App_Start
             builder.RegisterType<CommandProcessor>().AsImplementedInterfaces().InstancePerLifetimeScope();
             builder.RegisterType<EPDatabase>().As<IEPDatabase>().InstancePerLifetimeScope();
 
-            builder.RegisterAssemblyTypes(typeof(QueryHandler<,>).Assembly)
+            builder.RegisterAssemblyTypes(typeof(ClassViewInfoQueryHandler).Assembly)
                         .Where(t => t.GetInterface(typeof(IQueryHandler<,>).Name) != null)
                         .AsSelf().AsImplementedInterfaces().InstancePerLifetimeScope();
 
-            builder.RegisterAssemblyTypes(typeof(CommandHandler<>).Assembly)
-                .Where(t => t.GetInterface(typeof(ICommandHandler<>).Name) != null)
-                .AsSelf().AsImplementedInterfaces().InstancePerLifetimeScope();
+            // fix this after an commanhander is created
+            //builder.RegisterAssemblyTypes(typeof(CommandHandler<>).Assembly)
+            //    .Where(t => t.GetInterface(typeof(ICommandHandler<>).Name) != null)
+            //    .AsSelf().AsImplementedInterfaces().InstancePerLifetimeScope();
 
             IContainer container = builder.Build();
             //DependencyResolver.SetResolver(new AutofacWebApiDependencyResolver(container));

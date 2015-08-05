@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace EvaluationPlatformDAL.CommandAndQuery
 {
-    public interface IQueryHandler<TQueryObject, TQueryResult>
+    public interface IQueryHandler<in TQuery, TResult> where TQuery : IQueryObject<TResult>
     {
-        TQueryResult Handle(TQueryObject queryObject);
+        TResult Handle(TQuery query);
     }
 }

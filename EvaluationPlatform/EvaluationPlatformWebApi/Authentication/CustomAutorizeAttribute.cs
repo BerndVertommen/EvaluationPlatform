@@ -24,6 +24,7 @@ namespace EvaluationPlatformWebApi.Authentication
 
         public override void OnAuthorization(HttpActionContext actionContext)
         {
+            return; // no autorization ATM
             if (Authorize(actionContext))
             {
                 return;

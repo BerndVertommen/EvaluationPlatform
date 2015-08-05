@@ -21,9 +21,9 @@ namespace EvaluationPlatformWebApi.DataAccesors.Class
 
         public ClassViewInfo Handle(ClassViewInfoQueryObject queryObject)
         {
-            var retClass =
+            EvaluationPlatformDomain.Models.Class retClass =
                 _database.Classes.FirstOrDefault(
-                    c => c.Name == queryObject.ClassName && c.SchoolYear == queryObject.SchoolYear);
+                    c => c.Name == queryObject.ClassName && c.SchoolYear.StartYear == queryObject.SchoolYear.StartYear && c.SchoolYear.EndYear == queryObject.SchoolYear.EndYear);
 
             return Mapper.Map<ClassViewInfo>(retClass);
         }

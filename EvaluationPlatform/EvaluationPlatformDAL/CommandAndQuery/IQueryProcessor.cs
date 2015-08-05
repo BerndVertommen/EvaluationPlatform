@@ -8,5 +8,6 @@ namespace EvaluationPlatformDAL.CommandAndQuery
 {
     public interface IQueryProccesor
     {
+        TResult Execute<TResult>(IQueryObject<TResult> query);
     }
 }

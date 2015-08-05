@@ -16,6 +16,11 @@ namespace EvaluationPlatformDomain.Models
 
         public virtual ICollection<Student> Students { get; set; }
 
+        public Class()
+        {
+            
+        }
+
         public Class(string name, SchoolYear schoolYear, ICollection<Student> students )
         {
             Name = name;

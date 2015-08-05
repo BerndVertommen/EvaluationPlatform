@@ -7,6 +7,7 @@ using System.Web.Http;
 using Autofac;
 using EvaluationPlatformWebApi;
 using EvaluationPlatformWebApi.App_Start;
+using EvaluationPlatformWebApi.Authentication;
 using Microsoft.Owin;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -25,11 +26,11 @@ namespace EvaluationPlatformWebApi
         {
             var httpConfig = new HttpConfiguration();
             Container = IocConfig.RegisterDependencies(httpConfig);
-            //app.UseAutofacMiddleware(Container);
-            //ConfigureAuth(app);
+            app.UseAutofacMiddleware(Container);
+            ConfigureAuth(app);
             ConfigureJsonSerialization(httpConfig);
 
-            //httpConfig.Filters.Add(new CustomAutorizeAttribute());
+            httpConfig.Filters.Add(new CustomAutorizeAttribute());
             WebApiConfig.Register(httpConfig);
 
             app.UseWebApi(httpConfig);

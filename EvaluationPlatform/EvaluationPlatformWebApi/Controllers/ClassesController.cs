@@ -5,6 +5,8 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using EvaluationPlatformDAL.CommandAndQuery;
+using EvaluationPlatformDomain.Models;
+using EvaluationPlatformWebApi.DataAccesors.Class;
 using EvaluationPlatformWebApi.Models;
 
 namespace EvaluationPlatformWebApi.Controllers
@@ -21,12 +23,11 @@ namespace EvaluationPlatformWebApi.Controllers
             _queryProccesor = queryProccesor;
         }
 
+        [Route("test")]
         [HttpGet]
         public ClassViewInfo GetClassViewInfo()
         {
-            return null;
+            return _queryProccesor.Execute(new ClassViewInfoQueryObject("1NF", new SchoolYear(2015, 2016)));
         }
     }
-
-
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using EvaluationPlatformWebApi.App_Start;
+using Microsoft.Owin.Security.OAuth;
 
 namespace EvaluationPlatformWebApi
 {
@@ -10,9 +11,11 @@ namespace EvaluationPlatformWebApi
     {
         public static void Register(HttpConfiguration config)
         {
-                // Configure Mappings
+            // Configure Web API to use only bearer token authentication.
+            config.SuppressDefaultHostAuthentication();
+            config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType)); //Original
+                                                                                               
             MappingConfigurations.Configure();
-
 
             // Web API routes
             config.MapHttpAttributeRoutes();
