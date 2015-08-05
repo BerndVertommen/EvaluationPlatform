@@ -10,10 +10,8 @@ namespace EvaluationPlatformWebApi
     {
         public static void Register(HttpConfiguration config)
         {
-            // Web API configuration and services
-
-                // Configure inversion of control.
-            IocConfig.RegisterDependencies(config);
+                // Configure Mappings
+            MappingConfigurations.Configure();
 
 
             // Web API routes
