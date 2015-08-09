@@ -1,20 +1,11 @@
-﻿var app = angular.module('app', ['ngRoute', 'LocalStorageModule', 'ui.bootstrap']);
-
-app.config(function ($routeProvider) {
-
-    $routeProvider
-        .when('/home', {
-            controller: 'HomeCtrl',
-            templateUrl: '/App/Home/Views/Home.html'
-        });
-
-    app.run([
-        'authService', function (authService) {
-            authService.fillAuthData();
-        }
-    ]);
-
-    app.config(function ($httpProvider) {
+﻿angular.module('app', ['ngRoute', 'LocalStorageModule', 'ui.bootstrap','$scope', 'app.Home'])
+    .config(function($routeProvider, $httpProvider, $scope) {
+        "use strict";
         $httpProvider.interceptors.push('authInterceptorService');
     });
+
+angular.module('app').run(function (authService) {
+    authService.fillAuthData();
 });
+
+
