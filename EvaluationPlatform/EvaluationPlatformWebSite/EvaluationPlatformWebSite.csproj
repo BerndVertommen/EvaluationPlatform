@@ -59,6 +59,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\classes\classes-module.js" />
+    <Content Include="app\classes\controllers\testClassCtrl.js" />
+    <Content Include="app\classes\services\classesSvc.js" />
+    <Content Include="app\classes\views\testClassView.html" />
     <Content Include="app\home\controllers\homeCtrl.js" />
     <Content Include="app\home\home-module.js" />
     <Content Include="app\home\views\home.html" />
@@ -890,16 +894,16 @@
     <Content Include="scripts\angular-ui.min.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
-    <Content Include="scripts\DesignTemplateScripts\flot\excanvas.min.js" />
-    <Content Include="scripts\DesignTemplateScripts\flot\flot-data.js" />
-    <Content Include="scripts\DesignTemplateScripts\flot\jquery.flot.js" />
-    <Content Include="scripts\DesignTemplateScripts\flot\jquery.flot.pie.js" />
-    <Content Include="scripts\DesignTemplateScripts\flot\jquery.flot.resize.js" />
-    <Content Include="scripts\DesignTemplateScripts\flot\jquery.flot.tooltip.min.js" />
-    <Content Include="scripts\DesignTemplateScripts\morris\morris-data.js" />
-    <Content Include="scripts\DesignTemplateScripts\morris\morris.js" />
-    <Content Include="scripts\DesignTemplateScripts\morris\morris.min.js" />
-    <Content Include="scripts\DesignTemplateScripts\morris\raphael.min.js" />
+    <Content Include="scripts\designTemplateScripts\flot\excanvas.min.js" />
+    <Content Include="scripts\designTemplateScripts\flot\flot-data.js" />
+    <Content Include="scripts\designTemplateScripts\flot\jquery.flot.js" />
+    <Content Include="scripts\designTemplateScripts\flot\jquery.flot.pie.js" />
+    <Content Include="scripts\designTemplateScripts\flot\jquery.flot.resize.js" />
+    <Content Include="scripts\designTemplateScripts\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="scripts\designTemplateScripts\morris\morris-data.js" />
+    <Content Include="scripts\designTemplateScripts\morris\morris.js" />
+    <Content Include="scripts\designTemplateScripts\morris\morris.min.js" />
+    <Content Include="scripts\designTemplateScripts\morris\raphael.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
@@ -915,6 +919,9 @@
     <Folder Include="app\home\services\" />
     <Folder Include="app\login\controllers\" />
     <Folder Include="app\login\views\" />
+    <Folder Include="app\zzzcopyMe\controllers\" />
+    <Folder Include="app\zzzcopyMe\services\" />
+    <Folder Include="app\zzzcopyMe\views\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

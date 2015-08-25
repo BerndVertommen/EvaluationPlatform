@@ -4,6 +4,7 @@ using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformWebApi.Authentication;
 using EvaluationPlatformWebApi.Identity;
 using Microsoft.Owin;
+using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
@@ -38,6 +39,9 @@ namespace EvaluationPlatformWebApi
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
                 AllowInsecureHttp = true
             };
+
+            // enable cross origin calls
+            app.UseCors(CorsOptions.AllowAll);
 
             // Enable the application to use bearer tokens to authenticate users
             //app.UseOAuthBearerTokens(OAuthOptions);

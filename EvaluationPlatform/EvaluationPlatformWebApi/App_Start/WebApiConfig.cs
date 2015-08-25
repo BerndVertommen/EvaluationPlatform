@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using EvaluationPlatformWebApi.App_Start;
 using Microsoft.Owin.Security.OAuth;
 
@@ -19,6 +20,8 @@ namespace EvaluationPlatformWebApi
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+
+            config.EnableCors(new EnableCorsAttribute("*","*","get,post,options,put,delete,head"));
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
