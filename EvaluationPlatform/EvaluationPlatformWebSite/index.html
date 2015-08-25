@@ -9,17 +9,17 @@
     <title>Evaluation Platform</title>
     <!--***CSS***-->
     <!-- Bootstrap Core CSS -->
-    <link href="Content/BootstrapCss/bootstrap.min.css" rel="stylesheet" />
+    <link href="content/bootstrapCss/bootstrap.css" rel="stylesheet" />
+    <link href="content/bootstrapCss/bootstrap-theme.css" rel="stylesheet" />
     <!-- Custom CSS -->
-    <link href="Content/CustomCss/customCss.css" rel="stylesheet" />
+    <link href="content/customCss/customCss.css" rel="stylesheet" />
     <!-- Morris Charts CSS -->
-    <link href="Content/DesignTemplateCss/morris.css" rel="stylesheet" />
+    <link href="Content/designTemplateCss/morris.css" rel="stylesheet" />
     <!-- Custom Fonts -->
-    <link href="fonts/DesignTemplateFonts/font-awesome.min.css" rel="stylesheet" />
+    <link href="fonts/designTemplateFonts/font-awesome.min.css" rel="stylesheet" />
     <!--Angular css-->
-    <link href="Content/AngularCss/angular-ui.css" rel="stylesheet" />
-    <link href="Content/AngularCss/angular-ui.min.css" rel="stylesheet" />
-    <link href="Content/AngularCss/select2.css" rel="stylesheet" />
+    <link href="content/angularCss/angular-ui.css" rel="stylesheet" />
+    <link href="content/angularCss/select2.css" rel="stylesheet" />
 </head>
 <body>
     <div id="wrapper">
@@ -149,10 +149,10 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li class="active">
-                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="/"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                        <a href="/classes"><i class="fa fa-fw fa-bar-chart-o"></i> Klassen</a>
                     </li>
                     <li>
                         <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
@@ -187,7 +187,8 @@
             </div>
             <!-- /.navbar-collapse -->
         </nav>
-        <div id="page-wrapper">
+        <div id="page-wrapper" class="view-container container-fluid">
+            {{1+1}}
             <div ng-view="">
             </div>
             <!-- /.container-fluid -->
@@ -196,30 +197,29 @@
     </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
-    <script src="Scripts/jquery-2.1.4.js"></script>
-    <script src="Scripts/jquery-2.1.4.intellisense.js"></script>
+    <script src="scripts/jquery-2.1.4.js"></script>
+    <script src="scripts/underscore.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="Scripts/bootstrap.js"></script>
-
-    <!-- Morris Charts JavaScript -->
-    <script src="Scripts/DesignTemplateScripts/morris/morris-data.js"></script>
-    <script src="Scripts/DesignTemplateScripts/morris/morris.min.js"></script>
-    <script src="Scripts/DesignTemplateScripts/morris/raphael.min.js"></script>
+    <script src="scripts/bootstrap.js"></script>
 
     <!--***Angular Scripts***-->
-    <script src="Scripts/angular.js"></script>
+    <script src="scripts/angular.js"></script>
 
     <!--packages-->
-    <script src="Scripts/angular-route.js"></script>
-    <script src="Scripts/angular-ui.js"></script>
-    <script src="Scripts/select2.js"></script>
-
+    <script src="scripts/angular-route.js"></script>
+    <script src="scripts/angular-ui.js"></script>
+    <script src="scripts/angular-ui/ui-bootstrap.js"></script>
+    <script src="scripts/select2.js"></script>
     <!--Modules-->
-    <script src="App/app.js"></script>
-    <script src="App/Home/home-module.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/home/home-module.js"></script>
     <!--Services-->
     <!--Controllers-->
-    <script src="App/Home/Controllers/homeCtrl.js"></script>
+    <script src="app/home/controllers/homeCtrl.js"></script>
 
+    <!-- Morris Charts JavaScript -->
+    <script src="scripts/DesignTemplateScripts/morris/morris-data.js"></script>
+    <script src="scripts/DesignTemplateScripts/morris/morris.min.js"></script>
+    <script src="scripts/DesignTemplateScripts/morris/raphael.min.js"></script>
 </body>
 </html>

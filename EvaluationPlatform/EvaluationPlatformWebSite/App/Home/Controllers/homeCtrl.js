@@ -1,7 +1,7 @@
 ﻿(function(module) {
     "use strict";
 
-    function homeCtrl($http, $scope) {
+    function homeController($http, $scope) {
 
         var init = function() {
             $scope.message = "Welkom";
@@ -10,8 +10,8 @@
         init();
     }
 
-    module.controller('homeCtrl', homeCtrl);
+    module.controller('HomeController', homeController);
 
-})(angular.module('app.Home'));
+})(angular.module('app.home'));
 
 
