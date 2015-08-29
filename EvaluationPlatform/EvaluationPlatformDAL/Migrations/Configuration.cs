@@ -15,18 +15,41 @@ namespace EvaluationPlatformDAL.Migrations
 
         protected override void Seed(EPDatabase context)
         {
-            // seed classes
+            // seed students
             StudentGenerator studentGenerator = new StudentGenerator();
             ICollection<Student> students = studentGenerator.Generate();
+            
 
-            context.Classes.Add(new Class("1NF", new SchoolYear(), students));
-            //ClassGenerator classGenerator = new ClassGenerator();
-            //foreach (Class klas in classGenerator.Generate())
-            //{
-            //    context.Classes.Add(klas);
-            //}
+            //seed Classes
+            Class class1 = new Class("1NF", new SchoolYear(), students);
+
+            // StudyPlans
+            StudyPlan studyPlan1 = new StudyPlan("LeerplanMechanica");
+
+            // GeneralGoals
+            studyPlan1.AddGeneralGoal( new GeneralGoal(1, @"De taken en verantwoordelijkheden van de leden van het ‘mechanisch vormgevingsteam’ toelichten.",GenerateGoals(1,5)));
+            studyPlan1.AddGeneralGoal( new GeneralGoal(2, @"De eigenheid van de diverse mechanische vormgevingsbedrijven met eigen woorden uitleggen. ", GenerateGoals(1, 6)));
+            studyPlan1.AddGeneralGoal( new GeneralGoal(3, @"De mechanische vormgevingsbedrijven in de Belgische en de Vlaamse economische context situeren. ", GenerateGoals(1, 7)));
+            studyPlan1.AddGeneralGoal( new GeneralGoal(4, @"Van een mechanisch vormgevend bedrijf de structuur toelichten.", GenerateGoals(1, 5)));
+            studyPlan1.AddGeneralGoal(new GeneralGoal(5, @"De kenmerken van een mechanisch vormgevingsbedrijf toelichten.", GenerateGoals(1, 3)));
+
+            //teachers
+            Teacher teacher1 = new Teacher("Sneewbal", "VanMechanica");
+            teacher1.AddClass(class1);
+            teacher1.AddCource(new Cource("Mechanica", new SchoolYear(), teacher1));
+            teacher1.AddStudypPlan(studyPlan1);
+
+            context.Teachers.Add(teacher1);
 
             context.SaveChanges();
+        }
+
+        private IEnumerable<Goal> GenerateGoals(int generalnumber, int numberOfGoals)
+        {
+            for (int i = 0; i < numberOfGoals; i++)
+            {
+                yield return new Goal($"testGoal{i} GeneralGoal:{generalnumber}");//c#6 string interpolation   
+            }
         }
     }
 }

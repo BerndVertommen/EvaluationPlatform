@@ -85,6 +85,10 @@
     <Compile Include="Migrations\201507251253257_ChangedToCollections.Designer.cs">
       <DependentUpon>201507251253257_ChangedToCollections.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201508291529370_AddedClasses.cs" />
+    <Compile Include="Migrations\201508291529370_AddedClasses.Designer.cs">
+      <DependentUpon>201508291529370_AddedClasses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Generators\StudentGenerator.cs" />
@@ -105,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201507251253257_ChangedToCollections.resx">
       <DependentUpon>201507251253257_ChangedToCollections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201508291529370_AddedClasses.resx">
+      <DependentUpon>201508291529370_AddedClasses.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

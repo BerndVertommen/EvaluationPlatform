@@ -49,10 +49,16 @@
     <Compile Include="Calculators\ICalculator.cs" />
     <Compile Include="Calculators\ICalculatorInfo.cs" />
     <Compile Include="Models\Class.cs" />
+    <Compile Include="Models\Cource.cs" />
     <Compile Include="Models\Entity.cs" />
+    <Compile Include="Models\Evaluation.cs" />
+    <Compile Include="Models\EvaluationItem.cs" />
+    <Compile Include="Models\GeneralGoal.cs" />
+    <Compile Include="Models\Goal.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\SchoolYear.cs" />
     <Compile Include="Models\Student.cs" />
+    <Compile Include="Models\StudyPlan.cs" />
     <Compile Include="Models\Teacher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
