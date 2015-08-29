@@ -8,5 +8,4 @@ angular.module('app.classes', ['ngRoute'])
                 templateUrl: 'app/classes/views/testClassView.html',
                 controller: 'TestClassController'
             });
-
     });

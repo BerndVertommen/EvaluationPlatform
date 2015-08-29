@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calculators\ICalculator.cs" />
+    <Compile Include="Calculators\ICalculatorInfo.cs" />
     <Compile Include="Models\Class.cs" />
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\Person.cs" />

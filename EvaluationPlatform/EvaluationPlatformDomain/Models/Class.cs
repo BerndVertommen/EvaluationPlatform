@@ -11,7 +11,6 @@ namespace EvaluationPlatformDomain.Models
     /// </summary>
     public class Class : Entity
     {
-        public virtual string Name { get; set; }
         public virtual SchoolYear SchoolYear { get; set; }
 
         public virtual ICollection<Student> Students { get; set; }
@@ -21,9 +20,9 @@ namespace EvaluationPlatformDomain.Models
             
         }
 
-        public Class(string name, SchoolYear schoolYear, ICollection<Student> students )
+        public Class(string discription, SchoolYear schoolYear, ICollection<Student> students )
         {
-            Name = name;
+            Discription = discription;
             SchoolYear = schoolYear;
             Students = students;
         }

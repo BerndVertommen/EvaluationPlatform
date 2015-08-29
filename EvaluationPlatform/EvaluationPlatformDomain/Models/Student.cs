@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace EvaluationPlatformDomain.Models
 {
-    public class Student : Entity
+    public class Student : Person
     {
-        public virtual Person Person { get; set; }
-
-        public Student(Person person)
-        {
-            Person = person;
-        }
+        
+        public Student(Person person): base(person.FirstName,person.LastName)
+        {}
 
         public Student()
         {

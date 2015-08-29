@@ -5,11 +5,9 @@
              classesService.getTestClass().then(function (classResult) {
                  $scope.testClass = classResult.data;
             });
-
         }
 
         init();
-
     }
 
     module.controller('TestClassController', testClassController);

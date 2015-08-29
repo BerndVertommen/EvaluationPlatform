@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace EvaluationPlatformDomain.Models
 {
-    public class Teacher : Entity
+    public class Teacher : Person
     {
         public virtual ICollection<Class> Classes { get; set; }
+        public virtual ICollection<Evaluation> Evaluations { get; set; } 
+        public virtual ICollection<Cource> Cources { get; set; }
 
         public Teacher()
         {

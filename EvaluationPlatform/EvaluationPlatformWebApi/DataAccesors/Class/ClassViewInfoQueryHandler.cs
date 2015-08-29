@@ -23,7 +23,7 @@ namespace EvaluationPlatformWebApi.DataAccesors.Class
         {
             EvaluationPlatformDomain.Models.Class retClass =
                 _database.Classes.FirstOrDefault(
-                    c => c.Name == queryObject.ClassName && c.SchoolYear.StartYear == queryObject.SchoolYear.StartYear && c.SchoolYear.EndYear == queryObject.SchoolYear.EndYear);
+                    c => c.Discription == queryObject.ClassName && c.SchoolYear.StartYear == queryObject.SchoolYear.StartYear && c.SchoolYear.EndYear == queryObject.SchoolYear.EndYear);
 
             return Mapper.Map<ClassViewInfo>(retClass);
         }
