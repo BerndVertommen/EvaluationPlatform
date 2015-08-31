@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,8 @@ namespace EvaluationPlatformDomain.Models
         public virtual ICollection<Class> Classes { get; } = new List<Class>(); // c#6 auto initializers
         public virtual ICollection<Evaluation> Evaluations { get; } =new List<Evaluation>();
         public virtual ICollection<Cource> Cources { get; } = new List<Cource>();
-        public virtual ICollection<StudyPlan> StudyPlans { get; } = new List<StudyPlan>(); 
+
+        public ICollection<StudyPlan> StudyPlans { get; } = new List<StudyPlan>(); 
 
         public Teacher(string firstName , string lastName):base(firstName,lastName) 
         {

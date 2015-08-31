@@ -26,5 +26,6 @@ namespace EvaluationPlatformDAL
             Configuration.LazyLoadingEnabled = true;
             Configuration.AutoDetectChangesEnabled = true;
         }
+
     }
 }
