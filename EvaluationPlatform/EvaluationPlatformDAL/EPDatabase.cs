@@ -27,5 +27,9 @@ namespace EvaluationPlatformDAL
             Configuration.AutoDetectChangesEnabled = true;
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<StudyPlan>().HasMany(c => c.Teachers).WithMany(p => p.StudyPlans);
+        }
     }
 }
