@@ -1,15 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 using EvaluationPlatformDomain.Models;
+using Infrastructure;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace EvaluationPlatformDAL
 {
     public class EPDatabase : DbContext, IEPDatabase
     {
+        public IDbSet<Account> Accounts { get; set; } 
+        // Project
         public IDbSet<Class> Classes { get; set; }
         public IDbSet<SchoolYear> SchoolYears { get; set; }
         public IDbSet<Student> Students { get; set; }
@@ -30,6 +29,9 @@ namespace EvaluationPlatformDAL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<StudyPlan>().HasMany(c => c.Teachers).WithMany(p => p.StudyPlans);
+            modelBuilder.Entity<IdentityUserLogin>().HasKey<string>(l => l.UserId);
+            modelBuilder.Entity<IdentityRole>().HasKey<string>(r => r.Id);
+            modelBuilder.Entity<IdentityUserRole>().HasKey(r => new { r.RoleId, r.UserId });
         }
     }
 }

@@ -13,7 +13,7 @@ namespace EvaluationPlatformWebApi.Authentication
         private readonly ILifetimeScope _lifetimeScope;
 
 
-        public CustomOAuthServerProvider(IQueryProccesor queryProcessor,ILifetimeScope lifetimeScope)
+        public CustomOAuthServerProvider(IQueryProccesor queryProcessor, ILifetimeScope lifetimeScope)
         {
             _queryProcessor = queryProcessor;
             _lifetimeScope = lifetimeScope;
@@ -25,33 +25,32 @@ namespace EvaluationPlatformWebApi.Authentication
             //ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password); //debug
             using (var lifeTimeScope = _lifetimeScope.BeginLifetimeScope())
             {
-                    
-                    var claimsIdentity = new ClaimsIdentity(context.Options.AuthenticationType);
-                    //claimsIdentity.AddClaim(new Claim(ClaimTypes.Name, account.UserName));
-                    //claimsIdentity.AddClaim(new Claim("accountId", account.Id.ToString()));
+                var claimsIdentity = new ClaimsIdentity(context.Options.AuthenticationType);
+                //claimsIdentity.AddClaim(new Claim(ClaimTypes.Name, account.UserName));
+                //claimsIdentity.AddClaim(new Claim("accountId", account.Id.ToString()));
 
-                    //claimsIdentity.AddClaim(new Claim("PersonId", account.BabyPerson.Id.ToString()));
+                //claimsIdentity.AddClaim(new Claim("PersonId", account.BabyPerson.Id.ToString()));
 
-                    claimsIdentity.AddClaim(new Claim("IP", context.Request.RemoteIpAddress));
+                claimsIdentity.AddClaim(new Claim("IP", context.Request.RemoteIpAddress));
 
-                    //var authenticationProperties = new AuthenticationProperties()
-                    //{
-                    //    ExpiresUtc = DateTime.UtcNow.AddHours(24),
-                    //    IsPersistent = true,
-                    //};
+                //var authenticationProperties = new AuthenticationProperties()
+                //{
+                //    ExpiresUtc = DateTime.UtcNow.AddHours(24),
+                //    IsPersistent = true,
+                //};
 
-                    //// store authentication ticket absolution expiration date
-                    //// It will be used afterwards to check the maximum validity of the access token
-                    //var absoluteExpirationDate = authenticationProperties.ExpiresUtc.ToString();
+                //// store authentication ticket absolution expiration date
+                //// It will be used afterwards to check the maximum validity of the access token
+                //var absoluteExpirationDate = authenticationProperties.ExpiresUtc.ToString();
 
-                    //authenticationProperties.Dictionary.Add("abs-expires-utc", absoluteExpirationDate);
+                //authenticationProperties.Dictionary.Add("abs-expires-utc", absoluteExpirationDate);
 
-                    var ticket = new AuthenticationTicket(claimsIdentity, new AuthenticationProperties());
+                var ticket = new AuthenticationTicket(claimsIdentity, new AuthenticationProperties());
 
-                    //_oAuthAuthorizationServerOptions.AccessTokenExpireTimeSpan =
-                    //    bank.Configuration.Account.LoginTimeoutSlidingExpiration;
+                //_oAuthAuthorizationServerOptions.AccessTokenExpireTimeSpan =
+                //    bank.Configuration.Account.LoginTimeoutSlidingExpiration;
 
-                    context.Validated(ticket);              
+                context.Validated(ticket);
             }
         }
 
