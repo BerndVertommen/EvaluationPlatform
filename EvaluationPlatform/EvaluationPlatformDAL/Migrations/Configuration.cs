@@ -1,8 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
+using System.Threading;
 using EvaluationPlatformDAL.Generators;
 using EvaluationPlatformDomain.Models;
+using Infrastructure;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace EvaluationPlatformDAL.Migrations
 {
@@ -41,7 +46,26 @@ namespace EvaluationPlatformDAL.Migrations
 
             context.Teachers.Add(teacher1);
 
+            AddAccount(context);
+
             context.SaveChanges();
+        }
+
+        private void AddAccount(EPDatabase context)
+        {
+            var manager = new UserManager<Account>(new UserStore<Account>(context));
+            var account = new Account()
+            {
+                UserName = "Admin",
+                Email = "berndvertommen@msn.com",
+                EmailConfirmed = true,
+                FirstName = "Admin",
+                LastName = "Istrator",
+                RegisterDate = DateTime.Now.AddYears(-1)
+            };
+            manager.Create(account, "admin");
+
+            context.Accounts.Add(account);
         }
 
         private IEnumerable<Goal> GenerateGoals(int generalnumber, int numberOfGoals)

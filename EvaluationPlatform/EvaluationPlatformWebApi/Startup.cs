@@ -27,7 +27,9 @@ namespace EvaluationPlatformWebApi
             var httpConfig = new HttpConfiguration();
             Container = IocConfig.RegisterDependencies(httpConfig);
             app.UseAutofacMiddleware(Container);
+
             ConfigureAuth(app);
+            ConfigureWebApi(httpConfig);
             ConfigureJsonSerialization(httpConfig);
 
             httpConfig.Filters.Add(new CustomAutorizeAttribute());
@@ -36,6 +38,11 @@ namespace EvaluationPlatformWebApi
             app.UseWebApi(httpConfig);
 
             httpConfig.EnsureInitialized();
+        }
+
+        private void ConfigureWebApi(HttpConfiguration httpConfig)
+        {
+            httpConfig.MapHttpAttributeRoutes();
         }
 
         public static void ConfigureJsonSerialization(HttpConfiguration httpConfiguration)

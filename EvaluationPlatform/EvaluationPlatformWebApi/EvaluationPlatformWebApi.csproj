@@ -143,10 +143,11 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\IocConfig.cs" />
     <Compile Include="App_Start\MappingConfigurations.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
@@ -154,9 +155,11 @@
     <Compile Include="Authentication\CustomAutorizeAttribute.cs" />
     <Compile Include="Authentication\CustomOAuthOptions.cs" />
     <Compile Include="Authentication\CustomOAuthProvider.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ClassesController.cs" />
     <Compile Include="DataAccesors\Class\ClassViewInfoQueryObject.cs" />
     <Compile Include="DataAccesors\Class\ClassViewInfoQueryHandler.cs" />
+    <Compile Include="Identity\AccountManager.cs" />
     <Compile Include="Identity\CurrentIdentityHelper.cs" />
     <Compile Include="Identity\IdentityModels.cs" />
     <Compile Include="Identity\IIdentity.cs" />
@@ -185,6 +188,10 @@
     <ProjectReference Include="..\EvaluationPlatformDomain\EvaluationPlatformDomain.csproj">
       <Project>{c8f2a69b-3b3c-4b8c-a493-e2c13f7c03f8}</Project>
       <Name>EvaluationPlatformDomain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{B7F8F580-747C-46EC-88F6-AD408AD21698}</Project>
+      <Name>Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -19,7 +19,7 @@ namespace EvaluationPlatformWebApi
             MappingConfigurations.Configure();
 
             // Web API routes
-            config.MapHttpAttributeRoutes();
+            //config.MapHttpAttributeRoutes();
 
             config.EnableCors(new EnableCorsAttribute("*","*","get,post,options,put,delete,head"));
 
