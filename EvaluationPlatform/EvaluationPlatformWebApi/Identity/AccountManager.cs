@@ -14,7 +14,7 @@ namespace EvaluationPlatformWebApi.Identity
 
         public static AccountManager Create(IdentityFactoryOptions<AccountManager> options, IOwinContext context)
         {
-            var appDbContext = context.Get<EPDatabase>();
+            var appDbContext = context.Get<IdentityDatabase>();
             var appUserManager = new AccountManager(new UserStore<Account>(appDbContext));
 
             // Configure validation logic for usernames

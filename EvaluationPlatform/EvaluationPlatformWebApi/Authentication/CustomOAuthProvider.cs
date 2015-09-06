@@ -2,6 +2,9 @@
 using System.Threading.Tasks;
 using Autofac;
 using EvaluationPlatformDAL.CommandAndQuery;
+using EvaluationPlatformWebApi.Identity;
+using Infrastructure;
+using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
 
@@ -21,10 +24,37 @@ namespace EvaluationPlatformWebApi.Authentication
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
+            
             //var userManager = context.OwinContext.GetUserManager<ApplicationUserManager>();
             //ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password); //debug
             using (var lifeTimeScope = _lifetimeScope.BeginLifetimeScope())
             {
+                var allowedOrigin = "*";
+
+                context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { allowedOrigin });
+
+                var accountManager = context.OwinContext.GetUserManager<AccountManager>();
+
+                Account user = await accountManager.FindAsync(context.UserName, context.Password);
+
+                if (user == null)
+                {
+                    context.SetError("invalid_grant", "The user name or password is incorrect.");
+                    return;
+                }
+
+                if (!user.EmailConfirmed)
+                {
+                    context.SetError("invalid_grant", "User did not confirm email.");
+                    return;
+                }
+
+                ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(accountManager, "JWT");
+
+                var ticket = new AuthenticationTicket(oAuthIdentity, null);
+
+                context.Validated(ticket);
+                /*
                 var claimsIdentity = new ClaimsIdentity(context.Options.AuthenticationType);
                 //claimsIdentity.AddClaim(new Claim(ClaimTypes.Name, account.UserName));
                 //claimsIdentity.AddClaim(new Claim("accountId", account.Id.ToString()));
@@ -50,7 +80,7 @@ namespace EvaluationPlatformWebApi.Authentication
                 //_oAuthAuthorizationServerOptions.AccessTokenExpireTimeSpan =
                 //    bank.Configuration.Account.LoginTimeoutSlidingExpiration;
 
-                context.Validated(ticket);
+                context.Validated(ticket);*/
             }
         }
 

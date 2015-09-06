@@ -5,7 +5,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace EvaluationPlatformDAL
 {
-    public class EPDatabase : DbContext, IEPDatabase
+    public class EPDatabase : IdentityDatabase, IEPDatabase
     {
         public IDbSet<Account> Accounts { get; set; } 
         // Project
