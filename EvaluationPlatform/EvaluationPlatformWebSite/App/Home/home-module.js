@@ -6,11 +6,11 @@ angular.module('app.home', ['ngRoute'])
         $routeProvider
             .when( '/', {
             templateUrl: 'app/home/views/home.html',
-            controller: 'HomeController'
+            controller: 'homeController'
             })
             .when('/home', {
                 templateUrl: 'app/home/views/home.html',
-                controller: 'HomeController'
+                controller: 'homeController'
             })
             .otherwise({
             redirectTo: '/'

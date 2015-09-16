@@ -18,6 +18,8 @@ namespace EvaluationPlatformWebApi.Controllers
             _queryProccesor = queryProccesor;
         }
 
+
+        //[Authorize]
         [Route("test")]
         [HttpGet]
         public ClassViewInfo GetClassViewInfo()

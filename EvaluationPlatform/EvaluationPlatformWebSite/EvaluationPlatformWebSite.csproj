@@ -59,13 +59,21 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\Account\account-module.js" />
+    <Content Include="app\Account\controllers\changePasswordCtrl.js" />
+    <Content Include="app\Account\services\accountService.js" />
+    <Content Include="app\Account\views\changePassword.html" />
     <Content Include="app\classes\classes-module.js" />
     <Content Include="app\classes\controllers\testClassCtrl.js" />
     <Content Include="app\classes\services\classesSvc.js" />
     <Content Include="app\classes\views\testClassView.html" />
+    <Content Include="app\configuration\services\configurationService.js" />
     <Content Include="app\home\controllers\homeCtrl.js" />
     <Content Include="app\home\home-module.js" />
     <Content Include="app\home\views\home.html" />
+    <Content Include="app\login\controllers\loginCtrl.js" />
+    <Content Include="app\login\login-module.js" />
+    <Content Include="app\login\views\login.html" />
     <Content Include="content\ui-bootstrap-csp.css" />
     <Content Include="scripts\angular-animate.js" />
     <Content Include="scripts\angular-animate.min.js" />
@@ -917,8 +925,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\home\services\" />
-    <Folder Include="app\login\controllers\" />
-    <Folder Include="app\login\views\" />
     <Folder Include="app\zzzcopyMe\controllers\" />
     <Folder Include="app\zzzcopyMe\services\" />
     <Folder Include="app\zzzcopyMe\views\" />

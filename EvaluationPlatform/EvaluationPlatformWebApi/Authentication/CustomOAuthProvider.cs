@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Autofac;
 using EvaluationPlatformDAL.CommandAndQuery;
-using EvaluationPlatformWebApi.Identity;
+using EvaluationPlatformWebApi.AccountManagement;
 using Infrastructure;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -10,13 +10,12 @@ using Microsoft.Owin.Security.OAuth;
 
 namespace EvaluationPlatformWebApi.Authentication
 {
-    public class CustomOAuthServerProvider : OAuthAuthorizationServerProvider
+    public class CustomOAuthProvider : OAuthAuthorizationServerProvider
     {
         private readonly IQueryProccesor _queryProcessor;
         private readonly ILifetimeScope _lifetimeScope;
 
-
-        public CustomOAuthServerProvider(IQueryProccesor queryProcessor, ILifetimeScope lifetimeScope)
+        public CustomOAuthProvider(IQueryProccesor queryProcessor, ILifetimeScope lifetimeScope)
         {
             _queryProcessor = queryProcessor;
             _lifetimeScope = lifetimeScope;
@@ -29,9 +28,9 @@ namespace EvaluationPlatformWebApi.Authentication
             //ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password); //debug
             using (var lifeTimeScope = _lifetimeScope.BeginLifetimeScope())
             {
-                var allowedOrigin = "*";
+                //var allowedOrigin = "*";
 
-                context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { allowedOrigin });
+                //context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { allowedOrigin });
 
                 var accountManager = context.OwinContext.GetUserManager<AccountManager>();
 
@@ -49,7 +48,7 @@ namespace EvaluationPlatformWebApi.Authentication
                     return;
                 }
 
-                ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(accountManager, "JWT");
+                ClaimsIdentity oAuthIdentity = await accountManager.CreateIdentityAsync(user, "JWT");
 
                 var ticket = new AuthenticationTicket(oAuthIdentity, null);
 

@@ -10,7 +10,7 @@
         init();
     }
 
-    module.controller('HomeController', homeController);
+    module.controller('homeController', homeController);
 
 })(angular.module('app.home'));
 

@@ -7,7 +7,7 @@ namespace EvaluationPlatformDAL
 {
     public class EPDatabase : IdentityDatabase, IEPDatabase
     {
-        public IDbSet<Account> Accounts { get; set; } 
+        //public IDbSet<Account> Accounts { get; set; } 
         // Project
         public IDbSet<Class> Classes { get; set; }
         public IDbSet<SchoolYear> SchoolYears { get; set; }
@@ -19,7 +19,7 @@ namespace EvaluationPlatformDAL
         public IDbSet<GeneralGoal> GeneralGoals { get; set; }
         public IDbSet<Goal> Goals { get; set; }
 
-        public EPDatabase()
+        public EPDatabase() : base("EPDatabase")
         {
             Configuration.ProxyCreationEnabled = true;
             Configuration.LazyLoadingEnabled = true;
@@ -33,5 +33,12 @@ namespace EvaluationPlatformDAL
             modelBuilder.Entity<IdentityRole>().HasKey<string>(r => r.Id);
             modelBuilder.Entity<IdentityUserRole>().HasKey(r => new { r.RoleId, r.UserId });
         }
+
+        public static EPDatabase Create()
+        {
+            return  new EPDatabase();
+        }
     }
+
+
 }

@@ -1,11 +1,13 @@
-﻿using EvaluationPlatformDAL;
+﻿using System;
+using EvaluationPlatformDAL;
 using Infrastructure;
+using Infrastructure.Email;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 
-namespace EvaluationPlatformWebApi.Identity
+namespace EvaluationPlatformWebApi.AccountManagement
 {
     public class AccountManager : UserManager<Account>
     {
@@ -14,18 +16,18 @@ namespace EvaluationPlatformWebApi.Identity
 
         public static AccountManager Create(IdentityFactoryOptions<AccountManager> options, IOwinContext context)
         {
-            var appDbContext = context.Get<IdentityDatabase>();
-            var appUserManager = new AccountManager(new UserStore<Account>(appDbContext));
+            var appDbContext = OwinContextExtensions.Get<EPDatabase>(context);
+            AccountManager accountManager = new AccountManager(new UserStore<Account>(appDbContext));
 
             // Configure validation logic for usernames
-            appUserManager.UserValidator = new UserValidator<Account>(appUserManager)
+            accountManager.UserValidator = new UserValidator<Account>(accountManager)
             {
                 AllowOnlyAlphanumericUserNames = false,
                 RequireUniqueEmail = true
             };
 
             // Configure validation logic for passwords
-            appUserManager.PasswordValidator = new PasswordValidator
+            accountManager.PasswordValidator = new PasswordValidator
             {
                 RequiredLength = 6,
                 RequireNonLetterOrDigit = true,
@@ -33,13 +35,21 @@ namespace EvaluationPlatformWebApi.Identity
                 RequireLowercase = true,
                 RequireUppercase = true,
             };
+
+            
+            accountManager.EmailService = new EmailService();
+            
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
-                appUserManager.UserTokenProvider = new DataProtectorTokenProvider<Account>(dataProtectionProvider.Create("ASP.NET Identity"));
+                accountManager.UserTokenProvider = new DataProtectorTokenProvider<Account>(dataProtectionProvider.Create("ASP.NET Identity"))
+                {
+                    //Code for email confirmation and reset password life time
+                    TokenLifespan = TimeSpan.FromHours(6)
+                };
             }
 
-            return appUserManager;
+            return accountManager;
         }
     }
 }

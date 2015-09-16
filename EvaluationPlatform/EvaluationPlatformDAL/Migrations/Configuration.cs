@@ -65,7 +65,7 @@ namespace EvaluationPlatformDAL.Migrations
             };
             manager.Create(account, "admin");
 
-            context.Accounts.Add(account);
+            context.Users.Add(account);
         }
 
         private IEnumerable<Goal> GenerateGoals(int generalnumber, int numberOfGoals)

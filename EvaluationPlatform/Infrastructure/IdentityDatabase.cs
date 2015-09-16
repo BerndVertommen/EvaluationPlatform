@@ -9,5 +9,9 @@ namespace Infrastructure
 {
     public abstract class IdentityDatabase : IdentityDbContext<Account>
     {
+        public IdentityDatabase(string dbName) : base(dbName)
+        {
+            
+        }
     }
 }
