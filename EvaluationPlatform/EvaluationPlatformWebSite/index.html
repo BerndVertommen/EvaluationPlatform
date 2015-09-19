@@ -37,6 +37,10 @@
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
+                <li>
+                    <a href="#/createTestAccount" class="button">Create Test Account</a>
+                </li>
+
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu message-dropdown">
@@ -187,7 +191,7 @@
             </div>
             <!-- /.navbar-collapse -->
         </nav>
-        <div id="page-wrapper" >
+        <div id="page-wrapper">
             <div ng-view="">
             </div>
             <!-- /.container-fluid -->
@@ -224,6 +228,7 @@
     <script src="app/classes/controllers/testClassCtrl.js"></script>
     <script src="app/login/controllers/loginCtrl.js"></script>
     <script src="app/Account/controllers/changePasswordCtrl.js"></script>
+    <script src="app/Account/controllers/createTestAccountCtrl.js"></script> <!--REMOVE in production-->
 
 
 

@@ -2,9 +2,9 @@
     'use strict';
 
     function configurationService() {
-        thiz = this;
+       var thiz = this;
 
-        var baseApiPath = 'http://testplatformApi/api/';
+       thiz.baseApiPath = 'http://testplatformApi/api/';
     }
 
 

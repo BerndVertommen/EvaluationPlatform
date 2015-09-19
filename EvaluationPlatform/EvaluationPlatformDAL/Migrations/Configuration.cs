@@ -46,27 +46,10 @@ namespace EvaluationPlatformDAL.Migrations
 
             context.Teachers.Add(teacher1);
 
-            AddAccount(context);
-
             context.SaveChanges();
         }
 
-        private void AddAccount(EPDatabase context)
-        {
-            var manager = new UserManager<Account>(new UserStore<Account>(context));
-            var account = new Account()
-            {
-                UserName = "Admin",
-                Email = "berndvertommen@msn.com",
-                EmailConfirmed = true,
-                FirstName = "Admin",
-                LastName = "Istrator",
-                RegisterDate = DateTime.Now.AddYears(-1)
-            };
-            manager.Create(account, "admin");
-
-            context.Users.Add(account);
-        }
+       
 
         private IEnumerable<Goal> GenerateGoals(int generalnumber, int numberOfGoals)
         {
