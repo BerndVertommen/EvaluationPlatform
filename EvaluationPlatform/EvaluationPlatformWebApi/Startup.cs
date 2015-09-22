@@ -17,6 +17,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 using Owin;
+using Swashbuckle.Application;
 
 [assembly: OwinStartup(typeof(Startup))]
 
@@ -47,6 +48,10 @@ namespace EvaluationPlatformWebApi
             app.UseWebApi(httpConfig);
 
             httpConfig.EnsureInitialized();
+
+            httpConfig
+             .EnableSwagger(c => c.SingleApiVersion("v1", "EvaluationPlatform api Documentation"))
+             .EnableSwaggerUi();
         }
 
         private void ConfigureWebApi(HttpConfiguration httpConfig)
