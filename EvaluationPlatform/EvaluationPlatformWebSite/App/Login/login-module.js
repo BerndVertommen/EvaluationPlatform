@@ -9,3 +9,12 @@
             });
 
     });
+
+angular.module('app.login').run(function (authService) {
+    authService.fillAuthData();
+});
+
+angular.module('app.login').config(function ($httpProvider) {
+    $httpProvider.interceptors.push('authInterceptorFactory');
+});
+
