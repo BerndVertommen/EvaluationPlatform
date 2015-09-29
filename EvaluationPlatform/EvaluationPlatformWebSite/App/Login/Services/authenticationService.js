@@ -20,7 +20,7 @@
             var data = "grant_type=password&username=" +
             loginData.userName + "&password=" + loginData.password;
 
-            $http.post(configurationService.baseApiPath + '/oauth/token', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).then(function (response) {
+            $http.post(configurationService.tokenPath, data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).then(function (response) {
 
                 localStorageService.set('authorizationData', { token: response.access_token, userName: loginData.userName });
 
@@ -29,15 +29,15 @@
 
                 deferred.resolve(response);
 
-            }).error(function (error) {
+            }),function (error) {
                 this.logOut();
                 deferred.reject(error);
-            });
+            };
 
             return deferred.promise;
         };
 
-        thiz.getlAuthData = function () {
+        thiz.getAuthData = function () {
 
             var authData = localStorageService.get('authorizationData');
             if (authData) {
@@ -48,4 +48,4 @@
     }
 
     module.service('authenticationService', authenticationService);
-})(angular.module('app.login'))
+})(angular.module('app'))
