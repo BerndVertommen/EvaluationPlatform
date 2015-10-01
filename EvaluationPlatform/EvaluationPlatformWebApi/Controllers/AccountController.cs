@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using System.Web.Http;
 using EvaluationPlatformWebApi.AccountManagement;
 using Infrastructure;
@@ -55,6 +52,7 @@ namespace EvaluationPlatformWebApi.Controllers
             return Created(locationHeader, TheModelFactory.Create(user));
         }
 
+        [OverrideAuthorization]
         [Route("changePasword")]
         [HttpPost]
         public async Task<IHttpActionResult> ChangePassword(ChangePasswordBindingModel model)
@@ -74,6 +72,7 @@ namespace EvaluationPlatformWebApi.Controllers
             return Ok();
         }
 
+        [OverrideAuthorization]
         [HttpGet]
         [Route("ConfirmEmail")]
         public async Task<IHttpActionResult> ConfirmEmail(string userId = "", string code = "")

@@ -19,7 +19,7 @@ namespace EvaluationPlatformWebApi.Controllers
         }
 
 
-        //[Authorize]
+        [Authorize]
         [Route("test")]
         [HttpGet]
         public ClassViewInfo GetClassViewInfo()
