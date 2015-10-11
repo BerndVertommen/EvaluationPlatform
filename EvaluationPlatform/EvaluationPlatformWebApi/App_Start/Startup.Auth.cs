@@ -21,16 +21,6 @@ namespace EvaluationPlatformWebApi
         public void ConfigureAuth(IAppBuilder app)
         {
 
-            //OAuthOptions = new OAuthAuthorizationServerOptions
-            //{
-            //    TokenEndpointPath = new PathString("/api/token"),
-            //    Provider = new CustomOAuthProvider(
-            //        Container.Resolve<IQueryProccesor>(), Container.Resolve<ILifetimeScope>()),
-            //    AuthorizeEndpointPath = new PathString("/api/login/Login"),
-            //    AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
-            //    AllowInsecureHttp = true
-            //};
-
             // enable cross origin calls
             app.UseCors(CorsOptions.AllowAll);
 

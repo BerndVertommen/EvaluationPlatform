@@ -15,6 +15,11 @@ namespace EvaluationPlatformDAL.CommandAndQuery
             _database = database;
         }
 
+        protected IEPDatabase Database
+        {
+            get { return _database; }
+        }
+
         public abstract TResult Handle(TQueryObject queryObject);
 
 

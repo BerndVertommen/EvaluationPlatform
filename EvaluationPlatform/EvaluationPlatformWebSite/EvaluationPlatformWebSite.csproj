@@ -60,8 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\Account\account-module.js" />
-    <Content Include="app\Account\controllers\changePasswordCtrl.js" />
-    <Content Include="app\Account\controllers\createTestAccountCtrl.js" />
     <Content Include="app\Account\services\accountService.js" />
     <Content Include="app\Account\views\changePassword.html" />
     <Content Include="app\Account\views\createTestAccountView.html" />
@@ -961,6 +959,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\Account\controllers\" />
     <Folder Include="app\home\services\" />
     <Folder Include="app\zzzcopyMe\controllers\" />
     <Folder Include="app\zzzcopyMe\services\" />

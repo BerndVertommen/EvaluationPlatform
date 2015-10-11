@@ -1,9 +1,14 @@
-﻿using System.Security.Claims;
+﻿using System;
+using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Autofac;
+using Autofac.Integration.Owin;
+using EvaluationPlatformDAL;
 using EvaluationPlatformDAL.CommandAndQuery;
-using EvaluationPlatformWebApi.AccountManagement;
-using Infrastructure;
+using EvaluationPlatformDomain.Models.Account;
+using EvaluationPlatformDomain.Models.Authentication;
+using EvaluationPlatformWebApi.DataAccesors.Account;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
@@ -28,58 +33,52 @@ namespace EvaluationPlatformWebApi.Authentication
             //ApplicationUser user = await userManager.FindAsync(context.UserName, context.Password); //debug
             using (var lifeTimeScope = _lifetimeScope.BeginLifetimeScope())
             {
-                //var allowedOrigin = "*";
 
-                //context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { allowedOrigin });
-
-                var accountManager = context.OwinContext.GetUserManager<AccountManager>();
-
-                Account user = await accountManager.FindAsync(context.UserName, context.Password);
+                Account user = _queryProcessor.Execute(new GetAccountQueryObject(context.UserName));
 
                 if (user == null)
                 {
-                    context.SetError("invalid_grant", "The user name or password is incorrect.");
+                    context.SetError("invalid_grant", "Invalid credentials: Username or Password incorrect");
+                    context.Rejected();
                     return;
                 }
 
-                if (!user.EmailConfirmed)
+                if (!user.VerifyPassword(context.Password))
                 {
-                    context.SetError("invalid_grant", "User did not confirm email.");
+                    context.SetError("invalid_grant", "Invalid credentials: Username or Password incorrect");
+                    context.Rejected();
                     return;
                 }
 
-                ClaimsIdentity oAuthIdentity = await accountManager.CreateIdentityAsync(user, "JWT");
+                //if (!user.EmailConfirmed)
+                //{
+                //    context.SetError("invalid_grant", "User did not confirm email.");
+                //    return;
+                //}
 
-                var ticket = new AuthenticationTicket(oAuthIdentity, null);
-
-                context.Validated(ticket);
-                /*
                 var claimsIdentity = new ClaimsIdentity(context.Options.AuthenticationType);
-                //claimsIdentity.AddClaim(new Claim(ClaimTypes.Name, account.UserName));
-                //claimsIdentity.AddClaim(new Claim("accountId", account.Id.ToString()));
-
-                //claimsIdentity.AddClaim(new Claim("PersonId", account.BabyPerson.Id.ToString()));
-
+                //ClaimsIdentity oAuthIdentity = await accountManager.CreateIdentityAsync(user, "JWT");
+                claimsIdentity.AddClaim(new Claim(ClaimTypes.Name, user.Username));
+                claimsIdentity.AddClaim(new Claim("accountId", user.Id.ToString()));
                 claimsIdentity.AddClaim(new Claim("IP", context.Request.RemoteIpAddress));
 
-                //var authenticationProperties = new AuthenticationProperties()
-                //{
-                //    ExpiresUtc = DateTime.UtcNow.AddHours(24),
-                //    IsPersistent = true,
-                //};
+                foreach (AccountRole role in user.AccountRoles)
+                {
+                    claimsIdentity.AddClaim(new Claim(ClaimTypes.Role, role.AccountRoleType.ToString()));
+                }
 
-                //// store authentication ticket absolution expiration date
-                //// It will be used afterwards to check the maximum validity of the access token
-                //var absoluteExpirationDate = authenticationProperties.ExpiresUtc.ToString();
 
-                //authenticationProperties.Dictionary.Add("abs-expires-utc", absoluteExpirationDate);
+                var authenticationProperties = new AuthenticationProperties()
+                {
+                    ExpiresUtc = DateTime.UtcNow.AddHours(24),
+                    IsPersistent = true,
+                };
 
-                var ticket = new AuthenticationTicket(claimsIdentity, new AuthenticationProperties());
+                var ticket = new AuthenticationTicket(claimsIdentity, authenticationProperties);
 
-                //_oAuthAuthorizationServerOptions.AccessTokenExpireTimeSpan =
-                //    bank.Configuration.Account.LoginTimeoutSlidingExpiration;
-
-                context.Validated(ticket);*/
+                context.Validated(ticket);
+               
+           
             }
         }
 

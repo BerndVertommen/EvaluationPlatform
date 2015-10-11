@@ -5,7 +5,9 @@
         var thiz = this;
 
         thiz.getTestClass = function() {
-            return $http.get('http://testplatformApi/api/class/test');
+            return $http.get('http://testplatformApi/api/class/test').then(function(result) {
+                return result.data;
+            });
         }
     }
 

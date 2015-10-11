@@ -19,7 +19,7 @@
                 confirmPassword :"@Dmin123"
         }
 
-           return $http.post(configurationService.baseApiPath + 'accounts/create', createUserModel).then(function (data) {
+            return $http.post(configurationService.baseApiPath + 'accounts/createTester', createUserModel).then(function (data) {
                 return data;
             });
         }

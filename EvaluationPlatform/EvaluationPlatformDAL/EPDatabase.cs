@@ -1,16 +1,20 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
+using EvaluationPlatformDAL.Migrations;
 using EvaluationPlatformDomain.Models;
-using Infrastructure;
+using EvaluationPlatformDomain.Models.Account;
+using EvaluationPlatformDomain.Models.Authentication;
 using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace EvaluationPlatformDAL
 {
-    public class EPDatabase : IdentityDatabase, IEPDatabase
+    public class EPDatabase : DbContext , IEPDatabase
     {
         //public IDbSet<Account> Accounts { get; set; } 
         // Project
         public IDbSet<Class> Classes { get; set; }
         public IDbSet<SchoolYear> SchoolYears { get; set; }
+        public IDbSet<Person> Persons { get; set; }
         public IDbSet<Student> Students { get; set; }
         public IDbSet<Teacher> Teachers { get; set; }
         public IDbSet<Cource> Cources { get; set; }
@@ -18,6 +22,8 @@ namespace EvaluationPlatformDAL
         public IDbSet<StudyPlan> StudyPlans { get; set; }
         public IDbSet<GeneralGoal> GeneralGoals { get; set; }
         public IDbSet<Goal> Goals { get; set; }
+        public IDbSet<Account> Accounts { get; set; }
+        public IDbSet<AccountRole> AccountRoles { get; set; }
 
         public EPDatabase() : base("EPDatabase")
         {
@@ -29,9 +35,6 @@ namespace EvaluationPlatformDAL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<StudyPlan>().HasMany(c => c.Teachers).WithMany(p => p.StudyPlans);
-            modelBuilder.Entity<IdentityUserLogin>().HasKey<string>(l => l.UserId);
-            modelBuilder.Entity<IdentityRole>().HasKey<string>(r => r.Id);
-            modelBuilder.Entity<IdentityUserRole>().HasKey(r => new { r.RoleId, r.UserId });
         }
 
         public static EPDatabase Create()

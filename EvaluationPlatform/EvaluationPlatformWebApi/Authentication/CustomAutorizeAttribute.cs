@@ -1,30 +1,37 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using BabyLink.WebApi.Identity;
-using EvaluationPlatformWebApi.Models;
+using EvaluationPlatformDomain.Models.Authentication;
 
 namespace EvaluationPlatformWebApi.Authentication
 {
     public class CustomAutorizeAttribute : AuthorizeAttribute
     {
-        private List<AccountRole> _accountRoles;
+        private List<AccountRoleType> _accountRolesTypes;
 
-        public CustomAutorizeAttribute(params AccountRole[] roleTypes)
+        public CustomAutorizeAttribute(params AccountRoleType[] roleTypes)
         {
-            if (_accountRoles ==null)
+            if (_accountRolesTypes == null)
             {
-                _accountRoles = new List<AccountRole>();
+                _accountRolesTypes = new List<AccountRoleType>();
             }
-            _accountRoles.AddRange(roleTypes);
+            foreach (AccountRoleType role in roleTypes)
+            {
+                _accountRolesTypes.Add(role);
+            }
+
+            //_accountRolesTypes.AddRange(roleType);
+           
         }
 
         public override void OnAuthorization(HttpActionContext actionContext)
         {
-            return; // no autorization ATM
+
             if (Authorize(actionContext))
             {
                 return;
@@ -32,6 +39,7 @@ namespace EvaluationPlatformWebApi.Authentication
             HandleUnauthorizedRequest(actionContext);
 
         }
+
 
         protected override void HandleUnauthorizedRequest(HttpActionContext actionContext)
         {
@@ -48,7 +56,8 @@ namespace EvaluationPlatformWebApi.Authentication
             {
                 return false;
             }
-            return _accountRoles.Any(role => roles.Contains(role.ToString()));
+            bool result = _accountRolesTypes.Any(role => roles.Any(r => r == role.ToString()));
+            return result;
         }
     }
 

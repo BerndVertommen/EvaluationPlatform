@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using EvaluationPlatformWebApi.App_Start;
+using EvaluationPlatformWebApi.Authentication;
 using Microsoft.Owin.Security.OAuth;
 
 namespace EvaluationPlatformWebApi
@@ -15,7 +16,9 @@ namespace EvaluationPlatformWebApi
             // Configure Web API to use only bearer token authentication.
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType)); //Original
-                                                                                               
+            //config.Filters.Add(new CustomAutorizeAttribute());
+            //config.Filters.Add(new AuthorizeAttribute());
+
             MappingConfigurations.Configure();
 
             // Web API routes

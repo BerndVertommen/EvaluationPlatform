@@ -1,6 +1,8 @@
 ﻿using System.Web.Http;
 using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformDomain.Models;
+using EvaluationPlatformDomain.Models.Authentication;
+using EvaluationPlatformWebApi.Authentication;
 using EvaluationPlatformWebApi.DataAccesors.Class;
 using EvaluationPlatformWebApi.Models;
 
@@ -19,7 +21,7 @@ namespace EvaluationPlatformWebApi.Controllers
         }
 
 
-        [Authorize]
+        [CustomAutorize(AccountRoleType.Developer)]
         [Route("test")]
         [HttpGet]
         public ClassViewInfo GetClassViewInfo()

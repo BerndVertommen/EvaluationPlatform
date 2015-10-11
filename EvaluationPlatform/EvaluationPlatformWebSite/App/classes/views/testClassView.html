@@ -6,7 +6,7 @@
             <div class="col-xs-3">Schooljaar: {{testClass.schoolYear.startYear}} - {{testClass.schoolYear.endYear}}</div>
         </div>
         <div class="row" ng-repeat="student in testClass.students">
-            <div class="col-xs-12">{{student.firstName}} {{student.lastName}}</div>
+            <div class="col-xs-12">{{student.person.firstName}} {{student.person.lastName}}</div>
         </div>
     </div>
 </div>

@@ -1,23 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace EvaluationPlatformDomain.Models
 {
-    public class Teacher : Person
+    public class Teacher : Entity
     {
+        public virtual Person Person { get; protected set; }
         public virtual ICollection<Class> Classes { get; } = new List<Class>(); // c#6 auto initializers
         public virtual ICollection<Evaluation> Evaluations { get; } =new List<Evaluation>();
         public virtual ICollection<Cource> Cources { get; } = new List<Cource>();
 
-        public ICollection<StudyPlan> StudyPlans { get; } = new List<StudyPlan>(); 
+        public virtual ICollection<StudyPlan> StudyPlans { get; } = new List<StudyPlan>(); 
 
-        public Teacher(string firstName , string lastName):base(firstName,lastName) 
+        public Teacher(Person person)
         {
-
+            Person = person;
         }
 
         public void AddClass(Class toAddClass)

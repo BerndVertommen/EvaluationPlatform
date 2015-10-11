@@ -1,5 +1,7 @@
 ﻿using System.Data.Entity;
 using EvaluationPlatformDomain.Models;
+using EvaluationPlatformDomain.Models.Account;
+using EvaluationPlatformDomain.Models.Authentication;
 
 namespace EvaluationPlatformDAL
 {
@@ -7,6 +9,7 @@ namespace EvaluationPlatformDAL
     {
         IDbSet<Class> Classes { get; set; }
         IDbSet<SchoolYear> SchoolYears { get; set; }
+        IDbSet<Person> Persons{ get; set; }
         IDbSet<Student> Students { get; set; }
         IDbSet<Teacher> Teachers { get; set; }
         IDbSet<Cource> Cources { get; set; } 
@@ -14,5 +17,8 @@ namespace EvaluationPlatformDAL
         IDbSet<StudyPlan> StudyPlans { get; set; } 
         IDbSet<GeneralGoal> GeneralGoals { get; set; }
         IDbSet<Goal> Goals { get; set; }  
+        IDbSet<Account> Accounts { get; set; } 
+        IDbSet<AccountRole> AccountRoles { get; set; } 
+        
     }
 }

@@ -173,26 +173,21 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountManagement\AccountManager.cs" />
-    <Compile Include="AccountManagement\ChangePasswordBindingModel.cs" />
-    <Compile Include="AccountManagement\CreateUserBindingModel.cs" />
     <Compile Include="App_Start\IocConfig.cs" />
     <Compile Include="App_Start\MappingConfigurations.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Authentication\CustomAutorizeAttribute.cs" />
-    <Compile Include="Authentication\CustomJwtFormat.cs" />
     <Compile Include="Authentication\CustomOAuthProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\BaseApiController.cs" />
     <Compile Include="Controllers\ClassesController.cs" />
-    <Compile Include="Controllers\ModelFactory.cs" />
+    <Compile Include="DataAccesors\Account\GetAccountQueryHandler.cs" />
+    <Compile Include="DataAccesors\Account\GetAccountQueryObject.cs" />
     <Compile Include="DataAccesors\Class\ClassViewInfoQueryObject.cs" />
     <Compile Include="DataAccesors\Class\ClassViewInfoQueryHandler.cs" />
     <Compile Include="Identity\CurrentIdentityHelper.cs" />
     <Compile Include="Identity\IIdentity.cs" />
-    <Compile Include="Models\AccountRole.cs" />
     <Compile Include="Models\ClassViewInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />

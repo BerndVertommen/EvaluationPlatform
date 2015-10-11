@@ -3,6 +3,7 @@ using Autofac;
 using Autofac.Integration.WebApi;
 using EvaluationPlatformDAL;
 using EvaluationPlatformDAL.CommandAndQuery;
+using EvaluationPlatformWebApi.DataAccesors.Account;
 using EvaluationPlatformWebApi.DataAccesors.Class;
 
 namespace EvaluationPlatformWebApi
@@ -24,9 +25,11 @@ namespace EvaluationPlatformWebApi
             builder.RegisterType<CommandProcessor>().AsImplementedInterfaces().InstancePerLifetimeScope();
             builder.RegisterType<EPDatabase>().As<IEPDatabase>().InstancePerLifetimeScope();
 
-            builder.RegisterAssemblyTypes(typeof(ClassViewInfoQueryHandler).Assembly)
+            // Add this so the assembly of the queyrHanderls is know to autofac
+            builder.RegisterAssemblyTypes(typeof(GetAccountQueryHandler).Assembly)
                         .Where(t => t.GetInterface(typeof(IQueryHandler<,>).Name) != null)
                         .AsSelf().AsImplementedInterfaces().InstancePerLifetimeScope();
+
 
             // fix this after an commanhander is created
             //builder.RegisterAssemblyTypes(typeof(CommandHandler<>).Assembly)

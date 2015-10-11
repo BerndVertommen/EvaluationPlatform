@@ -1,13 +1,11 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
-using System.Threading;
+using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using EvaluationPlatformDAL.Generators;
 using EvaluationPlatformDomain.Models;
-using Infrastructure;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
+using EvaluationPlatformDomain.Models.Account;
+using EvaluationPlatformDomain.Models.Authentication;
 
 namespace EvaluationPlatformDAL.Migrations
 {
@@ -39,17 +37,19 @@ namespace EvaluationPlatformDAL.Migrations
             studyPlan1.AddGeneralGoal(new GeneralGoal(5, @"De kenmerken van een mechanisch vormgevingsbedrijf toelichten.", GenerateGoals(1, 3)));
 
             //teachers
-            Teacher teacher1 = new Teacher("Sneewbal", "VanMechanica");
+            Teacher teacher1 = new Teacher(new Person( "Sneewbal", "VanMechanica"));
             teacher1.AddClass(class1);
             teacher1.AddCource(new Cource("Mechanica", new SchoolYear(), teacher1));
             teacher1.AddStudypPlan(studyPlan1);
 
             context.Teachers.Add(teacher1);
 
+            CreateRoles(context);
+            CreateAccounts(context);
+
             context.SaveChanges();
         }
 
-       
 
         private IEnumerable<Goal> GenerateGoals(int generalnumber, int numberOfGoals)
         {
@@ -57,6 +57,25 @@ namespace EvaluationPlatformDAL.Migrations
             {
                 yield return new Goal($"testGoal{i} GeneralGoal:{generalnumber}");//c#6 string interpolation   
             }
+        }
+
+        private void CreateRoles(EPDatabase context)
+        {
+            context.AccountRoles.Add(new AccountRole(AccountRoleType.Admin));
+            context.AccountRoles.Add(new AccountRole(AccountRoleType.UserRole));
+            //context.AccountRoles.Add(new AccountRole(AccountRoleTypes.Developer));
+            
+        }
+
+        private void CreateAccounts(EPDatabase context)
+        {
+            // Add DevAccount
+            AccountRole devAccountRole =
+                context.AccountRoles.FirstOrDefault(r => r.AccountRoleType == AccountRoleType.Developer);
+            var devAccount = new Account("Tester","berndvertommen@msn.com",new Person("Test","er"), new AccountRole(AccountRoleType.Developer));
+            devAccount.SetPassword("@Dmin123");
+
+            context.Accounts.Add(devAccount);
         }
     }
 }

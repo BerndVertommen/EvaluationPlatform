@@ -3,7 +3,7 @@
 
         var init = function() {
              classesService.getTestClass().then(function (classResult) {
-                 $scope.testClass = classResult.data;
+                 $scope.testClass = classResult;
             });
         }
 
