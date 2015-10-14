@@ -19,8 +19,7 @@ namespace EvaluationPlatformWebApi.Controllers
             _commandProcessor = commandProcessor;
             _queryProccesor = queryProccesor;
         }
-
-
+        
         [CustomAutorize(AccountRoleType.Developer)]
         [Route("test")]
         [HttpGet]

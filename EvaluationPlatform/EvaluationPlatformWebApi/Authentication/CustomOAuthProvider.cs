@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Autofac;
-using Autofac.Integration.Owin;
-using EvaluationPlatformDAL;
 using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformDomain.Models.Account;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformWebApi.DataAccesors.Account;
-using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
 

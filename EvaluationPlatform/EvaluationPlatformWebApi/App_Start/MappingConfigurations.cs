@@ -14,8 +14,12 @@ namespace EvaluationPlatformWebApi.App_Start
     {
         public static void Configure()
         {
+           
             // Class Mappings
             Mapper.CreateMap<Class, ClassViewInfo>();
+            Mapper.CreateMap<Person, PersonInfo>();
+            Mapper.CreateMap<SchoolYear, SchoolYearInfo>();
+            Mapper.CreateMap<Student, StudentInfo>();
         }
     }
 }

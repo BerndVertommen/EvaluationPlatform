@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Configuration;
 using System.Web.Http;
 using Autofac;
-using EvaluationPlatformDAL;
 using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformWebApi;
 using EvaluationPlatformWebApi.Authentication;
 using Microsoft.Owin;
-using Microsoft.Owin.Security;
-using Microsoft.Owin.Security.DataHandler.Encoder;
-using Microsoft.Owin.Security.Jwt;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;

@@ -2,6 +2,6 @@
 {
     public class StudentInfo
     {
-        public PersonInfo PersonInfo { get; set; }
+        public PersonInfo Person { get; set; }
     }
 }
