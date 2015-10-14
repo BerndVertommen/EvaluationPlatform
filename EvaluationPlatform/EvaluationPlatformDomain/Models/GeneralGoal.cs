@@ -5,11 +5,13 @@ namespace EvaluationPlatformDomain.Models
     public class GeneralGoal : Entity // Leerplandoel
     {
         public int GoalNumber { get; set; }
+        public virtual string Discription { get; set; }
         public virtual ICollection<Goal> Goals{ get; } = new List<Goal>();
 
-        public GeneralGoal(int goalNumber, string discription):base(discription)
+        public GeneralGoal(int goalNumber, string discription)
         {
             GoalNumber = goalNumber;
+            Discription = discription;
         }
 
         public GeneralGoal(int goalNumber, string discription, IEnumerable<Goal> goals) : this (goalNumber, discription)

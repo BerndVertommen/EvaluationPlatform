@@ -2,9 +2,11 @@
 {
     public class Goal : Entity // lesdoel
     {
-        public Goal(string discription): base(discription)
+        public string Discription { get; set; }
+
+        public Goal(string discription)
         {
-            
+            Discription = discription;
         }
     }
 }

@@ -4,11 +4,15 @@ namespace EvaluationPlatformDomain.Models
 {
     public class EvaluationItem : Entity
     {
-        public Goal Goal { get; set; }
+        public virtual Goal Goal { get; set; }
+
+        public virtual int Score{ get; set; }
 
         public EvaluationItem(Goal goal)
         {
             Goal = goal;
         }
     }
+
+   
 }
