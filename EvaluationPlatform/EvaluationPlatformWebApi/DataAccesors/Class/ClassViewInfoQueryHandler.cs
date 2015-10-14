@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using AutoMapper;
+using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDAL;
 using EvaluationPlatformDAL.CommandAndQuery;
-using EvaluationPlatformWebApi.Models;
 
 namespace EvaluationPlatformWebApi.DataAccesors.Class
 {

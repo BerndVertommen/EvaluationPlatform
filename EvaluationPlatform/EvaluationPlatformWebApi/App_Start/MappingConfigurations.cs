@@ -5,8 +5,8 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDomain.Models;
-using EvaluationPlatformWebApi.Models;
 
 namespace EvaluationPlatformWebApi.App_Start
 {

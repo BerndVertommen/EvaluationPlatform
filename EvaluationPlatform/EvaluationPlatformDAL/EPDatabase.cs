@@ -1,10 +1,8 @@
-﻿using System;
-using System.Data.Entity;
-using EvaluationPlatformDAL.Migrations;
+﻿using System.Data.Entity;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformDomain.Models.Account;
 using EvaluationPlatformDomain.Models.Authentication;
-using Microsoft.AspNet.Identity.EntityFramework;
+using EvaluationPlatformDomain.Models.Scales;
 
 namespace EvaluationPlatformDAL
 {
@@ -24,6 +22,7 @@ namespace EvaluationPlatformDAL
         public IDbSet<Goal> Goals { get; set; }
         public IDbSet<Account> Accounts { get; set; }
         public IDbSet<AccountRole> AccountRoles { get; set; }
+        public IDbSet<Scale> Scales { get; set; } 
 
         public EPDatabase() : base("EPDatabase")
         {

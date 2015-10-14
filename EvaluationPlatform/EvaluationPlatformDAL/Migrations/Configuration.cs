@@ -6,6 +6,7 @@ using EvaluationPlatformDAL.Generators;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformDomain.Models.Account;
 using EvaluationPlatformDomain.Models.Authentication;
+using EvaluationPlatformDomain.Models.Scales;
 
 namespace EvaluationPlatformDAL.Migrations
 {
@@ -22,7 +23,7 @@ namespace EvaluationPlatformDAL.Migrations
             StudentGenerator studentGenerator = new StudentGenerator();
             ICollection<Student> students = studentGenerator.Generate();
             
-
+            
             //seed Classes
             Class class1 = new Class("1NF", new SchoolYear(), students);
 
@@ -36,10 +37,11 @@ namespace EvaluationPlatformDAL.Migrations
             studyPlan1.AddGeneralGoal( new GeneralGoal(4, @"Van een mechanisch vormgevend bedrijf de structuur toelichten.", GenerateGoals(1, 5)));
             studyPlan1.AddGeneralGoal(new GeneralGoal(5, @"De kenmerken van een mechanisch vormgevingsbedrijf toelichten.", GenerateGoals(1, 3)));
 
+            Scale fourPointScale = new Scale(0, 3, "Vier-puntschaal[3210]");
             //teachers
             Teacher teacher1 = new Teacher(new Person( "Sneewbal", "VanMechanica"));
             teacher1.AddClass(class1);
-            teacher1.AddCource(new Cource("Mechanica", new SchoolYear(), teacher1));
+            teacher1.AddCource(new Cource("Mechanica", new SchoolYear(), teacher1, fourPointScale));
             teacher1.AddStudypPlan(studyPlan1);
 
             context.Teachers.Add(teacher1);

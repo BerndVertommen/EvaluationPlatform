@@ -188,7 +188,6 @@
     <Compile Include="DataAccesors\Class\ClassViewInfoQueryHandler.cs" />
     <Compile Include="Identity\CurrentIdentityHelper.cs" />
     <Compile Include="Identity\IIdentity.cs" />
-    <Compile Include="Models\ClassViewInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -203,14 +202,19 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EvaluationPlatformDAL\EvaluationPlatformDAL.csproj">
       <Project>{f3d2484e-28f6-4c8b-9421-d1e2a3b741cb}</Project>
       <Name>EvaluationPlatformDAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EvaluationPlatformDataTransferModels\EvaluationPlatformDataTransferModels.csproj">
+      <Project>{A39B841D-237A-4635-BC00-1E7ACF41E788}</Project>
+      <Name>EvaluationPlatformDataTransferModels</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EvaluationPlatformDomain\EvaluationPlatformDomain.csproj">
-      <Project>{c8f2a69b-3b3c-4b8c-a493-e2c13f7c03f8}</Project>
+      <Project>{C8F2A69B-3B3C-4B8C-A493-E2C13F7C03F8}</Project>
       <Name>EvaluationPlatformDomain</Name>
     </ProjectReference>
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">

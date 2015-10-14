@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EvaluationPlatformDomain.Models.Scales
+﻿namespace EvaluationPlatformDomain.Models.Scales
 {
     public interface IScale
     {
-        int MinScore { get; set; }
-        int MaxScore { get; set; }
+        int MinScore { get; }
+        int MaxScore { get; }
 
-
+        string Discription { get; set; }
     }
 }

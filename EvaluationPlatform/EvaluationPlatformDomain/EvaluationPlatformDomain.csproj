@@ -68,6 +68,7 @@
     <Compile Include="Models\GeneralGoal.cs" />
     <Compile Include="Models\Goal.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Scales\Scale.cs" />
     <Compile Include="Models\Scales\IScale.cs" />
     <Compile Include="Models\SchoolYear.cs" />
     <Compile Include="Models\Student.cs" />
