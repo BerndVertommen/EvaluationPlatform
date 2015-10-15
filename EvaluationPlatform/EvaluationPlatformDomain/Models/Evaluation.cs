@@ -9,6 +9,9 @@ namespace EvaluationPlatformDomain.Models
         public virtual DateTime EvaluationDate { get; set; }
         public virtual Cource Cource { get; set; }
         public virtual ICollection<EvaluationItem> EvaluationItems { get; set; }
+        public virtual string GeneralComment { get; set; }  
+
+
 
         public Evaluation()
         {
