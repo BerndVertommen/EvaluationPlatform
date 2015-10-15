@@ -41,7 +41,7 @@ namespace EvaluationPlatformDAL.Migrations
             //teachers
             Teacher teacher1 = new Teacher(new Person( "Sneewbal", "VanMechanica"));
             teacher1.AddClass(class1);
-            teacher1.AddCource(new Cource("Mechanica", new SchoolYear(), teacher1, fourPointScale));
+            teacher1.AddCourse(new Course("Mechanica", new SchoolYear(), teacher1, fourPointScale));
             teacher1.AddStudypPlan(studyPlan1);
 
             context.Teachers.Add(teacher1);

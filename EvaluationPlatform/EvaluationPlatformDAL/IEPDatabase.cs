@@ -12,7 +12,7 @@ namespace EvaluationPlatformDAL
         IDbSet<Person> Persons{ get; set; }
         IDbSet<Student> Students { get; set; }
         IDbSet<Teacher> Teachers { get; set; }
-        IDbSet<Cource> Cources { get; set; } 
+        IDbSet<Course> Courses { get; set; } 
         IDbSet<Evaluation> Evaluations { get; set; }
         IDbSet<StudyPlan> StudyPlans { get; set; } 
         IDbSet<GeneralGoal> GeneralGoals { get; set; }

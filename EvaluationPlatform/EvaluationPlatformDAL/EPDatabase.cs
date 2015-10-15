@@ -15,7 +15,7 @@ namespace EvaluationPlatformDAL
         public IDbSet<Person> Persons { get; set; }
         public IDbSet<Student> Students { get; set; }
         public IDbSet<Teacher> Teachers { get; set; }
-        public IDbSet<Cource> Cources { get; set; }
+        public IDbSet<Course> Courses { get; set; }
         public IDbSet<Evaluation> Evaluations { get; set; }
         public IDbSet<StudyPlan> StudyPlans { get; set; }
         public IDbSet<GeneralGoal> GeneralGoals { get; set; }

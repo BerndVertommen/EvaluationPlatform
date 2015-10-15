@@ -7,7 +7,7 @@ namespace EvaluationPlatformDomain.Models
         public virtual Person Person { get; protected set; }
         public virtual ICollection<Class> Classes { get; } = new List<Class>(); // c#6 auto initializers
         public virtual ICollection<Evaluation> Evaluations { get; } =new List<Evaluation>();
-        public virtual ICollection<Cource> Cources { get; } = new List<Cource>();
+        public virtual ICollection<Course> Courses { get; } = new List<Course>();
 
         public virtual ICollection<StudyPlan> StudyPlans { get; } = new List<StudyPlan>(); 
 
@@ -26,9 +26,9 @@ namespace EvaluationPlatformDomain.Models
             Evaluations.Add(evaluation);
         }
 
-        public void AddCource(Cource cource)
+        public void AddCourse(Course course)
         {
-            Cources.Add(cource);
+            Courses.Add(course);
         }
 
         public void AddStudypPlan(StudyPlan studyPlan)
