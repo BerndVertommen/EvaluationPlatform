@@ -4,11 +4,11 @@
     function configurationService() {
        var thiz = this;
 
-        thiz.apiUrl = 'http://testplatformApi/';
+        var apiUrl = 'http://testplatformApi/';
 
-        thiz.baseApiPath = thiz.apiUrl + 'api/';
+        thiz.baseApiPath = apiUrl + 'api/';
 
-        thiz.tokenPath = thiz.apiUrl + 'oauth/token';
+        thiz.tokenPath = apiUrl + 'oauth/token';
 
     }
 

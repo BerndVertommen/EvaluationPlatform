@@ -1,11 +1,20 @@
 ﻿(function (module) {
+    'use strict';
 
-    function classesService($http) {
-        'use strict';
+    function classesService($http, configurationService) {
         var thiz = this;
+        var baseWebApiUrl = configurationService.baseApiPath;
 
-        thiz.getTestClass = function() {
-            return $http.get('http://testplatformApi/api/class/test').then(function(result) {
+        //Variables
+
+        //private Functions
+
+        // public functions
+
+        //initiations
+
+        thiz.getTestClass = function () {
+            return $http.get(baseWebApiUrl + 'class/test').then(function (result) {
                 return result.data;
             });
         }
