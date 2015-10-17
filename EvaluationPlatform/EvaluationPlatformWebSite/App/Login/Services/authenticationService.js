@@ -1,7 +1,7 @@
 ﻿(function (module) {
     'use strict';
 
-    function authenticationService($http, localStorageService, configurationService, $q) {
+    function authenticationService($http, localStorageService, configurationService, $q, $rootScope) {
         var thiz = this;
 
 
@@ -11,6 +11,10 @@
 
             thiz.isAuth = false;
             thiz.userName = "";
+
+            $rootScope.$broadcast('userLoggedOut', {
+              
+            });
         };
 
         thiz.login = function (loginData) {
@@ -27,9 +31,13 @@
                 thiz.userName = loginData.userName;
                 thiz.isAuth = true;
 
+                $rootScope.$broadcast('userLoggedIn', {
+                    userName: thiz.userName
+                });
+
                 deferred.resolve(response);
 
-            }),function (error) {
+            }), function (error) {
                 this.logOut();
                 deferred.reject(error);
             };

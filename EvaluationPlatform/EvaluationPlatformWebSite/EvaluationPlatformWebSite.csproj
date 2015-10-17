@@ -71,6 +71,10 @@
     <Content Include="app\home\controllers\homeCtrl.js" />
     <Content Include="app\home\home-module.js" />
     <Content Include="app\home\views\home.html" />
+    <Content Include="app\Index\controllers\indexCtrl.js" />
+    <Content Include="app\Index\index-module.js" />
+    <Content Include="app\Index\services\indexService.js" />
+    <Content Include="app\Index\views\view.html" />
     <Content Include="app\login\controllers\loginCtrl.js" />
     <Content Include="app\login\login-module.js" />
     <Content Include="app\login\services\authenticationService.js" />
