@@ -1,5 +1,13 @@
 ﻿(function(module) {
     function testClassController($scope, classesService) {
+        
+        //Variables
+
+        //private Functions
+
+        // public functions
+
+        //initiations
 
         var init = function() {
              classesService.getTestClass().then(function (classResult) {
