@@ -12,6 +12,11 @@ namespace EvaluationPlatformDomain.Models
         public virtual ICollection<GeneralGoal> GeneralGoals { get; } = new List<GeneralGoal>();
         public virtual ICollection<Teacher> Teachers { get; } = new List<Teacher>();
 
+        public StudyPlan()
+        {
+            
+        }
+
         public StudyPlan(string discription)
         {
             Discription = discription;

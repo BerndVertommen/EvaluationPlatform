@@ -181,11 +181,15 @@
     <Compile Include="Authentication\CustomAutorizeAttribute.cs" />
     <Compile Include="Authentication\CustomOAuthProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseWebApiController.cs" />
     <Compile Include="Controllers\ClassesController.cs" />
+    <Compile Include="Controllers\EvaluationController.cs" />
     <Compile Include="DataAccesors\Account\GetAccountQueryHandler.cs" />
     <Compile Include="DataAccesors\Account\GetAccountQueryObject.cs" />
     <Compile Include="DataAccesors\Class\ClassViewInfoQueryObject.cs" />
     <Compile Include="DataAccesors\Class\ClassViewInfoQueryHandler.cs" />
+    <Compile Include="DataAccesors\Evaluation\GetCreateEvaluationOptionsQueryObject.cs" />
+    <Compile Include="DataAccesors\Evaluation\GetCreateEvaluationOptionsQueryHandler.cs" />
     <Compile Include="Identity\CurrentIdentityHelper.cs" />
     <Compile Include="Identity\IIdentity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

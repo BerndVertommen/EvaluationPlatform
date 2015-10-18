@@ -51,7 +51,7 @@ namespace EvaluationPlatformWebApi.Authentication
                 //    context.SetError("invalid_grant", "User did not confirm email.");
                 //    return;
                 //}
-
+                
                 var claimsIdentity = new ClaimsIdentity(context.Options.AuthenticationType);
                 //ClaimsIdentity oAuthIdentity = await accountManager.CreateIdentityAsync(user, "JWT");
                 claimsIdentity.AddClaim(new Claim(ClaimTypes.Name, user.Username));

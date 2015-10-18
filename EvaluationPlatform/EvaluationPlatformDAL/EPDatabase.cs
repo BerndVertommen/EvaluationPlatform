@@ -1,4 +1,6 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
+using System.Linq;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformDomain.Models.Account;
 using EvaluationPlatformDomain.Models.Authentication;
@@ -22,6 +24,8 @@ namespace EvaluationPlatformDAL
         public IDbSet<Goal> Goals { get; set; }
         public IDbSet<Account> Accounts { get; set; }
         public IDbSet<AccountRole> AccountRoles { get; set; }
+     
+
         public IDbSet<Scale> Scales { get; set; } 
 
         public EPDatabase() : base("EPDatabase")
@@ -39,6 +43,12 @@ namespace EvaluationPlatformDAL
         public static EPDatabase Create()
         {
             return  new EPDatabase();
+        }
+
+        public Teacher GetTeacherForAccount(Guid? accountId)
+        {
+           return Teachers.FirstOrDefault(
+                    t => t.Person.Id == Accounts.FirstOrDefault(a => a.Id == accountId).Person.Id);
         }
     }
 

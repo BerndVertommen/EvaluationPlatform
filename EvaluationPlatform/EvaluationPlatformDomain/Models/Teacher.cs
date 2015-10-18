@@ -7,9 +7,15 @@ namespace EvaluationPlatformDomain.Models
         public virtual Person Person { get; protected set; }
         public virtual ICollection<Class> Classes { get; } = new List<Class>(); // c#6 auto initializers
         public virtual ICollection<Evaluation> Evaluations { get; } =new List<Evaluation>();
+        public virtual ICollection<EvaluationTemplate> EvaluationTemplates  { get; } = new List<EvaluationTemplate>();
         public virtual ICollection<Course> Courses { get; } = new List<Course>();
 
-        public virtual ICollection<StudyPlan> StudyPlans { get; } = new List<StudyPlan>(); 
+        public virtual ICollection<StudyPlan> StudyPlans { get; } = new List<StudyPlan>();
+
+        public Teacher()
+        {
+            
+        }
 
         public Teacher(Person person)
         {
@@ -34,6 +40,11 @@ namespace EvaluationPlatformDomain.Models
         public void AddStudypPlan(StudyPlan studyPlan)
         {
             StudyPlans.Add(studyPlan);
+        }
+
+        public void AddEvaluationTemplate(EvaluationTemplate evaluationTemplate)
+        {
+            EvaluationTemplates.Add(evaluationTemplate);
         }
     }
 }

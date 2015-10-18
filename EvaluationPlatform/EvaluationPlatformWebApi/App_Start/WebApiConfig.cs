@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using EvaluationPlatformDataTransferModels.InformationModels;
+using EvaluationPlatformDomain.Models;
 using EvaluationPlatformWebApi.App_Start;
 using EvaluationPlatformWebApi.Authentication;
 using Microsoft.Owin.Security.OAuth;
@@ -19,8 +21,8 @@ namespace EvaluationPlatformWebApi
             //config.Filters.Add(new CustomAutorizeAttribute());
             //config.Filters.Add(new AuthorizeAttribute());
 
-            MappingConfigurations.Configure();
-
+            string[] domainNamespaces = { "EvaluationPlatformDomain.Models"};
+            MappingConfigurations.Configure(typeof(Class).Assembly, typeof(ClassInfo).Assembly, domainNamespaces);
             // Web API routes
             //config.MapHttpAttributeRoutes();
 

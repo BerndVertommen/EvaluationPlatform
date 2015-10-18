@@ -20,10 +20,10 @@ namespace EvaluationPlatformWebApi.Controllers
             _queryProccesor = queryProccesor;
         }
         
-        [CustomAutorize(AccountRoleType.Developer)]
+        [CustomAutorize(AccountRoleType.Admin)]
         [Route("test")]
         [HttpGet]
-        public ClassViewInfo GetClassViewInfo()
+        public ClassInfo GetClassViewInfo()
         {
             return _queryProccesor.Execute(new ClassViewInfoQueryObject("1NF", new SchoolYear(2015, 2016)));
         }

@@ -22,8 +22,10 @@ namespace EvaluationPlatformDAL.Migrations
             // seed students
             StudentGenerator studentGenerator = new StudentGenerator();
             ICollection<Student> students = studentGenerator.Generate();
-            
-            
+
+            var schoolyearNow = new SchoolYear();
+
+
             //seed Classes
             Class class1 = new Class("1NF", new SchoolYear(), students);
 
@@ -41,13 +43,18 @@ namespace EvaluationPlatformDAL.Migrations
             //teachers
             Teacher teacher1 = new Teacher(new Person( "Sneewbal", "VanMechanica"));
             teacher1.AddClass(class1);
-            teacher1.AddCourse(new Course("Mechanica", new SchoolYear(), teacher1, fourPointScale));
+            teacher1.AddCourse(new Course("Mechanica", schoolyearNow, teacher1, fourPointScale));
             teacher1.AddStudypPlan(studyPlan1);
-
             context.Teachers.Add(teacher1);
 
+            Teacher teacher2 = new Teacher(new Person("Test", "er"));
+            teacher2.AddClass(class1);
+            teacher2.AddCourse(new Course("TesterCource", schoolyearNow, teacher2, fourPointScale));
+            teacher2.AddStudypPlan(studyPlan1);
+            context.Teachers.Add(teacher2);
+
             CreateRoles(context);
-            CreateAccounts(context);
+            CreateAccounts(context, teacher2);
 
             context.SaveChanges();
         }
@@ -69,15 +76,17 @@ namespace EvaluationPlatformDAL.Migrations
             
         }
 
-        private void CreateAccounts(EPDatabase context)
+        private void CreateAccounts(EPDatabase context, Teacher teacher2)
         {
             // Add DevAccount
             AccountRole devAccountRole =
                 context.AccountRoles.FirstOrDefault(r => r.AccountRoleType == AccountRoleType.Developer);
-            var devAccount = new Account("Tester","berndvertommen@msn.com",new Person("Test","er"), new AccountRole(AccountRoleType.Developer));
+            var devAccount = new Account("Tester","berndvertommen@msn.com", teacher2.Person, new AccountRole(AccountRoleType.Developer));
             devAccount.SetPassword("@Dmin123");
-
+            
             context.Accounts.Add(devAccount);
+
+            Teacher teacher = new Teacher(devAccount.Person);
         }
     }
 }

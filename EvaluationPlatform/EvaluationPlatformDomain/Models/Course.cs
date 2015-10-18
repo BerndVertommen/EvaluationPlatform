@@ -9,6 +9,11 @@ namespace EvaluationPlatformDomain.Models
         public Scale Scale { get; set; } 
         public virtual string Discription { get; set; }
 
+        public Course()
+        {
+            
+        }
+
         public Course(string discription, SchoolYear schoolYear, Teacher primaryTeacher, Scale fourPointScale)
         {
             Discription = discription;

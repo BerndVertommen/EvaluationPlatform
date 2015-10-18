@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Controllers;
-using BabyLink.WebApi.Identity;
 using EvaluationPlatformDomain.Models.Authentication;
+using EvaluationPlatformWebApi.Identity;
 
 namespace EvaluationPlatformWebApi.Authentication
 {
@@ -20,8 +19,11 @@ namespace EvaluationPlatformWebApi.Authentication
             {
                 _accountRolesTypes = new List<AccountRoleType>();
             }
+
+            _accountRolesTypes.Add(AccountRoleType.Developer);
             foreach (AccountRoleType role in roleTypes)
             {
+                
                 _accountRolesTypes.Add(role);
             }
 
@@ -31,7 +33,7 @@ namespace EvaluationPlatformWebApi.Authentication
 
         public override void OnAuthorization(HttpActionContext actionContext)
         {
-
+            
             if (Authorize(actionContext))
             {
                 return;

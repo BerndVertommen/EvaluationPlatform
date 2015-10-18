@@ -1,10 +1,10 @@
 ﻿namespace EvaluationPlatformDataTransferModels.InformationModels
 {
-    public class StudentInfo
+    public class GoalInfo
     {
-        public PersonInfo Person { get; set; }
+        public string Discription { get; set; }
 
-        public StudentInfo()
+        public GoalInfo()
         {
             
         }

@@ -15,7 +15,7 @@ namespace EvaluationPlatformWebApi
             var builder = new ContainerBuilder();
 
             // Register your Web API controllers.
-            builder.RegisterApiControllers(typeof(Controllers.ClassesController).Assembly);
+            builder.RegisterApiControllers(typeof(Controllers.BaseWebApiController).Assembly);
 
             // OPTIONAL: Register the Autofac filter provider.
             builder.RegisterWebApiFilterProvider(httpConfig);

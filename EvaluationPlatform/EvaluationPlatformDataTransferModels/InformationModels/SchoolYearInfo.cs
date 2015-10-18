@@ -5,5 +5,10 @@
         public int StartYear { get; set; }
         public int EndyYear { get; set; }
 
+        public SchoolYearInfo()
+        {
+            
+        }
+
     }
 }

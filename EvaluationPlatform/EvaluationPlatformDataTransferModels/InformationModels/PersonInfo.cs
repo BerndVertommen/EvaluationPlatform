@@ -5,5 +5,9 @@ namespace EvaluationPlatformDataTransferModels.InformationModels
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
+        public PersonInfo()
+        {
+            
+        }
     }
 }

@@ -40,10 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InformationModels\ClassViewInfo.cs" />
+    <Compile Include="InformationModels\ClassInfo.cs" />
+    <Compile Include="InformationModels\CourseInfo.cs" />
+    <Compile Include="InformationModels\CreateEvaluationOptions.cs" />
+    <Compile Include="InformationModels\GoalInfo.cs" />
     <Compile Include="InformationModels\PersonInfo.cs" />
+    <Compile Include="InformationModels\PrimaryTeacherInfo.cs" />
+    <Compile Include="InformationModels\ScaleInfo.cs" />
     <Compile Include="InformationModels\SchoolYearInfo.cs" />
     <Compile Include="InformationModels\StudentInfo.cs" />
+    <Compile Include="InformationModels\TeacherInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

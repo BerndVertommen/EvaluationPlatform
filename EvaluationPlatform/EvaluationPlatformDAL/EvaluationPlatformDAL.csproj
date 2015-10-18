@@ -126,6 +126,10 @@
     <Compile Include="Migrations\201510152007179_CorrectedSpellingOnCource.Designer.cs">
       <DependentUpon>201510152007179_CorrectedSpellingOnCource.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510181339168_ImplementedEvaluationTemplat.cs" />
+    <Compile Include="Migrations\201510181339168_ImplementedEvaluationTemplat.Designer.cs">
+      <DependentUpon>201510181339168_ImplementedEvaluationTemplat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Generators\StudentGenerator.cs" />
@@ -174,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510152007179_CorrectedSpellingOnCource.resx">
       <DependentUpon>201510152007179_CorrectedSpellingOnCource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510181339168_ImplementedEvaluationTemplat.resx">
+      <DependentUpon>201510181339168_ImplementedEvaluationTemplat.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

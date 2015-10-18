@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformDomain.Models.Account;
 using EvaluationPlatformDomain.Models.Authentication;
@@ -18,7 +19,8 @@ namespace EvaluationPlatformDAL
         IDbSet<GeneralGoal> GeneralGoals { get; set; }
         IDbSet<Goal> Goals { get; set; }  
         IDbSet<Account> Accounts { get; set; } 
-        IDbSet<AccountRole> AccountRoles { get; set; } 
-        
+        IDbSet<AccountRole> AccountRoles { get; set; }
+
+        Teacher GetTeacherForAccount(Guid? accountId);
     }
 }

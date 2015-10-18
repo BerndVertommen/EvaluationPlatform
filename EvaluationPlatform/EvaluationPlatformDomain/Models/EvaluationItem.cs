@@ -1,4 +1,5 @@
 ﻿using System.CodeDom;
+using System.Data.Entity.Infrastructure.Annotations;
 
 namespace EvaluationPlatformDomain.Models
 {
@@ -9,6 +10,11 @@ namespace EvaluationPlatformDomain.Models
         public virtual int Score{ get; set; }
 
         public string Comment { get; set; } // commentaar over het punt
+
+        public EvaluationItem()
+        {
+            
+        }
 
         public EvaluationItem(Goal goal)
         {
