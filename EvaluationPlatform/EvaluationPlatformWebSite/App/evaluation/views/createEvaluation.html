@@ -1,15 +1,82 @@
 ﻿<div>
     <div class="panel panel-default">
-        <div class="panel-heading"> <!--mainHeading-->
+        <div class="panel-heading">
+            <!--mainHeading-->
             <div class="panel-title">
                 Creër een nieuwe evaluatie.
             </div>
         </div>
-        <div class="panel-body"> <!--mainBody-->
+        <div class="panel-body">
+            <!--mainBody-->
+            <div class="row">
+                <!--editior-->
+                <div class="col-xs-12">
+                    <div class="bs-component">
+                        <ul class="nav nav-tabs">
+                            <li role="presentation" ng-class="{'active': tabs=== 1}" ng-click="tabs=1"><a data-toggle="tab">Algemeen</a> </li>
+                            <li role="presentation" ng-class="{'active': tabs=== 2}" ng-click="tabs=2"><a data-toggle="tab">Categorie</a> </li>
+                            <li role="presentation" ng-class="{'active': tabs=== 3}" ng-click="tabs=3"><a data-toggle="tab">??</a> </li>
+                        </ul>
+                    </div>
+                    <div class="well">
+                        <div ng-show="tabs===1">
+                            <!--content tab 1-->
+                            <form class="form-horizontal">
+                                <fieldset>
+                                    <legend>Algemeen</legend>
+                                    <div class="col-md-6 col-xs-12">
+                                        <label for="omschrijving" class="col-md-4 control-label">Omschrijving</label>
+                                        <div class="col-md-8 ">
+                                            <input class="form-control" id="omschrijving" type="text" ng-model="evaluationTemplate.discription" placeholder="Titel of omschrijving"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6 col-xs-12">
+                                        <label for="vak" class="col-sm-4 col-xs-12 control-label">Vak</label>
+                                        <div class="col-sm-8 col-xs-12">
+                                            <div class="btn-group">
+                                                <div class="input-group">
+                                                    <input id="vak"  type="text" ng-model="evaluationTemplate.course.discription" class="form-control" placeholder="Selecteer een vak" />
+                                                    <div class="input-group-btn">
+                                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+                                                        <ul role="menu" class="dropdown-menu dropdown-menu-right" aria-labelledby="vak">
+                                                            <li ng-click="selectCourse(course)" role="menuitem" ng-repeat="course in createEvaluationOptions.teacher.courses"><a>{{course.discription}}</a> </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <div ng-show="tabs===2">
+                            <!--content tab 2-->
+                            
+                        </div>
+                        <div ng-show="tabs===3">
+                            <!--content tab 3-->
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!--Overview-->
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr><td class="text-center">Nieuw Evaluatie Sjabloon</td></tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
             <div>{{createEvaluationOptions | json}}</div>
         </div>
-        <div class="panel-footer"> <!--mainFooter-->
-            
+        <div class="panel-footer">
+            <!--mainFooter-->
+
         </div>
     </div>
 </div>

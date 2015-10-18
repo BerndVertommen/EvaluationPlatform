@@ -938,7 +938,6 @@
     <Content Include="content\bootstrapCssRenamed\bootstrap-theme.min.css" />
     <Content Include="content\bootstrapCssRenamed\bootstrap.css" />
     <Content Include="content\bootstrapCssRenamed\bootstrap.min.css" />
-    <Content Include="content\angularCss\select2.css" />
     <Content Include="content\customCss\customCss-rtl.css" />
     <Content Include="content\designTemplateCss\morris.css" />
     <Content Include="content\img\select2.png" />
@@ -967,8 +966,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="scripts\select2.js" />
-    <Content Include="scripts\select2.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
