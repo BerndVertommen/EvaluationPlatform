@@ -15,10 +15,18 @@ namespace EvaluationPlatformWebApi.DataAccesors.Evaluation
         public override CreateEvaluationOptions Handle(GetCreateEvaluationOptionsQueryObject queryObject)
         {
             CreateEvaluationOptions createEvaluationOptions = new CreateEvaluationOptions();
+
+            createEvaluationOptions = SetTeacher(queryObject,createEvaluationOptions);
+            
+            return createEvaluationOptions;
+        }
+
+        private CreateEvaluationOptions SetTeacher(GetCreateEvaluationOptionsQueryObject queryObject, CreateEvaluationOptions createEvaluationOptions)
+        {
             Teacher teacher = Database.GetTeacherForAccount(queryObject.AccountId);
 
             createEvaluationOptions.Teacher = Mapper.Map<TeacherInfo>(teacher);
-            
+
             return createEvaluationOptions;
         }
     }

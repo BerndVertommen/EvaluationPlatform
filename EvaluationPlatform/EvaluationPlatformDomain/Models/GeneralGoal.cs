@@ -8,6 +8,11 @@ namespace EvaluationPlatformDomain.Models
         public virtual string Discription { get; set; }
         public virtual ICollection<Goal> Goals{ get; } = new List<Goal>();
 
+        public GeneralGoal()
+        {
+            
+        }
+
         public GeneralGoal(int goalNumber, string discription)
         {
             GoalNumber = goalNumber;

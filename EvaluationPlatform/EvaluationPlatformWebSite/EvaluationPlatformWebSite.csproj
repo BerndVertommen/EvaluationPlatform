@@ -94,6 +94,8 @@
     <Content Include="content\SladeBootstrap\bootstrap.css" />
     <Content Include="content\SladeBootstrap\bootstrap.min.css" />
     <Content Include="content\ui-bootstrap-csp.css" />
+    <Content Include="scripts\3thParty\Angular-loadingBar\loading-bar.min.css" />
+    <Content Include="scripts\3thParty\Angular-loadingBar\loading-bar.min.js" />
     <Content Include="scripts\angular-animate.js" />
     <Content Include="scripts\angular-animate.min.js" />
     <Content Include="scripts\angular-aria.js" />

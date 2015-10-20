@@ -10,7 +10,8 @@ namespace EvaluationPlatformDomain.Models
         public virtual ICollection<EvaluationTemplate> EvaluationTemplates  { get; } = new List<EvaluationTemplate>();
         public virtual ICollection<Course> Courses { get; } = new List<Course>();
 
-        public virtual ICollection<StudyPlan> StudyPlans { get; } = new List<StudyPlan>();
+       
+       // public virtual ICollection<StudyPlan> StudyPlans { get; } = new List<StudyPlan>();
 
         public Teacher()
         {
@@ -37,10 +38,10 @@ namespace EvaluationPlatformDomain.Models
             Courses.Add(course);
         }
 
-        public void AddStudypPlan(StudyPlan studyPlan)
-        {
-            StudyPlans.Add(studyPlan);
-        }
+        //public void AddStudypPlan(StudyPlan studyPlan)
+        //{
+        //    StudyPlans.Add(studyPlan);
+        //}
 
         public void AddEvaluationTemplate(EvaluationTemplate evaluationTemplate)
         {

@@ -4,6 +4,11 @@
     {
         public string Discription { get; set; }
 
+        public Goal()
+        {
+            
+        }
+
         public Goal(string discription)
         {
             Discription = discription;

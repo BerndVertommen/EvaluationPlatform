@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace EvaluationPlatformDataTransferModels.InformationModels
 {
@@ -9,7 +10,8 @@ namespace EvaluationPlatformDataTransferModels.InformationModels
         public PrimaryTeacherInfo PrimaryTeacher { get; set; }// leerkracht die het vak initieel geeft (niet de vervanger)
         public ScaleInfo Scale { get; set; }
         public string Discription { get; set; }
-
+        public List<GoalInfo> GoalsForCourse { get; set; }
+        
         public CourseInfo()
         {
             
