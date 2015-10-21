@@ -68,6 +68,8 @@
     <Content Include="app\classes\services\classesSvc.js" />
     <Content Include="app\classes\views\testClassView.html" />
     <Content Include="app\configuration\services\configurationService.js" />
+    <Content Include="app\evaluation\controllers\generalEvaluationOptionsCtrl.js" />
+    <Content Include="app\evaluation\views\generalEvaluationOptions.html" />
     <Content Include="app\home\controllers\homeCtrl.js" />
     <Content Include="app\home\home-module.js" />
     <Content Include="app\home\views\home.html" />

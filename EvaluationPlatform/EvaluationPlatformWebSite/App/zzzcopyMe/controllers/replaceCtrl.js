@@ -1,4 +1,4 @@
-﻿(function (model) {
+﻿(function (module) {
     'use strict';
 
     function controllerName($scope, $location) {
@@ -18,5 +18,5 @@
         init();
     }
 
-    model.controller('controllerName', controllerName);
+    module.controller('controllerName', controllerName);
 })(angular.module('app.replace'));

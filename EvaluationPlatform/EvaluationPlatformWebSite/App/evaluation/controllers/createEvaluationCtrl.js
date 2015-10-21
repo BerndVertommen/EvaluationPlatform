@@ -1,7 +1,7 @@
-﻿(function (model) {
+﻿(function (module) {
     'use strict';
 
-    function createEvaluationController($scope, $location, createEvaluationOptions) {
+    function createEvaluationController($scope, $location, createEvaluationOptions, $modal) {
         var thiz = this;
 
         //Variables
@@ -12,10 +12,29 @@
         //private Functions
 
         // public functions
-        $scope.selectCourse = function (course) {
-            $scope.evaluationTemplate.course = course;
+        $scope.openGeneralOptions = function() {
+            var modalInstance = $modal.open({
+                animation: true,
+                templateUrl: '/app/evaluation/views/generalEvaluationOptions.html',
+                controller: 'generalEvaluationOptionsController',
+                size: 'lg',
+               resolve: {
+                    createEvaluationOptions: function () {
+                        return  $scope.createEvaluationOptions;
+                    },
+                    generalOptions: function () {
+                        return {'discription' : "", 'course' : null};
+                    }
+                }
+            });
+            modalInstance.result.then(function (generalOptions) {
+                $scope.evaluationTemplate.discription = generalOptions.discription;
+                $scope.evaluationTemplate.course = generalOptions.course;
+            }, function () {
+               // Console.log('Modal general options dismissed at: ' + new Date());
+            });
         };
-
+     
         $scope.selectCourseForSubSection = function (goal) {
             $scope.newEvaluationSubSection.goal = goal;
         };
@@ -45,5 +64,5 @@
         init();
     }
 
-    model.controller('createEvaluationController', createEvaluationController);
+    module.controller('createEvaluationController', createEvaluationController);
 })(angular.module('app.evaluation'));

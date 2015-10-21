@@ -1,0 +1,47 @@
+﻿<div class="modal-header">
+    Algemeen
+</div>
+<div class="modal-body">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <!--mainHeading-->
+            <div class="panel-title">
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--mainBody-->
+            <div class="form-horizontal">
+                <fieldset>
+                    <legend>Algemeen</legend>
+                    <div class="col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label class="control-label">Omschrijving</label>
+                            <input class="form-control" type="text" ng-model="generalOptions.discription" placeholder="Titel of omschrijving" />
+                        </div>
+                    </div>
+                    <div class=" col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label class="control-label">Vak</label>
+                            <div class="btn-group">
+                                <div class="input-group">
+                                    <input id="vak" type="text" ng-model="generalOptions.course.discription" class="form-control" placeholder="Selecteer een vak" />
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></button>
+                                        <ul role="menu" class="dropdown-menu dropdown-menu-right" aria-labelledby="vak">
+                                            <li ng-click="selectCourse(course)" role="menuitem" ng-repeat="course in createEvaluationOptions.teacher.courses"><a>{{course.discription}}</a> </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" ng-click="ok()">Ok</button>
+            <button type="button" class="btn btn-danger" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</div>
+
