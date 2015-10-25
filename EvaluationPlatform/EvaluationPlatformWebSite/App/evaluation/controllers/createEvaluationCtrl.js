@@ -12,18 +12,18 @@
         //private Functions
 
         // public functions
-        $scope.openGeneralOptions = function() {
+        $scope.openGeneralOptions = function () {
             var modalInstance = $modal.open({
                 animation: true,
-                templateUrl: '/app/evaluation/views/generalEvaluationOptions.html',
+                templateUrl: '/app/evaluation/views/generalEvaluationOptionsModal.html',
                 controller: 'generalEvaluationOptionsController',
                 size: 'lg',
-               resolve: {
+                resolve: {
                     createEvaluationOptions: function () {
-                        return  $scope.createEvaluationOptions;
+                        return $scope.createEvaluationOptions;
                     },
                     generalOptions: function () {
-                        return {'discription' : "", 'course' : null};
+                        return { 'discription': "", 'course': null };
                     }
                 }
             });
@@ -31,29 +31,33 @@
                 $scope.evaluationTemplate.discription = generalOptions.discription;
                 $scope.evaluationTemplate.course = generalOptions.course;
             }, function () {
-               // Console.log('Modal general options dismissed at: ' + new Date());
+                // Console.log('Modal general options dismissed at: ' + new Date());
             });
         };
-     
-        $scope.selectCourseForSubSection = function (goal) {
-            $scope.newEvaluationSubSection.goal = goal;
+
+        $scope.openSubSections = function () {
+            var modalInstance = $modal.open({
+                animation: true,
+                templateUrl: '/app/evaluation/views/evaluationSubSectionModal.html',
+                controller: 'evaluationSubSectionController',
+                size: 'lg',
+                resolve: {
+                    course: function () {
+                        return $scope.evaluationTemplate.course;
+                    },
+                    evaluationSubSections: function () {
+                        return $scope.evaluationTemplate.evaluationSubSections;
+                    }
+                }
+            });
+            modalInstance.result.then(function (evaluationSubSections) {
+                $scope.evaluationTemplate.evaluationSubSections = evaluationSubSections;
+            }, function () {
+                // Console.log('Modal general options dismissed at: ' + new Date());
+            });
         };
 
-        $scope.addnewEvaluationSubSection = function () {
-            $scope.evaluationTemplate.evaluationSubSections.push(angular.copy($scope.newEvaluationSubSection));
-        }
 
-        $scope.AddGoalToNewEvaluationSubSection = function () {
-            if ($scope.evaluationTemplate.evaluationSubSections.length < 1) {
-                $scope.evaluationTemplate.evaluationSubSections.push(angular.copy($scope.newEvaluationSubSection));
-            }
-            var arrayLength = $scope.evaluationTemplate.evaluationSubSections.length - 1;
-
-            if (angular.isUndefined($scope.evaluationTemplate.evaluationSubSections[arrayLength].goals) || $scope.evaluationTemplate.evaluationSubSections[arrayLength].goals.length < 1) {
-                $scope.evaluationTemplate.evaluationSubSections[arrayLength].goals = [];
-            }
-            $scope.evaluationTemplate.evaluationSubSections[arrayLength].goals.push($scope.newEvaluationSubSection.goal);
-        }
 
         //initiations
         var init = function () {

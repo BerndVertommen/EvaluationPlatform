@@ -266,6 +266,12 @@ ul.alert-dropdown {
 /*End bootstrap overrides*/
 
 
+/*borders*/
+.table-bordered {
+    border-color: gray;
+}
+/*End borders*/
+
 /*Backgrounds*/
 .bg-EvaluationSubSection {
     background-color:#4f8c8b;
