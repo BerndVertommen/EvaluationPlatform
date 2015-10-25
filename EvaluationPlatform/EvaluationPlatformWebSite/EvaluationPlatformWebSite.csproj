@@ -87,6 +87,10 @@
     <Content Include="app\evaluation\evaluation-module.js" />
     <Content Include="app\evaluation\services\evaluationService.js" />
     <Content Include="app\evaluation\views\createEvaluation.html" />
+    <Content Include="app\Student\controllers\createStudentController.js" />
+    <Content Include="app\Student\student-module.js" />
+    <Content Include="app\Student\services\studentService.js" />
+    <Content Include="app\Student\views\createStudent.html" />
     <Content Include="app\zzzcopyMe\replace-module.js" />
     <Content Include="app\zzzcopyMe\controllers\replaceCtrl.js" />
     <Content Include="app\zzzcopyMe\services\replaceService.js" />

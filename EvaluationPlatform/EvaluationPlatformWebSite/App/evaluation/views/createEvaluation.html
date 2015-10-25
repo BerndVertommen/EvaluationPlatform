@@ -34,7 +34,7 @@
             <div class="row">
                 <!--Overview-->
                 <div class="col-xs-12">
-                  
+
                     <div class=" bs-component">
                         <table class="table table-bordered">
                             <thead>
@@ -43,60 +43,66 @@
                                 </tr>
                             </thead>
                             <tbody>
-                          
-                            <!--repeat for all EvaluationSubSections-->
-                            <tr ng-repeat="evaluationSubSection in evaluationTemplate.evaluationSubSections">
-                                <td >
-                                    <div class="bs-component">
-                                        <table class="table table-hover ">
-                                            <thead>
-                                            <tr class="bg-EvaluationSubSection">
-                                                <th class="text-center">{{evaluationSubSection.discription}}: {{evaluationSubSection.weight}}%</th>
-                                                <th>Score</th>
-                                                <th><i class="fa fa-question-circle"></i></th>
-                                                <th><i class=" fa fa-trophy"></i></th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <!--repeat for all GOALS in EvaluationSubSections-->
-                                            <tr ng-repeat="goal in evaluationSubSection.goals">
-                                                <td>{{goal.discription}}</td>
-                                                <td>
-                                                    <a class="btn btn-success btn-sm">3</a>
-                                                    <a class="btn btn-primary btn-sm">2</a>
-                                                    <a class="btn btn-warning btn-sm">1</a>
-                                                    <a class="btn btn-danger  btn-sm">0</a>
-                                                </td>
-                                                <td>
-                                                    <a class="btn btn-default  btn-sm dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
-                                                    <ul class="dropdown-menu">
-                                                        <li><a>?</a></li>
-                                                        <li><a>Afwezig</a></li>
-                                                        <li class="divider"></li>
-                                                        <li><a>Andere taak</a></li>
-                                                    </ul>
-                                                </td>
-                                                <td>-</td>
-                                            </tr>
 
-                                            <tr></tr>
-                                            </tbody>
-                                            <tfoot>
-                                            <tr class="text-center"><td rowspan="4">Subtotaal : - %</td> </tr>
-                                            </tfoot>
-                                        </table>
-                                    </div>
-                                </td>
-                            </tr>
+                                <!--repeat for all EvaluationSubSections-->
+                                <tr ng-repeat="evaluationSubSection in evaluationTemplate.evaluationSubSections">
+                                    <td>
+                                        <div class="bs-component">
+                                            <table class="table table-hover ">
+                                                <thead>
+                                                    <tr class="bg-EvaluationSubSection">
+                                                        <th class="text-center">{{evaluationSubSection.discription}}: {{evaluationSubSection.weight}}%</th>
+                                                        <th>Score</th>
+                                                        <th><i class="fa fa-question-circle"></i></th>
+                                                        <th><i class=" fa fa-trophy"></i></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <!--repeat for all GOALS in EvaluationSubSections-->
+                                                    <tr ng-repeat="goal in evaluationSubSection.goals">
+                                                        <td>{{goal.discription}}</td>
+                                                        <td>
+                                                            <a class="btn btn-success btn-sm">3</a>
+                                                            <a class="btn btn-primary btn-sm">2</a>
+                                                            <a class="btn btn-warning btn-sm">1</a>
+                                                            <a class="btn btn-danger  btn-sm">0</a>
+                                                        </td>
+                                                        <td>
+                                                            <a class="btn btn-default  btn-sm dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                                                            <ul class="dropdown-menu">
+                                                                <li><a>?</a></li>
+                                                                <li><a>Afwezig</a></li>
+                                                                <li class="divider"></li>
+                                                                <li><a>Andere taak</a></li>
+                                                            </ul>
+                                                        </td>
+                                                        <td>-</td>
+                                                    </tr>
+
+                                                    <tr></tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr class="text-center"><td rowspan="4">Subtotaal : - %</td> </tr>
+                                                </tfoot>
+                                            </table>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="btn-group-vertical">
+                                            <a class="btn btn-default" ng-click="editSubSection()"><i class="fa fa-edit"></i></a>
+                                            <a class="btn btn-default" ng-click="deleteSubSection()"><i class="fa fa-trash"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
                             </tbody>
                             <tfoot>
-                            <tr class="text-center bg-blueTitle"><td rowspan="4">Totaal : - %</td> </tr>
+                                <tr class="text-center bg-blueTitle"><td rowspan="4">Totaal : - %</td> </tr>
                             </tfoot>
                         </table>
                     </div>
                 </div>
             </div>
-           <!-- <div>{{createEvaluationOptions | json}}</div>-->
+            <!-- <div>{{createEvaluationOptions | json}}</div>-->
         </div>
         <div class="panel-footer">
             <!--mainFooter-->
