@@ -6,13 +6,20 @@
         var thiz = this;
 
         //Variables
-      
-      
+
+
         //private Functions
 
         // public functions
-       
+        $scope.selectedRow = null;
+
         $scope.ok = function () {
+            if (angular.isUndefined($scope.generalOptions.discription) || $scope.generalOptions.discription === null || $scope.generalOptions.discription === "") {
+                return; // replace with error method
+            }
+            if (angular.isUndefined($scope.generalOptions.course) || $scope.generalOptions.course === null) {
+                return; // replace with error method
+            }
             $modalInstance.close($scope.generalOptions);
         };
 
@@ -20,8 +27,10 @@
             $modalInstance.dismiss('cancel');
         };
 
-        $scope.selectCourse = function (course) {
+        $scope.selectCourse = function (course, index) {
             $scope.generalOptions.course = course;
+            $scope.selectedRow = index;
+
         };
 
         //initiations

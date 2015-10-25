@@ -5,6 +5,7 @@ using EvaluationPlatformDAL;
 using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformWebApi.DataAccesors.Account;
 using EvaluationPlatformWebApi.DataAccesors.Class;
+using EvaluationPlatformWebApi.DataAccesors.Evaluation;
 
 namespace EvaluationPlatformWebApi
 {
@@ -29,12 +30,10 @@ namespace EvaluationPlatformWebApi
             builder.RegisterAssemblyTypes(typeof(GetAccountQueryHandler).Assembly)
                         .Where(t => t.GetInterface(typeof(IQueryHandler<,>).Name) != null)
                         .AsSelf().AsImplementedInterfaces().InstancePerLifetimeScope();
-
-
-            // fix this after an commanhander is created
-            //builder.RegisterAssemblyTypes(typeof(CommandHandler<>).Assembly)
-            //    .Where(t => t.GetInterface(typeof(ICommandHandler<>).Name) != null)
-            //    .AsSelf().AsImplementedInterfaces().InstancePerLifetimeScope();
+            
+            builder.RegisterAssemblyTypes(typeof(AddEvaluationTemplateCommandHandler).Assembly)
+                .Where(t => t.GetInterface(typeof(ICommandHandler<>).Name) != null)
+                .AsSelf().AsImplementedInterfaces().InstancePerLifetimeScope();
 
             IContainer container = builder.Build();
             //DependencyResolver.SetResolver(new AutofacWebApiDependencyResolver(container));

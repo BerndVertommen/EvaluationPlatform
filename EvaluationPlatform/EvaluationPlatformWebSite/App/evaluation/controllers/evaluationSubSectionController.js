@@ -2,7 +2,7 @@
 (function (module) {
     'use strict';
 
-    function evaluationSubSectionController($scope, $modalInstance, evaluationSubSections, course, subSection) {
+    function evaluationSubSectionController($scope, $modalInstance, evaluationSubSections, currentTotalWeight, course, subSection) {
         var thiz = this;
 
         //Variables
@@ -33,6 +33,7 @@
         //initiations
         var init = function () {
             $scope.evaluationSubSections = evaluationSubSections;
+            $scope.currentTotalWeight = currentTotalWeight;
             $scope.course = course;
             if (angular.isDefined(subSection) && subSection !==null) {
                 $scope.newEvaluationSubSection = subSection;

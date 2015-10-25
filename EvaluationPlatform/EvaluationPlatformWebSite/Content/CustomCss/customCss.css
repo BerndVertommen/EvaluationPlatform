@@ -263,6 +263,14 @@ ul.alert-dropdown {
 .input-sm {
     margin-bottom: 0.5em;
 }
+
+.panel-title {
+    display: inline-block;
+}
+    .panel-heading > .btn-group {
+         top: -8px;
+    }
+
 /*End bootstrap overrides*/
 
 /*Margins*/
@@ -284,6 +292,9 @@ ul.alert-dropdown {
 }
 .bg-blueTitle {
     background-color:#0C2D4E;
+}
+.bg-greyTitle {
+    background-color: #3e444c;
 }
 
 /*End Backgrounds*/

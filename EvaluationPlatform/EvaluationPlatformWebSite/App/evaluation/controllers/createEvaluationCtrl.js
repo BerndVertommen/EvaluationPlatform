@@ -1,7 +1,7 @@
 ﻿(function (module) {
     'use strict';
 
-    function createEvaluationController($scope, $location, createEvaluationOptions, $modal) {
+    function createEvaluationController($scope, $location, evaluationService, createEvaluationOptions, $modal) {
         var thiz = this;
 
         //Variables
@@ -13,6 +13,11 @@
 
 
         // public functions
+        $scope.saveTemplate = function() {
+            // TODO develop validation and adjust 100 perscent code.
+            evaluationService.createTemplate($scope.evaluationTemplate);
+        };
+
         $scope.openGeneralOptions = function () {
             var modalInstance = $modal.open({
                 animation: true,
@@ -53,6 +58,9 @@
                     },
                     subSection: function () {
                         return subSection;
+                    },
+                    currentTotalWeight: function() {
+                        return thiz.getTotalSubSectionPercentage();
                     }
                 }
             });
@@ -84,6 +92,27 @@
                     },
                     subSection: function () {
                         return subSection;
+                    },
+                    availableGoals: function () {
+                        var chosenGoals = [];
+                        angular.forEach($scope.evaluationTemplate.evaluationSubSections, function (subSection) {
+                            angular.forEach(subSection.goals, function(goal) {
+                                chosenGoals.push(goal);
+                            });
+
+                        });
+                        var avialableGoals;
+                        if (chosenGoals.length >0) {
+                            avialableGoals = _.reject($scope.evaluationTemplate.course.goalsForCourse, function (goalFromCourse) {
+                                var inGoals = _.any(chosenGoals, function (goalfromSub) {
+                                    return goalFromCourse.id === goalfromSub.id;
+                                });
+                                return inGoals;
+                            });
+                        } else {
+                            avialableGoals= $scope.evaluationTemplate.course.goalsForCourse;
+                        }
+                        return avialableGoals;
                     }
                 }
             });

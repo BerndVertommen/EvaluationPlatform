@@ -24,7 +24,8 @@ namespace EvaluationPlatformDAL
         public IDbSet<Goal> Goals { get; set; }
         public IDbSet<Account> Accounts { get; set; }
         public IDbSet<AccountRole> AccountRoles { get; set; }
-     
+        public IDbSet<EvaluationTemplate> EvaluationTemplates { get; set; }
+
 
         public IDbSet<Scale> Scales { get; set; } 
 

@@ -23,7 +23,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr ng-repeat="goal in course.goalsForCourse" ng-class="{'success': $index == selectedRow}">
+                                    <tr ng-repeat="goal in availableGoals" ng-class="{'success': $index == selectedRow}">
                                         <td ng-click="setSelectedGoal(goal, $index)" >{{goal.discription}}</td>
                                     </tr>
                                 </tbody>

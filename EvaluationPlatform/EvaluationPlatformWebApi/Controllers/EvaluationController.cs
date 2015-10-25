@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Net;
+using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 using EvaluationPlatformDataTransferModels.InformationModels;
+using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
 using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformWebApi.Authentication;
@@ -26,9 +30,16 @@ namespace EvaluationPlatformWebApi.Controllers
         [HttpGet]
         public CreateEvaluationOptions GetCreateEvaluationOptions()
         {
-
             return _queryProccesor.Execute(new GetCreateEvaluationOptionsQueryObject(AccountId));
         }
-    
+
+        [CustomAutorize(AccountRoleType.UserRole)]
+        [Route("createTemplate")]
+        [HttpPost]
+        public HttpResponseMessage PostEvaluationTemplate(EvaluationTemplateInfo evaluationTemplateInfo)
+        {
+            _commandProcessor.Execute(new AddEvaluationTemplateCommand(evaluationTemplateInfo, AccountId));
+            return new HttpResponseMessage(HttpStatusCode.OK);
+        }
 }
 }

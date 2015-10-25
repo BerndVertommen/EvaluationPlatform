@@ -17,5 +17,12 @@ namespace EvaluationPlatformDomain.Models
             
         }
 
+        public EvaluationSubSection(string discription, int weight, ICollection<Goal> goals)
+        {
+            Discription = discription;
+            Weight = weight;
+            Goals = goals;
+        }
+
     }
 }

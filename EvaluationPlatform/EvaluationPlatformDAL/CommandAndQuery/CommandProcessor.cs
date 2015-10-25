@@ -17,12 +17,12 @@ namespace EvaluationPlatformDAL.CommandAndQuery
             _lifetimeScope = lifetimeScope;
         }
 
-        public void Execute(ICommand command)
+        public void Execute(ICommandObject command)
         {
             GetCommandHandler(command).Handle((dynamic)command);
         }
 
-        protected dynamic GetCommandHandler(ICommand command)
+        protected dynamic GetCommandHandler(ICommandObject command)
         {
             Type commandHandlerImplementationType = typeof(ICommandHandler<>).MakeGenericType(command.GetType());
             dynamic commandHandler = _lifetimeScope.Resolve(commandHandlerImplementationType);

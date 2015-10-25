@@ -20,6 +20,8 @@ namespace EvaluationPlatformDAL
         IDbSet<Goal> Goals { get; set; }  
         IDbSet<Account> Accounts { get; set; } 
         IDbSet<AccountRole> AccountRoles { get; set; }
+        IDbSet<EvaluationTemplate> EvaluationTemplates { get; set; }
+
 
         Teacher GetTeacherForAccount(Guid? accountId);
     }

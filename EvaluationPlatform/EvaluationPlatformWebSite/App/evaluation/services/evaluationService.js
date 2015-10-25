@@ -14,6 +14,10 @@
             });
         };
 
+        thiz.createTemplate = function(evaluationTemplate) {
+            $http.post(baseWebApiUrl + 'evaluation/createTemplate',evaluationTemplate);
+        };
+
         //initiations
         var init = function () {
 

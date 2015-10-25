@@ -2,7 +2,7 @@
 (function (module) {
     'use strict';
 
-    function evaluationGoalsController($scope, $modalInstance, subSection, course) {
+    function evaluationGoalsController($scope, $modalInstance, subSection, course, availableGoals) {
         var thiz = this;
 
         //Variables
@@ -46,15 +46,9 @@
         var init = function () {
             $scope.evaluationSubSection = subSection;
             $scope.course = course;
+            $scope.availableGoals = availableGoals;
 
-            if (angular.isDefined(subSection.goals)) {
-                $scope.course.goalsForCourse = _.reject($scope.course.goalsForCourse, function (goalFromCourse) {
-                    var inGoals = _.contains(subSection.goals, function (goalfromSub) {
-                        return goalFromCourse.id === goalfromSub.id;
-                    });
-                    return inGoals;
-                });
-            }
+           
             
             $scope.selectedGoal = {};
             $scope.selectedGoal.Id="noId";
