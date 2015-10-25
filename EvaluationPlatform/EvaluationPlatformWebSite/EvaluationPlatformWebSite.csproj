@@ -68,8 +68,10 @@
     <Content Include="app\classes\services\classesSvc.js" />
     <Content Include="app\classes\views\testClassView.html" />
     <Content Include="app\configuration\services\configurationService.js" />
+    <Content Include="app\evaluation\controllers\evaluationGoalsController.js" />
     <Content Include="app\evaluation\controllers\evaluationSubSectionController.js" />
     <Content Include="app\evaluation\controllers\generalEvaluationOptionsCtrl.js" />
+    <Content Include="app\evaluation\views\evaluationGoalsModal.html" />
     <Content Include="app\evaluation\views\evaluationSubSectionModal.html" />
     <Content Include="app\evaluation\views\generalEvaluationOptionsModal.html" />
     <Content Include="app\home\controllers\homeCtrl.js" />
@@ -128,10 +130,9 @@
     <Content Include="scripts\angular-scenario.js" />
     <Content Include="scripts\angular-touch.js" />
     <Content Include="scripts\angular-touch.min.js" />
-    <Content Include="scripts\angular-ui\ui-bootstrap-tpls.js" />
-    <Content Include="scripts\angular-ui\ui-bootstrap-tpls.min.js" />
-    <Content Include="scripts\angular-ui\ui-bootstrap.js" />
-    <Content Include="scripts\angular-ui\ui-bootstrap.min.js" />
+    <Content Include="scripts\angular-ui\ui-bootstrap-0.14.3-csp.css" />
+    <Content Include="scripts\angular-ui\ui-bootstrap-0.14.3.js" />
+    <Content Include="scripts\angular-ui\ui-bootstrap-tpls-0.14.3.js" />
     <Content Include="scripts\angular.js" />
     <Content Include="scripts\angular.min.js" />
     <Content Include="scripts\errors.json" />

@@ -2,7 +2,7 @@
 (function (module) {
     'use strict';
 
-    function evaluationSubSectionController($scope, $modalInstance, evaluationSubSections, course) {
+    function evaluationSubSectionController($scope, $modalInstance, evaluationSubSections, course, subSection) {
         var thiz = this;
 
         //Variables
@@ -11,28 +11,17 @@
         //private Functions
 
         // public functions
-        $scope.selectCourseForSubSection = function (goal) {
-            $scope.newEvaluationSubSection.goal = goal;
-        };
-
-        $scope.addnewEvaluationSubSection = function () {
+       
+        thiz.addnewEvaluationSubSection = function () {
             $scope.evaluationSubSections.push(angular.copy($scope.newEvaluationSubSection));
         }
-
-        $scope.AddGoalToNewEvaluationSubSection = function () {
-            if ($scope.evaluationSubSections.length < 1) {
-                $scope.evaluationSubSections.push(angular.copy($scope.newEvaluationSubSection));
-            }
-            var arrayLength = $scope.evaluationSubSections.length - 1;
-
-            if (angular.isUndefined($scope.evaluationSubSections[arrayLength].goals) || $scope.evaluationSubSections[arrayLength].goals.length < 1) {
-                $scope.evaluationSubSections[arrayLength].goals = [];
-            }
-            $scope.evaluationSubSections[arrayLength].goals.push($scope.newEvaluationSubSection.goal);
-        }
-
+        
         // modal functions
         $scope.ok = function () {
+            if (angular.isUndefined($scope.isEditing) || $scope.isEditing === false) {
+                thiz.addnewEvaluationSubSection();
+            }
+
             $modalInstance.close($scope.evaluationSubSections);
         };
 
@@ -45,6 +34,10 @@
         var init = function () {
             $scope.evaluationSubSections = evaluationSubSections;
             $scope.course = course;
+            if (angular.isDefined(subSection) && subSection !==null) {
+                $scope.newEvaluationSubSection = subSection;
+                $scope.isEditing = true;
+            }
 
         }
 

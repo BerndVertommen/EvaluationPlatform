@@ -265,6 +265,12 @@ ul.alert-dropdown {
 }
 /*End bootstrap overrides*/
 
+/*Margins*/
+.noMargin {
+    margin: 0;
+}
+
+/*End Margins*/
 
 /*borders*/
 .table-bordered {
