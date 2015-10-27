@@ -48,8 +48,8 @@
                                                                     <th>Score</th>
                                                                     <th><i class="fa fa-question-circle"></i></th>
                                                                     <th><i class=" fa fa-trophy"></i></th>
-                                                                    <th>
-                                                                        <div class="btn-group">
+                                                                    <th class="tcolDoubleSmButton">
+                                                                        <div class="btn-group" >
                                                                             <a class="btn btn-default btn-sm" ng-click="openSubSections(evaluationSubSection)"><i class="fa fa-edit"></i></a>
                                                                             <a class="btn btn-default btn-sm" ng-click="deleteSubSection(evaluationSubSection)"><i class="fa fa-trash"></i></a>
                                                                         </div>
@@ -82,9 +82,12 @@
                                                                 <tr></tr>
                                                             </tbody>
                                                             <tfoot>
-                                                                <tr class="text-center">
-                                                                    <td rowspan="3">Subtotaal : - %</td>
-                                                                    <td><a class="btn btn-default btn-sm" ng-click="openGoals(evaluationSubSection)"><i class="fa fa-plus"></i></a></td>
+                                                                <tr>
+                                                                    <td  class="text-center" rowspan="4">Subtotaal : - %</td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td></td>
+                                                                    <td class="tcolDoubleSmButton"><a class="btn btn-default btn-sm" ng-click="openGoals(evaluationSubSection)"><i class="fa fa-plus"></i></a></td>
                                                                 </tr>
                                                             </tfoot>
                                                         </table>

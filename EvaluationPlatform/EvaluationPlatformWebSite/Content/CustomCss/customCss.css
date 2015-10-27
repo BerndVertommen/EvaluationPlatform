@@ -273,6 +273,12 @@ ul.alert-dropdown {
 
 /*End bootstrap overrides*/
 
+/*table*/
+.tcolDoubleSmButton {
+    width: 85px;
+}
+/*End table*/
+
 /*Margins*/
 .noMargin {
     margin: 0;
