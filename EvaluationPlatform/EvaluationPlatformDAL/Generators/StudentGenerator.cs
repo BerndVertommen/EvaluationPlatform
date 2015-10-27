@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using EvaluationPlatformDomain.Models;
+using System;
 
 namespace EvaluationPlatformDAL.Generators
 {
@@ -10,12 +11,12 @@ namespace EvaluationPlatformDAL.Generators
         {
             List<Student> students = new List<Student>()
             {
-                new Student(new Person("Dokus", "Zonder Naam")),
-                new Student(new Person("Jan", "Zonder Vrees")),
-                new Student(new Person("Hertog", "Van Vlaanderen")),
-                new Student(new Person("Baron", "Van Grembergen")),
-                new Student(new Person("Boer", "Stansen")),
-                new Student(new Person("Ridder", "Kortenak")),
+                new Student(new Person("Dokus", "Zonder Naam",new DateTime(2000,10,10))),
+                new Student(new Person("Jan", "Zonder Vrees",new DateTime(2000,10,10))),
+                new Student(new Person("Hertog", "Van Vlaanderen",new DateTime(2000,10,10))),
+                new Student(new Person("Baron", "Van Grembergen",new DateTime(2000,10,10))),
+                new Student(new Person("Boer", "Stansen",new DateTime(2000,10,10))),
+                new Student(new Person("Ridder", "Kortenak",new DateTime(2000,10,10)))
             };
 
             return students;
