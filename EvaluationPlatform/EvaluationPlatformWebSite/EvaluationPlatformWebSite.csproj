@@ -106,6 +106,10 @@
     <Content Include="content\SladeBootstrap\bootstrap.css" />
     <Content Include="content\SladeBootstrap\bootstrap.min.css" />
     <Content Include="content\ui-bootstrap-csp.css" />
+    <Content Include="scripts\3thParty\Angular-Chart\angular-chart.css" />
+    <Content Include="scripts\3thParty\Angular-Chart\angular-chart.js" />
+    <Content Include="scripts\3thParty\Angular-Chart\angular-chart.min.css" />
+    <Content Include="scripts\3thParty\Angular-Chart\angular-chart.min.js" />
     <Content Include="scripts\3thParty\Angular-loadingBar\loading-bar.min.css" />
     <Content Include="scripts\3thParty\Angular-loadingBar\loading-bar.min.js" />
     <Content Include="scripts\angular-animate.js" />
@@ -182,6 +186,12 @@
     <Content Include="content\font-awesome-4.4.0\scss\_variables.scss" />
     <Content Include="content\SladeBootstrap\_bootswatch.scss" />
     <Content Include="content\SladeBootstrap\_variables.scss" />
+    <None Include=".bin\bower.cmd" />
+    <None Include=".bin\git.cmd" />
+    <None Include=".bin\node.cmd" />
+    <Content Include="scripts\3thParty\Angular-Chart\angular-chart.js.tar.gz" />
+    <Content Include="scripts\3thParty\Angular-Chart\angular-chart.min.css.map" />
+    <Content Include="scripts\3thParty\Angular-Chart\angular-chart.min.js.map" />
     <None Include="scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="scripts\i18n\angular-locale_aa-er.js" />
