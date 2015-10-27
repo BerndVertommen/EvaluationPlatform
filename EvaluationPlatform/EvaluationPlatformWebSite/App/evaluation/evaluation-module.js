@@ -16,4 +16,16 @@
               }
           });
 
+        $routeProvider
+        .when('/evaluationTemplates', {
+            templateUrl: '/app/evaluation/views/evaluationTemplates.html',
+            controller: 'evaluationTemplatesController',
+            resolve: {
+                /*ngInject*/
+                evaluationTemplates: function (evaluationService) {
+                    return evaluationService.getEvaluationTemplates();
+                }
+            }
+        });
+
     });

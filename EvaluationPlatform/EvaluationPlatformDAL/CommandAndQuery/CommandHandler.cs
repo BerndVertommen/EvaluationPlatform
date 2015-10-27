@@ -8,18 +8,18 @@ namespace EvaluationPlatformDAL.CommandAndQuery
 {
     public abstract class CommandHandler<TCommandObject>: ICommandHandler<TCommandObject> where TCommandObject : ICommandObject
     {
-        protected readonly IEPDatabase _database;
+        protected readonly IEPDatabase Database;
 
         protected CommandHandler(IEPDatabase database)
         {
-            _database = database;
+            Database = database;
         }
 
         public abstract void Handle(TCommandObject commandObject);
 
         public void SaveChanges()
         {
-            var db = _database as EPDatabase;
+            var db = Database as EPDatabase;
             db.SaveChanges();
         }
     }

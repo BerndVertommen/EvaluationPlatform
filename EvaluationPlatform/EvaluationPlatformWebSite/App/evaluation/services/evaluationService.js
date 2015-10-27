@@ -18,6 +18,12 @@
             $http.post(baseWebApiUrl + 'evaluation/createTemplate',evaluationTemplate);
         };
 
+        thiz.getEvaluationTemplates = function () {
+           return $http.get(baseWebApiUrl + 'evaluation/getEvaluationTemplates').then(function(result) {
+                return result.data;
+            });
+        };
+
         //initiations
         var init = function () {
 

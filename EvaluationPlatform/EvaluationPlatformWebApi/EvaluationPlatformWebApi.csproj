@@ -188,10 +188,12 @@
     <Compile Include="DataAccesors\Account\GetAccountQueryObject.cs" />
     <Compile Include="DataAccesors\Class\ClassViewInfoQueryObject.cs" />
     <Compile Include="DataAccesors\Class\ClassViewInfoQueryHandler.cs" />
-    <Compile Include="DataAccesors\Evaluation\AddEvaluationTemplateCommand.cs" />
-    <Compile Include="DataAccesors\Evaluation\AddEvaluationTemplateCommandHandler.cs" />
-    <Compile Include="DataAccesors\Evaluation\GetCreateEvaluationOptionsQueryObject.cs" />
-    <Compile Include="DataAccesors\Evaluation\GetCreateEvaluationOptionsQueryHandler.cs" />
+    <Compile Include="DataAccesors\EvaluationTemplates\CreateEvaluationTemplateCommand.cs" />
+    <Compile Include="DataAccesors\EvaluationTemplates\CreateEvaluationTemplateCommandHandler.cs" />
+    <Compile Include="DataAccesors\EvaluationTemplates\GetCreateEvaluationOptionsQueryObject.cs" />
+    <Compile Include="DataAccesors\EvaluationTemplates\GetCreateEvaluationOptionsQueryHandler.cs" />
+    <Compile Include="DataAccesors\EvaluationTemplates\GetEvaluationsTemplatesQueryHandler.cs" />
+    <Compile Include="DataAccesors\EvaluationTemplates\GetEvaluationTemplatesQueryObject.cs" />
     <Compile Include="Identity\CurrentIdentityHelper.cs" />
     <Compile Include="Identity\IIdentity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

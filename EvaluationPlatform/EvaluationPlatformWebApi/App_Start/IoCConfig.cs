@@ -31,7 +31,7 @@ namespace EvaluationPlatformWebApi
                         .Where(t => t.GetInterface(typeof(IQueryHandler<,>).Name) != null)
                         .AsSelf().AsImplementedInterfaces().InstancePerLifetimeScope();
             
-            builder.RegisterAssemblyTypes(typeof(AddEvaluationTemplateCommandHandler).Assembly)
+            builder.RegisterAssemblyTypes(typeof(CreateEvaluationTemplateCommandHandler).Assembly)
                 .Where(t => t.GetInterface(typeof(ICommandHandler<>).Name) != null)
                 .AsSelf().AsImplementedInterfaces().InstancePerLifetimeScope();
 

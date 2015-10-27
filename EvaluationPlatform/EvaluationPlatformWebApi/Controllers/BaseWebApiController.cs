@@ -14,17 +14,17 @@ namespace EvaluationPlatformWebApi.Controllers
         {
         }
 
-        public Guid? AccountId
+        public Guid AccountId
         {
             get
             {
                 try
                 {
-                    return new CurrentIdentityHelper().GetAccountId();
+                    return new CurrentIdentityHelper().GetAccountId().Value;
                 }
                 catch (NullReferenceException)
                 {
-                    return null;
+                    return Guid.Empty;
                 }
 
             }

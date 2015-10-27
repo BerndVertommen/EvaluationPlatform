@@ -8,7 +8,7 @@ namespace EvaluationPlatformDAL.CommandAndQuery
 {
     public abstract class QueryHandler<TQueryObject, TResult> : IQueryHandler<TQueryObject, TResult> where TQueryObject : IQueryObject<TResult>
     {
-        private readonly IEPDatabase _database;
+        protected readonly IEPDatabase _database;
 
         protected QueryHandler(IEPDatabase database)
         {

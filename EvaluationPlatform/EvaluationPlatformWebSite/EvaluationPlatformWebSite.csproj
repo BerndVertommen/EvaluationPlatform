@@ -71,9 +71,11 @@
     <Content Include="app\evaluation\controllers\evaluationGoalsController.js" />
     <Content Include="app\evaluation\controllers\evaluationSubSectionController.js" />
     <Content Include="app\evaluation\controllers\generalEvaluationOptionsCtrl.js" />
+    <Content Include="app\evaluation\controllers\evaluationTemplatesController.js" />
     <Content Include="app\evaluation\views\evaluationGoalsModal.html" />
     <Content Include="app\evaluation\views\evaluationSubSectionModal.html" />
     <Content Include="app\evaluation\views\generalEvaluationOptionsModal.html" />
+    <Content Include="app\evaluation\views\evaluationTemplates.html" />
     <Content Include="app\home\controllers\homeCtrl.js" />
     <Content Include="app\home\home-module.js" />
     <Content Include="app\home\views\home.html" />

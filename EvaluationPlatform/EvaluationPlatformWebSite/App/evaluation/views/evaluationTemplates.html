@@ -1,0 +1,27 @@
+﻿<div>
+    <div class="panel panel-default">
+        <div class="panel-heading"> <!--mainHeading-->
+            <div class="panel-title">Evaluatie Sjablonen
+            </div>
+        </div>
+        <div class="panel-body"> <!--mainBody-->
+            <div class="largeScrolable">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Sjablonen</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="template in evaluationTemplates" ng-class="{'success': $index == selectedRow}">
+                        <td ng-click="setSelectedTemplate(template, $index)">{{template.discription}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="panel-footer"> <!--mainFooter-->
+            
+        </div>
+    </div>
+</div>

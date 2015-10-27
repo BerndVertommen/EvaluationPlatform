@@ -133,7 +133,6 @@ ul.alert-dropdown {
         bottom: 0;
         overflow-x: hidden;
         padding-bottom: 40px;
-      
     }
 
         .side-nav > li > a {
@@ -160,7 +159,7 @@ ul.alert-dropdown {
     }
 
         .side-nav > li > ul > li > a:hover {
-            color:  #97999b; 
+            color: #97999b;
         }
 
 
@@ -178,23 +177,23 @@ ul.alert-dropdown {
 
 
 
-/*custom main panel*/ 
+/*custom main panel*/
 .panel-gray {
-
-    background-color : #3e4041;
-     /*color: #e5e5e6*/
+    background-color: #3e4041;
+    /*color: #e5e5e6*/
 }
 
     .panel-gray > .panel-heading {
-       border-bottom-color: #97999b;
+        border-bottom-color: #97999b;
     }
+
     .panel-gray > .panel-footer {
-        border-top-color :#97999b;
-        background-color :  #3e4041;
+        border-top-color: #97999b;
+        background-color: #3e4041;
     }
 
     .panel-gray > a {
-        color:#5cb85c;
+        color: #5cb85c;
     }
 
         .panel-gray > a:hover {
@@ -267,15 +266,34 @@ ul.alert-dropdown {
 .panel-title {
     display: inline-block;
 }
-    .panel-heading > .btn-group {
-         top: -8px;
-    }
 
+.panel-heading > .btn-group {
+    top: -8px;
+}
+
+table {
+    border-collapse: separate;
+}
+.table {
+    border-color: black;
+    border-width: thin;
+    border-style: solid;
+}
 /*End bootstrap overrides*/
 
 /*table*/
 .tcolDoubleSmButton {
     width: 85px;
+}
+
+.smallScrolable {
+    max-height: 250px;
+    overflow: auto;
+}
+
+.largeScrolable {
+    max-height: 500px;
+    overflow: auto;
 }
 /*End table*/
 
@@ -294,11 +312,13 @@ ul.alert-dropdown {
 
 /*Backgrounds*/
 .bg-EvaluationSubSection {
-    background-color:#4f8c8b;
+    background-color: #4f8c8b;
 }
+
 .bg-blueTitle {
-    background-color:#0C2D4E;
+    background-color: #0C2D4E;
 }
+
 .bg-greyTitle {
     background-color: #3e444c;
 }

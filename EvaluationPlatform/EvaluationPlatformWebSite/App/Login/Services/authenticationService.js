@@ -13,7 +13,7 @@
             thiz.userName = "";
 
             $rootScope.$broadcast('userLoggedOut', {
-              
+
             });
         };
 
@@ -49,6 +49,7 @@
 
             var authData = localStorageService.get('authorizationData');
             if (authData) {
+
                 thiz.isAuth = true;
                 thiz.userName = authData.userName;
             }

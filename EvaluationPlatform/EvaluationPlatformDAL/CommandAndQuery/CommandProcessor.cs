@@ -19,8 +19,10 @@ namespace EvaluationPlatformDAL.CommandAndQuery
 
         public void Execute(ICommandObject command)
         {
-            GetCommandHandler(command).Handle((dynamic)command);
-        }
+            var commandHandler = GetCommandHandler(command);
+            commandHandler.Handle((dynamic)command);
+            commandHandler.SaveChanges();
+            }
 
         protected dynamic GetCommandHandler(ICommandObject command)
         {
