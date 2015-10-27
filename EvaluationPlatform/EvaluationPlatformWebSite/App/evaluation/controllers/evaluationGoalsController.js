@@ -2,7 +2,7 @@
 (function (module) {
     'use strict';
 
-    function evaluationGoalsController($scope, $modalInstance, subSection, course, availableGoals) {
+    function evaluationGoalsController($scope, $uibModalInstance, subSection, course, availableGoals) {
         var thiz = this;
 
         //Variables
@@ -34,11 +34,11 @@
 
             thiz.AddGoalToNewEvaluationSubSection();
 
-            $modalInstance.close($scope.evaluationSubSection);
+            $uibModalInstance.close($scope.evaluationSubSection);
         };
 
         $scope.cancel = function () {
-            $modalInstance.dismiss('cancel');
+            $uibModalInstance.dismiss('cancel');
         };
 
        

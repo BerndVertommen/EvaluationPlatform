@@ -26,7 +26,7 @@
 
             $http.post(configurationService.tokenPath, data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).then(function (response) {
 
-                localStorageService.set('authorizationData', { token: response.data.access_token, userName: loginData.userName });
+                localStorageService.set('authorizationData', { token: response.data.access_token, userName: loginData.userName, expires: response.data.expires_in });
 
                 thiz.userName = loginData.userName;
                 thiz.isAuth = true;

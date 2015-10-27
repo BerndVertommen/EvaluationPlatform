@@ -1,7 +1,7 @@
 ﻿(function (module) {
     'use strict';
 
-    function createEvaluationController($scope, $location, evaluationService, createEvaluationOptions, $modal) {
+    function createEvaluationController($scope, $location, evaluationService, createEvaluationOptions, $uibModal) {
         var thiz = this;
 
         //Variables
@@ -19,7 +19,7 @@
         };
 
         $scope.openGeneralOptions = function () {
-            var modalInstance = $modal.open({
+            var modalInstance = $uibModal.open({
                 animation: true,
                 templateUrl: '/app/evaluation/views/generalEvaluationOptionsModal.html',
                 controller: 'generalEvaluationOptionsController',
@@ -44,7 +44,7 @@
         };
 
         $scope.openSubSections = function (subSection) {
-            var modalInstance = $modal.open({
+            var modalInstance = $uibModal.open({
                 animation: true,
                 templateUrl: '/app/evaluation/views/evaluationSubSectionModal.html',
                 controller: 'evaluationSubSectionController',
@@ -81,7 +81,7 @@
         };
 
         $scope.openGoals = function (subSection) {
-            var modalInstance = $modal.open({
+            var modalInstance = $uibModal.open({
                 animation: true,
                 templateUrl: '/app/evaluation/views/evaluationGoalsModal.html',
                 controller: 'evaluationGoalsController',

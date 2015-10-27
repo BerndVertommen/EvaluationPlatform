@@ -2,7 +2,7 @@
 (function (module) {
     'use strict';
 
-    function evaluationSubSectionController($scope, $modalInstance, evaluationSubSections, currentTotalWeight, course, subSection) {
+    function evaluationSubSectionController($scope, $uibModalInstance, evaluationSubSections, currentTotalWeight, course, subSection) {
         var thiz = this;
 
         //Variables
@@ -22,11 +22,11 @@
                 thiz.addnewEvaluationSubSection();
             }
 
-            $modalInstance.close($scope.evaluationSubSections);
+            $uibModalInstance.close($scope.evaluationSubSections);
         };
 
         $scope.cancel = function () {
-            $modalInstance.dismiss('cancel');
+            $uibModalInstance.dismiss('cancel');
         };
 
        

@@ -36,6 +36,7 @@ namespace EvaluationPlatformWebApi.Controllers
         public HttpResponseMessage PostEvaluationTemplate(EvaluationTemplateInfo evaluationTemplateInfo)
         {
             _commandProcessor.Execute(new AddEvaluationTemplateCommand(evaluationTemplateInfo, AccountId));
+
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 }

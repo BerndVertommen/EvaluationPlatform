@@ -57,7 +57,7 @@ namespace EvaluationPlatformWebApi.Authentication
                 claimsIdentity.AddClaim(new Claim(ClaimTypes.Name, user.Username));
                 claimsIdentity.AddClaim(new Claim("accountId", user.Id.ToString()));
                 claimsIdentity.AddClaim(new Claim("IP", context.Request.RemoteIpAddress));
-
+               
                 foreach (AccountRole role in user.AccountRoles)
                 {
                     claimsIdentity.AddClaim(new Claim(ClaimTypes.Role, role.AccountRoleType.ToString()));
@@ -69,6 +69,8 @@ namespace EvaluationPlatformWebApi.Authentication
                     ExpiresUtc = DateTime.UtcNow.AddHours(24),
                     IsPersistent = true,
                 };
+                claimsIdentity.AddClaim(new Claim(ClaimTypes.Expiration, authenticationProperties.ExpiresUtc.ToString()));
+
 
                 var ticket = new AuthenticationTicket(claimsIdentity, authenticationProperties);
 

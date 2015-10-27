@@ -2,7 +2,7 @@
 (function (module) {
     'use strict';
 
-    function generalEvaluationOptionsController($scope, $modalInstance, generalOptions, createEvaluationOptions) {
+    function generalEvaluationOptionsController($scope, $uibModalInstance, generalOptions, createEvaluationOptions) {
         var thiz = this;
 
         //Variables
@@ -20,11 +20,11 @@
             if (angular.isUndefined($scope.generalOptions.course) || $scope.generalOptions.course === null) {
                 return; // replace with error method
             }
-            $modalInstance.close($scope.generalOptions);
+            $uibModalInstance.close($scope.generalOptions);
         };
 
         $scope.cancel = function () {
-            $modalInstance.dismiss('cancel');
+            $uibModalInstance.dismiss('cancel');
         };
 
         $scope.selectCourse = function (course, index) {
