@@ -1,7 +1,5 @@
-﻿using System;
-using System.Net;
+﻿using System.Net;
 using System.Net.Http;
-using System.Web;
 using System.Web.Http;
 using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
@@ -9,7 +7,6 @@ using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformWebApi.Authentication;
 using EvaluationPlatformWebApi.DataAccesors.Evaluation;
-using EvaluationPlatformWebApi.Identity;
 
 namespace EvaluationPlatformWebApi.Controllers
 {

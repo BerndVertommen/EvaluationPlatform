@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
@@ -41,12 +42,12 @@ namespace EvaluationPlatformDAL.Migrations
 
             Scale fourPointScale = new Scale(0, 3, "Vier-puntschaal[3210]");
             //teachers
-            Teacher teacher1 = new Teacher(new Person( "Sneewbal", "VanMechanica"));
+            Teacher teacher1 = new Teacher(new Person( "Sneewbal", "VanMechanica" ,new DateTime(1970,5,10)));
             teacher1.AddClass(class1);
             teacher1.AddCourse(new Course("Mechanica", schoolyearNow, teacher1, fourPointScale, studyPlan1));
             context.Teachers.Add(teacher1);
 
-            Teacher teacher2 = new Teacher(new Person("Test", "er"));
+            Teacher teacher2 = new Teacher(new Person("Test", "er", new DateTime(1970, 5, 10)));
             teacher2.AddClass(class1);
             teacher2.AddCourse(new Course("TesterCource", schoolyearNow, teacher2, fourPointScale, studyPlan1));
             context.Teachers.Add(teacher2);
