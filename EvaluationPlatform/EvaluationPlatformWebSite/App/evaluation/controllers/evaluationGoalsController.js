@@ -50,8 +50,8 @@
 
            
             
-            $scope.selectedGoal = {};
-            $scope.selectedGoal.Id="noId";
+            //$scope.selectedGoal = {};
+            //$scope.selectedGoal.Id="noId";
 
 
         }

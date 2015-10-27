@@ -5,7 +5,7 @@
         // define routes
 
         $routeProvider
-          .when('/createEvaluation', {
+          .when('/createEvaluationTemplate', {
               templateUrl: '/app/evaluation/views/createEvaluation.html',
               controller: 'createEvaluationController',
               resolve: {

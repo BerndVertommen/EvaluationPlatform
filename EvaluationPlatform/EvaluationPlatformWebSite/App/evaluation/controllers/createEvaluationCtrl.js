@@ -15,7 +15,9 @@
         // public functions
         $scope.saveTemplate = function() {
             // TODO develop validation and adjust 100 perscent code.
-            evaluationService.createTemplate($scope.evaluationTemplate);
+            evaluationService.createTemplate($scope.evaluationTemplate).then(function(result) {
+                $location.path('/evaluationTemplates');
+            });
         };
 
         $scope.openGeneralOptions = function () {

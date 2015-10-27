@@ -15,7 +15,9 @@
         };
 
         thiz.createTemplate = function(evaluationTemplate) {
-            $http.post(baseWebApiUrl + 'evaluation/createTemplate',evaluationTemplate);
+           return  $http.post(baseWebApiUrl + 'evaluation/createTemplate', evaluationTemplate).then(function(result) {
+               return result.data;
+           });
         };
 
         thiz.getEvaluationTemplates = function () {
