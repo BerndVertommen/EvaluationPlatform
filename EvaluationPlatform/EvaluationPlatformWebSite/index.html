@@ -40,7 +40,20 @@
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
-              <li class="dropdown">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-wrench"></i> Admin tools <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#/login"><i class="fa fa-user-plus"></i> Account aanmaken</a>
+                        </li>
+                        
+                        <li class="divider"></li>
+                        <li>
+                            <a ng-click="logOut()"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
                     <a ng-show="userName" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{userName}} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
@@ -58,6 +71,7 @@
                         </li>
                     </ul>
                 </li>
+               
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -94,7 +108,7 @@
     <script src="scripts/underscore.js"></script>
     <!-- Bootstrap Core JavaScript -->
     <script src="scripts/bootstrap.js"></script>
-   <!--***Angular Scripts***-->
+    <!--***Angular Scripts***-->
     <script src="scripts/angular.js"></script>
     <!--packages 3th party-->
     <script src="scripts/angular-route.js"></script>
