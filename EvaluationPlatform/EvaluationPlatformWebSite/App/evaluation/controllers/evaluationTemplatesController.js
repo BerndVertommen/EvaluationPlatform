@@ -12,7 +12,7 @@
         $scope.selectedRow = null;
 
         $scope.setSelectedTemplate = function(template, index) {
-            $scope.setSelectedTemplate = template;
+            $scope.selectedTemplate = template;
             $scope.selectedRow = index;
         };
 
