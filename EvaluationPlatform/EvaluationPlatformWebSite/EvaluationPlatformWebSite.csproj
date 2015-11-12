@@ -110,6 +110,7 @@
     <Content Include="scripts\3thParty\Angular-Chart\angular-chart.js" />
     <Content Include="scripts\3thParty\Angular-Chart\angular-chart.min.css" />
     <Content Include="scripts\3thParty\Angular-Chart\angular-chart.min.js" />
+    <Content Include="scripts\3thParty\Angular-Chart\Chart.js" />
     <Content Include="scripts\3thParty\Angular-loadingBar\loading-bar.min.css" />
     <Content Include="scripts\3thParty\Angular-loadingBar\loading-bar.min.js" />
     <Content Include="scripts\angular-animate.js" />
