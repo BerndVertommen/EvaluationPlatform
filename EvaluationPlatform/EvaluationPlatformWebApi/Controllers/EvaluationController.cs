@@ -50,5 +50,15 @@ namespace EvaluationPlatformWebApi.Controllers
 
             return _queryProccesor.Execute(new GetEvaluationTemplatesQueryObject(AccountId));
         }
+
+        [CustomAutorize(AccountRoleType.UserRole)]
+        [Route("createEvaluationFromTemplate")]
+        [HttpPost]
+        public IEnumerable<EvaluationInfo> GetEvaluationsForTemplate()
+        {
+            //todo create evalution with createEvaluationCommand
+            return new List<EvaluationInfo>();
+
+        }
     }
 }

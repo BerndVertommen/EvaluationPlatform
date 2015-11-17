@@ -194,6 +194,7 @@
     <Compile Include="DataAccesors\EvaluationTemplates\GetCreateEvaluationOptionsQueryHandler.cs" />
     <Compile Include="DataAccesors\EvaluationTemplates\GetEvaluationsTemplatesQueryHandler.cs" />
     <Compile Include="DataAccesors\EvaluationTemplates\GetEvaluationTemplatesQueryObject.cs" />
+    <Compile Include="DataAccesors\Evaluation\Command\CreateEvaluationCommand.cs" />
     <Compile Include="Identity\CurrentIdentityHelper.cs" />
     <Compile Include="Identity\IIdentity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -210,6 +211,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="DataAccesors\Evaluation\CommandHandlers\" />
+    <Folder Include="DataAccesors\Evaluation\QueryHandlers\" />
+    <Folder Include="DataAccesors\Evaluation\QueryObjects\" />
+    <Folder Include="EvaluationInfo\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
