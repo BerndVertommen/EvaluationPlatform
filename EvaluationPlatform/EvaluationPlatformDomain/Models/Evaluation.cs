@@ -16,5 +16,15 @@ namespace EvaluationPlatformDomain.Models
         {
             
         }
+
+        public Evaluation(EvaluationTemplate evaluationTemplate, Student student, DateTime evaluationDate, Course cource, ICollection<EvaluationItem> evaluationItems, string generalComment)
+        {
+            EvaluationTemplate = evaluationTemplate;
+            Student = student;
+            EvaluationDate = evaluationDate;
+            Cource = cource;
+            EvaluationItems = evaluationItems;
+            GeneralComment = generalComment;
+        }
     }
 }

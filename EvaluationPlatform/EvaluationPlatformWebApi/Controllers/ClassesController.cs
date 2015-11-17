@@ -9,23 +9,18 @@ using EvaluationPlatformWebApi.DataAccesors.Class;
 namespace EvaluationPlatformWebApi.Controllers
 {
     [RoutePrefix("api/class")]
-    public class ClassesController : ApiController
+    public class ClassesController : BaseWebApiController
     {
-        private readonly ICommandProcessor _commandProcessor;
-        private readonly IQueryProccesor _queryProccesor;
-
-        public ClassesController(ICommandProcessor commandProcessor, IQueryProccesor queryProccesor)
+        public ClassesController()
         {
-            _commandProcessor = commandProcessor;
-            _queryProccesor = queryProccesor;
         }
-        
+
         [CustomAutorize(AccountRoleType.Admin)]
         [Route("test")]
         [HttpGet]
         public ClassInfo GetClassViewInfo()
         {
-            return _queryProccesor.Execute(new ClassViewInfoQueryObject("1NF", new SchoolYear(2015, 2016)));
+            return QueryProccesor.Execute(new ClassViewInfoQueryObject("1NF", new SchoolYear(2015, 2016)));
         }
     }
 }

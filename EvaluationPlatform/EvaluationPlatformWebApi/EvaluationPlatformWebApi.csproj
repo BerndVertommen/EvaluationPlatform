@@ -184,8 +184,10 @@
     <Compile Include="Controllers\BaseWebApiController.cs" />
     <Compile Include="Controllers\ClassesController.cs" />
     <Compile Include="Controllers\EvaluationController.cs" />
-    <Compile Include="DataAccesors\Account\GetAccountQueryHandler.cs" />
-    <Compile Include="DataAccesors\Account\GetAccountQueryObject.cs" />
+    <Compile Include="DataAccesors\Account\QueryHandlers\GetAccountInfoQueryHandler.cs" />
+    <Compile Include="DataAccesors\Account\QueryHandlers\GetAccountQueryHandler.cs" />
+    <Compile Include="DataAccesors\Account\QueryObjects\GetAccountInfoQueryObject.cs" />
+    <Compile Include="DataAccesors\Account\QueryObjects\GetAccountQueryObject.cs" />
     <Compile Include="DataAccesors\Class\ClassViewInfoQueryObject.cs" />
     <Compile Include="DataAccesors\Class\ClassViewInfoQueryHandler.cs" />
     <Compile Include="DataAccesors\EvaluationTemplates\CreateEvaluationTemplateCommand.cs" />
@@ -194,7 +196,9 @@
     <Compile Include="DataAccesors\EvaluationTemplates\GetCreateEvaluationOptionsQueryHandler.cs" />
     <Compile Include="DataAccesors\EvaluationTemplates\GetEvaluationsTemplatesQueryHandler.cs" />
     <Compile Include="DataAccesors\EvaluationTemplates\GetEvaluationTemplatesQueryObject.cs" />
+    <Compile Include="DataAccesors\Evaluation\CommandHandlers\CreateEvaluationCommandHandler.cs" />
     <Compile Include="DataAccesors\Evaluation\Command\CreateEvaluationCommand.cs" />
+    <Compile Include="Exeptions\BusinessExeption.cs" />
     <Compile Include="Identity\CurrentIdentityHelper.cs" />
     <Compile Include="Identity\IIdentity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -211,7 +215,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="DataAccesors\Evaluation\CommandHandlers\" />
     <Folder Include="DataAccesors\Evaluation\QueryHandlers\" />
     <Folder Include="DataAccesors\Evaluation\QueryObjects\" />
     <Folder Include="EvaluationInfo\" />

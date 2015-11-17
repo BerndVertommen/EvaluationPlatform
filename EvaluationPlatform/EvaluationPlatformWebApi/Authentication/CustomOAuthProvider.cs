@@ -6,6 +6,7 @@ using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformDomain.Models.Account;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformWebApi.DataAccesors.Account;
+using EvaluationPlatformWebApi.DataAccesors.Account.QueryObjects;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
 

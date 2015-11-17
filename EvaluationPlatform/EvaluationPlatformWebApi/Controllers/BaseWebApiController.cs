@@ -2,6 +2,10 @@
 using System.Web.Http;
 using EvaluationPlatformDAL.CommandAndQuery;
 using System.Net.Http;
+using EvaluationPlatformDataTransferModels.InformationModels;
+using EvaluationPlatformDomain.Models.Account;
+using EvaluationPlatformWebApi.DataAccesors.Account;
+using EvaluationPlatformWebApi.DataAccesors.Account.QueryObjects;
 using EvaluationPlatformWebApi.Identity;
 using Microsoft.AspNet.Identity;
 
@@ -9,7 +13,14 @@ namespace EvaluationPlatformWebApi.Controllers
 {
     public abstract class BaseWebApiController : ApiController
     {
+        protected readonly ICommandProcessor CommandProcessor;
+        protected readonly IQueryProccesor QueryProccesor;
 
+        protected BaseWebApiController(ICommandProcessor commandProcessor, IQueryProccesor queryProccesor)
+        {
+            CommandProcessor = commandProcessor;
+            QueryProccesor = queryProccesor;
+        }
         protected BaseWebApiController()
         {
         }
@@ -29,5 +40,12 @@ namespace EvaluationPlatformWebApi.Controllers
 
             }
         }
+
+        protected AccountInfo GetAccountInfo()
+        {
+          return QueryProccesor.Execute(new GetAccountInfoQueryObject(AccountId));
+        }
+
+
     }
 }

@@ -8,6 +8,7 @@ using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformWebApi.Authentication;
 using EvaluationPlatformWebApi.DataAccesors.Evaluation;
+using EvaluationPlatformWebApi.DataAccesors.Evaluation.Command;
 using EvaluationPlatformWebApi.DataAccesors.EvaluationTemplates;
 
 namespace EvaluationPlatformWebApi.Controllers
@@ -54,10 +55,11 @@ namespace EvaluationPlatformWebApi.Controllers
         [CustomAutorize(AccountRoleType.UserRole)]
         [Route("createEvaluationFromTemplate")]
         [HttpPost]
-        public IEnumerable<EvaluationInfo> GetEvaluationsForTemplate()
+        public void CreateEvaluationFromTemplate(CreateEvaluationCommand command)
         {
-            //todo create evalution with createEvaluationCommand
-            return new List<EvaluationInfo>();
+            command.TeacherId = GetAccountInfo().TeacherId;
+
+           CommandProcessor.Execute(command);
 
         }
     }

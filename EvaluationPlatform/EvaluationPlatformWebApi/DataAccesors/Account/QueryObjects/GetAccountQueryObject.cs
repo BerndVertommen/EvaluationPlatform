@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using EvaluationPlatformDAL.CommandAndQuery;
+﻿using EvaluationPlatformDAL.CommandAndQuery;
 
-namespace EvaluationPlatformWebApi.DataAccesors.Account
+namespace EvaluationPlatformWebApi.DataAccesors.Account.QueryObjects
 {
     public class GetAccountQueryObject : IQueryObject<EvaluationPlatformDomain.Models.Account.Account>
     {

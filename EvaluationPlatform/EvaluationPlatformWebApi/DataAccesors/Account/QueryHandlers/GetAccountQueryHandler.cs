@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using EvaluationPlatformDAL;
 using EvaluationPlatformDAL.CommandAndQuery;
+using EvaluationPlatformWebApi.DataAccesors.Account.QueryObjects;
 
-namespace EvaluationPlatformWebApi.DataAccesors.Account
+namespace EvaluationPlatformWebApi.DataAccesors.Account.QueryHandlers
 {
     public class GetAccountQueryHandler : QueryHandler<GetAccountQueryObject, EvaluationPlatformDomain.Models.Account.Account>
     {

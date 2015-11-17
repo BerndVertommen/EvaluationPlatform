@@ -4,6 +4,7 @@ using Autofac.Integration.WebApi;
 using EvaluationPlatformDAL;
 using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformWebApi.DataAccesors.Account;
+using EvaluationPlatformWebApi.DataAccesors.Account.QueryHandlers;
 using EvaluationPlatformWebApi.DataAccesors.Class;
 using EvaluationPlatformWebApi.DataAccesors.Evaluation;
 
