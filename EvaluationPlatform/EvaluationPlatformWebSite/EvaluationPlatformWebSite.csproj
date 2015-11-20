@@ -78,12 +78,12 @@
     <Content Include="app\evaluationTemplate\controllers\generalEvaluationTemplateOptionsModalController.js" />
     <Content Include="app\evaluationTemplate\evaluationTemplate-module.js" />
     <Content Include="app\evaluationTemplate\services\evaluationTemplateService.js" />
-    <Content Include="app\evaluationTemplate\views\createEvaluation.html" />
+    <Content Include="app\evaluationTemplate\views\createEvaluationTemplate.html" />
     <Content Include="app\evaluationTemplate\views\createEvaluationsFromTemplateModal.html" />
-    <Content Include="app\evaluationTemplate\views\evaluationGoalsModal.html" />
-    <Content Include="app\evaluationTemplate\views\evaluationSubSectionModal.html" />
+    <Content Include="app\evaluationTemplate\views\evaluationTemplateGoalsModal.html" />
+    <Content Include="app\evaluationTemplate\views\evaluationTemplateSubSectionModal.html" />
     <Content Include="app\evaluationTemplate\views\evaluationTemplates.html" />
-    <Content Include="app\evaluationTemplate\views\generalEvaluationOptionsModal.html" />
+    <Content Include="app\evaluationTemplate\views\generalEvaluationTemplateOptionsModal.html" />
     <Content Include="app\home\controllers\homeCtrl.js" />
     <Content Include="app\home\home-module.js" />
     <Content Include="app\home\views\home.html" />

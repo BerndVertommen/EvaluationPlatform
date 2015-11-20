@@ -16,21 +16,17 @@ namespace EvaluationPlatformWebApi.Controllers
     [RoutePrefix("api/evaluationTemplate")]
     public class EvaluationTemplateController : BaseWebApiController
     {
-        private readonly IQueryProccesor _queryProccesor;
-        private readonly ICommandProcessor _commandProcessor;
 
-        public EvaluationTemplateController(IQueryProccesor queryProccesor, ICommandProcessor commandProcessor)
+
+        public EvaluationTemplateController(ICommandProcessor commandProcessor, IQueryProccesor queryProccesor): base (commandProcessor, queryProccesor)
         {
-            _queryProccesor = queryProccesor;
-            _commandProcessor = commandProcessor;
-
         }
 
         [CustomAutorize(AccountRoleType.UserRole)]
         [HttpGet]
         public CreateEvaluationOptions GetCreateEvaluationOptions()
         {
-            return _queryProccesor.Execute(new GetCreateEvaluationOptionsQueryObject(AccountId));
+            return QueryProccesor.Execute(new GetCreateEvaluationOptionsQueryObject(AccountId));
         }
 
         [CustomAutorize(AccountRoleType.UserRole)]
@@ -38,7 +34,7 @@ namespace EvaluationPlatformWebApi.Controllers
         [HttpPost]
         public HttpResponseMessage CreateEvaluationTemplate(EvaluationTemplateInfo evaluationTemplateInfo)
         {
-            _commandProcessor.Execute(new CreateEvaluationTemplateCommand(evaluationTemplateInfo, AccountId));
+            CommandProcessor.Execute(new CreateEvaluationTemplateCommand(evaluationTemplateInfo, AccountId));
 
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
@@ -49,7 +45,7 @@ namespace EvaluationPlatformWebApi.Controllers
         public IEnumerable<EvaluationTemplateInfo> GetEvaluationTemplates()
         {
 
-            return _queryProccesor.Execute(new GetEvaluationTemplatesQueryObject(AccountId));
+            return QueryProccesor.Execute(new GetEvaluationTemplatesQueryObject(AccountId));
         }
 
         [CustomAutorize(AccountRoleType.UserRole)]

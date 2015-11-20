@@ -25,7 +25,7 @@
                 resolve: {
                     evaluationTemplate: function () {
                         return $scope.selectedTemplate;
-                    },
+                    }
                 }
             });
         };
