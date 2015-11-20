@@ -16,6 +16,7 @@
                             <th class="tcolDoubleSmButton">
                                 <div class="btn-group">
                                     <a class="btn btn-default btn-sm" href="#/createEvaluationTemplate"><i class="fa fa-plus"></i></a>
+                                    <a class="btn btn-primary btn-sm" ng-click="createEvaluations()"><i class="fa fa-files-o"></i></a>
                                 </div>
                             </th>
                         </tr>
@@ -23,7 +24,7 @@
                     <tbody>
                     <tr ng-repeat="template in evaluationTemplates" ng-class="{'success': $index == selectedRow}">
                         <td ng-click="setSelectedTemplate(template, $index)">{{template.discription}}</td>
-                        <td><a class="btn btn-primary" ng-click="createEvaluations()">Creeër Evaluaties</a></td>
+                        <td></td>
                     </tr>
                     </tbody>
                 </table>
@@ -31,7 +32,6 @@
         </div>
         <div class="panel-footer">
             <!--mainFooter-->
-
         </div>
     </div>
 </div>

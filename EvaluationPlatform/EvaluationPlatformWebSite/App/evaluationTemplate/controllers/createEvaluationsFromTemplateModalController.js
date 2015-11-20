@@ -13,15 +13,15 @@
         // public functions
         $scope.selectedRow = null;
 
-        //$scope.ok = function () {
-        //    if (angular.isUndefined($scope.generalOptions.discription) || $scope.generalOptions.discription === null || $scope.generalOptions.discription === "") {
-        //        return; // replace with error method
-        //    }
-        //    if (angular.isUndefined($scope.generalOptions.course) || $scope.generalOptions.course === null) {
-        //        return; // replace with error method
-        //    }
-        //    $uibModalInstance.close($scope.evaluationTemplate);
-        //};
+        $scope.ok = function () {
+            if (angular.isUndefined($scope.generalOptions.discription) || $scope.generalOptions.discription === null || $scope.generalOptions.discription === "") {
+                return; // replace with error method
+            }
+            if (angular.isUndefined($scope.generalOptions.course) || $scope.generalOptions.course === null) {
+                return; // replace with error method
+            }
+            $uibModalInstance.close($scope.evaluationTemplate);
+        };
 
         $scope.cancel = function () {
             $uibModalInstance.dismiss('cancel');

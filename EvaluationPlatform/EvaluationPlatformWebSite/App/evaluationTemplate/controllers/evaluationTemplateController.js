@@ -3,32 +3,29 @@
 
     function evaluationTemplatesController($scope, $location, evaluationTemplates, $uibModal) {
         var thiz = this;
-       
+
         //Variables
 
         //private Functions
-        
+
         // public functions
         $scope.selectedRow = null;
 
-        $scope.setSelectedTemplate = function(template, index) {
+        $scope.setSelectedTemplate = function (template, index) {
             $scope.selectedTemplate = template;
             $scope.selectedRow = index;
         };
 
-        $scope.createEvaluations = function() {
+        $scope.createEvaluations = function () {
             $uibModal.open({
                 animation: true,
-                templateUrl: '/app/evaluationTemplate/views/generalEvaluationOptionsModal.html',
-                controller: 'generalEvaluationTemplateOptionsModalController',
+                templateUrl: '/app/evaluationTemplate/views/createEvaluationsFromTemplateModal.html',
+                controller: 'createEvaluationsFromTemplateModalController',
                 size: 'lg',
                 resolve: {
-                    createEvaluationOptions: function () {
-                        return $scope.createEvaluationOptions;
+                    evaluationTemplate: function () {
+                        return $scope.selectedTemplate;
                     },
-                    generalOptions: function () {
-                        return { 'discription': "", 'course': null };
-                    }
                 }
             });
         };
