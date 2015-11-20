@@ -23,7 +23,7 @@
                     <tbody>
                     <tr ng-repeat="template in evaluationTemplates" ng-class="{'success': $index == selectedRow}">
                         <td ng-click="setSelectedTemplate(template, $index)">{{template.discription}}</td>
-                        <td></td>
+                        <td><a class="btn btn-primary" ng-click="createEvaluations()">Creeër Evaluaties</a></td>
                     </tr>
                     </tbody>
                 </table>

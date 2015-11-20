@@ -68,14 +68,20 @@
     <Content Include="app\classes\services\classesSvc.js" />
     <Content Include="app\classes\views\testClassView.html" />
     <Content Include="app\configuration\services\configurationService.js" />
-    <Content Include="app\evaluation\controllers\evaluationGoalsController.js" />
-    <Content Include="app\evaluation\controllers\evaluationSubSectionController.js" />
-    <Content Include="app\evaluation\controllers\generalEvaluationOptionsCtrl.js" />
-    <Content Include="app\evaluation\controllers\evaluationTemplatesController.js" />
-    <Content Include="app\evaluation\views\evaluationGoalsModal.html" />
-    <Content Include="app\evaluation\views\evaluationSubSectionModal.html" />
-    <Content Include="app\evaluation\views\generalEvaluationOptionsModal.html" />
-    <Content Include="app\evaluation\views\evaluationTemplates.html" />
+    <Content Include="app\evaluationTemplate\controllers\createEvaluationTemplateCtrl.js" />
+    <Content Include="app\evaluationTemplate\controllers\evaluationTemplateSubSectionModalController.js" />
+    <Content Include="app\evaluationTemplate\controllers\evaluationTemplateGoalsModalController.js" />
+    <Content Include="app\evaluationTemplate\controllers\evaluationTemplateController.js" />
+    <Content Include="app\evaluationTemplate\controllers\createEvaluationsFromTemplateModalController.js" />
+    <Content Include="app\evaluationTemplate\controllers\generalEvaluationTemplateOptionsModalController.js" />
+    <Content Include="app\evaluationTemplate\evaluationTemplate-module.js" />
+    <Content Include="app\evaluationTemplate\services\evaluationTemplateService.js" />
+    <Content Include="app\evaluationTemplate\views\createEvaluation.html" />
+    <Content Include="app\evaluationTemplate\views\createEvaluationsFromTemplateModal.html" />
+    <Content Include="app\evaluationTemplate\views\evaluationGoalsModal.html" />
+    <Content Include="app\evaluationTemplate\views\evaluationSubSectionModal.html" />
+    <Content Include="app\evaluationTemplate\views\evaluationTemplates.html" />
+    <Content Include="app\evaluationTemplate\views\generalEvaluationOptionsModal.html" />
     <Content Include="app\home\controllers\homeCtrl.js" />
     <Content Include="app\home\home-module.js" />
     <Content Include="app\home\views\home.html" />
@@ -87,10 +93,8 @@
     <Content Include="app\login\login-module.js" />
     <Content Include="app\login\services\authenticationService.js" />
     <Content Include="app\login\views\login.html" />
-    <Content Include="app\evaluation\controllers\createEvaluationCtrl.js" />
     <Content Include="app\evaluation\evaluation-module.js" />
     <Content Include="app\evaluation\services\evaluationService.js" />
-    <Content Include="app\evaluation\views\createEvaluation.html" />
     <Content Include="app\Student\controllers\createStudentController.js" />
     <Content Include="app\Student\student-module.js" />
     <Content Include="app\Student\services\studentService.js" />
@@ -997,6 +1001,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\Account\controllers\" />
+    <Folder Include="app\evaluation\controllers\" />
+    <Folder Include="app\evaluation\views\" />
     <Folder Include="app\home\services\" />
   </ItemGroup>
   <PropertyGroup>

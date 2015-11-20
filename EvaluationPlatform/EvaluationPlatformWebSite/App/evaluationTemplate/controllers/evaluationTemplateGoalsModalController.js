@@ -2,7 +2,7 @@
 (function (module) {
     'use strict';
 
-    function evaluationGoalsController($scope, $uibModalInstance, subSection, course, availableGoals) {
+    function evaluationTemplateGoalsModalController($scope, $uibModalInstance, subSection, course, availableGoals) {
         var thiz = this;
 
         //Variables
@@ -59,5 +59,5 @@
         init();
     }
 
-    module.controller('evaluationGoalsController', evaluationGoalsController);
-})(angular.module('app.evaluation'));
+    module.controller('evaluationTemplateGoalsModalController', evaluationTemplateGoalsModalController);
+})(angular.module('app.evaluationTemplate'));

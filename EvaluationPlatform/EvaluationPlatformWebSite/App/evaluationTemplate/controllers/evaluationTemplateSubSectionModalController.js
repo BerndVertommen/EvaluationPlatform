@@ -2,7 +2,7 @@
 (function (module) {
     'use strict';
 
-    function evaluationSubSectionController($scope, $uibModalInstance, evaluationSubSections, currentTotalWeight, course, subSection) {
+    function evaluationTemplateSubSectionModalController($scope, $uibModalInstance, evaluationSubSections, currentTotalWeight, course, subSection) {
         var thiz = this;
 
         //Variables
@@ -45,5 +45,5 @@
         init();
     }
 
-    module.controller('evaluationSubSectionController', evaluationSubSectionController);
-})(angular.module('app.evaluation'));
+    module.controller('evaluationTemplateSubSectionModalController', evaluationTemplateSubSectionModalController);
+})(angular.module('app.evaluationTemplate'));

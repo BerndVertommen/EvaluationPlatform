@@ -2,7 +2,7 @@
 (function (module) {
     'use strict';
 
-    function generalEvaluationOptionsController($scope, $uibModalInstance, generalOptions, createEvaluationOptions) {
+    function generalEvaluationTemplateOptionsModalController($scope, $uibModalInstance, generalOptions, createEvaluationOptions) {
         var thiz = this;
 
         //Variables
@@ -43,5 +43,5 @@
         init();
     }
 
-    module.controller('generalEvaluationOptionsController', generalEvaluationOptionsController);
-})(angular.module('app.evaluation'));
+    module.controller('generalEvaluationTemplateOptionsModalController', generalEvaluationTemplateOptionsModalController);
+})(angular.module('app.evaluationTemplate'));

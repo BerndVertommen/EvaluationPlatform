@@ -26,41 +26,5 @@ namespace EvaluationPlatformWebApi.Controllers
 
         }
 
-        [CustomAutorize(AccountRoleType.UserRole)]
-        [HttpGet]
-        public CreateEvaluationOptions GetCreateEvaluationOptions()
-        {
-            return _queryProccesor.Execute(new GetCreateEvaluationOptionsQueryObject(AccountId));
-        }
-
-        [CustomAutorize(AccountRoleType.UserRole)]
-        [Route("createTemplate")]
-        [HttpPost]
-        public HttpResponseMessage PostEvaluationTemplate(EvaluationTemplateInfo evaluationTemplateInfo)
-        {
-            _commandProcessor.Execute(new CreateEvaluationTemplateCommand(evaluationTemplateInfo, AccountId));
-
-            return new HttpResponseMessage(HttpStatusCode.OK);
-        }
-
-        [CustomAutorize(AccountRoleType.UserRole)]
-        [Route("getEvaluationTemplates")]
-        [HttpGet]
-        public IEnumerable<EvaluationTemplateInfo> GetEvaluationTemplates()
-        {
-
-            return _queryProccesor.Execute(new GetEvaluationTemplatesQueryObject(AccountId));
-        }
-
-        [CustomAutorize(AccountRoleType.UserRole)]
-        [Route("createEvaluationFromTemplate")]
-        [HttpPost]
-        public void CreateEvaluationFromTemplate(CreateEvaluationCommand command)
-        {
-            command.TeacherId = GetAccountInfo().TeacherId;
-
-           CommandProcessor.Execute(command);
-
-        }
     }
 }

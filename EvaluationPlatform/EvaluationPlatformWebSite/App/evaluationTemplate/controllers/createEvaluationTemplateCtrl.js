@@ -1,7 +1,7 @@
 ﻿(function (module) {
     'use strict';
 
-    function createEvaluationController($scope, $location, evaluationService, createEvaluationOptions, $uibModal) {
+    function createEvaluationTemplateController($scope, $location, evaluationTemplateService, createEvaluationOptions, $uibModal) {
         var thiz = this;
 
         //Variables
@@ -15,7 +15,7 @@
         // public functions
         $scope.saveTemplate = function() {
             // TODO develop validation and adjust 100 perscent code.
-            evaluationService.createTemplate($scope.evaluationTemplate).then(function(result) {
+            evaluationTemplateService.createTemplate($scope.evaluationTemplate).then(function(result) {
                 $location.path('/evaluationTemplates');
             });
         };
@@ -23,8 +23,8 @@
         $scope.openGeneralOptions = function () {
             var modalInstance = $uibModal.open({
                 animation: true,
-                templateUrl: '/app/evaluation/views/generalEvaluationOptionsModal.html',
-                controller: 'generalEvaluationOptionsController',
+                templateUrl: '/app/evaluationTemplate/views/generalEvaluationTemplateOptionsModal.html',
+                controller: 'generalEvaluationTemplateOptionsModalController',
                 size: 'lg',
                 resolve: {
                     createEvaluationOptions: function () {
@@ -48,8 +48,8 @@
         $scope.openSubSections = function (subSection) {
             var modalInstance = $uibModal.open({
                 animation: true,
-                templateUrl: '/app/evaluation/views/evaluationSubSectionModal.html',
-                controller: 'evaluationSubSectionController',
+                templateUrl: '/app/evaluationTemplate/views/evaluationTemplateSubSectionModal.html',
+                controller: 'evaluationTemplateSubSectionModalController',
                 size: 'lg',
                 resolve: {
                     course: function () {
@@ -85,8 +85,8 @@
         $scope.openGoals = function (subSection) {
             var modalInstance = $uibModal.open({
                 animation: true,
-                templateUrl: '/app/evaluation/views/evaluationGoalsModal.html',
-                controller: 'evaluationGoalsController',
+                templateUrl: '/app/evaluationTemplate/views/evaluationTemplateGoalsModal.html',
+                controller: 'evaluationTemplateGoalsModalController',
                 size: 'lg',
                 resolve: {
                     course: function () {
@@ -196,5 +196,5 @@
         init();
     }
 
-    module.controller('createEvaluationController', createEvaluationController);
-})(angular.module('app.evaluation'));
+    module.controller('createEvaluationTemplateController', createEvaluationTemplateController);
+})(angular.module('app.evaluationTemplate'));

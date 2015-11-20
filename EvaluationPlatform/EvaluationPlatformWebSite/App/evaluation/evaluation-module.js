@@ -4,28 +4,18 @@
 
         // define routes
 
-        $routeProvider
-          .when('/createEvaluationTemplate', {
-              templateUrl: '/app/evaluation/views/createEvaluation.html',
-              controller: 'createEvaluationController',
-              resolve: {
-                  /*ngInject*/
-                  createEvaluationOptions: function (evaluationService) {
-                      return evaluationService.getCreateEvaluationOptions();
-                  }
-              }
-          });
+        //$routeProvider
+        //  .when('/createEvaluationTemplate', {
+        //      templateUrl: '/app/evaluationTemplate/views/createEvaluation.html',
+        //      controller: 'createEvaluationTemplateController',
+        //      resolve: {
+        //          /*ngInject*/
+        //          createEvaluationOptions: function (evaluationTemplateService) {
+        //              return evaluationTemplateService.getCreateEvaluationOptions();
+        //          }
+        //      }
+        //  });
 
-        $routeProvider
-        .when('/evaluationTemplates', {
-            templateUrl: '/app/evaluation/views/evaluationTemplates.html',
-            controller: 'evaluationTemplatesController',
-            resolve: {
-                /*ngInject*/
-                evaluationTemplates: function (evaluationService) {
-                    return evaluationService.getEvaluationTemplates();
-                }
-            }
-        });
+       
 
     });
