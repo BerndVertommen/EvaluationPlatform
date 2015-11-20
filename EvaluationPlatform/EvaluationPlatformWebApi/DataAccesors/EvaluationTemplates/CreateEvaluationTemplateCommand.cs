@@ -14,5 +14,5 @@ namespace EvaluationPlatformWebApi.DataAccesors.Evaluation
             EvaluationTemplateInfo = evaluationTemplateInfo;
             AccountId = accountId;
         }
-    }
+   } 
 }

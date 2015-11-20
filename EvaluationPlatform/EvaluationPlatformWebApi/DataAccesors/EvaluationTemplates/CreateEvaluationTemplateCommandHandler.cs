@@ -18,6 +18,8 @@ namespace EvaluationPlatformWebApi.DataAccesors.Evaluation
             var teacher = Database.GetTeacherForAccount(command.AccountId);
             var templateInfo = command.EvaluationTemplateInfo;
             var course = Database.Courses.FirstOrDefault(c => c.Id == templateInfo.Course.Id);
+            //List<Course> test = Database.Courses.Where(c => c.PrimaryTeacher.Id == course.PrimaryTeacher.Id).ToList();
+            //opvragen uit database alle courses van deze primary teacher puur voor voorbeeld lambda expressie query
             var subsSections = new List<EvaluationSubSection>();
 
             foreach (EvaluationSubSectionInfo subSection in templateInfo.EvaluationSubSections)

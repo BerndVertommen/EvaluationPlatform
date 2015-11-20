@@ -60,9 +60,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\Account\account-module.js" />
+    <Content Include="app\Account\controllers\manageAccountController.js" />
     <Content Include="app\Account\services\accountService.js" />
     <Content Include="app\Account\views\changePassword.html" />
     <Content Include="app\Account\views\createTestAccountView.html" />
+    <Content Include="app\Account\views\manageAccount.html" />
     <Content Include="app\classes\classes-module.js" />
     <Content Include="app\classes\controllers\testClassCtrl.js" />
     <Content Include="app\classes\services\classesSvc.js" />
@@ -99,10 +101,6 @@
     <Content Include="app\Student\student-module.js" />
     <Content Include="app\Student\services\studentService.js" />
     <Content Include="app\Student\views\createStudent.html" />
-    <Content Include="app\zzzcopyMe - Copy\controllers\replaceCtrl.js" />
-    <Content Include="app\zzzcopyMe - Copy\replace-module.js" />
-    <Content Include="app\zzzcopyMe - Copy\services\replaceService.js" />
-    <Content Include="app\zzzcopyMe - Copy\views\view.html" />
     <Content Include="app\zzzcopyMe\replace-module.js" />
     <Content Include="app\zzzcopyMe\controllers\replaceCtrl.js" />
     <Content Include="app\zzzcopyMe\services\replaceService.js" />
@@ -1004,7 +1002,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\Account\controllers\" />
     <Folder Include="app\evaluation\controllers\" />
     <Folder Include="app\evaluation\views\" />
     <Folder Include="app\home\services\" />

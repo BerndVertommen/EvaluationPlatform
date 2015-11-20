@@ -36,7 +36,7 @@ namespace EvaluationPlatformWebApi.Controllers
         [CustomAutorize(AccountRoleType.UserRole)]
         [Route("createTemplate")]
         [HttpPost]
-        public HttpResponseMessage PostEvaluationTemplate(EvaluationTemplateInfo evaluationTemplateInfo)
+        public HttpResponseMessage CreateEvaluationTemplate(EvaluationTemplateInfo evaluationTemplateInfo)
         {
             _commandProcessor.Execute(new CreateEvaluationTemplateCommand(evaluationTemplateInfo, AccountId));
 

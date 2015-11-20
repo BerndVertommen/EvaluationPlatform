@@ -187,8 +187,10 @@
     <Compile Include="Controllers\EvaluationController.cs" />
     <Compile Include="DataAccesors\Account\QueryHandlers\GetAccountInfoQueryHandler.cs" />
     <Compile Include="DataAccesors\Account\QueryHandlers\GetAccountQueryHandler.cs" />
+    <Compile Include="DataAccesors\Account\QueryHandlers\GetAccountsQueryHandler.cs" />
     <Compile Include="DataAccesors\Account\QueryObjects\GetAccountInfoQueryObject.cs" />
     <Compile Include="DataAccesors\Account\QueryObjects\GetAccountQueryObject.cs" />
+    <Compile Include="DataAccesors\Account\QueryObjects\GetAccountsQueryObject.cs" />
     <Compile Include="DataAccesors\Class\ClassViewInfoQueryObject.cs" />
     <Compile Include="DataAccesors\Class\ClassViewInfoQueryHandler.cs" />
     <Compile Include="DataAccesors\EvaluationTemplates\CreateEvaluationTemplateCommand.cs" />

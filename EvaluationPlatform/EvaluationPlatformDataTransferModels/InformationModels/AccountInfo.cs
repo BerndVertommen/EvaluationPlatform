@@ -10,6 +10,7 @@ namespace EvaluationPlatformDataTransferModels.InformationModels
     {
         public Guid? TeacherId { get; set; }
         public PersonInfo Person { get; set; }
+        public Guid? Id { get; set; }
 
         public AccountInfo()
         {

@@ -1,16 +1,30 @@
-﻿using System.Web.Http;
+﻿using EvaluationPlatformDAL.CommandAndQuery;
+using EvaluationPlatformDataTransferModels.InformationModels;
+using EvaluationPlatformWebApi.DataAccesors.Account.QueryObjects;
+using System.Collections.Generic;
+using System.Web.Http;
 
 namespace EvaluationPlatformWebApi.Controllers
 {
-    [OverrideAuthorization]
+    
     [RoutePrefix("api/accounts")]
-    public class AccountController : ApiController
+    public class AccountController : BaseWebApiController
     {
-        public AccountController()
+
+        public AccountController(IQueryProccesor queryProcessor, ICommandProcessor commandProcessor) : base(commandProcessor,queryProcessor)
         {
 
         }
 
+       
+
+        [Route("getAccounts")]
+        [HttpGet]
+        public List<AccountInfo> GetAccounts()
+        {
+
+            return QueryProccesor.Execute(new GetAccountsQueryObject());
+        }
 
     }
 }
