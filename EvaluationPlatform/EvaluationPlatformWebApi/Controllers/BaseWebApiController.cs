@@ -3,6 +3,7 @@ using System.Web.Http;
 using EvaluationPlatformDAL.CommandAndQuery;
 using System.Net.Http;
 using EvaluationPlatformDataTransferModels.InformationModels;
+using EvaluationPlatformDataTransferModels.InformationModels.Account;
 using EvaluationPlatformDomain.Models.Account;
 using EvaluationPlatformWebApi.DataAccesors.Account;
 using EvaluationPlatformWebApi.DataAccesors.Account.QueryObjects;

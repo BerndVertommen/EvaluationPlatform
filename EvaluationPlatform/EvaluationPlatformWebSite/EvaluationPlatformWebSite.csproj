@@ -61,10 +61,10 @@
   <ItemGroup>
     <Content Include="app\Account\account-module.js" />
     <Content Include="app\Account\controllers\manageAccountController.js" />
+    <Content Include="app\Account\controllers\createAccountModalController.js" />
     <Content Include="app\Account\services\accountService.js" />
-    <Content Include="app\Account\views\changePassword.html" />
-    <Content Include="app\Account\views\createTestAccountView.html" />
     <Content Include="app\Account\views\manageAccount.html" />
+    <Content Include="app\Account\views\createAccountModall.html" />
     <Content Include="app\classes\classes-module.js" />
     <Content Include="app\classes\controllers\testClassCtrl.js" />
     <Content Include="app\classes\services\classesSvc.js" />
@@ -104,6 +104,7 @@
     <Content Include="app\zzzcopyMe\replace-module.js" />
     <Content Include="app\zzzcopyMe\controllers\replaceCtrl.js" />
     <Content Include="app\zzzcopyMe\services\replaceService.js" />
+    <Content Include="app\zzzcopyMe\views\viewModal.html" />
     <Content Include="app\zzzcopyMe\views\view.html" />
     <Content Include="content\customCss\customCss.css" />
     <Content Include="content\font-awesome-4.4.0\css\font-awesome.css" />
@@ -952,10 +953,10 @@
     <Content Include="scripts\jquery-2.1.4.min.map" />
     <Content Include="scripts\underscore.min.map" />
     <Content Include="scripts\version.json" />
-    <None Include="Web.Debug.config">
+    <None Include="scripts\Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-    <None Include="Web.Release.config">
+    <None Include="scripts\Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
@@ -996,7 +997,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Web.config" />
+    <Content Include="scripts\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

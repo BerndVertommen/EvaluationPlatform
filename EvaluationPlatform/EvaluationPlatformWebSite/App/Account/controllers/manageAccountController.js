@@ -1,7 +1,7 @@
 ﻿(function (module) {
     'use strict';
 
-    function manageAccountController($scope, $location, accountService, $uiModal) {
+    function manageAccountController($scope, $location, accountService, $uibModal) {
         var thiz = this;
 
         // ctrl + h replace alle controllernamen door huidige controller
@@ -13,12 +13,30 @@
         
         // in module account-module route aanmaken ($routeProvider)
 
-
-        //Variables
+       //Variables
 
         //private Functions
         
         // public functions
+
+        // selecteren van rij in accountstabel
+        $scope.selectedRow = null;
+        $scope.setSelectedAccount = function (account, index) {
+            $scope.setSelectedAccount = account;
+            $scope.selectedRow = index;
+        };
+
+        $scope.createAccountInfo = function() {
+            $uibModal.open({
+                animation: true,
+                templateUrl: '/app/Account/views/createAccountModal.html',
+                controller: 'createAccountModalController',
+                size: 'lg',
+                resolve: {
+                   // niets door te geven.
+                }
+            });
+        }
 
         //initiations
         var init = function () {

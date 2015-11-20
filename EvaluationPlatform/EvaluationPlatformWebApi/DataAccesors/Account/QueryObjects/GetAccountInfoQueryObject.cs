@@ -1,5 +1,6 @@
 ﻿using System;
 using EvaluationPlatformDataTransferModels.InformationModels;
+using EvaluationPlatformDataTransferModels.InformationModels.Account;
 using EvaluationPlatformDAL.CommandAndQuery;
 
 namespace EvaluationPlatformWebApi.DataAccesors.Account.QueryObjects

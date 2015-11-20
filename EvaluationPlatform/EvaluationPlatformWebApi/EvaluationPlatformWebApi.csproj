@@ -185,6 +185,8 @@
     <Compile Include="Controllers\ClassesController.cs" />
     <Compile Include="Controllers\EvaluationTemplateController.cs" />
     <Compile Include="Controllers\EvaluationController.cs" />
+    <Compile Include="DataAccesors\Account\CommandHandlers\CreateAccountCommandHandler.cs" />
+    <Compile Include="DataAccesors\Account\Commands\CreateAccountCommand.cs" />
     <Compile Include="DataAccesors\Account\QueryHandlers\GetAccountInfoQueryHandler.cs" />
     <Compile Include="DataAccesors\Account\QueryHandlers\GetAccountQueryHandler.cs" />
     <Compile Include="DataAccesors\Account\QueryHandlers\GetAccountsQueryHandler.cs" />
