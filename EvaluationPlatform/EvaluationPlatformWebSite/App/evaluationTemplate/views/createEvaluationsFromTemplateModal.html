@@ -12,6 +12,37 @@
                 <fieldset>
                     <div class="row">
                         <div class="col-xs-12">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="schoolYear" class="col-xs-6 control-label">Schooljaar: </label>
+                                    <div class="col-xs-6">
+                                        <div class="input-group">
+                                            <div class="input-group-btn" uib-dropdown>
+                                                <a class="btn btn-default" uib-dropdown-toggle> <i class="fa fa-caret-down"></i></a>
+                                                <ul class="uib-dropdown-menu" role="menu" aria-labelledby="schoolYear">
+                                                    <li ng-repeat="schoolYear in schoolYears">
+                                                        <a ng-click="setSchoolYear(schoolYear)">{{schoolYear.notation}}</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <input class="form-control" id="schoolYear" readonly="readonly" ng-model="selectedSchoolYear.notation" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="evaluationDate" class="col-xs-6 control-label">Evaluatie datum: </label>
+                                    <div class="col-xs-6">
+                                        <div class="input-group">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                            </span>
+                                            <input id="evaluationDate" type="text" class="form-control" uib-datepicker-popup="dd-MMMM-yyyy" ng-model="createCommand.evaluationDate" is-open="status.opened" min-date="minDate" datepicker-options="dateOptions" ng-required="true" close-text="Sluiten" clear-text="Wissen" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
 
                         </div>
 

@@ -1,9 +1,13 @@
-﻿namespace EvaluationPlatformDataTransferModels.InformationModels
+﻿using System.Reflection.Emit;
+
+namespace EvaluationPlatformDataTransferModels.InformationModels
 {
     public class SchoolYearInfo
     {
         public int StartYear { get; set; }
-        public int EndyYear { get; set; }
+        public int EndYear { get; set; }
+
+        public string Notation => $"{StartYear} - {EndYear}"; 
 
         public SchoolYearInfo()
         {

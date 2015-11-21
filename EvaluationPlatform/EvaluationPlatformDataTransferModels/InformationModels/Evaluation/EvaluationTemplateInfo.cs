@@ -8,6 +8,7 @@ namespace EvaluationPlatformDataTransferModels.InformationModels.Evaluation
 {
     public class EvaluationTemplateInfo
     {
+        public Guid Id { get; set; }
         public  CourseInfo Course { get; set; }
         public string Discription { get; set; }
         public List<EvaluationSubSectionInfo> EvaluationSubSections { get; set; }

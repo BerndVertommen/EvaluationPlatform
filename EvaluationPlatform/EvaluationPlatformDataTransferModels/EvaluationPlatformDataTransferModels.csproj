@@ -40,11 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreationModels\CreateAccountInfo.cs" />
+    <Compile Include="CreationModels\CreateEvaluationOptions.cs" />
     <Compile Include="InformationModels\Account\AccountInfo.cs" />
-    <Compile Include="InformationModels\Account\CreateAccountInfo.cs" />
     <Compile Include="InformationModels\ClassInfo.cs" />
     <Compile Include="InformationModels\CourseInfo.cs" />
-    <Compile Include="InformationModels\CreateEvaluationOptions.cs" />
     <Compile Include="InformationModels\Evaluation\EvaluationInfo.cs" />
     <Compile Include="InformationModels\Evaluation\EvaluationItemInfo.cs" />
     <Compile Include="InformationModels\Evaluation\EvaluationTemplateInfo.cs" />

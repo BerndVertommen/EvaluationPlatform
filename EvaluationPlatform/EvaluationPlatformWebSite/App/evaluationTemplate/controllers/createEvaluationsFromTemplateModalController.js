@@ -2,7 +2,7 @@
 (function (module) {
     'use strict';
 
-    function createEvaluationsFromTemplateModalController($scope, $uibModalInstance, evaluationTemplate) {
+    function createEvaluationsFromTemplateModalController($scope, $uibModalInstance, evaluationTemplate, configurationService) {
         var thiz = this;
 
         //Variables
@@ -11,6 +11,41 @@
         //private Functions
 
         // public functions
+        // datepicker
+        $scope.open = function ($event) {
+            $scope.status.opened = true;
+        };
+
+        $scope.setDate = function (year, month, day) {
+            $scope.createCommand.evaluationDate = new Date(year, month, day);
+        };
+
+        $scope.dateOptions = {
+            formatYear: 'yy',
+            startingDay: 1
+        };
+
+        // end datepicker
+
+        //schoolyear dropdown
+        $scope.status = {
+            isopen: false
+        };
+       
+
+        $scope.toggleDropdown = function ($event) {
+            $event.preventDefault();
+            $event.stopPropagation();
+            $scope.status.isopen = !$scope.status.isopen;
+        };
+
+        $scope.selectedSchoolYear= {};
+        $scope.setSchoolYear = function (schoolYear) {
+            $scope.createCommand.schoolYearId = schoolYear.id;
+            $scope.selectedSchoolYear = schoolYear;
+        };
+        //end schoolyear dropdown
+
         $scope.selectedRow = null;
 
         $scope.ok = function () {
@@ -31,9 +66,19 @@
 
         //initiations
         var init = function () {
-            $scope.evaluationTemplate = evaluationTemplate;
-            
+            configurationService.getSchoolYears().then(function(schoolYears) {
+                $scope.schoolYears = schoolYears;
+            });
 
+            // $scope.evaluationTemplate = evaluationTemplate;
+            $scope.createCommand = {
+                schoolYearId : undefined,
+                EvaluationTemplateId : evaluationTemplate.id,
+                EvaluationDate : undefined,
+                ClassId : undefined,
+                CourseId: undefined
+            }
+        
         }
 
         init();
