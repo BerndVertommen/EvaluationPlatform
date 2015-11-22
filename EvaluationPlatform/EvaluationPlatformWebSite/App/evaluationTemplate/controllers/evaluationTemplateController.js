@@ -1,7 +1,7 @@
 ﻿(function (module) {
     'use strict';
 
-    function evaluationTemplatesController($scope, $location, evaluationTemplates, $uibModal, configurationService) {
+    function evaluationTemplatesController($scope, $location, evaluationTemplates, $uibModal, classesService, configurationService) {
         var thiz = this;
 
         //Variables
@@ -23,12 +23,16 @@
                 controller: 'createEvaluationsFromTemplateModalController',
                 size: 'lg',
                 resolve: {
-                    evaluationTemplate: function () {
+                    evaluationTemplate: function() {
                         return $scope.selectedTemplate;
                     },
-                    
+                    classesForCourse: function () {
+                       return classesService.classesForCourse($scope.selectedTemplate.course.id).then(function (classes) {
+                            return classes;
+                        });
+                    }
                 }
-            });
+        });
         };
 
         //initiations

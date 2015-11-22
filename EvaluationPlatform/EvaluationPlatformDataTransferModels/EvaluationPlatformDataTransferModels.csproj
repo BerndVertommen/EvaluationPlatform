@@ -49,6 +49,7 @@
     <Compile Include="InformationModels\Evaluation\EvaluationItemInfo.cs" />
     <Compile Include="InformationModels\Evaluation\EvaluationTemplateInfo.cs" />
     <Compile Include="InformationModels\GoalInfo.cs" />
+    <Compile Include="InformationModels\GuidDto.cs" />
     <Compile Include="InformationModels\PersonInfo.cs" />
     <Compile Include="InformationModels\PrimaryTeacherInfo.cs" />
     <Compile Include="InformationModels\ScaleInfo.cs" />

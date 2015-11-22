@@ -26,8 +26,8 @@
             });
         };
 
-        thiz.createEvaluationFromTemplate = function () {
-            return $http.get(baseWebApiUrl + 'evaluationTemplate/createEvaluationFromTemplate').then(function (result) {
+        thiz.createEvaluationFromTemplate = function (command) {
+            return $http.post(baseWebApiUrl + 'evaluationTemplate/createEvaluationFromTemplate',command).then(function (result) {
                 return result.data;
             });
         };

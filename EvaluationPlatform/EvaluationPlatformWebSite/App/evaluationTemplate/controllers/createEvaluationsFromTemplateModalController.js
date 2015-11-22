@@ -2,7 +2,7 @@
 (function (module) {
     'use strict';
 
-    function createEvaluationsFromTemplateModalController($scope, $uibModalInstance, evaluationTemplate) {
+    function createEvaluationsFromTemplateModalController($scope, $uibModalInstance,evaluationTemplateService, evaluationTemplate, classesForCourse) {
         var thiz = this;
 
         //Variables
@@ -39,42 +39,35 @@
             $scope.status.isopen = !$scope.status.isopen;
         };
 
-        $scope.selectedSchoolYear = {};
-        $scope.setSchoolYear = function (schoolYear) {
-            $scope.createCommand.schoolYearId = schoolYear.id;
-            $scope.selectedSchoolYear = schoolYear;
+        $scope.selectedClass = {};
+        $scope.setClass = function (classForCourse) {
+            $scope.createCommand.classId = classForCourse.id;
+            $scope.selectedClass = classForCourse;
         };
         //end schoolyear dropdown
 
-        $scope.selectedRow = null;
+      $scope.ok = function () {
+          //make call here
+          evaluationTemplateService.createEvaluationFromTemplate($scope.createCommand).then(function() {
+              $uibModalInstance.dismiss('ok');
+          });
 
-        $scope.ok = function () {
-            if (angular.isUndefined($scope.generalOptions.discription) || $scope.generalOptions.discription === null || $scope.generalOptions.discription === "") {
-                return; // replace with error method
-            }
-            if (angular.isUndefined($scope.generalOptions.course) || $scope.generalOptions.course === null) {
-                return; // replace with error method
-            }
-            $uibModalInstance.close($scope.evaluationTemplate);
-        };
+      };
 
         $scope.cancel = function () {
             $uibModalInstance.dismiss('cancel');
         };
-
-
-
+        
         //initiations
         var init = function () {
+            $scope.classesForCourse = classesForCourse;
           
             // $scope.evaluationTemplate = evaluationTemplate;
             $scope.createCommand = {
-                schoolYearId: undefined,
                 EvaluationTemplateId: evaluationTemplate.id,
                 EvaluationDate: undefined,
-                ClassId: undefined,
-                CourseId: undefined
-            }
+                classId: undefined
+               }
 
         }
 

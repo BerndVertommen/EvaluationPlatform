@@ -20,6 +20,8 @@ namespace EvaluationPlatformWebApi.DataAccesors.EvaluationTemplates
         {
             Teacher teacher = Database.GetTeacherForAccount(queryObject.AccountId);
 
+
+
             return Mapper.Map<IEnumerable<EvaluationTemplate>,IEnumerable<EvaluationTemplateInfo>>(teacher.EvaluationTemplates);
         }
     }

@@ -23,9 +23,10 @@ namespace EvaluationPlatformWebApi.DataAccesors.Evaluation.CommandHandlers
             }
 
             var klas = Database.Classes.FirstOrDefault(c => c.Id == commandObject.ClassId);
-            var course = Database.Courses.FirstOrDefault(c => c.Id == commandObject.CourseId);
+            
             var evaluationTemplate =
                 Database.EvaluationTemplates.FirstOrDefault(e => e.Id == commandObject.EvaluationTemplateId);
+            var course = Database.Courses.FirstOrDefault(c => c.Id == evaluationTemplate.Course.Id);
             var teacher = Database.Teachers.FirstOrDefault(t => t.Id == commandObject.TeacherId.Value);
 
 

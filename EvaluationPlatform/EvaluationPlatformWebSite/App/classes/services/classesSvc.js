@@ -1,4 +1,4 @@
-﻿(function (module) {
+﻿(function(module) {
     'use strict';
 
     function classesService($http, configurationService) {
@@ -11,15 +11,21 @@
 
         // public functions
 
-        thiz.classesForTeacher = function () {
-            return $http.get(baseWebApiUrl + 'class/classesForTeacher').then(function (result) {
+        thiz.classesForTeacher = function() {
+            return $http.get(baseWebApiUrl + 'class/classesForTeacher').then(function(result) {
+                return result.data;
+            });
+        }
+
+        thiz.classesForCourse = function(courseId) {
+            return $http.post(baseWebApiUrl + 'class/classesForCourse', { 'id': courseId }).then(function(result) {
                 return result.data;
             });
         }
 
         //initiations
-        
-    }
+
+    };
 
     module.service('classesService', classesService);
 })(angular.module('app.classes'))

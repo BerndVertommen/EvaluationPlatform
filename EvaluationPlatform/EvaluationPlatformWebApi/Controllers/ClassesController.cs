@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Http;
 using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDAL.CommandAndQuery;
@@ -11,10 +12,10 @@ namespace EvaluationPlatformWebApi.Controllers
     [RoutePrefix("api/class")]
     public class ClassesController : BaseWebApiController
     {
-        public ClassesController(IQueryProccesor queryProccesor, ICommandProcessor commandProcessor):base(commandProcessor,queryProccesor)
+        public ClassesController(IQueryProccesor queryProccesor, ICommandProcessor commandProcessor) : base(commandProcessor, queryProccesor)
         {
         }
-        
+
         [CustomAutorize(AccountRoleType.UserRole)]
         [Route("classesForTeacher")]
         [HttpGet]
@@ -23,6 +24,16 @@ namespace EvaluationPlatformWebApi.Controllers
             var accountInfo = GetAccountInfo();
 
             return QueryProccesor.Execute(new ClassesForTeacherQueryObject(accountInfo.TeacherId));
+        }
+
+
+        [CustomAutorize(AccountRoleType.UserRole)]
+        [Route("classesForCourse")]
+        [HttpPost]
+        public IEnumerable<ClassInfo> ClassesForCourse( GuidDto guidDto)
+        {
+            //var guid = Guid.Parse(courseId);
+            return QueryProccesor.Execute(new ClassesForCourseQueryObject(guidDto.Id));
         }
     }
 }

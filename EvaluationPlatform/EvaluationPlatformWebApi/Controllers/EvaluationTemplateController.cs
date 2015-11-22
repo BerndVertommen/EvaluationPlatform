@@ -45,7 +45,7 @@ namespace EvaluationPlatformWebApi.Controllers
         [HttpGet]
         public IEnumerable<EvaluationTemplateInfo> GetEvaluationTemplates()
         {
-
+            
             return QueryProccesor.Execute(new GetEvaluationTemplatesQueryObject(AccountId));
         }
 

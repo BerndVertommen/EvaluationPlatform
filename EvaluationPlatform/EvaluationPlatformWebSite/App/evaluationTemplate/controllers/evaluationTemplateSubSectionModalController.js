@@ -18,10 +18,14 @@
         
         // modal functions
         $scope.ok = function () {
+            if (angular.isUndefined($scope.newEvaluationSubSection.weight) || $scope.newEvaluationSubSection.weight === null) {
+                return; // error message here : no weigth entered
+            }
+
             if (angular.isUndefined($scope.isEditing) || $scope.isEditing === false) {
                 thiz.addnewEvaluationSubSection();
             }
-
+           
             $uibModalInstance.close($scope.evaluationSubSections);
         };
 

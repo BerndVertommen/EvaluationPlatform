@@ -7,7 +7,7 @@ namespace EvaluationPlatformWebApi.DataAccesors.EvaluationTemplates
 {
     public class GetEvaluationTemplatesQueryObject : IQueryObject<IEnumerable<EvaluationTemplateInfo>>
     {
-        public Guid? AccountId { get; set; }
+        public Guid AccountId { get; set; }
 
         public GetEvaluationTemplatesQueryObject(Guid accountId)
         {

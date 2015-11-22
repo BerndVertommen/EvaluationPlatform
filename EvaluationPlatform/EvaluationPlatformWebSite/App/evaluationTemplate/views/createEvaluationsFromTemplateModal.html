@@ -13,23 +13,23 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <form class="form-horizontal">
-                                <!--<div class="form-group">
-                                    <label for="schoolYear" class="col-xs-6 control-label">Schooljaar: </label>
+                                <div class="form-group">
+                                    <label for="classesForCourse" class="col-xs-6 control-label">Klassen: </label>
                                     <div class="col-xs-6">
                                         <div class="input-group">
                                             <div class="input-group-btn" uib-dropdown>
                                                 <a class="btn btn-default" uib-dropdown-toggle> <i class="fa fa-caret-down"></i></a>
-                                                <ul class="uib-dropdown-menu" role="menu" aria-labelledby="schoolYear">
-                                                    <li ng-repeat="schoolYear in schoolYears">
-                                                        <a ng-click="setSchoolYear(schoolYear)">{{schoolYear.notation}}</a>
+                                                <ul class="uib-dropdown-menu" role="menu" aria-labelledby="classesForCourse">
+                                                    <li ng-repeat="class in classesForCourse">
+                                                        <a ng-click="setClass(class)">{{class.discription}}</a>
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <input class="form-control" id="schoolYear" readonly="readonly" ng-model="selectedSchoolYear.notation" />
+                                            <input class="form-control" id="classesForCourse" readonly="readonly" ng-model="selectedClass.discription" />
 
                                         </div>
                                     </div>
-                                </div>-->
+                                </div>
                                 <div class="form-group">
                                     <label for="evaluationDate" class="col-xs-6 control-label">Evaluatie datum: </label>
                                     <div class="col-xs-6">
