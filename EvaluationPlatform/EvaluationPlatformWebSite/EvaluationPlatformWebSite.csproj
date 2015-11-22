@@ -70,6 +70,8 @@
     <Content Include="app\classes\services\classesSvc.js" />
     <Content Include="app\classes\views\testClassView.html" />
     <Content Include="app\configuration\services\configurationService.js" />
+    <Content Include="app\dashboard\controllers\partials\calendarController.js" />
+    <Content Include="app\dashboard\views\partials\calendarPartial.html" />
     <Content Include="app\evaluationTemplate\controllers\createEvaluationTemplateCtrl.js" />
     <Content Include="app\evaluationTemplate\controllers\evaluationTemplateSubSectionModalController.js" />
     <Content Include="app\evaluationTemplate\controllers\evaluationTemplateGoalsModalController.js" />
@@ -101,6 +103,10 @@
     <Content Include="app\Student\student-module.js" />
     <Content Include="app\Student\services\studentService.js" />
     <Content Include="app\Student\views\createStudent.html" />
+    <Content Include="app\dashboard\controllers\dashboardController.js" />
+    <Content Include="app\dashboard\dashboard-module.js" />
+    <Content Include="app\dashboard\services\dashboardService.js" />
+    <Content Include="app\dashboard\views\dashboard.html" />
     <Content Include="app\zzzcopyMe\replace-module.js" />
     <Content Include="app\zzzcopyMe\controllers\replaceCtrl.js" />
     <Content Include="app\zzzcopyMe\services\replaceService.js" />
@@ -1006,6 +1012,7 @@
     <Folder Include="app\evaluation\controllers\" />
     <Folder Include="app\evaluation\views\" />
     <Folder Include="app\home\services\" />
+    <Folder Include="scripts\angular-ui\calendar\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

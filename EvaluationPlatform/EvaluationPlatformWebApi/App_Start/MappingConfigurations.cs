@@ -9,7 +9,7 @@ namespace EvaluationPlatformWebApi.App_Start
 {
     public class MappingConfigurations
     {
-        private static readonly string[] DtoSuffixes = { "Info", "SummaryInfo", "Message", "Dto", "ViewInfo" };
+        private static readonly string[] DtoSuffixes = { "Info", "SummaryInfo", "Message", "Dto", "ViewInfo","BaseInfo" };
 
         public static void Configure(Assembly sourceAssembly, Assembly destinationAssembly, string[] domainNamespaces)
         {

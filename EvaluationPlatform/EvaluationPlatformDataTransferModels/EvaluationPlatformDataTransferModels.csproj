@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseInfoModels\EvaluationBaseInfo.cs" />
     <Compile Include="CreationModels\CreateAccountInfo.cs" />
     <Compile Include="CreationModels\CreateEvaluationOptions.cs" />
     <Compile Include="InformationModels\Account\AccountInfo.cs" />

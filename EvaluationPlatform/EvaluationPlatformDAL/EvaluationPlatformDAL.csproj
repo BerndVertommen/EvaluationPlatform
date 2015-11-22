@@ -146,6 +146,10 @@
     <Compile Include="Migrations\201511221047383_AddedCoursesToClass.Designer.cs">
       <DependentUpon>201511221047383_AddedCoursesToClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511221810533_RenamedCourceToCourse.cs" />
+    <Compile Include="Migrations\201511221810533_RenamedCourceToCourse.Designer.cs">
+      <DependentUpon>201511221810533_RenamedCourceToCourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Generators\StudentGenerator.cs" />
@@ -209,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511221047383_AddedCoursesToClass.resx">
       <DependentUpon>201511221047383_AddedCoursesToClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511221810533_RenamedCourceToCourse.resx">
+      <DependentUpon>201511221810533_RenamedCourceToCourse.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -17,7 +17,7 @@ namespace EvaluationPlatformWebApi.DataAccesors.Evaluation.CommandHandlers
         public override void Handle(CreateEvaluationCommand commandObject)
         {
             //check if the template is not already used
-            if (Database.Evaluations.Any(e => e.EvaluationTemplate.Id == commandObject.EvaluationTemplateId && e.EvaluationDate == commandObject.EvaluationDate && e.Cource.Id == commandObject.CourseId))
+            if (Database.Evaluations.Any(e => e.EvaluationTemplate.Id == commandObject.EvaluationTemplateId && e.EvaluationDate == commandObject.EvaluationDate && e.Course.Id == commandObject.CourseId))
             {
                 throw new BusinessExeption(BusinessExeption.EvaluationExitst);
             }
