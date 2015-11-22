@@ -2,7 +2,7 @@
 (function (module) {
     'use strict';
 
-    function createEvaluationsFromTemplateModalController($scope, $uibModalInstance, evaluationTemplate, configurationService) {
+    function createEvaluationsFromTemplateModalController($scope, $uibModalInstance, evaluationTemplate) {
         var thiz = this;
 
         //Variables
@@ -31,7 +31,7 @@
         $scope.status = {
             isopen: false
         };
-       
+
 
         $scope.toggleDropdown = function ($event) {
             $event.preventDefault();
@@ -39,7 +39,7 @@
             $scope.status.isopen = !$scope.status.isopen;
         };
 
-        $scope.selectedSchoolYear= {};
+        $scope.selectedSchoolYear = {};
         $scope.setSchoolYear = function (schoolYear) {
             $scope.createCommand.schoolYearId = schoolYear.id;
             $scope.selectedSchoolYear = schoolYear;
@@ -62,23 +62,20 @@
             $uibModalInstance.dismiss('cancel');
         };
 
-      
+
 
         //initiations
         var init = function () {
-            configurationService.getSchoolYears().then(function(schoolYears) {
-                $scope.schoolYears = schoolYears;
-            });
-
+          
             // $scope.evaluationTemplate = evaluationTemplate;
             $scope.createCommand = {
-                schoolYearId : undefined,
-                EvaluationTemplateId : evaluationTemplate.id,
-                EvaluationDate : undefined,
-                ClassId : undefined,
+                schoolYearId: undefined,
+                EvaluationTemplateId: evaluationTemplate.id,
+                EvaluationDate: undefined,
+                ClassId: undefined,
                 CourseId: undefined
             }
-        
+
         }
 
         init();

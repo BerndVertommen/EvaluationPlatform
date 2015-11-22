@@ -44,14 +44,20 @@ namespace EvaluationPlatformDAL.Migrations
             //teachers
             Teacher teacher1 = new Teacher(new Person( "Sneewbal", "VanMechanica" ,new DateTime(1970,5,10)));
             teacher1.AddClass(class1);
-            teacher1.AddCourse(new Course("Mechanica", schoolyearNow, teacher1, fourPointScale, studyPlan1));
+            var courseMechanica = new Course("Mechanica", schoolyearNow, teacher1, fourPointScale, studyPlan1);
+            teacher1.AddCourse(courseMechanica);
             context.Teachers.Add(teacher1);
 
             Teacher teacher2 = new Teacher(new Person("Test", "er", new DateTime(1970, 5, 10)));
             teacher2.AddClass(class1);
-            teacher2.AddCourse(new Course("TesterCource", schoolyearNow, teacher2, fourPointScale, studyPlan1));
+            var courseTester = new Course("TesterCource", schoolyearNow, teacher2, fourPointScale, studyPlan1);
+            teacher2.AddCourse(courseTester);
             context.Teachers.Add(teacher2);
 
+
+            class1.AddCourse(courseMechanica);
+            class1.AddCourse(courseTester);
+           
             CreateRoles(context);
             CreateAccounts(context, teacher2);
 

@@ -5,6 +5,7 @@ using System.Web;
 using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDAL;
 using EvaluationPlatformDAL.CommandAndQuery;
+using EvaluationPlatformDomain.Models;
 using EvaluationPlatformWebApi.DataAccesors.General.QueryObjects;
 
 namespace EvaluationPlatformWebApi.DataAccesors.General.QueryHandlers
@@ -17,11 +18,7 @@ namespace EvaluationPlatformWebApi.DataAccesors.General.QueryHandlers
 
         public override IEnumerable<SchoolYearInfo> Handle(GetSchoolYearsQueryObject queryObject)
         {
-            var now = DateTime.Now;
-            // When before August return the previous year as startyear after August return the current year as startyear
-            var thisYearStartYear = now.Month < 8 ? now.AddYears(-1).Year : now.Year;
-
-            var schoolyears = Database.SchoolYears.Where(s => s.StartYear == thisYearStartYear).ToList();
+         var schoolyears = Database.SchoolYears.Where(s => s.StartYear == SchoolYear.GetStartYearThisSchoolYear()).ToList();
 
             return AutoMapper.Mapper.Map<IEnumerable<SchoolYearInfo>>(schoolyears);
         }

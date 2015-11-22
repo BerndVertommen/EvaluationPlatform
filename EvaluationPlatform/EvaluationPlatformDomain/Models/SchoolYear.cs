@@ -31,5 +31,12 @@ namespace EvaluationPlatformDomain.Models
             StartYear = DateTime.Now.Year;
             EndYear = StartYear + 1;
         }
+
+        public static int GetStartYearThisSchoolYear()
+        {
+            var now = DateTime.Now;
+            // When before August return the previous year as startyear after August return the current year as startyear
+            return now.Month < 8 ? now.AddYears(-1).Year : now.Year;
+        }
     }
 }

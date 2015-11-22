@@ -1,26 +1,28 @@
-﻿using System.Web.Http;
+﻿using System.Collections.Generic;
+using System.Web.Http;
 using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDAL.CommandAndQuery;
-using EvaluationPlatformDomain.Models;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformWebApi.Authentication;
-using EvaluationPlatformWebApi.DataAccesors.Class;
+using EvaluationPlatformWebApi.DataAccesors.Class.QueryObjects;
 
 namespace EvaluationPlatformWebApi.Controllers
 {
     [RoutePrefix("api/class")]
     public class ClassesController : BaseWebApiController
     {
-        public ClassesController()
+        public ClassesController(IQueryProccesor queryProccesor, ICommandProcessor commandProcessor):base(commandProcessor,queryProccesor)
         {
         }
-
-        [CustomAutorize(AccountRoleType.Admin)]
-        [Route("test")]
+        
+        [CustomAutorize(AccountRoleType.UserRole)]
+        [Route("classesForTeacher")]
         [HttpGet]
-        public ClassInfo GetClassViewInfo()
+        public IEnumerable<ClassInfo> ClassesForTeacher()
         {
-            return QueryProccesor.Execute(new ClassViewInfoQueryObject("1NF", new SchoolYear(2015, 2016)));
+            var accountInfo = GetAccountInfo();
+
+            return QueryProccesor.Execute(new ClassesForTeacherQueryObject(accountInfo.TeacherId));
         }
     }
 }

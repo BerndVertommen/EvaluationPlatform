@@ -11,13 +11,14 @@
 
         // public functions
 
-        //initiations
-
-        thiz.getTestClass = function () {
-            return $http.get(baseWebApiUrl + 'class/test').then(function (result) {
+        thiz.classesForTeacher = function () {
+            return $http.get(baseWebApiUrl + 'class/classesForTeacher').then(function (result) {
                 return result.data;
             });
         }
+
+        //initiations
+        
     }
 
     module.service('classesService', classesService);

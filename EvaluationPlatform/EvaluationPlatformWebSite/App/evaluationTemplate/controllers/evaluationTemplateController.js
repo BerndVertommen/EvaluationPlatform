@@ -1,7 +1,7 @@
 ﻿(function (module) {
     'use strict';
 
-    function evaluationTemplatesController($scope, $location, evaluationTemplates, $uibModal) {
+    function evaluationTemplatesController($scope, $location, evaluationTemplates, $uibModal, configurationService) {
         var thiz = this;
 
         //Variables
@@ -25,7 +25,8 @@
                 resolve: {
                     evaluationTemplate: function () {
                         return $scope.selectedTemplate;
-                    }
+                    },
+                    
                 }
             });
         };

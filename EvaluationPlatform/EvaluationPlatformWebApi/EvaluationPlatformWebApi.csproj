@@ -251,6 +251,8 @@
     <Compile Include="DataAccesors\Account\QueryObjects\GetAccountsQueryObject.cs" />
     <Compile Include="DataAccesors\Class\ClassViewInfoQueryObject.cs" />
     <Compile Include="DataAccesors\Class\ClassViewInfoQueryHandler.cs" />
+    <Compile Include="DataAccesors\Class\QueryHandlers\ClassesForTeacherQueryHandler.cs" />
+    <Compile Include="DataAccesors\Class\QueryObjects\ClassesForTeacherQueryObject.cs" />
     <Compile Include="DataAccesors\EvaluationTemplates\CreateEvaluationTemplateCommand.cs" />
     <Compile Include="DataAccesors\EvaluationTemplates\CreateEvaluationTemplateCommandHandler.cs" />
     <Compile Include="DataAccesors\EvaluationTemplates\GetCreateEvaluationOptionsQueryObject.cs" />

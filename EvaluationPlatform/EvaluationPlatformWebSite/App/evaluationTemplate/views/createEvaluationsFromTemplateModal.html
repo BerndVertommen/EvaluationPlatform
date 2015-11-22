@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <form class="form-horizontal">
-                                <div class="form-group">
+                                <!--<div class="form-group">
                                     <label for="schoolYear" class="col-xs-6 control-label">Schooljaar: </label>
                                     <div class="col-xs-6">
                                         <div class="input-group">
@@ -29,13 +29,13 @@
 
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
                                 <div class="form-group">
                                     <label for="evaluationDate" class="col-xs-6 control-label">Evaluatie datum: </label>
                                     <div class="col-xs-6">
                                         <div class="input-group">
                                             <span class="input-group-btn">
-                                                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                                                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="fa fa-calendar"></i></button>
                                             </span>
                                             <input id="evaluationDate" type="text" class="form-control" uib-datepicker-popup="dd-MMMM-yyyy" ng-model="createCommand.evaluationDate" is-open="status.opened" min-date="minDate" datepicker-options="dateOptions" ng-required="true" close-text="Sluiten" clear-text="Wissen" />
                                         </div>

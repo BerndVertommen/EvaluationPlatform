@@ -13,20 +13,27 @@ namespace EvaluationPlatformDomain.Models
     {
         public virtual SchoolYear SchoolYear { get; set; }
 
-        public virtual ICollection<Student> Students { get; set; }
+        public virtual ICollection<Student> Students { get; private set; }
 
         public virtual string Discription { get; set; }
 
+        public virtual ICollection<Course> Courses { get; private set; }
+
         public Class()
         {
-            
+            Courses = new List<Course>();
         }
 
-        public Class(string discription, SchoolYear schoolYear, ICollection<Student> students )
+        public Class(string discription, SchoolYear schoolYear, ICollection<Student> students) : this()
         {
             Discription = discription;
             SchoolYear = schoolYear;
             Students = students;
+        }
+
+        public void AddCourse(Course courseMechanica)
+        {
+            Courses.Add(courseMechanica);
         }
     }
 }

@@ -13,7 +13,10 @@ namespace EvaluationPlatformDomain.Models
         public virtual string Discription { get; set; }
         public virtual StudyPlan StudyPlan { get; set; }
 
-        [NotMapped]
+        // do not add to this colelction property exists to let EF generate coupling table
+        public virtual ICollection<Class> Classes { get; private set; }
+       
+        [NotMapped] // EntityFramework ignores this
         public List<Goal> GoalsForCourse
         {
             get
