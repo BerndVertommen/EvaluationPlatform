@@ -1,20 +1,21 @@
 ﻿angular.module('app.evaluation', ['ngRoute'])
-    .config(function ($routeProvider) {
+    .config(function ($routeProvider,$route, evaluationService) {
         "use strict";
 
         // define routes
 
-        //$routeProvider
-        //  .when('/createEvaluationTemplate', {
-        //      templateUrl: '/app/evaluationTemplate/views/createEvaluation.html',
-        //      controller: 'createEvaluationTemplateController',
-        //      resolve: {
-        //          /*ngInject*/
-        //          createEvaluationOptions: function (evaluationTemplateService) {
-        //              return evaluationTemplateService.getCreateEvaluationOptions();
-        //          }
-        //      }
-        //  });
+        $routeProvider
+          .when('/evaluation/{id}', {
+              templateUrl: '/app/evaluation/views/evaluation.html',
+              controller: 'evaluationController',
+              resolve: {
+                  /*ngInject*/
+                  createEvaluationOptions: function (evaluationService) {
+                      var id = $route.current.params("id");
+                      return evaluationService.getEvaluations(id);
+                  }
+              }
+          });
 
        
 

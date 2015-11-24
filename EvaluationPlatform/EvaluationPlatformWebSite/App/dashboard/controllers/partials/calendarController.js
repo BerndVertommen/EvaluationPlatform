@@ -9,7 +9,16 @@
         //private Functions
         
         // public functions
-       
+        $scope.selectedRow = null;
+
+        $scope.setSelectedEvaluation = function (evaluation, index) {
+            $scope.selectedEvaluation = evaluation;
+            $scope.selectedRow = index;
+        };
+
+        $scope.startEvaluation = function() {
+            $location.Path("/evaluation/" + $scope.selectedEvaluation.id);
+        };
 
      
         //initiations

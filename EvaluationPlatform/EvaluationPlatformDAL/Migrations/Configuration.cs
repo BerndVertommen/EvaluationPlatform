@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
@@ -16,6 +17,7 @@ namespace EvaluationPlatformDAL.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            
         }
 
         protected override void Seed(EPDatabase context)

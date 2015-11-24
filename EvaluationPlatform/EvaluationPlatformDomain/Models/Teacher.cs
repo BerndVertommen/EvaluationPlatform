@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace EvaluationPlatformDomain.Models
 {
@@ -46,6 +47,25 @@ namespace EvaluationPlatformDomain.Models
         public void AddEvaluationTemplate(EvaluationTemplate evaluationTemplate)
         {
             EvaluationTemplates.Add(evaluationTemplate);
+        }
+
+        public void AddNewEvaluations(Class klas, EvaluationTemplate evaluationTemplate, DateTime evaluationDate, Course course)
+        {
+            Guid bundleId = Guid.NewGuid();
+            foreach (var student in klas.Students)
+            {
+                List<EvaluationItem> evaluationItems = new List<EvaluationItem>();
+                foreach (var subsection in evaluationTemplate.EvaluationSubSections)
+                {
+                    foreach (Goal goal in subsection.Goals)
+                    {
+                        evaluationItems.Add(new EvaluationItem(goal));
+                    }
+                }
+
+                AddEvaluation(new EvaluationPlatformDomain.Models.Evaluation(evaluationTemplate, student, evaluationDate, course, evaluationItems, "", bundleId));
+            }
+
         }
     }
 }

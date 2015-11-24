@@ -6,6 +6,7 @@ using EvaluationPlatformDataTransferModels.BaseInfoModels;
 using EvaluationPlatformDAL;
 using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformWebApi.DataAccesors.Evaluation.QueryObjects;
+using Microsoft.Ajax.Utilities;
 
 namespace EvaluationPlatformWebApi.DataAccesors.Evaluation.QueryHandlers
 {
@@ -19,7 +20,7 @@ namespace EvaluationPlatformWebApi.DataAccesors.Evaluation.QueryHandlers
         {
             var teacher = Database.GetTeacherForAccount(queryObject.AccountId);
 
-            var evaluations = teacher.Evaluations.Where(e => e.EvaluationDate > DateTime.Now);
+            var evaluations = teacher.Evaluations.Where(e => e.EvaluationDate > DateTime.Now).GroupBy(e => e.BundleId, (key,group )=> group.First());
 
             return Mapper.Map<IEnumerable<EvaluationBaseInfo>>(evaluations);
         }

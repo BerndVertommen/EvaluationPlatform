@@ -1,16 +1,27 @@
 ﻿<div class="col-xs-12 col-md-6" ng-controller="calendarController">
-    <table class="table table-striped table-bordered table-responsive">
-        <thead>
-        <th>Datum</th>
-        <th>Omschrijving</th>
-        <th>Vak</th>
-        </thead>
-        <tbody>
-            <tr ng-repeat="evaluation in plannedEvaluations">
-                <td>{{evaluation.evaluationDate | date }}</td>
-                <td>{{evaluation.discription}}</td>
-                <td>{{evaluation.course.discription }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <!--mainHeading-->
+            <div class="panel-title">
+                Geplande evaluaties
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--mainBody-->
+            <table class="table table-striped table-responsive table-hover">
+                <thead>
+                <th>Datum</th>
+                <th>Omschrijving</th>
+                <th>Vak</th>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="evaluation in plannedEvaluations" ng-click="setSelectedEvaluation(evaluation)">
+                        <td>{{evaluation.evaluationDate | date }}</td>
+                        <td>{{evaluation.discription}}</td>
+                        <td>{{evaluation.course.discription }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>

@@ -29,21 +29,7 @@ namespace EvaluationPlatformWebApi.DataAccesors.Evaluation.CommandHandlers
             var course = Database.Courses.FirstOrDefault(c => c.Id == evaluationTemplate.Course.Id);
             var teacher = Database.Teachers.FirstOrDefault(t => t.Id == commandObject.TeacherId.Value);
 
-
-            foreach (var student in klas.Students)
-            {
-                List<EvaluationItem> evaluationItems = new List<EvaluationItem>();
-                foreach (var subsection in evaluationTemplate.EvaluationSubSections)
-                {
-                    foreach (Goal goal in subsection.Goals)
-                    {
-                        evaluationItems.Add(new EvaluationItem(goal));
-                    }
-                }
-
-                teacher.AddEvaluation(new EvaluationPlatformDomain.Models.Evaluation(evaluationTemplate, student, commandObject.EvaluationDate, course, evaluationItems, ""));
-            }
-
+            teacher?.AddNewEvaluations(klas, evaluationTemplate,commandObject.EvaluationDate,course);
         }
     }
 }
