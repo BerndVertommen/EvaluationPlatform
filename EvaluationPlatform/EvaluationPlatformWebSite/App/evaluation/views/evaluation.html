@@ -12,34 +12,31 @@
         <div class="panel-body">
             <!--mainBody-->
             <!--students-->
-            <div class="col-xs-4 col-md-2">
-                <table class="table-hover">
-                    <thead>
-                    <tr>
-                        <th class="text-center"></th>
-                        <th class="text-center"></th>
-                        <th>{{classTitle}}</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr  ng-repeat="evaluation in evaluations">
-                        <td  class="text-center"></td>
-                        <td  class="text-center"></td>
-                        <td><a class="btn btn-default">{{evaluation.student.person.firstName}} {{evaluation.student.person.lastName}}</a></td>
+            <div class="row">
+                <div class="col-xs-4 col-md-2">
+                    <table class="table-responsive">
+                        <thead>
+                            <tr>
+                                <th class="text-center"></th>
+                                <th class="text-center"></th>
+                                <th>{{classTitle}}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="evaluation in evaluations">
+                                <td class="text-center"></td>
+                                <td class="text-center"></td>
+                                <td><a class="btn btn-default" style="width: 100%">{{evaluation.student.person.firstName}} {{evaluation.student.person.lastName}}</a></td>
 
-                    </tr>
-                    </tbody>
-                </table>
-                <!--<uib-tabset vertical="false" type="pills">
-                    <uib-tab heading="">{{classTitle}}></uib-tab>
-                    <uib-tab heading="{{evaluation.student.person.firstName}} {{evaluation.student.person.lastName}}"></uib-tab>
-                </uib-tabset>-->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--evaluation-->
+                <div class="col-xs-8 col-md-10">
+                    test
+                </div>
             </div>
-            <!--evaluation-->
-            <div class="col-xs-8 col-md-10">
-
-            </div>
-
         </div>
         <div class="panel-footer">
             <!--mainFooter-->
