@@ -14,7 +14,7 @@ namespace EvaluationPlatformDAL.Migrations
                 c => new
                     {
                         Id = c.Guid(nullable: false),
-                        Discription = c.String(),
+                        Description = c.String(),
                         PrimaryTeacher_Id = c.Guid(),
                         SchoolYear_Id = c.Guid(),
                     })
@@ -30,7 +30,7 @@ namespace EvaluationPlatformDAL.Migrations
                     {
                         Id = c.Guid(nullable: false),
                         EvaluationDate = c.DateTime(nullable: false),
-                        Discription = c.String(),
+                        Description = c.String(),
                         Cource_Id = c.Guid(),
                         Student_Id = c.Guid(),
                         Teacher_Id = c.Guid(),
@@ -48,7 +48,7 @@ namespace EvaluationPlatformDAL.Migrations
                 c => new
                     {
                         Id = c.Guid(nullable: false),
-                        Discription = c.String(),
+                        Description = c.String(),
                         Goal_Id = c.Guid(),
                         Evaluation_Id = c.Guid(),
                     })
@@ -63,7 +63,7 @@ namespace EvaluationPlatformDAL.Migrations
                 c => new
                     {
                         Id = c.Guid(nullable: false),
-                        Discription = c.String(),
+                        Description = c.String(),
                         GeneralGoal_Id = c.Guid(),
                     })
                 .PrimaryKey(t => t.Id)
@@ -75,7 +75,7 @@ namespace EvaluationPlatformDAL.Migrations
                 c => new
                     {
                         Id = c.Guid(nullable: false),
-                        Discription = c.String(),
+                        Description = c.String(),
                         Teacher_Id = c.Guid(),
                     })
                 .PrimaryKey(t => t.Id)
@@ -88,21 +88,21 @@ namespace EvaluationPlatformDAL.Migrations
                     {
                         Id = c.Guid(nullable: false),
                         GoalNumber = c.Int(nullable: false),
-                        Discription = c.String(),
+                        Description = c.String(),
                         StudyPlan_Id = c.Guid(),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.StudyPlans", t => t.StudyPlan_Id)
                 .Index(t => t.StudyPlan_Id);
             
-            AddColumn("dbo.Classes", "Discription", c => c.String());
-            AddColumn("dbo.SchoolYears", "Discription", c => c.String());
+            AddColumn("dbo.Classes", "Description", c => c.String());
+            AddColumn("dbo.SchoolYears", "Description", c => c.String());
             AddColumn("dbo.Students", "FirstName", c => c.String());
             AddColumn("dbo.Students", "LastName", c => c.String());
-            AddColumn("dbo.Students", "Discription", c => c.String());
+            AddColumn("dbo.Students", "Description", c => c.String());
             AddColumn("dbo.Teachers", "FirstName", c => c.String());
             AddColumn("dbo.Teachers", "LastName", c => c.String());
-            AddColumn("dbo.Teachers", "Discription", c => c.String());
+            AddColumn("dbo.Teachers", "Description", c => c.String());
             DropColumn("dbo.Classes", "Name");
             DropColumn("dbo.Students", "Person_Id");
             DropTable("dbo.People");
@@ -142,14 +142,14 @@ namespace EvaluationPlatformDAL.Migrations
             DropIndex("dbo.Evaluations", new[] { "Cource_Id" });
             DropIndex("dbo.Cources", new[] { "SchoolYear_Id" });
             DropIndex("dbo.Cources", new[] { "PrimaryTeacher_Id" });
-            DropColumn("dbo.Teachers", "Discription");
+            DropColumn("dbo.Teachers", "Description");
             DropColumn("dbo.Teachers", "LastName");
             DropColumn("dbo.Teachers", "FirstName");
-            DropColumn("dbo.Students", "Discription");
+            DropColumn("dbo.Students", "Description");
             DropColumn("dbo.Students", "LastName");
             DropColumn("dbo.Students", "FirstName");
-            DropColumn("dbo.SchoolYears", "Discription");
-            DropColumn("dbo.Classes", "Discription");
+            DropColumn("dbo.SchoolYears", "Description");
+            DropColumn("dbo.Classes", "Description");
             DropTable("dbo.GeneralGoals");
             DropTable("dbo.StudyPlans");
             DropTable("dbo.Goals");

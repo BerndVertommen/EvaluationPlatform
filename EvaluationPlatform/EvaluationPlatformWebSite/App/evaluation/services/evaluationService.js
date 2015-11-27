@@ -8,8 +8,12 @@
         //private Functions
 
         // public functions
-       
 
+        thiz.evaluationsForBundle = function (bundleId) {
+            return $http.post(baseWebApiUrl + 'evaluation/evaluationsForBundle', { 'id': bundleId }).then(function (result) {
+                return result.data;
+            });
+        };
       
 
         //initiations

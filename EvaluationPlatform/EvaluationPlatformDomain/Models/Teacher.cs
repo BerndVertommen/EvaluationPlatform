@@ -63,7 +63,7 @@ namespace EvaluationPlatformDomain.Models
                     }
                 }
 
-                AddEvaluation(new EvaluationPlatformDomain.Models.Evaluation(evaluationTemplate, student, evaluationDate, course, evaluationItems, "", bundleId));
+                AddEvaluation(new Evaluation(evaluationTemplate, student, evaluationDate, course, evaluationItems, "", bundleId,klas));
             }
 
         }

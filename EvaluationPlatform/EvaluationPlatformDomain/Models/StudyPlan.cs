@@ -8,7 +8,7 @@ namespace EvaluationPlatformDomain.Models
 {
     public class StudyPlan : Entity // Leerplan
     {
-        public virtual string Discription { get; set; }
+        public virtual string Description { get; set; }
         public virtual ICollection<GeneralGoal> GeneralGoals { get; } = new List<GeneralGoal>();
         public virtual ICollection<Teacher> Teachers { get; } = new List<Teacher>();
 
@@ -17,9 +17,9 @@ namespace EvaluationPlatformDomain.Models
             
         }
 
-        public StudyPlan(string discription)
+        public StudyPlan(string description)
         {
-            Discription = discription;
+            Description = description;
         }
 
         public void AddGeneralGoal(GeneralGoal generalGoal)

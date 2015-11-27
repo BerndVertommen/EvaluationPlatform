@@ -13,7 +13,7 @@ namespace EvaluationPlatformDAL.Migrations
                     {
                         Id = c.Guid(nullable: false),
                         AccountRoleTypes = c.Int(nullable: false),
-                        Discription = c.String(),
+                        Description = c.String(),
                         Account_Id = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)

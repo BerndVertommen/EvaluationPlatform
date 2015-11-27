@@ -14,7 +14,7 @@ namespace EvaluationPlatformDAL.Migrations
                         Id = c.Guid(nullable: false),
                         MinScore = c.Int(nullable: false),
                         MaxScore = c.Int(nullable: false),
-                        Discription = c.String(),
+                        Description = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -23,26 +23,26 @@ namespace EvaluationPlatformDAL.Migrations
             AddColumn("dbo.EvaluationItems", "Comment", c => c.String());
             CreateIndex("dbo.Cources", "Scale_Id");
             AddForeignKey("dbo.Cources", "Scale_Id", "dbo.Scales", "Id");
-            DropColumn("dbo.AccountRoles", "Discription");
-            DropColumn("dbo.Accounts", "Discription");
-            DropColumn("dbo.People", "Discription");
-            DropColumn("dbo.SchoolYears", "Discription");
-            DropColumn("dbo.Students", "Discription");
-            DropColumn("dbo.Teachers", "Discription");
-            DropColumn("dbo.Evaluations", "Discription");
-            DropColumn("dbo.EvaluationItems", "Discription");
+            DropColumn("dbo.AccountRoles", "Description");
+            DropColumn("dbo.Accounts", "Description");
+            DropColumn("dbo.People", "Description");
+            DropColumn("dbo.SchoolYears", "Description");
+            DropColumn("dbo.Students", "Description");
+            DropColumn("dbo.Teachers", "Description");
+            DropColumn("dbo.Evaluations", "Description");
+            DropColumn("dbo.EvaluationItems", "Description");
         }
         
         public override void Down()
         {
-            AddColumn("dbo.EvaluationItems", "Discription", c => c.String());
-            AddColumn("dbo.Evaluations", "Discription", c => c.String());
-            AddColumn("dbo.Teachers", "Discription", c => c.String());
-            AddColumn("dbo.Students", "Discription", c => c.String());
-            AddColumn("dbo.SchoolYears", "Discription", c => c.String());
-            AddColumn("dbo.People", "Discription", c => c.String());
-            AddColumn("dbo.Accounts", "Discription", c => c.String());
-            AddColumn("dbo.AccountRoles", "Discription", c => c.String());
+            AddColumn("dbo.EvaluationItems", "Description", c => c.String());
+            AddColumn("dbo.Evaluations", "Description", c => c.String());
+            AddColumn("dbo.Teachers", "Description", c => c.String());
+            AddColumn("dbo.Students", "Description", c => c.String());
+            AddColumn("dbo.SchoolYears", "Description", c => c.String());
+            AddColumn("dbo.People", "Description", c => c.String());
+            AddColumn("dbo.Accounts", "Description", c => c.String());
+            AddColumn("dbo.AccountRoles", "Description", c => c.String());
             DropForeignKey("dbo.Cources", "Scale_Id", "dbo.Scales");
             DropIndex("dbo.Cources", new[] { "Scale_Id" });
             DropColumn("dbo.EvaluationItems", "Comment");

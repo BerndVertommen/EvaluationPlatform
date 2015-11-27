@@ -7,7 +7,8 @@ namespace EvaluationPlatformDataTransferModels.BaseInfoModels
     {
         public DateTime EvaluationDate { get; set; }
         public CourseInfo Course { get; set; }
-        public string Discription { get; set; }
+        public string Description { get; set; }
+        public Guid BundleId { get; set; }
 
         public EvaluationBaseInfo()
         {

@@ -12,7 +12,7 @@ namespace EvaluationPlatformDAL.Migrations
                 c => new
                     {
                         Id = c.Guid(nullable: false),
-                        Discription = c.String(),
+                        Description = c.String(),
                         Course_Id = c.Guid(),
                         Teacher_Id = c.Guid(),
                     })
@@ -27,7 +27,7 @@ namespace EvaluationPlatformDAL.Migrations
                 c => new
                     {
                         Id = c.Guid(nullable: false),
-                        Discription = c.String(),
+                        Description = c.String(),
                         Weight = c.Int(nullable: false),
                         EvaluationTemplate_Id = c.Guid(),
                     })

@@ -4,13 +4,13 @@
     {
         public int MinScore { get; protected set; }
         public int MaxScore { get; protected set; }
-        public string Discription { get; set; }
+        public string Description { get; set; }
 
-        public Scale(int minScore, int maxScore, string discription)
+        public Scale(int minScore, int maxScore, string description)
         {
             MinScore = minScore;
             MaxScore = maxScore;
-            Discription = discription;
+            Description = description;
         }
     }
 }

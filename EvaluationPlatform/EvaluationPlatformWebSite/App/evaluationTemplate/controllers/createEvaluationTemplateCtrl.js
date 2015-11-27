@@ -31,12 +31,12 @@
                         return $scope.createEvaluationOptions;
                     },
                     generalOptions: function () {
-                        return { 'discription': "", 'course': null };
+                        return { 'description': "", 'course': null };
                     }
                 }
             });
             modalInstance.result.then(function (generalOptions) {
-                $scope.evaluationTemplate.discription = generalOptions.discription;
+                $scope.evaluationTemplate.description = generalOptions.description;
                 $scope.evaluationTemplate.course = generalOptions.course;
 
                 thiz.calculateProgress();
@@ -142,8 +142,8 @@
             return totalPercentage;
         };
 
-        thiz.calcDiscriptionPoints = function () {
-            if (angular.isDefined($scope.evaluationTemplate.discription) && $scope.evaluationTemplate.discription !== null && $scope.evaluationTemplate.discription !== "") {
+        thiz.calcDescriptionPoints = function () {
+            if (angular.isDefined($scope.evaluationTemplate.description) && $scope.evaluationTemplate.description !== null && $scope.evaluationTemplate.description !== "") {
                 return 25;
             }
 
@@ -179,7 +179,7 @@
 
         thiz.calculateProgress = function () {
             $scope.totalProgress = 0;
-            $scope.totalProgress += thiz.calcDiscriptionPoints();
+            $scope.totalProgress += thiz.calcDescriptionPoints();
             $scope.totalProgress += thiz.calcCoursePoints();
             $scope.totalProgress += thiz.calcSubTotalPoints();
             $scope.totalProgress += thiz.calcGoalPoints();

@@ -25,7 +25,7 @@ namespace EvaluationPlatformDAL.Migrations
                         Id = c.Guid(nullable: false),
                         FirstName = c.String(),
                         LastName = c.String(),
-                        Discription = c.String(),
+                        Description = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -34,7 +34,7 @@ namespace EvaluationPlatformDAL.Migrations
             AddColumn("dbo.Accounts", "RegistrationDate", c => c.DateTime());
             AddColumn("dbo.Accounts", "HashedPassword", c => c.String());
             AddColumn("dbo.Accounts", "Salt", c => c.String());
-            AddColumn("dbo.Accounts", "Discription", c => c.String());
+            AddColumn("dbo.Accounts", "Description", c => c.String());
             AddColumn("dbo.Accounts", "Person_Id", c => c.Guid());
             AddColumn("dbo.AccountRoles", "AccountRoleType", c => c.Int(nullable: false));
             AlterColumn("dbo.Accounts", "Id", c => c.Guid(nullable: false));
@@ -144,7 +144,7 @@ namespace EvaluationPlatformDAL.Migrations
             AlterColumn("dbo.Accounts", "Id", c => c.String(nullable: false, maxLength: 128));
             DropColumn("dbo.AccountRoles", "AccountRoleType");
             DropColumn("dbo.Accounts", "Person_Id");
-            DropColumn("dbo.Accounts", "Discription");
+            DropColumn("dbo.Accounts", "Description");
             DropColumn("dbo.Accounts", "Salt");
             DropColumn("dbo.Accounts", "HashedPassword");
             DropColumn("dbo.Accounts", "RegistrationDate");

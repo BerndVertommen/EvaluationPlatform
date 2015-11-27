@@ -15,7 +15,7 @@ namespace EvaluationPlatformDomain.Models
 
         public virtual ICollection<Student> Students { get; private set; }
 
-        public virtual string Discription { get; set; }
+        public virtual string Description { get; set; }
 
         public virtual ICollection<Course> Courses { get; private set; }
 
@@ -24,9 +24,9 @@ namespace EvaluationPlatformDomain.Models
             Courses = new List<Course>();
         }
 
-        public Class(string discription, SchoolYear schoolYear, ICollection<Student> students) : this()
+        public Class(string description, SchoolYear schoolYear, ICollection<Student> students) : this()
         {
-            Discription = discription;
+            Description = description;
             SchoolYear = schoolYear;
             Students = students;
         }

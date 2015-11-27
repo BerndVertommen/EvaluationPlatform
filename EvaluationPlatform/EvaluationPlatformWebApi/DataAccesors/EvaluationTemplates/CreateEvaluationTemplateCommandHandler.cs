@@ -25,13 +25,13 @@ namespace EvaluationPlatformWebApi.DataAccesors.Evaluation
             foreach (EvaluationSubSectionInfo subSection in templateInfo.EvaluationSubSections)
             {
                 var goals = GetGoalsForSubSection(subSection).ToList();
-                subsSections.Add(new EvaluationSubSection( subSection.Discription,
+                subsSections.Add(new EvaluationSubSection( subSection.Description,
                                                             subSection.Weight,
                                                             goals));
 
             }
 
-            var newEvaluationTemplate = new EvaluationTemplate(course,templateInfo.Discription,subsSections);
+            var newEvaluationTemplate = new EvaluationTemplate(course,templateInfo.Description,subsSections);
             teacher.AddEvaluationTemplate(newEvaluationTemplate);
 
           

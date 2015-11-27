@@ -14,7 +14,7 @@
                             <!--<div class="form-group">-->
                             <div class="input-group">
                                 <label class="control-label">Omschrijving</label>
-                                <input class="form-control" type="text" ng-model="generalOptions.discription" placeholder="Titel of omschrijving"/>
+                                <input class="form-control" type="text" ng-model="generalOptions.description" placeholder="Titel of omschrijving"/>
                             </div>
                         </div>
 
@@ -28,7 +28,7 @@
                                     </thead>
                                     <tbody>
                                         <tr ng-repeat="course in createEvaluationOptions.teacher.courses" ng-class="{'success': $index == selectedRow}">
-                                            <td ng-click="selectCourse(course, $index)">{{course.discription}}</td>
+                                            <td ng-click="selectCourse(course, $index)">{{course.description}}</td>
                                         </tr>
                                     </tbody>
                                 </table>

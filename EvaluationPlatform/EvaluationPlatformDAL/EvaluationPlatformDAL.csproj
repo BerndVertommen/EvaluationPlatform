@@ -154,6 +154,14 @@
     <Compile Include="Migrations\201511242007410_AddedBundleIdOnEvaluation.Designer.cs">
       <DependentUpon>201511242007410_AddedBundleIdOnEvaluation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511271217462_AddedCreatedForClassOnEvaluation.cs" />
+    <Compile Include="Migrations\201511271217462_AddedCreatedForClassOnEvaluation.Designer.cs">
+      <DependentUpon>201511271217462_AddedCreatedForClassOnEvaluation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511271248376_RenamedDescription.cs" />
+    <Compile Include="Migrations\201511271248376_RenamedDescription.Designer.cs">
+      <DependentUpon>201511271248376_RenamedDescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Generators\StudentGenerator.cs" />
@@ -224,6 +232,18 @@
     <EmbeddedResource Include="Migrations\201511242007410_AddedBundleIdOnEvaluation.resx">
       <DependentUpon>201511242007410_AddedBundleIdOnEvaluation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511271217462_AddedCreatedForClassOnEvaluation.resx">
+      <DependentUpon>201511271217462_AddedCreatedForClassOnEvaluation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511271248376_RenamedDescription.resx">
+      <DependentUpon>201511271248376_RenamedDescription.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

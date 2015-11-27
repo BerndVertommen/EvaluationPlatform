@@ -16,12 +16,12 @@
                             <table class="table table-hover ">
                                 <thead>
                                     <tr>
-                                        <th>Lesdoelen: {{course.discription}}</th>
+                                        <th>Lesdoelen: {{course.description}}</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr ng-repeat="goal in availableGoals" ng-class="{'success': $index == selectedRow}">
-                                        <td ng-click="setSelectedGoal(goal, $index)" >{{goal.discription}}</td>
+                                        <td ng-click="setSelectedGoal(goal, $index)" >{{goal.description}}</td>
                                     </tr>
                                 </tbody>
                             </table>

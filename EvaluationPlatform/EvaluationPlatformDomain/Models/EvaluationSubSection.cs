@@ -5,7 +5,7 @@ namespace EvaluationPlatformDomain.Models
 {
     public class EvaluationSubSection : Entity
     {
-        public virtual string Discription { get; set; }
+        public virtual string Description { get; set; }
 
         [Range(1,100)]
         public int  Weight { get; set; }
@@ -17,9 +17,9 @@ namespace EvaluationPlatformDomain.Models
             
         }
 
-        public EvaluationSubSection(string discription, int weight, ICollection<Goal> goals)
+        public EvaluationSubSection(string description, int weight, ICollection<Goal> goals)
         {
-            Discription = discription;
+            Description = description;
             Weight = weight;
             Goals = goals;
         }

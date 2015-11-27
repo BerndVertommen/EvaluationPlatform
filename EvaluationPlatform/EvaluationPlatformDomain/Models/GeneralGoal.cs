@@ -5,7 +5,7 @@ namespace EvaluationPlatformDomain.Models
     public class GeneralGoal : Entity // Leerplandoel
     {
         public int GoalNumber { get; set; }
-        public virtual string Discription { get; set; }
+        public virtual string Description { get; set; }
         public virtual ICollection<Goal> Goals{ get; } = new List<Goal>();
 
         public GeneralGoal()
@@ -13,13 +13,13 @@ namespace EvaluationPlatformDomain.Models
             
         }
 
-        public GeneralGoal(int goalNumber, string discription)
+        public GeneralGoal(int goalNumber, string description)
         {
             GoalNumber = goalNumber;
-            Discription = discription;
+            Description = description;
         }
 
-        public GeneralGoal(int goalNumber, string discription, IEnumerable<Goal> goals) : this (goalNumber, discription)
+        public GeneralGoal(int goalNumber, string description, IEnumerable<Goal> goals) : this (goalNumber, description)
         {
             foreach (Goal goal in goals)
             {

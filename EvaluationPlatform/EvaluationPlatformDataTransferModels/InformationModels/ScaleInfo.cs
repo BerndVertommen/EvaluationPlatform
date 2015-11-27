@@ -4,7 +4,7 @@
     {
         public int MinScore { get; set; }
         public int MaxScore { get; set; }
-        public int Discription { get; set; }
+        public int Description { get; set; }
 
         public ScaleInfo()
         {

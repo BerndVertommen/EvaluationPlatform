@@ -5,6 +5,6 @@
         int MinScore { get; }
         int MaxScore { get; }
 
-        string Discription { get; set; }
+        string Description { get; set; }
     }
 }

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
-using System.Web.Routing;
-using System.Web.Security;
 using EvaluationPlatformDataTransferModels.BaseInfoModels;
+using EvaluationPlatformDataTransferModels.InformationModels;
+using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
 using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformWebApi.Authentication;
@@ -26,6 +26,14 @@ namespace EvaluationPlatformWebApi.Controllers
         public IEnumerable<EvaluationBaseInfo> PlannedEvaluations()
         {
             return QueryProccesor.Execute(new PlannedEvaluationBaseInfoQueryObject(AccountId));
+        }
+
+        [Route("evaluationsForBundle")]
+        [CustomAutorize(AccountRoleType.UserRole)]
+        [HttpPost]
+        public IEnumerable<EvaluationInfo> EvaluationsForbundle(GuidDto bundleIdDto)
+        {
+            return QueryProccesor.Execute(new EvaluationInfosForBundleQueryObject(bundleIdDto.Id));
         }
     }
 

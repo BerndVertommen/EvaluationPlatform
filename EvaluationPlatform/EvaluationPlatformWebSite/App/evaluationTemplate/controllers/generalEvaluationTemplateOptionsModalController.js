@@ -14,7 +14,7 @@
         $scope.selectedRow = null;
 
         $scope.ok = function () {
-            if (angular.isUndefined($scope.generalOptions.discription) || $scope.generalOptions.discription === null || $scope.generalOptions.discription === "") {
+            if (angular.isUndefined($scope.generalOptions.description) || $scope.generalOptions.description === null || $scope.generalOptions.description === "") {
                 return; // replace with error method
             }
             if (angular.isUndefined($scope.generalOptions.course) || $scope.generalOptions.course === null) {

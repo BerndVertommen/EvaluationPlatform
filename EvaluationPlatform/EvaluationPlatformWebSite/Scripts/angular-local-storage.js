@@ -238,7 +238,7 @@ angularLocalStorage.provider('localStorageService', function() {
           try {
             keys.push(key.substr(prefixLength));
           } catch (e) {
-            $rootScope.$broadcast('LocalStorageModule.notification.error', e.Description);
+            $rootScope.$broadcast('LocalStorageModule.notification.error', e.description);
             return [];
           }
         }
