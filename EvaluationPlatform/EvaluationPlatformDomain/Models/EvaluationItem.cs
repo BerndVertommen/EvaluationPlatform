@@ -7,7 +7,7 @@ namespace EvaluationPlatformDomain.Models
     {
         public virtual Goal Goal { get; set; }
 
-        public virtual int Score{ get; set; }
+        public virtual int? Score{ get; set; }
 
         public string Comment { get; set; } // commentaar over het punt
 

@@ -162,6 +162,10 @@
     <Compile Include="Migrations\201511271248376_RenamedDescription.Designer.cs">
       <DependentUpon>201511271248376_RenamedDescription.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511271423431_MadeScoreOnEvaluationItemNullable.cs" />
+    <Compile Include="Migrations\201511271423431_MadeScoreOnEvaluationItemNullable.Designer.cs">
+      <DependentUpon>201511271423431_MadeScoreOnEvaluationItemNullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Generators\StudentGenerator.cs" />
@@ -237,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511271248376_RenamedDescription.resx">
       <DependentUpon>201511271248376_RenamedDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511271423431_MadeScoreOnEvaluationItemNullable.resx">
+      <DependentUpon>201511271423431_MadeScoreOnEvaluationItemNullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
