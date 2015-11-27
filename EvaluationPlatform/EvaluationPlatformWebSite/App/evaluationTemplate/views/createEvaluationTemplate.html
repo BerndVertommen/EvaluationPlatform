@@ -67,13 +67,17 @@
                                                                         <a class="btn btn-danger  btn-sm">0</a>
                                                                     </td>
                                                                     <td>
-                                                                        <a class="btn btn-default  btn-sm dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
-                                                                        <ul class="dropdown-menu">
-                                                                            <li><a>?</a></li>
-                                                                            <li><a>Afwezig</a></li>
-                                                                            <li class="divider"></li>
-                                                                            <li><a>Andere taak</a></li>
-                                                                        </ul>
+                                                                        <div class="btn-group" uib-dropdown is-open="status.isopen">
+                                                                            <button id="single-button" type="button" class="btn btn-default btn-sm" uib-dropdown-toggle ng-disabled="disabled">
+                                                                                <span class="caret"></span>
+                                                                            </button>
+                                                                            <ul class="uib-dropdown-menu" role="menu" aria-labelledby="single-button">
+                                                                                <li role="menuitem"><a href="">?</a></li>
+                                                                                <li role="menuitem"><a href="">Afwezig</a></li>
+                                                                                <li role="menuitem"><a href="">Andere taak</a></li>
+
+                                                                            </ul>
+                                                                        </div>
                                                                     </td>
                                                                     <td>-</td>
                                                                     <td><a class="btn btn-default btn-sm" ng-click="deleteGoal(evaluationSubSection,goal)"><i class="fa fa-trash"></i></a></td>
