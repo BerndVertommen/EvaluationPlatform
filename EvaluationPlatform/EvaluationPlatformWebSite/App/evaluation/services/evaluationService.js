@@ -14,6 +14,13 @@
                 return result.data;
             });
         };
+
+
+        thiz.updateEvaluation = function (evaluation) {
+            $http.post(baseWebApiUrl + 'evaluation/updateEvaluation', evaluation).then(function (result) {
+                return result.data;
+            });
+        };
       
 
         //initiations

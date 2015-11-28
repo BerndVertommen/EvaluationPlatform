@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Net.Http;
 using System.Web.Http;
 using EvaluationPlatformDataTransferModels.BaseInfoModels;
 using EvaluationPlatformDataTransferModels.InformationModels;
@@ -6,6 +7,7 @@ using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
 using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformWebApi.Authentication;
+using EvaluationPlatformWebApi.DataAccesors.Evaluation.Command;
 using EvaluationPlatformWebApi.DataAccesors.Evaluation.QueryObjects;
 
 namespace EvaluationPlatformWebApi.Controllers
@@ -34,6 +36,16 @@ namespace EvaluationPlatformWebApi.Controllers
         public IEnumerable<EvaluationInfo> EvaluationsForbundle(GuidDto bundleIdDto)
         {
             return QueryProccesor.Execute(new EvaluationInfosForBundleQueryObject(bundleIdDto.Id));
+        }
+
+        [Route("updateEvaluation")]
+        [CustomAutorize(AccountRoleType.UserRole)]
+        [HttpPost]
+        public HttpResponseMessage UpdateEvaluation(EvaluationInfo evaluationInfo)
+        {
+            CommandProcessor.Execute(new UpdateEvaluationItemsCommandObject(evaluationInfo.Id, evaluationInfo.EvaluationItems));
+
+            return new HttpResponseMessage();
         }
     }
 

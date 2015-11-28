@@ -20,6 +20,12 @@ namespace EvaluationPlatformDomain.Models
         {
             Goal = goal;
         }
+
+        public void Update(string comment, int? score)
+        {
+            Comment = comment;
+            Score = score ?? Score; // equal to the parameter if it has a value;
+        }
     }
 
    

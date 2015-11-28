@@ -82,6 +82,10 @@
     <Reference Include="Microsoft.AspNet.Identity.Owin">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Azure.AppService.ApiApps.Service, Version=0.9.16.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.AppService.ApiApps.Service.0.9.16\lib\net45\Microsoft.Azure.AppService.ApiApps.Service.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin">
       <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
@@ -211,6 +215,8 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Metadata\deploymentTemplates\apiappconfig.azureresource.json" />
+    <Content Include="apiapp.json" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -260,7 +266,9 @@
     <Compile Include="DataAccesors\EvaluationTemplates\GetEvaluationsTemplatesQueryHandler.cs" />
     <Compile Include="DataAccesors\EvaluationTemplates\GetEvaluationTemplatesQueryObject.cs" />
     <Compile Include="DataAccesors\Evaluation\CommandHandlers\CreateEvaluationCommandHandler.cs" />
+    <Compile Include="DataAccesors\Evaluation\CommandHandlers\UpdateEvaluationItemsCommandHandler.cs" />
     <Compile Include="DataAccesors\Evaluation\Command\CreateEvaluationCommand.cs" />
+    <Compile Include="DataAccesors\Evaluation\Command\UpdateEvaluationItemsCommandObject.cs" />
     <Compile Include="DataAccesors\Evaluation\QueryHandlers\EvaluationInfosForBundleQueryHandler.cs" />
     <Compile Include="DataAccesors\Evaluation\QueryHandlers\PlannedEvaluationBaseInfoQueryHandler.cs" />
     <Compile Include="DataAccesors\Evaluation\QueryObjects\EvaluationInfosForBundleQueryObject.cs" />

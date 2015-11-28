@@ -1,8 +1,9 @@
 ﻿(function (module) {
     'use strict';
 
-    function evaluationController($scope, $location, evaluations) {
+    function evaluationController($scope, $location, evaluationService, evaluations) {
         var thiz = this;
+      
        
         //Variables
 
@@ -19,8 +20,8 @@
             evaluationItem.score = score;
         };
 
-        $scope.saveEvaluation = function() {
-            // write save entire evaluations functionality
+        $scope.updateEvaluation = function () {
+            evaluationService.updateEvaluation($scope.selectedEvaluation);
         };
 
         $scope.selectedEvaluation = function() {
