@@ -11,14 +11,17 @@ namespace EvaluationPlatformDomain.Models
 
         public string Comment { get; set; } // commentaar over het punt
 
+        public virtual EvaluationSubSection EvaluationSubSection { get; set; }
+
         public EvaluationItem()
         {
             
         }
 
-        public EvaluationItem(Goal goal)
+        public EvaluationItem(Goal goal, EvaluationSubSection evaluationSubSection)
         {
             Goal = goal;
+            EvaluationSubSection = evaluationSubSection;
         }
 
         public void Update(string comment, int? score)

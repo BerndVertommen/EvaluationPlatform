@@ -66,7 +66,7 @@
                                         <!--repeat for all GOALS in EvaluationSubSections-->
                                         <tr ng-repeat="evaluationItem in selectedEvaluation.evaluationItems">
                                             <td>{{evaluationItem.goal.description}}</td>
-                                            <td>{{evaluationItem.weight}}</td>
+                                            <td>{{evaluationItem.evaluationSubSection.weight}}</td>
                                             <td>
                                                 <span>
                                                     <a class="btn btn-success btn-sm" ng-click="setScore(evaluationItem, 3)">3</a>

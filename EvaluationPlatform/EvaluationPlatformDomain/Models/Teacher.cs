@@ -59,7 +59,7 @@ namespace EvaluationPlatformDomain.Models
                 {
                     foreach (Goal goal in subsection.Goals)
                     {
-                        evaluationItems.Add(new EvaluationItem(goal));
+                        evaluationItems.Add(new EvaluationItem(goal, subsection));
                     }
                 }
 

@@ -166,6 +166,10 @@
     <Compile Include="Migrations\201511271423431_MadeScoreOnEvaluationItemNullable.Designer.cs">
       <DependentUpon>201511271423431_MadeScoreOnEvaluationItemNullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511281602518_AddedEvaluationSubsectionToEvaluationItem.cs" />
+    <Compile Include="Migrations\201511281602518_AddedEvaluationSubsectionToEvaluationItem.Designer.cs">
+      <DependentUpon>201511281602518_AddedEvaluationSubsectionToEvaluationItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Generators\StudentGenerator.cs" />
@@ -244,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511271423431_MadeScoreOnEvaluationItemNullable.resx">
       <DependentUpon>201511271423431_MadeScoreOnEvaluationItemNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511281602518_AddedEvaluationSubsectionToEvaluationItem.resx">
+      <DependentUpon>201511281602518_AddedEvaluationSubsectionToEvaluationItem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

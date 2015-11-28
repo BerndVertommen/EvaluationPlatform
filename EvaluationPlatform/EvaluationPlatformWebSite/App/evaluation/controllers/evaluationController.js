@@ -28,13 +28,26 @@
             
         }
 
-        //initiations
+        thiz.mapItemsToSubSection = function () {
+
+           _.each($scope.evaluations, function(evaluation) {
+                var differentSubsections = _.groupBy(evaluation.evaluationItems, function(item) {
+                    return item.evaluationSubSection.description;
+                });
+               evaluation.mappedSubsection = differentSubsections;
+
+           });
+
+        };
+
+       //initiations
         var init = function () {
             $scope.evaluations = evaluations;
             console.log(evaluations[0]);
             $scope.classTitle = evaluations[0].createdForClass.description;
             $scope.selectEvaluation(evaluations[0]);
-            
+            //thiz.mapItemsToSubSection();
+
         }
 
         init();

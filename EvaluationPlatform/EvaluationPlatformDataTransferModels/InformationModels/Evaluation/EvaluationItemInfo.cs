@@ -9,6 +9,9 @@ namespace EvaluationPlatformDataTransferModels.InformationModels.Evaluation
     public class EvaluationItemInfo
     {
         public Guid Id { get; set; }
+
+        public EvaluationSubSectionInfo EvaluationSubSection { get; set; }
+
         public GoalInfo Goal { get; set; }
 
         public int? Score { get; set; }
