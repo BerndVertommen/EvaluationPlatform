@@ -15,22 +15,22 @@
             <div class="row">
                 <div class="col-xs-4 col-md-3">
                     <div class="bs-component">
-                        
+
                         <table class="table-responsive">
                             <thead>
-                            <tr>
-                                <th class="text-center"></th>
-                                <th class="text-center"></th>
-                                <th>{{classTitle}}</th>
-                            </tr>
+                                <tr>
+                                    <th class="text-center"></th>
+                                    <th class="text-center"></th>
+                                    <th>{{classTitle}}</th>
+                                </tr>
                             </thead>
                             <tbody>
-                            <tr ng-repeat="evaluation in evaluations" >
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                                <td><a class="btn btn-default" style="width: 100%" ng-click="selectEvaluation(evaluation)" ng-class="{'btn-success': evaluation.id === selectedEvaluation.id}">{{evaluation.student.person.firstName}} {{evaluation.student.person.lastName}}</a></td>
+                                <tr ng-repeat="evaluation in evaluations">
+                                    <td class="text-center"></td>
+                                    <td class="text-center"></td>
+                                    <td><a class="btn btn-default" style="width: 100%" ng-click="selectEvaluation(evaluation)" ng-class="{'btn-success': evaluation.id === selectedEvaluation.id}">{{evaluation.student.person.firstName}} {{evaluation.student.person.lastName}}</a></td>
 
-                            </tr>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -50,49 +50,56 @@
                         <div class="panel-body">
                             <!--mainBody-->
                             <div class=" bs-component">
-                                <table class="table table-hover table-responsive ">
-                                    <thead>
-                                        <tr class="bg-EvaluationSubSection">
-                                            <th>Omschrijving:</th>
-                                            <th class="text-center">Gewicht</th>
-                                            <!--<th class="text-center">{{evaluationItem.description}}: {{evaluationSubSection.weight}}%</th>-->
-                                            <th>Score</th>
-                                            <th><i class="fa fa-question-circle"></i></th>
-                                            <th><i class=" fa fa-trophy"></i></th>
+                                <div>
+                                    <div class="row" ng-repeat="subsection in selectedEvaluation.mappedSubsections">
+                                        <h5 class="text-center">{{subsection[0].evaluationSubSection.description}}</h5>
+                                        <table class="table table-hover table-responsive ">
+                                            <thead>
+                                                <tr class="bg-EvaluationSubSection">
+                                                    <th>Omschrijving:</th>
+                                                    <th class="text-center">Gewicht</th>
+                                                    <!--<th class="text-center">{{evaluationItem.description}}: {{evaluationSubSection.weight}}%</th>-->
+                                                    <th>S
+                                                    <th>Score</th>
+                                                    <th><i class="fa fa-question-circle"></i></th>
+                                                    <th><i class=" fa fa-trophy"></i></th>
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!--repeat for all GOALS in EvaluationSubSections-->
-                                        <tr ng-repeat="evaluationItem in selectedEvaluation.evaluationItems">
-                                            <td>{{evaluationItem.goal.description}}</td>
-                                            <td>{{evaluationItem.evaluationSubSection.weight}}</td>
-                                            <td>
-                                                <span>
-                                                    <a class="btn btn-success btn-sm" ng-click="setScore(evaluationItem, 3)">3</a>
-                                                    <a class="btn btn-primary btn-sm" ng-click="setScore(evaluationItem, 2)">2</a>
-                                                    <a class="btn btn-warning btn-sm" ng-click="setScore(evaluationItem, 1)">1</a>
-                                                    <a class="btn btn-danger  btn-sm" ng-click="setScore(evaluationItem, 0)">0</a>
-                                                </span>
-                                            </td>
-                                            <td>
-                                                <div class="btn-group" uib-dropdown is-open="status.isopen">
-                                                    <button id="single-button" type="button" class="btn btn-default btn-sm" uib-dropdown-toggle ng-disabled="disabled">
-                                                        <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="uib-dropdown-menu" role="menu" aria-labelledby="single-button">
-                                                        <li role="menuitem"><a href="">?</a></li>
-                                                        <li role="menuitem"><a href="">Afwezig</a></li>
-                                                        <li role="menuitem"><a href="">Andere taak</a></li>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!--repeat for all GOALS in EvaluationSubSections-->
+                                                <tr ng-repeat="evaluationItem in subsection">
+                                                    <td>{{evaluationItem.goal.description}}</td>
+                                                    <td>{{evaluationItem.evaluationSubSection.weight}}</td>
+                                                    <td>
+                                                        <span>
+                                                            <a class="btn btn-success btn-sm" ng-click="setScore(evaluationItem, 3)">3</a>
+                                                            <a class="btn btn-primary btn-sm" ng-click="setScore(evaluationItem, 2)">2</a>
+                                                            <a class="btn btn-warning btn-sm" ng-click="setScore(evaluationItem, 1)">1</a>
+                                                            <a class="btn btn-danger  btn-sm" ng-click="setScore(evaluationItem, 0)">0</a>
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group" uib-dropdown is-open="status.isopen">
+                                                            <button id="single-button" type="button" class="btn btn-default btn-sm" uib-dropdown-toggle ng-disabled="disabled">
+                                                                <span class="caret"></span>
+                                                            </button>
+                                                            <ul class="uib-dropdown-menu" role="menu" aria-labelledby="single-button">
+                                                                <li role="menuitem"><a href="">?</a></li>
+                                                                <li role="menuitem"><a href="">Afwezig</a></li>
+                                                                <li role="menuitem"><a href="">Andere taak</a></li>
 
-                                                    </ul>
-                                                </div>
-                                            </td>
-                                            <td>{{ evaluationItem.score === null ? '-' : evaluationItem.score}}</td>
-                                        </tr>
-                                        <tr></tr>
-                                    </tbody>
-                                </table>
+                                                            </ul>
+                                                        </div>
+                                                    </td>
+                                                    <td>{{ evaluationItem.score === null ? '-' : evaluationItem.score}}</td>
+                                                </tr>
+                                                <tr></tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

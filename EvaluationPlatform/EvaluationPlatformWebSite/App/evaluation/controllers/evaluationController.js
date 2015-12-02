@@ -23,13 +23,9 @@
             evaluationService.updateEvaluation($scope.selectedEvaluation);
         };
 
-        $scope.updateEvaluations = function() {
+        $scope.updateEvaluations = function () {
             evaluationService.updateEvaluations($scope.evaluations);
         };
-
-        $scope.selectedEvaluation = function () {
-
-        }
 
         thiz.mapItemsToSubSection = function () {
 
@@ -37,10 +33,11 @@
                 var differentSubsections = _.groupBy(evaluation.evaluationItems, function (item) {
                     return item.evaluationSubSection.description;
                 });
-                evaluation.mappedSubsection = differentSubsections;
-
+                differentSubsections = _.sortBy(differentSubsections, function(sub) {
+                    return sub[0].evaluationSubSection.weight;
+                });
+                evaluation.mappedSubsections = differentSubsections;
             });
-
         };
 
         //initiations
@@ -49,7 +46,7 @@
             console.log(evaluations[0]);
             $scope.classTitle = evaluations[0].createdForClass.description;
             $scope.selectEvaluation(evaluations[0]);
-            //thiz.mapItemsToSubSection();
+            thiz.mapItemsToSubSection();
 
         }
 
