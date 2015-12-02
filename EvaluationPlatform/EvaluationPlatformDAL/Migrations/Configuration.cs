@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
 using EvaluationPlatformDAL.Generators;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformDomain.Models.Account;

@@ -21,6 +21,13 @@
                 return result.data;
             });
         };
+
+
+        thiz.updateEvaluations = function (evaluations) {
+            $http.post(baseWebApiUrl + 'evaluation/updateEvaluations', evaluations).then(function (result) {
+                return result.data;
+            });
+        };
       
 
         //initiations

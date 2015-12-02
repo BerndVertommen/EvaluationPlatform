@@ -6,7 +6,6 @@ using EvaluationPlatformDataTransferModels.BaseInfoModels;
 using EvaluationPlatformDAL;
 using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformWebApi.DataAccesors.Evaluation.QueryObjects;
-using Microsoft.Ajax.Utilities;
 
 namespace EvaluationPlatformWebApi.DataAccesors.Evaluation.QueryHandlers
 {

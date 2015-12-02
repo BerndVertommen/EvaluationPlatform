@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
 using EvaluationPlatformDataTransferModels.BaseInfoModels;
@@ -44,6 +45,22 @@ namespace EvaluationPlatformWebApi.Controllers
         public HttpResponseMessage UpdateEvaluation(EvaluationInfo evaluationInfo)
         {
             CommandProcessor.Execute(new UpdateEvaluationItemsCommandObject(evaluationInfo.Id, evaluationInfo.EvaluationItems));
+
+            return new HttpResponseMessage();
+        }
+
+        [Route("updateEvaluations")]
+        [CustomAutorize(AccountRoleType.UserRole)]
+        [HttpPost]
+        public HttpResponseMessage UpdateEvaluation(IEnumerable<EvaluationInfo> evaluationInfos)
+        {
+            if (evaluationInfos.Any())
+            {
+                foreach (var evaluationinfo in evaluationInfos)
+                {
+                    CommandProcessor.Execute(new UpdateEvaluationItemsCommandObject(evaluationinfo.Id, evaluationinfo.EvaluationItems));
+                }
+            }
 
             return new HttpResponseMessage();
         }
