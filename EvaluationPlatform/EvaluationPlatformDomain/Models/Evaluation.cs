@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace EvaluationPlatformDomain.Models
 {
@@ -13,6 +14,9 @@ namespace EvaluationPlatformDomain.Models
         public virtual ICollection<EvaluationItem> EvaluationItems { get; set; }
         public virtual string GeneralComment { get; private set; }
         public virtual Class CreatedForClass { get; private set; }
+        public virtual DateTime? LastUpdated { get; private set; }
+
+        public virtual bool Finished { get; private set; }
 
         // bundle id groups the evaluations made from the same template at the same time
         // usefulle for faster queries where only one column needs to be searched.
@@ -36,9 +40,17 @@ namespace EvaluationPlatformDomain.Models
             GeneralComment = generalComment;
             BundleId = bundleId;
             CreatedForClass = createdForClass;
-
-           
         }
 
+        public void SetUpdated()
+        {
+            LastUpdated = DateTime.Now;
+            CheckFinished();
+        }
+
+        private void CheckFinished()
+        {
+           Finished = !EvaluationItems.Any(e => !e.Score.HasValue && e.NotScoredReason == NotScoredReason.NotProvided);
+        }
     }
 }

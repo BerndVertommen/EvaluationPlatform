@@ -170,6 +170,10 @@
     <Compile Include="Migrations\201511281602518_AddedEvaluationSubsectionToEvaluationItem.Designer.cs">
       <DependentUpon>201511281602518_AddedEvaluationSubsectionToEvaluationItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512021957560_AddedNotScoredREason.cs" />
+    <Compile Include="Migrations\201512021957560_AddedNotScoredREason.Designer.cs">
+      <DependentUpon>201512021957560_AddedNotScoredREason.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Generators\StudentGenerator.cs" />
@@ -251,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511281602518_AddedEvaluationSubsectionToEvaluationItem.resx">
       <DependentUpon>201511281602518_AddedEvaluationSubsectionToEvaluationItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512021957560_AddedNotScoredREason.resx">
+      <DependentUpon>201512021957560_AddedNotScoredREason.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

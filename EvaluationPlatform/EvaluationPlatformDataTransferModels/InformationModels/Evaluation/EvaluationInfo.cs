@@ -11,7 +11,9 @@ namespace EvaluationPlatformDataTransferModels.InformationModels.Evaluation
         public CourseInfo Course { get; set; }
         public ICollection<EvaluationItemInfo> EvaluationItems { get; set; }
         public string GeneralComment { get; set; }
-        public virtual ClassInfo CreatedForClass { get; set; }
+        public ClassInfo CreatedForClass { get; set; }
+        public virtual bool Finished { get; set; }
+
 
 
         public EvaluationInfo()

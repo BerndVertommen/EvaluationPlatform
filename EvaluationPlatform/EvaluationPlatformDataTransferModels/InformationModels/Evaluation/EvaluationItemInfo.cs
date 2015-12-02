@@ -17,5 +17,8 @@ namespace EvaluationPlatformDataTransferModels.InformationModels.Evaluation
         public int? Score { get; set; }
 
         public string Comment { get; set; }
+
+        public virtual int NotScoredReason { get; set; }
+
     }
 }

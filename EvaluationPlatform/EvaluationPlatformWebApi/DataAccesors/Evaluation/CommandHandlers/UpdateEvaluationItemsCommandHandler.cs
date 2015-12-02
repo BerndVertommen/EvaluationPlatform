@@ -24,8 +24,10 @@ namespace EvaluationPlatformWebApi.DataAccesors.Evaluation.CommandHandlers
                 
                 if(evaluationitem == null) { break;}
 
-                evaluationitem.Update(evaluationInfo.Comment, evaluationInfo.Score);
+                evaluationitem.Update(evaluationInfo.Comment, evaluationInfo.Score, evaluationInfo.NotScoredReason);
             }
+
+            evaluation.SetUpdated();
         }
     }
 }

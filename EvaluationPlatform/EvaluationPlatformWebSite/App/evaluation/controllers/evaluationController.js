@@ -27,6 +27,10 @@
             evaluationService.updateEvaluations($scope.evaluations);
         };
 
+        $scope.setNotScoredReason = function(evaluationitem, number) {
+            evaluationitem.notScoredReason = number;
+        };
+        
         thiz.mapItemsToSubSection = function () {
 
             _.each($scope.evaluations, function (evaluation) {

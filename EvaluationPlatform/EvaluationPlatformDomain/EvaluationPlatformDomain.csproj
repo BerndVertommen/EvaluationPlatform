@@ -69,6 +69,7 @@
     <Compile Include="Models\EvaluationTemplate.cs" />
     <Compile Include="Models\GeneralGoal.cs" />
     <Compile Include="Models\Goal.cs" />
+    <Compile Include="Models\NotScoredReason.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Scales\Scale.cs" />
     <Compile Include="Models\Scales\IScale.cs" />
