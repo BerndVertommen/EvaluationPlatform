@@ -31,7 +31,10 @@ namespace EvaluationPlatformDomain.Models
         {
             Comment = comment;
             Score = score ?? Score; // equal to the parameter if it has a value;
-            NotScoredReason = (NotScoredReason)notScoredReason;
+            if (!Score.HasValue)
+            {
+                NotScoredReason = (NotScoredReason)notScoredReason;
+            }
         }
     }
 }

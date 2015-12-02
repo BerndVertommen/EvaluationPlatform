@@ -29,6 +29,7 @@
 
         $scope.setNotScoredReason = function(evaluationitem, number) {
             evaluationitem.notScoredReason = number;
+            evaluationitem.score = null;
         };
         
         thiz.mapItemsToSubSection = function () {
