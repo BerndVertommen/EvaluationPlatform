@@ -109,10 +109,10 @@
     <Content Include="app\dashboard\dashboard-module.js" />
     <Content Include="app\dashboard\services\dashboardService.js" />
     <Content Include="app\dashboard\views\dashboard.html" />
-    <Content Include="app\Teacher\controllers\replaceCtrl.js" />
-    <Content Include="app\Teacher\replace-module.js" />
-    <Content Include="app\Teacher\services\replaceService.js" />
-    <Content Include="app\Teacher\views\view.html" />
+    <Content Include="app\Teacher\controllers\manageTeacherController.js" />
+    <Content Include="app\Teacher\teacher-module.js" />
+    <Content Include="app\Teacher\services\teacherService.js" />
+    <Content Include="app\Teacher\views\manageTeacher.html" />
     <Content Include="app\Teacher\views\viewModal.html" />
     <Content Include="app\zzzcopyMe\replace-module.js" />
     <Content Include="app\zzzcopyMe\controllers\replaceCtrl.js" />

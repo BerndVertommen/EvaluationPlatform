@@ -1,6 +1,6 @@
 ﻿(function (module) {
 
-    function serviceName($http, configurationService) {
+    function teacherService($http, configurationService) {
         var thiz = this;
         var baseWebApiUrl = configurationService.baseApiPath;
         //Variables
@@ -18,5 +18,5 @@
 
     }
 
-    module.service('serviceName', serviceName);
-})(angular.module('app.replace'))
+    module.service('teacherService', teacherService);
+})(angular.module('app.teacher'))

@@ -1,7 +1,7 @@
 ﻿(function (module) {
     'use strict';
 
-    function controllerName($scope, $location) {
+    function manageTeacherController($scope, $location, teacherService, $uibModal) {
         var thiz = this;
        
         //Variables
@@ -18,5 +18,5 @@
         init();
     }
 
-    module.controller('controllerName', controllerName);
-})(angular.module('app.replace'));
+    module.controller('manageTeacherController', manageTeacherController);
+})(angular.module('app.teacher'));
