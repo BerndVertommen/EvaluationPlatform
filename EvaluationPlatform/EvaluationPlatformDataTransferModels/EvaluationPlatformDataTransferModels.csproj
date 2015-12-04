@@ -48,6 +48,7 @@
     <Compile Include="InformationModels\CourseInfo.cs" />
     <Compile Include="InformationModels\Evaluation\EvaluationInfo.cs" />
     <Compile Include="InformationModels\Evaluation\EvaluationItemInfo.cs" />
+    <Compile Include="InformationModels\Evaluation\EvaluationResultInfo.cs" />
     <Compile Include="InformationModels\Evaluation\EvaluationSubSectionInfo.cs" />
     <Compile Include="InformationModels\Evaluation\EvaluationTemplateInfo.cs" />
     <Compile Include="InformationModels\GoalInfo.cs" />

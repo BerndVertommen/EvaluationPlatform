@@ -31,7 +31,7 @@
             evaluationitem.notScoredReason = number;
             evaluationitem.score = null;
         };
-        
+
         thiz.mapItemsToSubSection = function () {
 
             _.each($scope.evaluations, function (evaluation) {
@@ -45,6 +45,16 @@
             });
         };
 
+
+        thiz.setSubsectionScores = function () {
+            //// var value = object[key] => use dictionary from c# this way
+            _.each($scope.selectedEvaluation.mappedSubsections, function (subsection) {
+                if (angular.isDefined($scope.selectedEvaluation.result) && $scope.selectedEvaluation.result !== null) {
+                    subsection.totalScore = $scope.selectedEvaluation.result.totalsPercategory[subsection[0].evaluationSubSection.id];
+                }
+            });
+        };
+
         //initiations
         var init = function () {
             $scope.evaluations = evaluations;
@@ -52,6 +62,7 @@
             $scope.classTitle = evaluations[0].createdForClass.description;
             $scope.selectEvaluation(evaluations[0]);
             thiz.mapItemsToSubSection();
+            thiz.setSubsectionScores();
 
         }
 

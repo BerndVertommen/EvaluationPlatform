@@ -25,6 +25,21 @@ namespace EvaluationPlatformDomain.Models
         [NotMapped]
         public string Description => EvaluationTemplate.Description; //c#6 auto met property getter.
 
+        [NotMapped]
+        public EvaluationResult Result
+        {
+            get
+            {
+                if (!Finished)
+                {
+                    return null;
+                }
+
+                return EvaluationResult.GetEvaluationResult(this);
+            }
+        }
+
+
         public Evaluation()
         {
 
@@ -48,9 +63,12 @@ namespace EvaluationPlatformDomain.Models
             CheckFinished();
         }
 
+        
         private void CheckFinished()
         {
-           Finished = !EvaluationItems.Any(e => !e.Score.HasValue && e.NotScoredReason == NotScoredReason.NotProvided);
+            Finished = !EvaluationItems.Any(e => !e.Score.HasValue && e.NotScoredReason == NotScoredReason.NotProvided);
         }
+
+
     }
 }

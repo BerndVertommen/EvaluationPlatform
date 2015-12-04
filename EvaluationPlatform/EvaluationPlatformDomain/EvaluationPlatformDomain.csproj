@@ -65,6 +65,7 @@
     <Compile Include="Models\Entity.cs" />
     <Compile Include="Models\Evaluation.cs" />
     <Compile Include="Models\EvaluationItem.cs" />
+    <Compile Include="Models\EvaluationResult.cs" />
     <Compile Include="Models\EvaluationSubSection.cs" />
     <Compile Include="Models\EvaluationTemplate.cs" />
     <Compile Include="Models\GeneralGoal.cs" />

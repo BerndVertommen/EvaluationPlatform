@@ -12,7 +12,9 @@ namespace EvaluationPlatformDataTransferModels.InformationModels.Evaluation
         public ICollection<EvaluationItemInfo> EvaluationItems { get; set; }
         public string GeneralComment { get; set; }
         public ClassInfo CreatedForClass { get; set; }
-        public virtual bool Finished { get; set; }
+        public bool Finished { get; set; }
+        public EvaluationResultInfo Result { get; set; }
+
 
 
 
