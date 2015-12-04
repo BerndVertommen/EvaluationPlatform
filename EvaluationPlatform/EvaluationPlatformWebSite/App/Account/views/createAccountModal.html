@@ -9,7 +9,7 @@
         <div class="panel-body">
             <!--mainBody-->
 
-            <div class="form-horizontal">
+            <form class="form-horizontal">
                 <fieldset>
 
                     <div class="col-xs-12">
@@ -17,97 +17,108 @@
                         <div class="form-group">
                             <label for="inputUsername" class="col-lg-2 control-label">Accountnaam</label>
                             <div class="col-lg-10">
-                                <input class="form-control" id="inputUsername" placeholder="Accountnaam" type="text">
+                                <input class="form-control" ng-model="createAccountInfo.username" id="inputUsername" placeholder="Accountnaam" type="text">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="inputPassword" class="col-lg-2 control-label">Wachtwoord</label>
                             <div class="col-lg-10">
-                                <input class="form-control" id="inputPassword" placeholder="Wachtwoord" type="password">
+                                <input class="form-control" ng-model="createAccountInfo.password" id="inputPassword" placeholder="Wachtwoord" type="password">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="confirmPassword" class="col-lg-2 control-label">Bevestigen</label>
                             <div class="col-lg-10">
-                                <input class="form-control" id="confirmPassword" placeholder="Wachtwoord bevestigen" type="password">
+                                <input class="form-control" ng-model="createAccountInfo.confirmPassword" id="confirmPassword" placeholder="Wachtwoord bevestigen" type="password">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="inputEmail" class="col-lg-2 control-label">E-mail</label>
                             <div class="col-lg-10">
-                                <input class="form-control" id="inputEmail" placeholder="E-mail" type="email">
+                                <input class="form-control" ng-model="createAccountInfo.email" id="inputEmail" placeholder="E-mail" type="email">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="confirmEmail" class="col-lg-2 control-label">Bevestigen</label>
                             <div class="col-lg-10">
-                                <input class="form-control" id="confirmEmail" placeholder="E-mail bevestigen" type="email">
+                                <input class="form-control" ng-model="createAccountInfo.confirmEmail" id="confirmEmail" placeholder="E-mail bevestigen" type="email">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="col-lg-2 control-label">Account rol</label>
                             <div class="col-lg-10">
-                                <div class="radio">
-                                    <label>
-                                        <input name="optionsRadios" id="rolUser" value="Normaal" checked="" type="radio">
-                                        Normaal account
-                                    </label>
+                                <input type="text" class="form-control" ng-model="createAccountInfo.roleType"  readonly />
+                                <div class="btn-group" uib-dropdown is-open="status.isopen">
+                                    <button id="single-button" type="button" class="btn btn-default btn-sm" uib-dropdown-toggle>
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="uib-dropdown-menu" role="menu" aria-labelledby="single-button">
+                                        <li role="menuitem"><a ng-click="setAccountRole('UserRole')">Gebruiker</a></li>
+                                        <li role="menuitem"><a ng-click="setAccountRole('Admin')">Administrator</a></li>
+                                    </ul>
                                 </div>
-                                <div class="radio">
-                                    <label>
-                                        <input name="optionsRadios" id="rolAdmin" value="Administrator" type="radio">
-                                        Administrator account
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="inputFirstname" class="col-lg-2 control-label">Voornaam</label>
-                            <div class="col-lg-10">
-                                <input class="form-control" id="inputFirstname" placeholder="Voornaam" type="text">
+                                <!--<div class="radio">
+                                        <label>
+                                            <input name="optionsRadios"  id="rolUser" value="Normaal" checked="" type="radio">
+                                            Normaal account
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input name="optionsRadios" id="rolAdmin" value="Administrator" type="radio">
+                                            Administrator account
+                                        </label>
+                                    </div>
+                                </div>-->
                             </div>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="inputLastname" class="col-lg-2 control-label">Achternaam</label>
-                            <div class="col-lg-10">
-                                <input class="form-control" id="inputLastname" placeholder="Achternaam" type="text">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="inputBirthdate" class="col-lg-2 control-label">Geboortedatum</label>
-                            <div class="col-lg-10">
-                                <input class="form-control" id="inputBirthdate" placeholder="Geboortedatum" type="date" />
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="inputTeacher" class="col-lg-2 control-label">Leerkracht?</label>
-                            <div class="col-lg-10">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" checked> Ja
-                                    </label>
+                            <div class="form-group">
+                                <label for="inputFirstname" class="col-lg-2 control-label">Voornaam</label>
+                                <div class="col-lg-10">
+                                    <input class="form-control" ng-model="createAccountInfo.person.firstName" id=" inputFirstname" placeholder="Voornaam" type="text">
                                 </div>
                             </div>
+
+                            <div class="form-group">
+                                <label for="inputLastname" class="col-lg-2 control-label">Achternaam</label>
+                                <div class="col-lg-10">
+                                    <input class="form-control" ng-model="createAccountInfo.person.lastName" id="inputLastname" placeholder="Achternaam" type="text">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputBirthdate" class="col-lg-2 control-label">Geboortedatum</label>
+                                <div class="col-lg-10">
+                                    <input class="form-control" ng-model="createAccountInfo.person.birthDate" id="inputBirthdate" placeholder="Geboortedatum" type="date" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputTeacher" class="col-lg-2 control-label">Leerkracht?</label>
+                                <div class="col-lg-10">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" ng-model="createAccountInfo.isTeacher" readonly checked> Ja
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
 
-                    </div>
+                        <div class="col-xs-12" style="margin-top: 15px">
 
-                    <div class="col-xs-12" style="margin-top: 15px">
-
-                    </div>
+                        </div>
 
                 </fieldset>
-            </div>
-
+            </form>
+            
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-success" ng-click="ok()">Ok</button>

@@ -31,6 +31,13 @@
             });
         }
 
+        //nieuwe methode om account te creeeren aangemaakt
+        thiz.createAccount = function (createAccountInfo) {
+            return $http.post(basePath + 'accounts/createAccount', createAccountInfo).then(function (result) {
+                return result.data;
+            });
+        }
+       
         //creeer hier de methode die naar bij de accountcontroller createAccount gebruikt.
     }
 
