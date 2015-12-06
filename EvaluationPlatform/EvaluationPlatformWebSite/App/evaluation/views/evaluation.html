@@ -20,16 +20,15 @@
                             <thead>
                                 <tr>
                                     <th class="text-center"></th>
-                                    <th class="text-center"></th>
                                     <th>{{classTitle}}</th>
+                                    <th class="text-center"></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr ng-repeat="evaluation in evaluations">
                                     <td class="text-center"></td>
-                                    <td class="text-center"></td>
                                     <td><a class="btn btn-default" style="width: 100%" ng-click="selectEvaluation(evaluation)" ng-class="{'btn-success': evaluation.id === selectedEvaluation.id}">{{evaluation.student.person.firstName}} {{evaluation.student.person.lastName}}</a></td>
-
+                                    <td class="text-center"><span ng-show="evaluation.finished === true"><i class="fa fa-check" style="color: chartreuse"></i></span></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -59,7 +58,6 @@
                                                     <th>Omschrijving:</th>
                                                     <th class="text-center">Gewicht</th>
                                                     <!--<th class="text-center">{{evaluationItem.description}}: {{evaluationSubSection.weight}}%</th>-->
-                                                    <th>S
                                                     <th>Score</th>
                                                     <th><i class="fa fa-question-circle"></i></th>
                                                     <th><i class=" fa fa-trophy"></i></th>
@@ -99,13 +97,12 @@
                                                     <td></td>
                                                     <td></td>
                                                     <td></td>
-                                                    <td></td>
                                                     <td>{{subsection.totalScore | number:2 }}</td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
-                                    <div class="pull-right">Totaal: {{selectedEvaluation.result.total}}</div>
+                                    <div class="pull-right">Totaal: {{selectedEvaluation.result.total | number : 2}}</div>
                                 </div>
                             </div>
                         </div>

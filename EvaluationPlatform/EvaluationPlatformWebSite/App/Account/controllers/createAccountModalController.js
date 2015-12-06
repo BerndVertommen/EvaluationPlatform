@@ -33,6 +33,7 @@
         var init = function () {
             $scope.createAccountInfo = {}; // gebruik dit om alle info aan te hangen in de view (dit model moet je serverside nog opbouwen)
             $scope.createAccountInfo.roleType = "UserRole";
+            $scope.createAccountInfo.isTeacher = true;
         }
 
         init();

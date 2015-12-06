@@ -7,11 +7,11 @@ using Infrastructure.Security;
 
 namespace EvaluationPlatformDomain.Models.Account
 {
-    public class Account :  Entity, IAccount
+    public class Account : Entity, IAccount
     {
         public Account()
         {
-            
+
         }
         public Account(string username, string email, Person person, AccountRole accountRole)
         {
@@ -38,7 +38,7 @@ namespace EvaluationPlatformDomain.Models.Account
             Salt = salt;
         }
 
-        public void ResetPassword(string newPassword,string oldPassword)
+        public void ResetPassword(string newPassword, string oldPassword)
         {
             if (!VerifyPassword(oldPassword))
             {
@@ -53,17 +53,36 @@ namespace EvaluationPlatformDomain.Models.Account
 
             return result;
         }
+
+
+        public static Account CreateAccount(string username, string email, string firstName, string lastName, DateTime birthDate, AccountRole role, string password, string confirmPassword, string confirmEmail)
+        {
+            var person = new Person(firstName, lastName, birthDate);
+            var account = new Account(username, email, person, role);
+            if (email != confirmEmail)
+            {
+                throw new Exception("Email and confirmationEmail do not match");
+            }
+            if (password != confirmPassword)
+            {
+                throw new Exception("Password and confirmPassword do not match");
+            }
+
+            account.SetPassword(password);
+            
+            return account;
+        }
     }
 
     public interface IAccount
     {
-        string Username { get;  }
+        string Username { get; }
         ICollection<AccountRole> AccountRoles { get; }
-        bool EmailConfirmed { get;  }
-        DateTime? RegistrationDate { get;  }
+        bool EmailConfirmed { get; }
+        DateTime? RegistrationDate { get; }
         [EmailAddress]
-        string Email { get;  }
-        string HashedPassword { get;  }
-       
+        string Email { get; }
+        string HashedPassword { get; }
+
     }
 }
