@@ -5,13 +5,24 @@
         var thiz = this;
        
         //Variables
+        $scope.selectedRow = null;
+        $scope.setSelectedAccount = function (account, index) {
+            $scope.setSelectedAccount = account;
+            $scope.selectedRow = index;
+        };
 
         //private Functions
         
         // public functions
 
+
         //initiations
         var init = function () {
+            teacherService.getAccounts().then(function (accounts) {
+                $scope.accountList = accounts;
+            });
+
+
 
         }
 

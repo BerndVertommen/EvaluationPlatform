@@ -3,18 +3,15 @@
     function teacherService($http, configurationService) {
         var thiz = this;
         var baseWebApiUrl = configurationService.baseApiPath;
-        //Variables
+       
 
-        //private Functions
-
-        // public functions
-
-        //initiations
-        var init = function () {
-
+        thiz.getAccounts = function () {
+            return $http.get(basePath + 'accounts/getAccounts').then(function (result) {
+                return result.data;
+            });
         }
 
-        init();
+        
 
     }
 

@@ -13,7 +13,7 @@
         
         // in module account-module route aanmaken ($routeProvider)
 
-       //Variables
+        // Variables
 
         //private Functions
         
