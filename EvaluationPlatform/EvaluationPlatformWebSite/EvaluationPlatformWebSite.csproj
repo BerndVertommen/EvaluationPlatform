@@ -66,9 +66,9 @@
     <Content Include="app\Account\views\manageAccount.html" />
     <Content Include="app\Account\views\createAccountModal.html" />
     <Content Include="app\classes\classes-module.js" />
-    <Content Include="app\classes\controllers\testClassCtrl.js" />
+    <Content Include="app\classes\controllers\classesController.js" />
     <Content Include="app\classes\services\classesSvc.js" />
-    <Content Include="app\classes\views\testClassView.html" />
+    <Content Include="app\classes\views\classes.html" />
     <Content Include="app\configuration\services\configurationService.js" />
     <Content Include="app\dashboard\controllers\partials\calendarController.js" />
     <Content Include="app\dashboard\views\partials\calendarPartial.html" />

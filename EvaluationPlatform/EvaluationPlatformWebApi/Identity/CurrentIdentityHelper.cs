@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Web;
-using BabyLink.WebApi.Identity;
 
 namespace EvaluationPlatformWebApi.Identity
 {

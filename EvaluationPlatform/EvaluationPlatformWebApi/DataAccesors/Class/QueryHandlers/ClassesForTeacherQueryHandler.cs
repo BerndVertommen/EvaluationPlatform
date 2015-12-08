@@ -25,7 +25,9 @@ namespace EvaluationPlatformWebApi.DataAccesors.Class.QueryHandlers
                 throw new NullReferenceException();
             }
 
-            return Mapper.Map<IEnumerable<ClassInfo>>(teacher.Classes.Where(c => c.SchoolYear.StartYear == SchoolYear.GetStartYearThisSchoolYear()));
+            var classes = teacher.Classes.Where(c => c.SchoolYear.StartYear == SchoolYear.GetStartYearThisSchoolYear());
+
+            return Mapper.Map<IEnumerable<ClassInfo>>(classes);
         }
     }
 }

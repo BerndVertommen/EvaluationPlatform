@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Claims;
 
-namespace BabyLink.WebApi.Identity
+namespace EvaluationPlatformWebApi.Identity
 {
     public interface ICurrentIdentityHelper
     {

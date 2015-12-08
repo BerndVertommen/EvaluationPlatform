@@ -9,9 +9,9 @@ namespace EvaluationPlatformWebApi.DataAccesors.Class.QueryObjects
     {
         public Guid TeacherId { get; set; }
 
-        public ClassesForTeacherQueryObject(Guid? teacherId)
+        public ClassesForTeacherQueryObject(Guid teacherId)
         {
-            TeacherId = teacherId.Value;
+            TeacherId = teacherId;
         }
     }
 }

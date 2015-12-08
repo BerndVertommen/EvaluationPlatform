@@ -23,7 +23,12 @@ namespace EvaluationPlatformWebApi.Controllers
         {
             var accountInfo = GetAccountInfo();
 
-            return QueryProccesor.Execute(new ClassesForTeacherQueryObject(accountInfo.TeacherId));
+            if (!accountInfo.TeacherId.HasValue)
+            {
+                throw new NullReferenceException();
+            }
+
+            return QueryProccesor.Execute(new ClassesForTeacherQueryObject(accountInfo.TeacherId.Value));
         }
 
 
