@@ -220,6 +220,7 @@
     <Content Include="scripts\angular-ui\calendar\angular-bootstrap-calendar-tpls.min.js.map" />
     <Content Include="scripts\angular-ui\calendar\angular-bootstrap-calendar.min.css.map" />
     <Content Include="scripts\angular-ui\calendar\angular-bootstrap-calendar.min.js.map" />
+    <None Include="Properties\PublishProfiles\website publish package.pubxml" />
     <None Include="scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="scripts\i18n\angular-locale_aa-dj.js" />
     <Content Include="scripts\i18n\angular-locale_aa-er.js" />
@@ -976,12 +977,6 @@
     <Content Include="scripts\jquery-2.1.4.min.map" />
     <Content Include="scripts\underscore.min.map" />
     <Content Include="scripts\version.json" />
-    <None Include="scripts\Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="scripts\Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\app.js" />
@@ -1020,7 +1015,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="scripts\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
