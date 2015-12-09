@@ -5,7 +5,7 @@
         var thiz = this;
        
         //Variables
-        $scope.calenderPath = '/app/dashboard/views/partials/calendarPartial.html';
+        $scope.calenderPath = 'app/dashboard/views/partials/calendarPartial.html';
         //private Functions
         
         // public functions

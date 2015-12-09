@@ -23,7 +23,7 @@
         $scope.openGeneralOptions = function () {
             var modalInstance = $uibModal.open({
                 animation: true,
-                templateUrl: '/app/evaluationTemplate/views/generalEvaluationTemplateOptionsModal.html',
+                templateUrl: 'app/evaluationTemplate/views/generalEvaluationTemplateOptionsModal.html',
                 controller: 'generalEvaluationTemplateOptionsModalController',
                 size: 'lg',
                 resolve: {
@@ -48,7 +48,7 @@
         $scope.openSubSections = function (subSection) {
             var modalInstance = $uibModal.open({
                 animation: true,
-                templateUrl: '/app/evaluationTemplate/views/evaluationTemplateSubSectionModal.html',
+                templateUrl: 'app/evaluationTemplate/views/evaluationTemplateSubSectionModal.html',
                 controller: 'evaluationTemplateSubSectionModalController',
                 size: 'lg',
                 resolve: {
@@ -85,7 +85,7 @@
         $scope.openGoals = function (subSection) {
             var modalInstance = $uibModal.open({
                 animation: true,
-                templateUrl: '/app/evaluationTemplate/views/evaluationTemplateGoalsModal.html',
+                templateUrl: 'app/evaluationTemplate/views/evaluationTemplateGoalsModal.html',
                 controller: 'evaluationTemplateGoalsModalController',
                 size: 'lg',
                 resolve: {

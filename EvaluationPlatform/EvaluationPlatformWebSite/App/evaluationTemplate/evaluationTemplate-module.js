@@ -6,7 +6,7 @@
 
         $routeProvider
           .when('/createEvaluationTemplate', {
-              templateUrl: '/app/evaluationTemplate/views/createEvaluationTemplate.html',
+              templateUrl: 'app/evaluationTemplate/views/createEvaluationTemplate.html',
               controller: 'createEvaluationTemplateController',
               resolve: {
                   /*ngInject*/
@@ -18,7 +18,7 @@
 
         $routeProvider
         .when('/evaluationTemplates', {
-            templateUrl: '/app/evaluationTemplate/views/evaluationTemplates.html',
+            templateUrl: 'app/evaluationTemplate/views/evaluationTemplates.html',
             controller: 'evaluationTemplatesController',
             resolve: {
                 /*ngInject*/

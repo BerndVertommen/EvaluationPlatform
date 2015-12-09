@@ -6,7 +6,7 @@
 
         $routeProvider
           .when('/manageTeacher', {
-              templateUrl: '/app/Teacher/views/manageTeacher.html',
+              templateUrl: 'app/Teacher/views/manageTeacher.html',
               controller: 'manageTeacherController'
           });
 

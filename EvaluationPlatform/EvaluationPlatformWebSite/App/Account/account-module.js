@@ -4,7 +4,7 @@
 
         $routeProvider
           .when('/manageAccount', {
-              templateUrl: '/app/Account/views/manageAccount.html',
+              templateUrl: 'app/Account/views/manageAccount.html',
               controller: 'manageAccountController'
              
               

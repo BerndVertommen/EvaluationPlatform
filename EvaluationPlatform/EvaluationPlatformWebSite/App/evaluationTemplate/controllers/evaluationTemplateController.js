@@ -19,7 +19,7 @@
         $scope.createEvaluations = function () {
             $uibModal.open({
                 animation: true,
-                templateUrl: '/app/evaluationTemplate/views/createEvaluationsFromTemplateModal.html',
+                templateUrl: 'app/evaluationTemplate/views/createEvaluationsFromTemplateModal.html',
                 controller: 'createEvaluationsFromTemplateModalController',
                 size: 'lg',
                 resolve: {

@@ -6,7 +6,7 @@
 
         $routeProvider
             .when('/evaluation/:bundleId?', {
-                templateUrl: '/app/evaluation/views/evaluation.html',
+                templateUrl: 'app/evaluation/views/evaluation.html',
                 controller: 'evaluationController',
                 resolve: {
                     /*ngInject*/

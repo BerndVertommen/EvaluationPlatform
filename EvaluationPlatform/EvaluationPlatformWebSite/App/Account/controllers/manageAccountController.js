@@ -29,7 +29,7 @@
         $scope.createAccountInfo = function() {
             $uibModal.open({
                 animation: true,
-                templateUrl: '/app/Account/views/createAccountModal.html',
+                templateUrl: 'app/Account/views/createAccountModal.html',
                 controller: 'createAccountModalController',
                 size: 'lg',
                 resolve: {

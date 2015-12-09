@@ -6,7 +6,7 @@
 
         $routeProvider
           .when('/dashboard', {
-              templateUrl: '/app/dashboard/views/dashboard.html',
+              templateUrl: 'app/dashboard/views/dashboard.html',
               controller: 'dashboardController'
           });
 
