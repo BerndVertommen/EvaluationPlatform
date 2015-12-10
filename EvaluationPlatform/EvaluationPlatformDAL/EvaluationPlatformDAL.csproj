@@ -85,6 +85,7 @@
     <Compile Include="CommandAndQuery\QueryProcessor.cs" />
     <Compile Include="EPDatabase.cs" />
     <Compile Include="Generators\ClassGenerator.cs" />
+    <Compile Include="Generators\GeneralGoalsGenerator.cs" />
     <Compile Include="IEPDatabase.cs" />
     <Compile Include="Migrations\201507251222198_CreateMigrations.cs" />
     <Compile Include="Migrations\201507251222198_CreateMigrations.Designer.cs">
@@ -259,12 +260,6 @@
     <EmbeddedResource Include="Migrations\201512021957560_AddedNotScoredREason.resx">
       <DependentUpon>201512021957560_AddedNotScoredREason.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Scripts\moment-with-locales.js" />
-    <Content Include="Scripts\moment-with-locales.min.js" />
-    <Content Include="Scripts\moment.js" />
-    <Content Include="Scripts\moment.min.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

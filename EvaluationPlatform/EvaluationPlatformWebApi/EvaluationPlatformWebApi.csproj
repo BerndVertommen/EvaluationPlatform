@@ -215,6 +215,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\api.evaluationplatform.be.pubxml" />
     <None Include="Properties\PublishProfiles\EvaluationWebsite - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\EvaluationWebsite - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\testprofile.pubxml" />

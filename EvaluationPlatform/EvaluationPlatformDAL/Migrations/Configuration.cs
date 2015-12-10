@@ -22,16 +22,22 @@ namespace EvaluationPlatformDAL.Migrations
         {
             // seed students
             StudentGenerator studentGenerator = new StudentGenerator();
+            GeneralGoalsGenerator generalGoalsGenerator = new GeneralGoalsGenerator();
             ICollection<Student> students = studentGenerator.Generate();
+
 
             var schoolyearNow = new SchoolYear();
 
 
             //seed Classes
             Class class1 = new Class("1NF", new SchoolYear(), students);
+            Class classVerzorging = new Class("3HZ", schoolyearNow, studentGenerator.GenerateVerzorgingStudents());
 
             // StudyPlans
             StudyPlan studyPlan1 = new StudyPlan("LeerplanMechanica");
+            StudyPlan studyPlanVerzorging = new StudyPlan("Verzorging 2e graad");
+            generalGoalsGenerator.AddVerzorginGoalsToStudyPlan(studyPlanVerzorging);
+
 
             // GeneralGoals
             studyPlan1.AddGeneralGoal( new GeneralGoal(1, @"De taken en verantwoordelijkheden van de leden van het ‘mechanisch vormgevingsteam’ toelichten.",GenerateGoals(1,5)));
@@ -50,14 +56,18 @@ namespace EvaluationPlatformDAL.Migrations
 
             Teacher teacher2 = new Teacher(new Person("Test", "er", new DateTime(1970, 5, 10)));
             teacher2.AddClass(class1);
+            teacher2.AddClass(classVerzorging);
             var courseTester = new Course("TesterCource", schoolyearNow, teacher2, fourPointScale, studyPlan1);
+            var courseVerzorging = new Course("Verzorging 3HZ", schoolyearNow,teacher2, fourPointScale, studyPlanVerzorging);
             teacher2.AddCourse(courseTester);
+            teacher2.AddCourse(courseVerzorging);
             context.Teachers.Add(teacher2);
 
 
             class1.AddCourse(courseMechanica);
             class1.AddCourse(courseTester);
-           
+            classVerzorging.AddCourse(courseVerzorging);
+
             CreateRoles(context);
             CreateAccounts(context, teacher2);
 
