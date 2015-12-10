@@ -2,7 +2,7 @@
 
     function teacherService($http, configurationService) {
         var thiz = this;
-        var baseWebApiUrl = configurationService.baseApiPath;
+        var basePath = configurationService.baseApiPath;
        
 
         thiz.getAccounts = function () {
