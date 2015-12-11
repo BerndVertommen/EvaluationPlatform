@@ -274,16 +274,28 @@ ul.alert-dropdown {
 table {
     border-collapse: separate;
 }
+
 .table {
     border-color: black;
     border-width: thin;
     border-style: solid;
+}
+
+thead {
+    background-color: #4f8c8b;
+    color: black;
+}
+ thead > tr > .tcolDoubleSmButton {
+    text-align: right;
+}
+
 }
 /*End bootstrap overrides*/
 
 /*table*/
 .tcolDoubleSmButton {
     width: 85px;
+    text-align: right;
 }
 
 .smallScrolable {
