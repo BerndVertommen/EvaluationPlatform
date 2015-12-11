@@ -12,6 +12,7 @@
         // public functions
         $scope.selectEvaluation = function (evaluation) {
             $scope.selectedEvaluation = evaluation;
+            thiz.setSubsectionScores(); // find other solutio to map scores not on evry select.
             console.log($scope.selectedEvaluation);
         }
 
@@ -53,6 +54,7 @@
                     subsection.totalScore = $scope.selectedEvaluation.result.totalsPercategory[subsection[0].evaluationSubSection.id];
                 }
             });
+            // map every evaluation not just selected so it can be procesed in int()
         };
 
         //initiations
@@ -63,6 +65,7 @@
             $scope.selectEvaluation(evaluations[0]);
             thiz.mapItemsToSubSection();
             thiz.setSubsectionScores();
+            console.log($scope.evaluations);
 
         }
 
