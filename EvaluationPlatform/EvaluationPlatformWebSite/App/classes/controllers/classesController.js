@@ -13,6 +13,7 @@
         //initiations
         var init = function () {
             $scope.classes = classes;
+            console.log(classes);
 
         }
 

@@ -6,7 +6,30 @@
             </div>
         </div>
         <div class="panel-body"> <!--mainBody-->
-        {{classes | json}}
+            <div class="row">
+                <div class="col-md-12">
+                    <uib-tabset justified="true" >
+                        <uib-tab class="nav nav-tabs" ng-repeat="class in classes" heading="{{class.description}}">
+                          
+                            <table class="table table-striped table-responsive table-hover">
+                                <thead>
+                                <th>Voornaam</th>
+                                <th>Achternaam</th>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="student in class.students" ng-click="viewStudent()">
+                                    <td>{{student.person.lastName }}</td>
+                                    <td>{{student.person.firstName }}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </uib-tab>
+                       
+                    </uib-tabset>
+                </div>
+                </div>
+            </div>
+
         </div>
         <div class="panel-footer"> <!--mainFooter-->
             
