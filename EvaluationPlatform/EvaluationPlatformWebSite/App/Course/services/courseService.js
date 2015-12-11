@@ -2,12 +2,18 @@
 
     function courseService($http, configurationService) {
         var thiz = this;
-        var basePath = configurationService.baseApiPath;
+        var baseWebApiUrl = configurationService.baseApiPath;
         //Variables
 
         //private Functions
 
         // public functions
+
+        thiz.getCourses = function () {
+            return $http.get(baseWebApiUrl + "courses/coursesForTeacher").then(function (result) {
+                return result.data;
+            });
+        };
 
         //initiations
         var init = function () {
@@ -19,4 +25,4 @@
     }
 
     module.service('courseService', courseService);
-})(angular.module('app.replace'))
+})(angular.module('app.course'))

@@ -10,4 +10,18 @@
               controller: 'manageCourseController'
           });
 
+        $routeProvider
+         .when('/courses', {
+             templateUrl: 'app/Course/views/courses.html',
+             controller: 'courseController',
+             resolve: {
+                 /*ngInject*/
+                 courses: function (courseService) {
+                     return courseService.getCourses().then(function (courses) {
+                         return courses;
+                     });
+                 }
+             }
+         });
+
     });
