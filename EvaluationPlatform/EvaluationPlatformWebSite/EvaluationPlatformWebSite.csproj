@@ -91,7 +91,9 @@
     <Content Include="app\evaluationTemplate\views\evaluationTemplates.html" />
     <Content Include="app\evaluationTemplate\views\generalEvaluationTemplateOptionsModal.html" />
     <Content Include="app\evaluation\controllers\evaluationController.js" />
+    <Content Include="app\evaluation\controllers\evaluationsController.js" />
     <Content Include="app\evaluation\views\evaluation.html" />
+    <Content Include="app\evaluation\views\evaluations.html" />
     <Content Include="app\home\controllers\homeCtrl.js" />
     <Content Include="app\home\home-module.js" />
     <Content Include="app\home\views\home.html" />

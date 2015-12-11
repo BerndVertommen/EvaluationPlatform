@@ -1,0 +1,52 @@
+﻿<div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <!--mainHeading-->
+            <div class="panel-title">
+                Evaluaties
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--mainBody-->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">
+                        Zoeken
+                    </div>
+                    <div class="btn-group pull-right">
+                        <a class="btn btn-default" ng-click="search()"><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="startDate" class="col-xs-6 control-label">Begin datum</label>
+                                    <input type="date" id="startDate" ng-model="evaluationQueryObject.startDate" placeholder="01/05/2015"  />
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="endDate" class="col-xs-6 control-label">Begin datum</label>
+                                    <input type="date" id="endDate" ng-model="evaluationQueryObject.endDate" placeholder="10/05/2015" />
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="complete" class="col-xs-6 control-label">Volledig?</label>
+                                    <input type="checkbox" id="complete" ng-model="evaluationQueryObject.complete"  />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+        <div class="panel-footer">
+            <!--mainFooter-->
+
+        </div>
+    </div>
+</div>

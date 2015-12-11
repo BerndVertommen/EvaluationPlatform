@@ -12,13 +12,19 @@
                     /*ngInject*/
                     evaluations: function (evaluationService, $route) {
                         var bundleId = $route.current.params.bundleId;
-                        return evaluationService.evaluationsForBundle(bundleId).then(function(evals) {
+                        return evaluationService.evaluationsForBundle(bundleId).then(function (evals) {
                             return evals;
                         });
-                  }
-              }
-          });
+                    }
+                }
+            });
 
-       
+        $routeProvider
+           .when('/evaluations', {
+               templateUrl: 'app/evaluation/views/evaluations.html',
+               controller: 'evaluationsController'
+           });
+
+
 
     });
