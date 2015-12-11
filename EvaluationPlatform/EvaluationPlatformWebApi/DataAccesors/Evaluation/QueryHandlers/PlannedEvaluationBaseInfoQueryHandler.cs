@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
-using EvaluationPlatformDataTransferModels.BaseInfoModels;
+using EvaluationPlatformDataTransferModels.InformationModels;
+using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
 using EvaluationPlatformDAL;
 using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformWebApi.DataAccesors.Evaluation.QueryObjects;

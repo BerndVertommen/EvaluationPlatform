@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using AutoMapper;
 using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
+using EvaluationPlatformDataTransferModels.InformationModels.EvaluationTemplate;
 using EvaluationPlatformDAL;
 using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformDomain.Models;

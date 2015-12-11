@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
+using EvaluationPlatformDataTransferModels.InformationModels.EvaluationSubsection;
 
-namespace EvaluationPlatformDataTransferModels.InformationModels.Evaluation
+namespace EvaluationPlatformDataTransferModels.InformationModels.EvaluationItem
 {
     public class EvaluationItemInfo
     {

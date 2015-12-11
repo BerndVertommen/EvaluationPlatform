@@ -3,6 +3,7 @@ using System.Linq;
 using System.Reflection;
 using AutoMapper;
 using EvaluationPlatformDataTransferModels.InformationModels;
+using EvaluationPlatformDataTransferModels.InformationModels.Teacher;
 using EvaluationPlatformDomain.Models;
 
 namespace EvaluationPlatformWebApi.App_Start

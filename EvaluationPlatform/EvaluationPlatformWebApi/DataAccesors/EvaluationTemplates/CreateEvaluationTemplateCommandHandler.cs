@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
+using EvaluationPlatformDataTransferModels.InformationModels.EvaluationSubsection;
 using EvaluationPlatformDAL;
 using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformDomain.Models;

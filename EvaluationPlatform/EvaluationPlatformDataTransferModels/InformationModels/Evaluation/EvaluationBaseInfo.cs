@@ -1,7 +1,7 @@
 ﻿using System;
-using EvaluationPlatformDataTransferModels.InformationModels;
+using EvaluationPlatformDataTransferModels.InformationModels.Course;
 
-namespace EvaluationPlatformDataTransferModels.BaseInfoModels
+namespace EvaluationPlatformDataTransferModels.InformationModels.Evaluation
 {
     public class EvaluationBaseInfo
     {

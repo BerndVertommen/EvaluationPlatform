@@ -246,6 +246,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseWebApiController.cs" />
     <Compile Include="Controllers\ClassesController.cs" />
+    <Compile Include="Controllers\CourcesController.cs" />
     <Compile Include="Controllers\EvaluationTemplateController.cs" />
     <Compile Include="Controllers\EvaluationController.cs" />
     <Compile Include="Controllers\GeneralInfoController.cs" />
@@ -261,6 +262,8 @@
     <Compile Include="DataAccesors\Class\QueryHandlers\ClassesForTeacherQueryHandler.cs" />
     <Compile Include="DataAccesors\Class\QueryObjects\ClassesForCourseQueryObject.cs" />
     <Compile Include="DataAccesors\Class\QueryObjects\ClassesForTeacherQueryObject.cs" />
+    <Compile Include="DataAccesors\Course\QueryHandlers\CoursesForTeacherQueryHandler.cs" />
+    <Compile Include="DataAccesors\Course\QueryObjects\CoursesForTeacherQueryObject.cs" />
     <Compile Include="DataAccesors\EvaluationTemplates\CreateEvaluationTemplateCommand.cs" />
     <Compile Include="DataAccesors\EvaluationTemplates\CreateEvaluationTemplateCommandHandler.cs" />
     <Compile Include="DataAccesors\EvaluationTemplates\GetCreateEvaluationOptionsQueryObject.cs" />
@@ -305,6 +308,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="DataAccesors\Course\CommandHandlers\" />
+    <Folder Include="DataAccesors\Course\Command\" />
     <Folder Include="Models\" />
     <Folder Include="Views\GeneralInfo\" />
   </ItemGroup>

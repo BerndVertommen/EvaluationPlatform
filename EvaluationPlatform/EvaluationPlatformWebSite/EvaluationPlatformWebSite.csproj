@@ -114,6 +114,11 @@
     <Content Include="app\Teacher\services\teacherService.js" />
     <Content Include="app\Teacher\views\manageTeacher.html" />
     <Content Include="app\Teacher\views\viewModal.html" />
+    <Content Include="app\courses\controllers\courseController.js" />
+    <Content Include="app\courses\course-module.js" />
+    <Content Include="app\courses\services\courseService.js" />
+    <Content Include="app\courses\views\courses.html" />
+    <Content Include="app\courses\views\viewModal.html" />
     <Content Include="app\zzzcopyMe\replace-module.js" />
     <Content Include="app\zzzcopyMe\controllers\replaceCtrl.js" />
     <Content Include="app\zzzcopyMe\services\replaceService.js" />

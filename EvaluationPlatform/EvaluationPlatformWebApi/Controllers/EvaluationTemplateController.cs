@@ -5,6 +5,7 @@ using System.Web.Http;
 using EvaluationPlatformDataTransferModels.CreationModels;
 using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
+using EvaluationPlatformDataTransferModels.InformationModels.EvaluationTemplate;
 using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformWebApi.Authentication;

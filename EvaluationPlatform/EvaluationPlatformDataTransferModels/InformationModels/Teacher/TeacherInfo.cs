@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using EvaluationPlatformDataTransferModels.InformationModels.Class;
+using EvaluationPlatformDataTransferModels.InformationModels.Course;
 
-namespace EvaluationPlatformDataTransferModels.InformationModels
+namespace EvaluationPlatformDataTransferModels.InformationModels.Teacher
 {
     public class TeacherInfo
     {

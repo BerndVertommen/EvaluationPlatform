@@ -40,26 +40,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseInfoModels\EvaluationBaseInfo.cs" />
     <Compile Include="CreationModels\CreateAccountInfo.cs" />
     <Compile Include="CreationModels\CreateEvaluationOptions.cs" />
     <Compile Include="InformationModels\Account\AccountInfo.cs" />
-    <Compile Include="InformationModels\ClassInfo.cs" />
-    <Compile Include="InformationModels\CourseInfo.cs" />
+    <Compile Include="InformationModels\Class\ClassBaseInfo.cs" />
+    <Compile Include="InformationModels\Class\ClassInfo.cs" />
+    <Compile Include="InformationModels\Course\CourceBaseInfo.cs" />
+    <Compile Include="InformationModels\Course\CourseInfo.cs" />
+    <Compile Include="InformationModels\Course\CourseViewInfo.cs" />
+    <Compile Include="InformationModels\EvaluationItem\EvaluationItemInfo.cs" />
+    <Compile Include="InformationModels\EvaluationSubsection\EvaluationSubSectionInfo.cs" />
+    <Compile Include="InformationModels\EvaluationTemplate\EvaluationTemplateInfo.cs" />
+    <Compile Include="InformationModels\Evaluation\EvaluationBaseInfo.cs" />
     <Compile Include="InformationModels\Evaluation\EvaluationInfo.cs" />
-    <Compile Include="InformationModels\Evaluation\EvaluationItemInfo.cs" />
     <Compile Include="InformationModels\Evaluation\EvaluationResultInfo.cs" />
-    <Compile Include="InformationModels\Evaluation\EvaluationSubSectionInfo.cs" />
-    <Compile Include="InformationModels\Evaluation\EvaluationTemplateInfo.cs" />
     <Compile Include="InformationModels\GoalInfo.cs" />
     <Compile Include="InformationModels\GuidDto.cs" />
     <Compile Include="InformationModels\PersonInfo.cs" />
-    <Compile Include="InformationModels\PrimaryTeacherInfo.cs" />
     <Compile Include="InformationModels\ScaleInfo.cs" />
     <Compile Include="InformationModels\SchoolYearInfo.cs" />
     <Compile Include="InformationModels\StudentInfo.cs" />
-    <Compile Include="InformationModels\TeacherInfo.cs" />
+    <Compile Include="InformationModels\Teacher\PrimaryTeacherInfo.cs" />
+    <Compile Include="InformationModels\Teacher\TeacherBaseInfo.cs" />
+    <Compile Include="InformationModels\Teacher\TeacherInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BaseInfoModels\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using EvaluationPlatformDataTransferModels.CreationModels;
 using EvaluationPlatformDataTransferModels.InformationModels;
+using EvaluationPlatformDataTransferModels.InformationModels.Teacher;
 using EvaluationPlatformDAL;
 using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformDomain.Models;

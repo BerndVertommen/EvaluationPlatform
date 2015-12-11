@@ -1,5 +1,6 @@
 ﻿using System;
 using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
+using EvaluationPlatformDataTransferModels.InformationModels.EvaluationTemplate;
 using EvaluationPlatformDAL.CommandAndQuery;
 
 namespace EvaluationPlatformWebApi.DataAccesors.Evaluation

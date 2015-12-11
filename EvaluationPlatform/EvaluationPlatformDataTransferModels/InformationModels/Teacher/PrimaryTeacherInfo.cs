@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EvaluationPlatformDataTransferModels.InformationModels
+namespace EvaluationPlatformDataTransferModels.InformationModels.Teacher
 {
     public class PrimaryTeacherInfo
     {

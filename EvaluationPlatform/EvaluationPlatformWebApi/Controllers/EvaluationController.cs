@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
-using EvaluationPlatformDataTransferModels.BaseInfoModels;
 using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
 using EvaluationPlatformDAL.CommandAndQuery;

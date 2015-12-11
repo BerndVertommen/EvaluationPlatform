@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using EvaluationPlatformDataTransferModels.InformationModels.Class;
+using EvaluationPlatformDataTransferModels.InformationModels.Course;
+using EvaluationPlatformDataTransferModels.InformationModels.EvaluationItem;
 
 namespace EvaluationPlatformDataTransferModels.InformationModels.Evaluation
 {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Web.Http;
 using EvaluationPlatformDataTransferModels.InformationModels;
+using EvaluationPlatformDataTransferModels.InformationModels.Class;
 using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformWebApi.Authentication;

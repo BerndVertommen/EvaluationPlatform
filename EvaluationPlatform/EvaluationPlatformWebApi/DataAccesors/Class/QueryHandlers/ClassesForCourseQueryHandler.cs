@@ -2,6 +2,7 @@
 using System.Linq;
 using AutoMapper;
 using EvaluationPlatformDataTransferModels.InformationModels;
+using EvaluationPlatformDataTransferModels.InformationModels.Class;
 using EvaluationPlatformDAL;
 using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformDomain.Models;

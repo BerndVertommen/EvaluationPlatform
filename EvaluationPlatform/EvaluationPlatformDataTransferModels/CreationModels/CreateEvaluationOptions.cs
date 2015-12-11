@@ -1,4 +1,5 @@
 ﻿using EvaluationPlatformDataTransferModels.InformationModels;
+using EvaluationPlatformDataTransferModels.InformationModels.Teacher;
 
 namespace EvaluationPlatformDataTransferModels.CreationModels
 {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EvaluationPlatformDataTransferModels.InformationModels.Evaluation
+namespace EvaluationPlatformDataTransferModels.InformationModels.EvaluationSubsection
 {
     public class EvaluationSubSectionInfo
     {

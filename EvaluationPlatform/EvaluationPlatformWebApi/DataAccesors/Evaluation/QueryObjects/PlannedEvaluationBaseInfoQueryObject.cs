@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using EvaluationPlatformDataTransferModels.BaseInfoModels;
+using EvaluationPlatformDataTransferModels.InformationModels;
+using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
 using EvaluationPlatformDAL.CommandAndQuery;
 
 namespace EvaluationPlatformWebApi.DataAccesors.Evaluation.QueryObjects

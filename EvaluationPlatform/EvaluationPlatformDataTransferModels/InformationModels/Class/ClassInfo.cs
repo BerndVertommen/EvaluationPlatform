@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EvaluationPlatformDataTransferModels.InformationModels
+namespace EvaluationPlatformDataTransferModels.InformationModels.Class
 {
     public class ClassInfo
     {
