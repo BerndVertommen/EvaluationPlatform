@@ -1,6 +1,6 @@
 ﻿(function (module) {
 
-    function serviceName($http, configurationService) {
+    function studyPlanService($http, configurationService) {
         var thiz = this;
         var baseWebApiUrl = configurationService.baseApiPath;
         
@@ -19,5 +19,5 @@
 
     }
 
-    module.service('serviceName', serviceName);
-})(angular.module('app.replace'))
+    module.service('studyPlanService', studyPlanService);
+})(angular.module('app.studyPlan'))

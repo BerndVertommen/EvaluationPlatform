@@ -1,10 +1,9 @@
 ﻿(function (module) {
 
-    function serviceName($http, configurationService) {
+    function courseService($http, configurationService) {
         var thiz = this;
-        var baseWebApiUrl = configurationService.baseApiPath;
-        
-        // Variables
+        var basePath = configurationService.baseApiPath;
+        //Variables
 
         //private Functions
 
@@ -19,5 +18,5 @@
 
     }
 
-    module.service('serviceName', serviceName);
+    module.service('courseService', courseService);
 })(angular.module('app.replace'))

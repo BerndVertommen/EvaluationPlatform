@@ -67,8 +67,10 @@
     <Content Include="app\Account\views\createAccountModal.html" />
     <Content Include="app\classes\classes-module.js" />
     <Content Include="app\classes\controllers\classesController.js" />
+    <Content Include="app\classes\controllers\manageClassesController.js" />
     <Content Include="app\classes\services\classesSvc.js" />
     <Content Include="app\classes\views\classes.html" />
+    <Content Include="app\classes\views\manageClasses.html" />
     <Content Include="app\configuration\services\configurationService.js" />
     <Content Include="app\dashboard\controllers\partials\calendarController.js" />
     <Content Include="app\dashboard\views\partials\calendarPartial.html" />
@@ -114,6 +116,16 @@
     <Content Include="app\Teacher\services\teacherService.js" />
     <Content Include="app\Teacher\views\manageTeacher.html" />
     <Content Include="app\Teacher\views\viewModal.html" />
+    <Content Include="app\Course\controllers\manageCourseController.js" />
+    <Content Include="app\Course\course-module.js" />
+    <Content Include="app\Course\services\courseService.js" />
+    <Content Include="app\Course\views\manageCourse.html" />
+    <Content Include="app\Course\views\viewModal.html" />
+    <Content Include="app\StudyPlan\controllers\manageStudyPlanController.js" />
+    <Content Include="app\StudyPlan\studyPlan-module.js" />
+    <Content Include="app\StudyPlan\services\studyPlanService.js" />
+    <Content Include="app\StudyPlan\views\manageStudyPlan.html" />
+    <Content Include="app\StudyPlan\views\viewModal.html" />
     <Content Include="app\zzzcopyMe\replace-module.js" />
     <Content Include="app\zzzcopyMe\controllers\replaceCtrl.js" />
     <Content Include="app\zzzcopyMe\services\replaceService.js" />

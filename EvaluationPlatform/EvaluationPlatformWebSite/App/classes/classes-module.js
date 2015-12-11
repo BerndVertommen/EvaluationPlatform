@@ -16,4 +16,10 @@ angular.module('app.classes', ['ngRoute'])
                     }
                 }
             });
+
+        $routeProvider
+          .when('/manageClasses', {
+              templateUrl: 'app/classes/views/manageClasses.html',
+              controller: 'manageClassesController'
+          });
     });
