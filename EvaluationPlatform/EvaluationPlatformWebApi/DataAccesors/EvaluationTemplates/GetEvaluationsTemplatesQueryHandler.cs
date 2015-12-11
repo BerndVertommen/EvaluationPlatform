@@ -19,7 +19,7 @@ namespace EvaluationPlatformWebApi.DataAccesors.EvaluationTemplates
 
         public override IEnumerable<EvaluationTemplateInfo> Handle(GetEvaluationTemplatesQueryObject queryObject)
         {
-            Teacher teacher = Database.GetTeacherForAccount(queryObject.AccountId);
+            var teacher = Database.GetTeacherForAccount(queryObject.AccountId);
 
 
 

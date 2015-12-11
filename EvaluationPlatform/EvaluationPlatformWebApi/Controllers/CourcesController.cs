@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Http;
-using System.Web.Routing;
-using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Course;
 using EvaluationPlatformDAL.CommandAndQuery;
+using EvaluationPlatformDomain.Models;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformWebApi.Authentication;
 using EvaluationPlatformWebApi.DataAccesors.Course.QueryObjects;
@@ -28,5 +27,14 @@ namespace EvaluationPlatformWebApi.Controllers
 
             return QueryProccesor.Execute(new CoursesForTeacherQueryObject(teacherId));
         }
+        
+        [CustomAutorize(AccountRoleType.Admin)]
+        [Route("allCourses")]
+        [HttpGet]
+        public IEnumerable<CourseBaseInfo> AllCourses()
+        {
+            return QueryProccesor.Execute(new AllCoursesQueryObject(SchoolYear.GetStartYearThisSchoolYear()));
+        }
+
     }
 }

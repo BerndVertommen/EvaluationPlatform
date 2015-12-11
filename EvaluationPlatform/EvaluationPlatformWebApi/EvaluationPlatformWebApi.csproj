@@ -250,6 +250,7 @@
     <Compile Include="Controllers\EvaluationTemplateController.cs" />
     <Compile Include="Controllers\EvaluationController.cs" />
     <Compile Include="Controllers\GeneralInfoController.cs" />
+    <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="DataAccesors\Account\CommandHandlers\CreateAccountCommandHandler.cs" />
     <Compile Include="DataAccesors\Account\Commands\CreateAccountCommand.cs" />
     <Compile Include="DataAccesors\Account\QueryHandlers\GetAccountInfoQueryHandler.cs" />
@@ -262,7 +263,9 @@
     <Compile Include="DataAccesors\Class\QueryHandlers\ClassesForTeacherQueryHandler.cs" />
     <Compile Include="DataAccesors\Class\QueryObjects\ClassesForCourseQueryObject.cs" />
     <Compile Include="DataAccesors\Class\QueryObjects\ClassesForTeacherQueryObject.cs" />
+    <Compile Include="DataAccesors\Course\QueryHandlers\AllCoursesQueryHandler.cs" />
     <Compile Include="DataAccesors\Course\QueryHandlers\CoursesForTeacherQueryHandler.cs" />
+    <Compile Include="DataAccesors\Course\QueryObjects\AllCoursesQueryObject.cs" />
     <Compile Include="DataAccesors\Course\QueryObjects\CoursesForTeacherQueryObject.cs" />
     <Compile Include="DataAccesors\EvaluationTemplates\CreateEvaluationTemplateCommand.cs" />
     <Compile Include="DataAccesors\EvaluationTemplates\CreateEvaluationTemplateCommandHandler.cs" />
@@ -280,6 +283,10 @@
     <Compile Include="DataAccesors\Evaluation\QueryObjects\PlannedEvaluationBaseInfoQueryObject.cs" />
     <Compile Include="DataAccesors\General\QueryHandlers\GetSchoolYearQueryHandler.cs" />
     <Compile Include="DataAccesors\General\QueryObjects\GetSchoolYearsQueryObject.cs" />
+    <Compile Include="DataAccesors\Teacher\CommandHandler\AddCourseToTeacherCommandHandler.cs" />
+    <Compile Include="DataAccesors\Teacher\Command\AddCourseToTeacherCommand.cs" />
+    <Compile Include="DataAccesors\Teacher\QueryHandler\TeachersQueryHandler.cs" />
+    <Compile Include="DataAccesors\Teacher\QueryObject\TeachersQueryObject.cs" />
     <Compile Include="Exeptions\BusinessExeption.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

@@ -39,7 +39,7 @@ namespace EvaluationPlatformWebApi.DataAccesors.Account.CommandHandlers
             // teacher aanmaken en in database steken
             if (createAccountInfo.IsTeacher)
             {
-                Teacher newTeacher = new Teacher(newAccount.Person);
+                EvaluationPlatformDomain.Models.Teacher newTeacher = new EvaluationPlatformDomain.Models.Teacher(newAccount.Person);
                 Database.Teachers.Add(newTeacher);
             }
 

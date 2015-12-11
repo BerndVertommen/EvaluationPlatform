@@ -4,13 +4,13 @@ using EvaluationPlatformDataTransferModels.InformationModels.Teacher;
 
 namespace EvaluationPlatformDataTransferModels.InformationModels.Course
 {
-    public class CourceBaseInfo 
+    public class CourseBaseInfo 
     {
         public Guid Id { get; set; }
         public SchoolYearInfo SchoolYear { get; set; }
         public string Description { get; set; }
 
-        public CourceBaseInfo()
+        public CourseBaseInfo()
         {
             
         }

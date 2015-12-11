@@ -7,7 +7,15 @@
         $routeProvider
           .when('/manageTeacher', {
               templateUrl: 'app/Teacher/views/manageTeacher.html',
-              controller: 'manageTeacherController'
+              controller: 'manageTeacherController',
+              resolve: {
+                  teachers : function(teacherService) {
+                      return teacherService.teachers().then(function(result) {
+                          return result;
+                      });
+                  }
+              }
+
           });
 
     });

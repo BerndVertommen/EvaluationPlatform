@@ -11,6 +11,20 @@
             });
         }
 
+        thiz.addCourse = function (addCourseToTeacherCommand) {
+            return $http.post(basePath + '/teacher/addCourse', addCourseToTeacherCommand).then(function (result) {
+                return result.data;
+            });
+        }
+
+        thiz.teachers = function () { // use query object in future change method to post then probably
+            return $http.get(basePath + '/teacher/teachers').then(function (result) {
+                return result.data;
+            });
+        }
+
+        
+
         
 
     }

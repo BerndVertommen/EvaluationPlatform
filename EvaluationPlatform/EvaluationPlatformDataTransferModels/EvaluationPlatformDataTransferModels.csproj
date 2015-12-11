@@ -45,7 +45,7 @@
     <Compile Include="InformationModels\Account\AccountInfo.cs" />
     <Compile Include="InformationModels\Class\ClassBaseInfo.cs" />
     <Compile Include="InformationModels\Class\ClassInfo.cs" />
-    <Compile Include="InformationModels\Course\CourceBaseInfo.cs" />
+    <Compile Include="InformationModels\Course\CourseBaseInfo.cs" />
     <Compile Include="InformationModels\Course\CourseInfo.cs" />
     <Compile Include="InformationModels\Course\CourseViewInfo.cs" />
     <Compile Include="InformationModels\EvaluationItem\EvaluationItemInfo.cs" />

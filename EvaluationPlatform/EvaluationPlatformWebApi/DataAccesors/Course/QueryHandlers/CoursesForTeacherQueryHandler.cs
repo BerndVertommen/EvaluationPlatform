@@ -6,6 +6,7 @@ using EvaluationPlatformDataTransferModels.InformationModels.Course;
 using EvaluationPlatformDataTransferModels.InformationModels.Teacher;
 using EvaluationPlatformDAL;
 using EvaluationPlatformDAL.CommandAndQuery;
+using EvaluationPlatformDomain.Models;
 using EvaluationPlatformWebApi.DataAccesors.Course.QueryObjects;
 
 namespace EvaluationPlatformWebApi.DataAccesors.Course.QueryHandlers
@@ -24,7 +25,8 @@ namespace EvaluationPlatformWebApi.DataAccesors.Course.QueryHandlers
             {
                 throw new NullReferenceException("Teacher not found");
             }
-            var cources = teacher.Courses;
+            var thisStartyear = SchoolYear.GetStartYearThisSchoolYear();
+            var cources = teacher.Courses.Where(c => c.SchoolYear.StartYear == thisStartyear);
 
 
             var courcesViewInfo = Mapper.Map<IEnumerable<CourseViewInfo>>(cources).ToList();

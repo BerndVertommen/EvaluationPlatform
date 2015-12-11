@@ -15,6 +15,12 @@
             });
         };
 
+        thiz.allCourses = function () {
+            return $http.get(baseWebApiUrl + "courses/allCourses").then(function (result) {
+                return result.data;
+            });
+        };
+
         //initiations
         var init = function () {
 

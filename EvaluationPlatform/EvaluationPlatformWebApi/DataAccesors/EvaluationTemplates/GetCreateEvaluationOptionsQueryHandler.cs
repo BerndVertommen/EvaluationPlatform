@@ -25,7 +25,7 @@ namespace EvaluationPlatformWebApi.DataAccesors.Evaluation
 
         private CreateEvaluationOptions SetTeacher(GetCreateEvaluationOptionsQueryObject queryObject, CreateEvaluationOptions createEvaluationOptions)
         {
-            Teacher teacher = Database.GetTeacherForAccount(queryObject.AccountId);
+            EvaluationPlatformDomain.Models.Teacher teacher = Database.GetTeacherForAccount(queryObject.AccountId);
 
             createEvaluationOptions.Teacher = Mapper.Map<TeacherInfo>(teacher);
 

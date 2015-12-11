@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace EvaluationPlatformDomain.Models
 {
@@ -36,6 +37,10 @@ namespace EvaluationPlatformDomain.Models
 
         public void AddCourse(Course course)
         {
+            if (Courses.Any(c => c.Id == course.Id))
+            {
+                throw new Exception("Course already on teacher");
+            }
             Courses.Add(course);
         }
 
