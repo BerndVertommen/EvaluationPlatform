@@ -175,6 +175,18 @@
     <Compile Include="Migrations\201512021957560_AddedNotScoredREason.Designer.cs">
       <DependentUpon>201512021957560_AddedNotScoredREason.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512131307417_MadeSureCouplingTablesWhereGenerated.cs" />
+    <Compile Include="Migrations\201512131307417_MadeSureCouplingTablesWhereGenerated.Designer.cs">
+      <DependentUpon>201512131307417_MadeSureCouplingTablesWhereGenerated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512131313128_AddedManyTomanyTeacherCourses.cs" />
+    <Compile Include="Migrations\201512131313128_AddedManyTomanyTeacherCourses.Designer.cs">
+      <DependentUpon>201512131313128_AddedManyTomanyTeacherCourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512131315343_RemovedStudyPlanFromTeacher.cs" />
+    <Compile Include="Migrations\201512131315343_RemovedStudyPlanFromTeacher.Designer.cs">
+      <DependentUpon>201512131315343_RemovedStudyPlanFromTeacher.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Generators\StudentGenerator.cs" />
@@ -259,6 +271,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512021957560_AddedNotScoredREason.resx">
       <DependentUpon>201512021957560_AddedNotScoredREason.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512131307417_MadeSureCouplingTablesWhereGenerated.resx">
+      <DependentUpon>201512131307417_MadeSureCouplingTablesWhereGenerated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512131313128_AddedManyTomanyTeacherCourses.resx">
+      <DependentUpon>201512131313128_AddedManyTomanyTeacherCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512131315343_RemovedStudyPlanFromTeacher.resx">
+      <DependentUpon>201512131315343_RemovedStudyPlanFromTeacher.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

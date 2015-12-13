@@ -8,7 +8,7 @@ namespace EvaluationPlatformDomain.Models
     {
         public virtual Person Person { get; protected set; }
         public virtual ICollection<Class> Classes { get; } = new List<Class>(); // c#6 auto initializers
-        public virtual ICollection<Evaluation> Evaluations { get; } =new List<Evaluation>();
+        public virtual ICollection<Evaluation> Evaluations { get; } = new List<Evaluation>();
         public virtual ICollection<EvaluationTemplate> EvaluationTemplates  { get; } = new List<EvaluationTemplate>();
         public virtual ICollection<Course> Courses { get; } = new List<Course>();
 

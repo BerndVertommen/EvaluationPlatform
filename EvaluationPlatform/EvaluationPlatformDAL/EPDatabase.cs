@@ -39,6 +39,7 @@ namespace EvaluationPlatformDAL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //modelBuilder.Entity<StudyPlan>().HasMany(c => c.).WithMany(p => p.StudyPlans);
+            modelBuilder.Entity<Teacher>().HasMany(c => c.Courses).WithMany(p => p.Teachers);
 
         }
 

@@ -12,6 +12,8 @@ namespace EvaluationPlatformDomain.Models
         public Scale Scale { get; set; } 
         public virtual string Description { get; set; }
         public virtual StudyPlan StudyPlan { get; set; }
+        public virtual ICollection<Teacher> Teachers { get; } = new List<Teacher>();
+
 
         // do not add to this colelction property exists to let EF generate coupling table
         public virtual ICollection<Class> Classes { get; private set; }
