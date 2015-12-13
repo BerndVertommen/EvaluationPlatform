@@ -17,7 +17,8 @@
                         <th >Leraren overzicht</th>
                         <th class="tcolDoubleSmButton">
                             <div class="btn-group">
-                                <a class="btn btn-default btn-sm" ng-click="openCoursesModal()"><i class="fa fa-book"></i></a>
+                                <a class="btn btn-default btn-sm" ng-click="openCoursesModal()" ng-disabled="selectedRow == null"><i class="fa fa-book"></i> <i class="fa fa-plus"></i></a>
+                                <a class="btn btn-default btn-sm" ng-click="openClassModal()" ng-disabled="selectedRow == null"><i class="fa fa-users"></i> <i class="fa fa-plus"></i></a>
                             </div>
                         </th>
                     </tr>

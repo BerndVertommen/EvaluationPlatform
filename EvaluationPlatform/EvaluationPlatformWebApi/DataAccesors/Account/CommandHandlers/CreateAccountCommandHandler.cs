@@ -7,6 +7,7 @@ using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformWebApi.DataAccesors.Account.Commands;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformDomain.Models;
+using EvaluationPlatformWebApi.Exeptions;
 
 namespace EvaluationPlatformWebApi.DataAccesors.Account.CommandHandlers
 {
@@ -18,6 +19,12 @@ namespace EvaluationPlatformWebApi.DataAccesors.Account.CommandHandlers
 
         public override void Handle(CreateAccountCommand commandObject)
         {
+            var account = Database.Accounts.FirstOrDefault(a => a.Username == commandObject.CreateAccountInfo.Username);
+            if (account != null)
+            {
+                throw new BusinessExeption(BusinessExeption.UsernameExists);
+            }
+
             var createAccountInfo = commandObject.CreateAccountInfo;
             // gebruik de createAccountInfo om een nieuwe account aan te maken
             // stop de nieuwe account nadien in de database. Id moet je niet invullen dit doet de basisklasse 'entity'

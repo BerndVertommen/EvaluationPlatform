@@ -39,5 +39,16 @@ namespace EvaluationPlatformWebApi.Controllers
 
             return QueryProccesor.Execute(new TeachersQueryObject());
         }
+
+        [CustomAutorize(AccountRoleType.Admin)]
+        [Route("addClass")]
+        [HttpPost] 
+        public HttpResponseMessage AddClass(AddClassToTeacherCommand addClassToTeacherCommand)
+        {
+            CommandProcessor.Execute(addClassToTeacherCommand);
+
+            return new HttpResponseMessage(HttpStatusCode.OK);
+        }
+        
     }
 }

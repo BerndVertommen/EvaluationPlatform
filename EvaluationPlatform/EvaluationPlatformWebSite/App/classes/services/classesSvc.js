@@ -23,6 +23,12 @@
             });
         }
 
+        thiz.availableClassesForTeacher = function (teacherId) {
+            return $http.post(baseWebApiUrl + 'class/availableClassesForTeacher', { 'id': teacherId }).then(function (result) {
+                return result.data;
+            });
+        }
+
         //initiations
 
     };

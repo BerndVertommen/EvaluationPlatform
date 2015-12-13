@@ -23,6 +23,12 @@
             });
         }
 
+        thiz.addClass = function (addClassToTeacherCommand) {
+            return $http.post(basePath + '/teacher/addClass', addClassToTeacherCommand).then(function (result) {
+                return result.data;
+            });
+        }
+
         
 
         

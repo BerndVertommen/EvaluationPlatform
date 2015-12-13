@@ -41,5 +41,15 @@ namespace EvaluationPlatformWebApi.Controllers
             //var guid = Guid.Parse(courseId);
             return QueryProccesor.Execute(new ClassesForCourseQueryObject(guidDto.Id));
         }
+
+        [CustomAutorize(AccountRoleType.Admin)]
+        [Route("availableClassesForTeacher")]
+        [HttpPost]
+        public IEnumerable<ClassBaseInfo> AvailableClassesForTeacher(GuidDto guidDto)
+        {
+            //var guid = Guid.Parse(courseId);
+            return QueryProccesor.Execute(new ClassesAvailableForTeacherQueryObject(guidDto.Id));
+        }
+        
     }
 }

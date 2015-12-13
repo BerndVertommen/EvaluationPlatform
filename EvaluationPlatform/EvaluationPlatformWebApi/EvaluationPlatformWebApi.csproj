@@ -259,8 +259,10 @@
     <Compile Include="DataAccesors\Account\QueryObjects\GetAccountInfoQueryObject.cs" />
     <Compile Include="DataAccesors\Account\QueryObjects\GetAccountQueryObject.cs" />
     <Compile Include="DataAccesors\Account\QueryObjects\GetAccountsQueryObject.cs" />
+    <Compile Include="DataAccesors\Class\QueryHandlers\ClassesAvailableForTeacherQueryHandler.cs" />
     <Compile Include="DataAccesors\Class\QueryHandlers\ClassesForCourseQueryHandler.cs" />
     <Compile Include="DataAccesors\Class\QueryHandlers\ClassesForTeacherQueryHandler.cs" />
+    <Compile Include="DataAccesors\Class\QueryObjects\ClassesAvailableForTeacherQueryObject.cs" />
     <Compile Include="DataAccesors\Class\QueryObjects\ClassesForCourseQueryObject.cs" />
     <Compile Include="DataAccesors\Class\QueryObjects\ClassesForTeacherQueryObject.cs" />
     <Compile Include="DataAccesors\Course\QueryHandlers\AllCoursesQueryHandler.cs" />
@@ -283,7 +285,9 @@
     <Compile Include="DataAccesors\Evaluation\QueryObjects\PlannedEvaluationBaseInfoQueryObject.cs" />
     <Compile Include="DataAccesors\General\QueryHandlers\GetSchoolYearQueryHandler.cs" />
     <Compile Include="DataAccesors\General\QueryObjects\GetSchoolYearsQueryObject.cs" />
+    <Compile Include="DataAccesors\Teacher\CommandHandler\AddClassToTeacherCommandHandler.cs" />
     <Compile Include="DataAccesors\Teacher\CommandHandler\AddCourseToTeacherCommandHandler.cs" />
+    <Compile Include="DataAccesors\Teacher\Command\AddClassToTeacherCommand.cs" />
     <Compile Include="DataAccesors\Teacher\Command\AddCourseToTeacherCommand.cs" />
     <Compile Include="DataAccesors\Teacher\QueryHandler\TeachersQueryHandler.cs" />
     <Compile Include="DataAccesors\Teacher\QueryObject\TeachersQueryObject.cs" />

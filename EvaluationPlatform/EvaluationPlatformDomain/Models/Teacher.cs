@@ -27,6 +27,11 @@ namespace EvaluationPlatformDomain.Models
 
         public void AddClass(Class toAddClass)
         {
+            if (Classes.Any(c => c.Id == toAddClass.Id))
+            {
+                throw new Exception("Class already added.");
+            }
+
             Classes.Add(toAddClass);
         }
 

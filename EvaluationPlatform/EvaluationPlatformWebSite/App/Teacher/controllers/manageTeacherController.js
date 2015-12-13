@@ -33,6 +33,36 @@
             });
         };
 
+        $scope.openClassModal = function () {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: 'app/classes/views/selectClassesModal.html',
+                controller: 'selectClassModalController',
+                size: 'lg',
+                resolve: {
+                    classes: function (classesService) {
+                        return classesService.availableClassesForTeacher($scope.selectedTeacher.id).then(function (classes) {
+                            return classes;
+                        });
+                    }
+                }
+          });
+
+            modalInstance.result.then(function (selectedClass) {
+                var addClassToTeacherCommand = {};
+                addClassToTeacherCommand.teacherId = $scope.selectedTeacher.id;
+                addClassToTeacherCommand.classId = selectedClass.id;
+
+                teacherService.addClass(addClassToTeacherCommand).then(function(result) {
+                    // succes toaster
+                },function () {
+                    //error toaster
+                });
+            }, function () {
+              // Console.log('Modal general options dismissed at: ' + new Date());
+          });
+        };
+
         //initiations
         var init = function () {
             //teacherService.getAccounts().then(function (accounts) {
