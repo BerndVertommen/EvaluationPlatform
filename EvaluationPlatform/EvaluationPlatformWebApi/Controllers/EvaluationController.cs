@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using EvaluationPlatformDataTransferModels.InformationModels;
@@ -43,7 +44,7 @@ namespace EvaluationPlatformWebApi.Controllers
         [HttpPost]
         public HttpResponseMessage UpdateEvaluation(EvaluationInfo evaluationInfo)
         {
-            CommandProcessor.Execute(new UpdateEvaluationItemsCommandObject(evaluationInfo.Id, evaluationInfo.EvaluationItems));
+            CommandProcessor.Execute(new UpdateEvaluationItemsCommandObject(evaluationInfo));
 
             return new HttpResponseMessage();
         }
@@ -57,11 +58,10 @@ namespace EvaluationPlatformWebApi.Controllers
             {
                 foreach (var evaluationinfo in evaluationInfos)
                 {
-                    CommandProcessor.Execute(new UpdateEvaluationItemsCommandObject(evaluationinfo.Id, evaluationinfo.EvaluationItems));
+                    CommandProcessor.Execute(new UpdateEvaluationItemsCommandObject(evaluationinfo));
                 }
             }
-
-            return new HttpResponseMessage();
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
     }
 

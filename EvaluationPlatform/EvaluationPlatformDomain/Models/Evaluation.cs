@@ -70,5 +70,10 @@ namespace EvaluationPlatformDomain.Models
         }
 
 
+        public void UpdateGeneralcomment(string generalComment)
+        {
+            GeneralComment = generalComment;
+            SetUpdated();
+        }
     }
 }

@@ -12,7 +12,7 @@
         // public functions
         $scope.selectEvaluation = function (evaluation) {
             $scope.selectedEvaluation = evaluation;
-            thiz.setSubsectionScores(); // find other solutio to map scores not on evry select.
+            thiz.setSubsectionScores(); // find other solution to map scores not on evry select.
             console.log($scope.selectedEvaluation);
         }
 
