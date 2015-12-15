@@ -51,7 +51,7 @@ namespace EvaluationPlatformWebApi.Controllers
         [Route("updateEvaluations")]
         [CustomAutorize(AccountRoleType.UserRole)]
         [HttpPost]
-        public HttpResponseMessage UpdateEvaluation(IEnumerable<EvaluationInfo> evaluationInfos)
+        public HttpResponseMessage UpdateEvaluations(IEnumerable<EvaluationInfo> evaluationInfos)
         {
             if (evaluationInfos.Any())
             {
