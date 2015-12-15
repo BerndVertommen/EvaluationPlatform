@@ -37,6 +37,10 @@
     <Reference Include="Autofac.Integration.WebApi">
       <HintPath>..\packages\Autofac.WebApi2.3.4.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
     </Reference>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -78,9 +82,12 @@
     <Compile Include="CommandAndQuery\ICommandHandler.cs" />
     <Compile Include="CommandAndQuery\ICommandObject.cs" />
     <Compile Include="CommandAndQuery\ICommandProcessor.cs" />
+    <Compile Include="CommandAndQuery\PagedQueryResult.cs" />
     <Compile Include="CommandAndQuery\IQueryHandler.cs" />
     <Compile Include="CommandAndQuery\IQueryObject.cs" />
     <Compile Include="CommandAndQuery\IQueryProcessor.cs" />
+    <Compile Include="CommandAndQuery\PagedQueryHandler.cs" />
+    <Compile Include="CommandAndQuery\PagedQueryObject.cs" />
     <Compile Include="CommandAndQuery\QueryHandler.cs" />
     <Compile Include="CommandAndQuery\QueryProcessor.cs" />
     <Compile Include="EPDatabase.cs" />

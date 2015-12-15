@@ -22,7 +22,20 @@
         $routeProvider
            .when('/evaluations', {
                templateUrl: 'app/evaluation/views/evaluations.html',
-               controller: 'evaluationsController'
+               controller: 'evaluationsController',
+               resolve: {
+                   /*ngInject*/
+                   classes: function (classesService) {
+                       return classesService.classesForTeacher().then(function (classes) {
+                           return classes;
+                       });
+                   },
+                   courses: function (courseService) {
+                       return courseService.getCourses().then(function (courses) {
+                           return courses;
+                       });
+                   }
+               }
            });
 
 

@@ -17,14 +17,20 @@
 
 
         thiz.updateEvaluation = function (evaluation) {
-            $http.post(baseWebApiUrl + 'evaluation/updateEvaluation', evaluation).then(function (result) {
+            return $http.post(baseWebApiUrl + 'evaluation/updateEvaluation', evaluation).then(function (result) {
                 return result.data;
             });
         };
 
 
         thiz.updateEvaluations = function (evaluations) {
-            $http.post(baseWebApiUrl + 'evaluation/updateEvaluations', evaluations).then(function (result) {
+            return $http.post(baseWebApiUrl + 'evaluation/updateEvaluations', evaluations).then(function (result) {
+                return result.data;
+            });
+        };
+
+        thiz.searchEvaluations = function (evaluationsPagedQueryObject) {
+            return $http.post(baseWebApiUrl + 'evaluation/searchEvaluations', evaluationsPagedQueryObject).then(function (result) {
                 return result.data;
             });
         };

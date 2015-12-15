@@ -279,10 +279,12 @@
     <Compile Include="DataAccesors\Evaluation\CommandHandlers\UpdateEvaluationItemsCommandHandler.cs" />
     <Compile Include="DataAccesors\Evaluation\Command\CreateEvaluationCommand.cs" />
     <Compile Include="DataAccesors\Evaluation\Command\UpdateEvaluationItemsCommandObject.cs" />
+    <Compile Include="DataAccesors\Evaluation\PagedQueryResults\EvaluationsPagedQueryResult.cs" />
     <Compile Include="DataAccesors\Evaluation\QueryHandlers\EvaluationInfosForBundleQueryHandler.cs" />
+    <Compile Include="DataAccesors\Evaluation\QueryHandlers\EvaluationsPagedQueryHandler.cs" />
     <Compile Include="DataAccesors\Evaluation\QueryHandlers\PlannedEvaluationBaseInfoQueryHandler.cs" />
     <Compile Include="DataAccesors\Evaluation\QueryObjects\EvaluationInfosForBundleQueryObject.cs" />
-    <Compile Include="DataAccesors\Evaluation\QueryObjects\EvaluationsQueryObject.cs" />
+    <Compile Include="DataAccesors\Evaluation\QueryObjects\EvaluationsPagedQueryObject.cs" />
     <Compile Include="DataAccesors\Evaluation\QueryObjects\PlannedEvaluationBaseInfoQueryObject.cs" />
     <Compile Include="DataAccesors\General\QueryHandlers\GetSchoolYearQueryHandler.cs" />
     <Compile Include="DataAccesors\General\QueryObjects\GetSchoolYearsQueryObject.cs" />

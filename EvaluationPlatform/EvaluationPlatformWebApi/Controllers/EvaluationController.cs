@@ -9,6 +9,7 @@ using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformWebApi.Authentication;
 using EvaluationPlatformWebApi.DataAccesors.Evaluation.Command;
+using EvaluationPlatformWebApi.DataAccesors.Evaluation.PagedQueryResults;
 using EvaluationPlatformWebApi.DataAccesors.Evaluation.QueryObjects;
 
 namespace EvaluationPlatformWebApi.Controllers
@@ -68,9 +69,9 @@ namespace EvaluationPlatformWebApi.Controllers
         [Route("searchEvaluations")]
         [CustomAutorize(AccountRoleType.UserRole)]
         [HttpPost]
-        public HttpResponseMessage SearchEvaluations(EvaluationsQueryObject evaluationsQueryObject)
+        public EvaluationsPagedQueryResult SearchEvaluations(EvaluationsPagedQueryObject evaluationsQueryObject)
         {
-            return new HttpResponseMessage(HttpStatusCode.OK);
+            return QueryProccesor.Execute(evaluationsQueryObject);
         }
     }
 
