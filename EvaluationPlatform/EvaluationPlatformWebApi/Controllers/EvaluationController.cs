@@ -63,6 +63,22 @@ namespace EvaluationPlatformWebApi.Controllers
 
             return new HttpResponseMessage();
         }
+
+        [Route("searchEvaluations")]
+        [CustomAutorize(AccountRoleType.UserRole)]
+        [HttpPost]
+        public HttpResponseMessage SearchEvaluations(evaluationqueryobject)
+        {
+            if (evaluationInfos.Any())
+            {
+                foreach (var evaluationinfo in evaluationInfos)
+                {
+                    CommandProcessor.Execute(new UpdateEvaluationItemsCommandObject(evaluationinfo.Id, evaluationinfo.EvaluationItems));
+                }
+            }
+
+            return new HttpResponseMessage();
+        }
     }
 
 }
