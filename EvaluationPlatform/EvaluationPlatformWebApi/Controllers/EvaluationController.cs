@@ -58,7 +58,7 @@ namespace EvaluationPlatformWebApi.Controllers
             {
                 foreach (var evaluationinfo in evaluationInfos)
                 {
-                    CommandProcessor.Execute(new UpdateEvaluationItemsCommandObject(evaluationinfo.Id, evaluationinfo.EvaluationItems));
+                    CommandProcessor.Execute(new UpdateEvaluationItemsCommandObject(evaluationinfo));
                 }
             }
 
@@ -68,15 +68,8 @@ namespace EvaluationPlatformWebApi.Controllers
         [Route("searchEvaluations")]
         [CustomAutorize(AccountRoleType.UserRole)]
         [HttpPost]
-        public HttpResponseMessage SearchEvaluations(evaluationqueryobject)
+        public HttpResponseMessage SearchEvaluations(EvaluationsQueryObject evaluationsQueryObject)
         {
-            if (evaluationInfos.Any())
-            {
-                foreach (var evaluationinfo in evaluationInfos)
-                {
-                    CommandProcessor.Execute(new UpdateEvaluationItemsCommandObject(evaluationinfo));
-                }
-            }
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
     }
