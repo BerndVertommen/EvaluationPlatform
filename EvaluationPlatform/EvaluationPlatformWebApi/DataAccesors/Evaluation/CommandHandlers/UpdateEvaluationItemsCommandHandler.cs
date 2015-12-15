@@ -16,18 +16,25 @@ namespace EvaluationPlatformWebApi.DataAccesors.Evaluation.CommandHandlers
 
         public override void Handle(UpdateEvaluationItemsCommandObject commandObject)
         {
-            var evaluation = Database.Evaluations.FirstOrDefault(e => e.Id == commandObject.Id);
+            var evaluation = Database.Evaluations.FirstOrDefault(e => e.Id == commandObject.EvaluationInfo.Id);
 
-            foreach (var evaluationInfo in commandObject.EvaluationItems)
+            if (evaluation == null)
             {
-                var evaluationitem = evaluation.EvaluationItems.FirstOrDefault(e => e.Id == evaluationInfo.Id);
+                throw new NullReferenceException("Evaluation not found.");
+            }
+
+            foreach (var evaluationItem in commandObject.EvaluationInfo.EvaluationItems)
+            {
+                var evaluationitem = evaluation.EvaluationItems.FirstOrDefault(e => e.Id == evaluationItem.Id);
                 
                 if(evaluationitem == null) { break;}
 
-                evaluationitem.Update(evaluationInfo.Comment, evaluationInfo.Score, evaluationInfo.NotScoredReason);
+                evaluationitem.Update(evaluationItem.Comment, evaluationItem.Score, evaluationItem.NotScoredReason);
             }
 
-            evaluation.SetUpdated();
+            evaluation.UpdateGeneralcomment(commandObject.EvaluationInfo.GeneralComment);
+
+            //evaluation.SetUpdated();
         }
     }
 }

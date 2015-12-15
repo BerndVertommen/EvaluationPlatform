@@ -8,14 +8,11 @@ namespace EvaluationPlatformWebApi.DataAccesors.Evaluation.Command
 {
     public class UpdateEvaluationItemsCommandObject : ICommandObject
     {
-        public Guid Id { get; set; }
+        public EvaluationInfo EvaluationInfo { get; set; }
 
-        public ICollection<EvaluationItemInfo> EvaluationItems { get; set; }
-
-        public UpdateEvaluationItemsCommandObject(Guid id, ICollection<EvaluationItemInfo> evaluationItems)
+        public UpdateEvaluationItemsCommandObject(EvaluationInfo evaluationInfo)
         {
-            Id = id;
-            EvaluationItems = evaluationItems;
+            EvaluationInfo = evaluationInfo;
         }
     }
 }
