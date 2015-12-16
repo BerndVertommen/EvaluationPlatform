@@ -15,15 +15,13 @@ namespace EvaluationPlatformDomain.Models
         public virtual string GeneralComment { get; private set; }
         public virtual Class CreatedForClass { get; private set; }
         public virtual DateTime? LastUpdated { get; private set; }
-
+        public virtual string Description { get; private set; }
         public virtual bool Finished { get; private set; }
 
         // bundle id groups the evaluations made from the same template at the same time
         // usefulle for faster queries where only one column needs to be searched.
         public virtual Guid BundleId { get; private set; }
 
-        [NotMapped]
-        public string Description => EvaluationTemplate.Description; //c#6 auto met property getter.
 
         [NotMapped]
         public EvaluationResult Result
@@ -45,8 +43,9 @@ namespace EvaluationPlatformDomain.Models
 
         }
 
-        public Evaluation(EvaluationTemplate evaluationTemplate, Student student, DateTime evaluationDate, Course course, ICollection<EvaluationItem> evaluationItems, string generalComment, Guid bundleId, Class createdForClass)
+        public Evaluation(string description, EvaluationTemplate evaluationTemplate, Student student, DateTime evaluationDate, Course course, ICollection<EvaluationItem> evaluationItems, string generalComment, Guid bundleId, Class createdForClass)
         {
+            Description = description;
             EvaluationTemplate = evaluationTemplate;
             Student = student;
             EvaluationDate = evaluationDate;

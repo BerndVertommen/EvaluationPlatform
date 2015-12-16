@@ -59,7 +59,7 @@ namespace EvaluationPlatformDomain.Models
             EvaluationTemplates.Add(evaluationTemplate);
         }
 
-        public void AddNewEvaluations(Class klas, EvaluationTemplate evaluationTemplate, DateTime evaluationDate, Course course)
+        public void AddNewEvaluations( string description, Class klas, EvaluationTemplate evaluationTemplate, DateTime evaluationDate, Course course)
         {
             Guid bundleId = Guid.NewGuid();
             foreach (var student in klas.Students)
@@ -73,7 +73,7 @@ namespace EvaluationPlatformDomain.Models
                     }
                 }
 
-                AddEvaluation(new Evaluation(evaluationTemplate, student, evaluationDate, course, evaluationItems, "", bundleId,klas));
+                AddEvaluation(new Evaluation(description, evaluationTemplate, student, evaluationDate, course, evaluationItems, "", bundleId,klas));
             }
 
         }

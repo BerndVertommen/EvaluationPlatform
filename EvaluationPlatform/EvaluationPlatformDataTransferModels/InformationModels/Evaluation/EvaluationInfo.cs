@@ -17,6 +17,8 @@ namespace EvaluationPlatformDataTransferModels.InformationModels.Evaluation
         public ClassInfo CreatedForClass { get; set; }
         public bool Finished { get; set; }
         public EvaluationResultInfo Result { get; set; }
+        public string Description { get; set; }
+
 
 
 

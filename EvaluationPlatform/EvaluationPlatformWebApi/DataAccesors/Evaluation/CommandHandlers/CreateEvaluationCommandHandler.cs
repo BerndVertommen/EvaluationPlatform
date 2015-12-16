@@ -29,7 +29,7 @@ namespace EvaluationPlatformWebApi.DataAccesors.Evaluation.CommandHandlers
             var course = Database.Courses.FirstOrDefault(c => c.Id == evaluationTemplate.Course.Id);
             var teacher = Database.Teachers.FirstOrDefault(t => t.Id == commandObject.TeacherId.Value);
 
-            teacher?.AddNewEvaluations(klas, evaluationTemplate,commandObject.EvaluationDate,course);
+            teacher?.AddNewEvaluations(commandObject.Description, klas, evaluationTemplate,commandObject.EvaluationDate,course);
         }
     }
 }

@@ -194,6 +194,10 @@
     <Compile Include="Migrations\201512131315343_RemovedStudyPlanFromTeacher.Designer.cs">
       <DependentUpon>201512131315343_RemovedStudyPlanFromTeacher.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512161013472_AddedDescriptionOnEvaluation.cs" />
+    <Compile Include="Migrations\201512161013472_AddedDescriptionOnEvaluation.Designer.cs">
+      <DependentUpon>201512161013472_AddedDescriptionOnEvaluation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Generators\StudentGenerator.cs" />
@@ -287,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512131315343_RemovedStudyPlanFromTeacher.resx">
       <DependentUpon>201512131315343_RemovedStudyPlanFromTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512161013472_AddedDescriptionOnEvaluation.resx">
+      <DependentUpon>201512161013472_AddedDescriptionOnEvaluation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

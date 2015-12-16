@@ -10,6 +10,7 @@ namespace EvaluationPlatformDataTransferModels.InformationModels.Evaluation
         public string Description { get; set; }
         public Guid BundleId { get; set; }
 
+
         public EvaluationBaseInfo()
         {
             
