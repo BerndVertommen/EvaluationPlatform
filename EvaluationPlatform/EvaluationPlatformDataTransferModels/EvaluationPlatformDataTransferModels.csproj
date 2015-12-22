@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CreationModels\CreateAccountInfo.cs" />
+    <Compile Include="CreationModels\CreateCourseInfo.cs" />
     <Compile Include="CreationModels\CreateEvaluationOptions.cs" />
     <Compile Include="InformationModels\Account\AccountInfo.cs" />
     <Compile Include="InformationModels\Class\ClassBaseInfo.cs" />
