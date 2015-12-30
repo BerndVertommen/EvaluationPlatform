@@ -21,16 +21,36 @@
         };
 
         $scope.updateEvaluation = function () {
-            evaluationService.updateEvaluation($scope.selectedEvaluation);
+            evaluationService.updateEvaluation($scope.selectedEvaluation).then(function (evaluation) {
+                var indexEva = _.findIndex($scope.evaluations, function (eva) {
+                    return eva.id === evaluation.id;
+                });
+
+                $scope.evaluations[indexEva] = evaluation;
+                //var hashkey = $scope.selectedEvaluation.$$hashKey;
+                //$scope.selectedEvaluation = evaluation;
+                //$scope.selectedEvaluation.$$hashKey = hashkey;
+                thiz.updateAfterChange();
+
+            });
         };
 
         $scope.updateEvaluations = function () {
-            evaluationService.updateEvaluations($scope.evaluations);
+            evaluationService.updateEvaluations($scope.evaluations).then(function(evaluations) {
+                $scope.evaluations = evaluations;
+
+                thiz.updateAfterChange();
+            });
         };
 
         $scope.setNotScoredReason = function(evaluationitem, number) {
             evaluationitem.notScoredReason = number;
             evaluationitem.score = null;
+        };
+
+        thiz.updateAfterChange = function() {
+            thiz.mapItemsToSubSection();
+            thiz.setSubsectionScores();
         };
 
         thiz.mapItemsToSubSection = function () {

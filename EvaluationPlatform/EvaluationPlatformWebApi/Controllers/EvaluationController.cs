@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -43,17 +44,18 @@ namespace EvaluationPlatformWebApi.Controllers
         [Route("updateEvaluation")]
         [CustomAutorize(AccountRoleType.UserRole)]
         [HttpPost]
-        public HttpResponseMessage UpdateEvaluation(EvaluationInfo evaluationInfo)
+        public EvaluationInfo UpdateEvaluation(EvaluationInfo evaluationInfo)
         {
             CommandProcessor.Execute(new UpdateEvaluationItemsCommandObject(evaluationInfo));
 
-            return new HttpResponseMessage();
+
+            return QueryProccesor.Execute(new EvaluationsQueryObject(new List<Guid>() {evaluationInfo.Id})).FirstOrDefault();
         }
 
         [Route("updateEvaluations")]
         [CustomAutorize(AccountRoleType.UserRole)]
         [HttpPost]
-        public HttpResponseMessage UpdateEvaluations(IEnumerable<EvaluationInfo> evaluationInfos)
+        public IEnumerable<EvaluationInfo> UpdateEvaluations(IEnumerable<EvaluationInfo> evaluationInfos)
         {
             if (evaluationInfos.Any())
             {
@@ -63,7 +65,9 @@ namespace EvaluationPlatformWebApi.Controllers
                 }
             }
 
-            return new HttpResponseMessage();
+            var infoIds = evaluationInfos.Select(evaluationInfo => evaluationInfo.Id).ToList();
+
+            return QueryProccesor.Execute(new EvaluationsQueryObject(infoIds));
         }
 
         [Route("searchEvaluations")]
