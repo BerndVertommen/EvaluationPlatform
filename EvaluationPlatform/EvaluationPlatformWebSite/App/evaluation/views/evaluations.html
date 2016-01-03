@@ -89,16 +89,18 @@
                 <div class="panel-body">
                     <table class="table table-responsive table-striped table-bordered table-hover">
                         <thead>
-                            <tr>
-                                <th>Omschrijving</th>
-                                <th>Totaal</th>
-                            </tr>
+                        <tr>
+                            <th>Leerling</th>
+                            <th>Omschrijving</th>
+                            <th>Totaal</th>
+                        </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="evaluation in evaluations">
-                                <td>{{evaluation.description}}</td>
-                                <td>{{evaluation.result.total}}</td>
-                            </tr>
+                        <tr ng-repeat="evaluation in evaluations">
+                            <td>{{evaluation.student.person.firstName}} {{evaluation.student.person.lastName}}</td>                            
+                            <td>{{evaluation.description}}</td>
+                            <td>{{evaluation.result.total}}</td>
+                        </tr>
                         </tbody>
                     </table>
                     <uib-pagination ng-if="showpagination" total-items="totalItems" ng-model="evaluationsPagedQueryObject.page" ng-change="search()"></uib-pagination>
