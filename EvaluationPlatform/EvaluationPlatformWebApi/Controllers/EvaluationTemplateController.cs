@@ -16,22 +16,19 @@ using EvaluationPlatformWebApi.DataAccesors.EvaluationTemplates;
 namespace EvaluationPlatformWebApi.Controllers
 {
     [RoutePrefix("api/evaluationTemplate")]
+    [CustomAutorize(AccountRoleType.UserRole, AccountRoleType.Admin)]
     public class EvaluationTemplateController : BaseWebApiController
     {
-
-
         public EvaluationTemplateController(ICommandProcessor commandProcessor, IQueryProccesor queryProccesor): base (commandProcessor, queryProccesor)
         {
         }
 
-        [CustomAutorize(AccountRoleType.UserRole)]
         [HttpGet]
         public CreateEvaluationOptions GetCreateEvaluationOptions()
         {
             return QueryProccesor.Execute(new GetCreateEvaluationOptionsQueryObject(AccountId));
         }
 
-        [CustomAutorize(AccountRoleType.UserRole)]
         [Route("createTemplate")]
         [HttpPost]
         public HttpResponseMessage CreateEvaluationTemplate(EvaluationTemplateInfo evaluationTemplateInfo)
@@ -41,7 +38,6 @@ namespace EvaluationPlatformWebApi.Controllers
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
-        [CustomAutorize(AccountRoleType.UserRole)]
         [Route("getEvaluationTemplates")]
         [HttpGet]
         public IEnumerable<EvaluationTemplateInfo> GetEvaluationTemplates()
@@ -50,7 +46,6 @@ namespace EvaluationPlatformWebApi.Controllers
             return QueryProccesor.Execute(new GetEvaluationTemplatesQueryObject(AccountId));
         }
 
-        [CustomAutorize(AccountRoleType.UserRole)]
         [Route("createEvaluationFromTemplate")]
         [HttpPost]
         public HttpResponseMessage CreateEvaluationFromTemplate(CreateEvaluationCommand command)

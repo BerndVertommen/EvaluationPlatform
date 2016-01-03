@@ -14,6 +14,7 @@ namespace EvaluationPlatformWebApi.Controllers
 {
     
     [RoutePrefix("api/accounts")]
+    [CustomAutorize(AccountRoleType.UserRole, AccountRoleType.Admin)]
     public class AccountController : BaseWebApiController
     {
 

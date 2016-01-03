@@ -2,7 +2,6 @@
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Teacher;
 using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformDomain.Models.Authentication;
@@ -13,6 +12,7 @@ using EvaluationPlatformWebApi.DataAccesors.Teacher.QueryObject;
 namespace EvaluationPlatformWebApi.Controllers
 {
     [RoutePrefix("api/teacher")]
+    [CustomAutorize(AccountRoleType.UserRole , AccountRoleType.Admin)]
     public class TeacherController : BaseWebApiController
     {
         public TeacherController(ICommandProcessor commandProcessor, IQueryProccesor queryProccesor) : base(commandProcessor,queryProccesor)

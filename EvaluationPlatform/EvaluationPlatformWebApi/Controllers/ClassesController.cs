@@ -11,13 +11,13 @@ using EvaluationPlatformWebApi.DataAccesors.Class.QueryObjects;
 namespace EvaluationPlatformWebApi.Controllers
 {
     [RoutePrefix("api/class")]
+    [CustomAutorize(AccountRoleType.UserRole, AccountRoleType.Admin)]
     public class ClassesController : BaseWebApiController
     {
         public ClassesController(IQueryProccesor queryProccesor, ICommandProcessor commandProcessor) : base(commandProcessor, queryProccesor)
         {
         }
 
-        [CustomAutorize(AccountRoleType.UserRole)]
         [Route("classesForTeacher")]
         [HttpGet]
         public IEnumerable<ClassInfo> ClassesForTeacher()
@@ -33,7 +33,6 @@ namespace EvaluationPlatformWebApi.Controllers
         }
 
 
-        [CustomAutorize(AccountRoleType.UserRole)]
         [Route("classesForCourse")]
         [HttpPost]
         public IEnumerable<ClassInfo> ClassesForCourse( GuidDto guidDto)

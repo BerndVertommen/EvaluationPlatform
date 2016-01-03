@@ -11,6 +11,7 @@ using EvaluationPlatformWebApi.DataAccesors.Course.QueryObjects;
 namespace EvaluationPlatformWebApi.Controllers
 {
     [RoutePrefix("api/courses")]
+    [CustomAutorize(AccountRoleType.UserRole, AccountRoleType.Admin)]
     public class CourcesController : BaseWebApiController
     {
         public CourcesController(IQueryProccesor queryProccesor, ICommandProcessor commandProcessor): base(commandProcessor,queryProccesor)
@@ -18,7 +19,6 @@ namespace EvaluationPlatformWebApi.Controllers
             
         }
 
-        [CustomAutorize(AccountRoleType.UserRole)]
         [Route("coursesForTeacher")]
         [HttpGet]
         public IEnumerable<CourseViewInfo> CoursesForTeacher()

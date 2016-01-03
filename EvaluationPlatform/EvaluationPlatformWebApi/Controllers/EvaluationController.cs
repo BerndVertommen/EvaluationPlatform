@@ -16,6 +16,7 @@ using EvaluationPlatformWebApi.DataAccesors.Evaluation.QueryObjects;
 namespace EvaluationPlatformWebApi.Controllers
 {
     [RoutePrefix("api/evaluation")]
+    [CustomAutorize(AccountRoleType.UserRole, AccountRoleType.Admin)]
     public class EvaluationController : BaseWebApiController
     {
 
@@ -26,7 +27,6 @@ namespace EvaluationPlatformWebApi.Controllers
         }
 
         [Route("plannedEvaluations")]
-        [CustomAutorize(AccountRoleType.UserRole)]
         [HttpGet]
         public IEnumerable<EvaluationBaseInfo> PlannedEvaluations()
         {
@@ -34,7 +34,6 @@ namespace EvaluationPlatformWebApi.Controllers
         }
 
         [Route("evaluationsForBundle")]
-        [CustomAutorize(AccountRoleType.UserRole)]
         [HttpPost]
         public IEnumerable<EvaluationInfo> EvaluationsForbundle(GuidDto bundleIdDto)
         {
@@ -42,7 +41,6 @@ namespace EvaluationPlatformWebApi.Controllers
         }
 
         [Route("updateEvaluation")]
-        [CustomAutorize(AccountRoleType.UserRole)]
         [HttpPost]
         public EvaluationInfo UpdateEvaluation(EvaluationInfo evaluationInfo)
         {
@@ -53,7 +51,6 @@ namespace EvaluationPlatformWebApi.Controllers
         }
 
         [Route("updateEvaluations")]
-        [CustomAutorize(AccountRoleType.UserRole)]
         [HttpPost]
         public IEnumerable<EvaluationInfo> UpdateEvaluations(IEnumerable<EvaluationInfo> evaluationInfos)
         {
@@ -71,7 +68,6 @@ namespace EvaluationPlatformWebApi.Controllers
         }
 
         [Route("searchEvaluations")]
-        [CustomAutorize(AccountRoleType.UserRole)]
         [HttpPost]
         public EvaluationsPagedQueryResult SearchEvaluations(EvaluationsPagedQueryObject evaluationsQueryObject)
         {

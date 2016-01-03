@@ -9,6 +9,7 @@ using EvaluationPlatformWebApi.DataAccesors.General.QueryObjects;
 namespace EvaluationPlatformWebApi.Controllers
 {
     [RoutePrefix("api/generalInfo")]
+    [CustomAutorize(AccountRoleType.UserRole, AccountRoleType.Admin)]
     public class GeneralInfoController : BaseWebApiController
     {
         public GeneralInfoController(IQueryProccesor queryProccesor, ICommandProcessor commandProcessor) : base(commandProcessor,queryProccesor)
@@ -16,7 +17,6 @@ namespace EvaluationPlatformWebApi.Controllers
             
         }
 
-        [CustomAutorize(AccountRoleType.UserRole)]
         [Route("getschoolyears")]
         [HttpGet]
         public IEnumerable<SchoolYearInfo> GetSchoolYears()
