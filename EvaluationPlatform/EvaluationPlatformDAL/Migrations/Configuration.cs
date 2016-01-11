@@ -27,6 +27,8 @@ namespace EvaluationPlatformDAL.Migrations
 
 
             var schoolyearNow = new SchoolYear();
+            schoolyearNow.StartYear = 2015;
+            schoolyearNow.StartYear = 2016;
 
 
             //seed Classes
