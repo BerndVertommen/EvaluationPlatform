@@ -37,7 +37,7 @@ namespace EvaluationPlatformDomain.Models
         {
             int totalAchieved = items.Sum(e => e.Score).Value;
             int scaleMax = scale?.MaxScore ?? 3;
-            int max = items.Count() * scaleMax;
+            int max = items.Count(i => i.Score != null) * scaleMax;
 
             return Decimal.Divide(totalAchieved, max) * weight;
         }
