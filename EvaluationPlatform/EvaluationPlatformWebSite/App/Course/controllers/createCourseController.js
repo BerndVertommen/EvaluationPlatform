@@ -9,9 +9,9 @@
         //private Functions
         
         //public functions
-        //$scope.cancel = function() {
-        //    location.href = '#/manageCourse';
-        //} // Redirecten naar /manageCourse ? of goed zo dat ik dat ineens doe in de html
+        $scope.cancel = function() {
+            $location.path("#/manageCourse");
+        } 
 
         //initiations
         var init = function () {
