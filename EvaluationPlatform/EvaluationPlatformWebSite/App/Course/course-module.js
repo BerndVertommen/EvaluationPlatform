@@ -32,4 +32,10 @@
              }
          });
 
+        $routeProvider
+            .when('/createCourse', {
+                templateUrl: 'app/Course/views/createCourse.html',
+                controller: 'createCourseController'
+            });
+
     });

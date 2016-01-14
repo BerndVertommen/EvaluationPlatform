@@ -1,0 +1,35 @@
+﻿<div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <!--mainHeading-->
+            <div class="panel-title">
+                Creëer cursus
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--mainBody-->
+            <form class="form-horizontal">
+                <fieldset>
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="inputDescription" class="col-lg-2 control-label">Omschrijving</label>
+                            <div class="col-lg-10">
+                                <input class="form-control" ng-model="createCourseInfo.description" id="inputDescription" placeholder="Omschrijving" type="text">
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12" style="margin-top: 15px">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+
+        </div>
+        <div class="modal-footer">
+            <!--mainFooter-->
+            <button type="button" class="btn btn-success" ng-click="ok()">Ok</button>
+            <button type="button" class="btn btn-default" onclick="location.href = '#/manageCourse'">Cancel</button>
+
+        </div>
+    </div>
+</div>

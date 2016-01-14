@@ -75,7 +75,9 @@
     <Content Include="app\classes\views\selectClassesModal.html" />
     <Content Include="app\configuration\services\configurationService.js" />
     <Content Include="app\Course\controllers\courseController.js" />
+    <Content Include="app\Course\controllers\createCourseController.js" />
     <Content Include="app\Course\views\courses.html" />
+    <Content Include="app\Course\views\createCourse.html" />
     <Content Include="app\dashboard\controllers\partials\calendarController.js" />
     <Content Include="app\dashboard\views\partials\calendarPartial.html" />
     <Content Include="app\evaluationTemplate\controllers\createEvaluationTemplateCtrl.js" />
