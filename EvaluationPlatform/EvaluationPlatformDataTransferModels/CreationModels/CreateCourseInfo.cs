@@ -15,6 +15,8 @@ namespace EvaluationPlatformDataTransferModels.CreationModels
         public Guid TeacherID { get; set; }
         //public ScaleInfo Scale { get; set; } nog wel meegeven serverside zo ook studyplans
 
+        //test branch
+
 
     }
 }
