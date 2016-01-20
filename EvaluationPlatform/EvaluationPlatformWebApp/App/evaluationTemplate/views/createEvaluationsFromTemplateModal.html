@@ -1,0 +1,68 @@
+﻿<div class="modal-body">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <!--mainHeading-->
+            <div class="panel-title">
+                Creeër Evaluaties
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--mainBody-->
+            <div class="form-horizontal">
+                <fieldset>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <form class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="description" class="col-xs-6 control-label">Titel: </label>
+                                    <div class="col-xs-6">
+                                        <input type="text" class="form-control" maxlength="50" required id="description" ng-model="createCommand.description" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="classesForCourse" class="col-xs-6 control-label">Klassen: </label>
+                                    <div class="col-xs-6">
+                                        <div class="input-group">
+                                            <div class="input-group-btn" uib-dropdown>
+                                                <a class="btn btn-default" uib-dropdown-toggle> <i class="fa fa-caret-down"></i></a>
+                                                <ul class="uib-dropdown-menu" role="menu" aria-labelledby="classesForCourse">
+                                                    <li ng-repeat="class in classesForCourse">
+                                                        <a ng-click="setClass(class)">{{class.description}}</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <input class="form-control" id="classesForCourse" readonly="readonly" ng-model="selectedClass.description" />
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="evaluationDate" class="col-xs-6 control-label">Evaluatie datum: </label>
+                                    <div class="col-xs-6">
+                                        <div class="input-group">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="fa fa-calendar"></i></button>
+                                            </span>
+                                            <input id="evaluationDate" type="text" class="form-control" uib-datepicker-popup="dd-MMMM-yyyy" ng-model="createCommand.evaluationDate" is-open="status.opened" min-date="minDate" datepicker-options="dateOptions" ng-required="true" close-text="Sluiten" clear-text="Wissen" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                        <div class="col-xs-12" style="margin-top: 15px">
+
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" ng-click="ok()">Ok</button>
+            <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</div>
+

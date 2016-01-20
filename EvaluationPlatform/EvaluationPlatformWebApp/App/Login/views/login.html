@@ -1,0 +1,26 @@
+﻿<div>
+    <div class="panel panel-default">
+        <div class="panel-heading panel-default">
+            <h3 class="panel-title">{{testTitle}}</h3>
+            <span ng-show="errorMessage" class="alert alert-danger pull-right">{{errorMessage}}</span>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-offset-5 col-md-3">
+                    <form class="form-login" ng-submit="login()">
+                        <h4>Welcome back.</h4>
+                        <input type="text" required ng-model="userName" id="userName" class="form-control input-sm chat-input" placeholder="username" />
+                        <input  type="password" required ng-model="password" id="userPassword" class="form-control input-sm chat-input" placeholder="password" />
+                        <div class="wrapper">
+                            <span class="group-btn">
+                                <button type="submit"  class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></button>
+                            </span>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer"></div>
+    </div>
+</div>

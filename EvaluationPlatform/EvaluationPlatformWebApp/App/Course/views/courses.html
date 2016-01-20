@@ -1,0 +1,60 @@
+﻿<div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <!--mainHeading-->
+            <div class="panel-title">
+                Vakken
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--mainBody-->
+            <div class="row">
+                <div class="col-md-12">
+                    <uib-tabset justified="true">
+                        <uib-tab class="nav nav-tabs" ng-repeat="course in courses" heading="{{course.description}}">
+                            <div class="well well-sm">
+                                <p> Vakverantwoordelijke : {{course.primaryTeacher.person.lastName}} {{course.primaryTeacher.person.firstName}}</p> 
+                                <p>  Schooljaar : {{course.schoolYear.notation}}</p>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <!--classesTable-->
+                                <table class="table table-striped table-responsive table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Klassen</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="class in course.classes">
+                                            <td>{{class.description }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!--teacherstable-->
+                            <div class="col-md-6 col-sm-12">
+                                <table class="table table-striped table-responsive table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Co Leerkrachten</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="teacher in course.coTeachers">
+                                            <td>{{teacher.person.lastName }} {{teacher.person.firstName }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </uib-tab>
+                    </uib-tabset>
+                </div>
+            </div>
+
+        </div>
+        <div class="panel-footer">
+            <!--mainFooter-->
+
+        </div>
+    </div>
+</div>

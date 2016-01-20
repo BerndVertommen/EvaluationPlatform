@@ -1,0 +1,47 @@
+﻿<div class="modal-body">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <!--mainHeading-->
+            <div class="panel-title">Algemeen
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--mainBody-->
+            <div class="form-horizontal">
+                <fieldset>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!--<div class="form-group">-->
+                            <div class="input-group">
+                                <label class="control-label">Omschrijving</label>
+                                <input class="form-control" type="text" ng-model="generalOptions.description" placeholder="Titel of omschrijving"/>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12" style="margin-top: 15px">
+                            <div style="max-height: 200px; overflow: auto">
+                                <table class="table table-hover table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">Vakken</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="course in createEvaluationOptions.teacher.courses" ng-class="{'success': $index == selectedRow}">
+                                            <td ng-click="selectCourse(course, $index)">{{course.description}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" ng-click="ok()">Ok</button>
+            <button type="button" class="btn btn-danger" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</div>
+

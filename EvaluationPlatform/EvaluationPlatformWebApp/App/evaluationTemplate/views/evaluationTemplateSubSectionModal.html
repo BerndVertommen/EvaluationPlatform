@@ -1,0 +1,29 @@
+﻿<div class="modal-body">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <!--mainHeading-->
+            <div class="panel-title">Categorieën</div>
+        </div>
+        <div class="panel-body">
+            <!--mainBody-->
+            <div class="form-horizontal">
+                <fieldset>
+                    <legend>Categorieën</legend>
+                    <div class="col-sm-6 col-xs-12">
+                        <label class=" control-label">Omschrijving</label>
+                        <input class="form-control" type="text" ng-model="newEvaluationSubSection.description" placeholder="Categorie omschrijving" />
+                    </div>
+                    <div class=" col-sm-4 col-xs-10">
+                        <label class=" control-label">Gewicht in %</label>
+                        <input class="form-control" type="number" min="1" step="5" max="{{100-currentTotalWeight}}" ng-model="newEvaluationSubSection.weight" placeholder="1-100%" />
+                    </div>
+                   </fieldset>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" ng-click="ok()">Ok</button>
+            <button type="button" class="btn btn-danger" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</div>
+
