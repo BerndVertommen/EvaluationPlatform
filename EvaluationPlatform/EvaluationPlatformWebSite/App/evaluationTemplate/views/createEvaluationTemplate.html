@@ -45,7 +45,7 @@
                                                             <thead>
                                                                 <tr class="bg-EvaluationSubSection">
                                                                     <th class="text-center">{{evaluationSubSection.description}}: {{evaluationSubSection.weight}}%</th>
-                                                                    <th>Score</th>
+                                                                    <th  class="scoreButtons">Score</th>
                                                                     <th><i class="fa fa-question-circle"></i></th>
                                                                     <th><i class=" fa fa-trophy"></i></th>
                                                                     <th class="tcolDoubleSmButton">
@@ -60,7 +60,7 @@
                                                                 <!--repeat for all GOALS in EvaluationSubSections-->
                                                                 <tr ng-repeat="goal in evaluationSubSection.goals">
                                                                     <td>{{goal.description}}</td>
-                                                                    <td>
+                                                                    <td class="scoreButtons">
                                                                         <a class="btn btn-success btn-sm">3</a>
                                                                         <a class="btn btn-primary btn-sm">2</a>
                                                                         <a class="btn btn-warning btn-sm">1</a>
@@ -87,8 +87,8 @@
                                                             </tbody>
                                                             <tfoot>
                                                                 <tr>
-                                                                    <td  class="text-center" rowspan="4">Subtotaal : - %</td>
-                                                                    <td></td>
+                                                                    <td class="text-center" rowspan="4">Subtotaal : - %</td>
+                                                                    <td class="scoreButtons"></td>
                                                                     <td></td>
                                                                     <td></td>
                                                                     <td class="tcolDoubleSmButton"><a class="btn btn-default btn-sm" ng-click="openGoals(evaluationSubSection)"><i class="fa fa-plus"></i></a></td>
