@@ -3,15 +3,12 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using EvaluationPlatformDataTransferModels.CreationModels;
-using EvaluationPlatformDataTransferModels.InformationModels;
-using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
 using EvaluationPlatformDataTransferModels.InformationModels.EvaluationTemplate;
-using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformDomain.Models.Authentication;
+using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
+using EvaluationPlatformLogic.CommandAndQuery.Evaluation.Command;
+using EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates;
 using EvaluationPlatformWebApi.Authentication;
-using EvaluationPlatformWebApi.DataAccesors.Evaluation;
-using EvaluationPlatformWebApi.DataAccesors.Evaluation.Command;
-using EvaluationPlatformWebApi.DataAccesors.EvaluationTemplates;
 
 namespace EvaluationPlatformWebApi.Controllers
 {

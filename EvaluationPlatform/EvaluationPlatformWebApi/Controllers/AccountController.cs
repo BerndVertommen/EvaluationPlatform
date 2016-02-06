@@ -4,11 +4,11 @@ using System.Net.Http;
 using System.Web.Http;
 using EvaluationPlatformDataTransferModels.CreationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Account;
-using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformDomain.Models.Authentication;
+using EvaluationPlatformLogic.CommandAndQuery.Account.Commands;
+using EvaluationPlatformLogic.CommandAndQuery.Account.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using EvaluationPlatformWebApi.Authentication;
-using EvaluationPlatformWebApi.DataAccesors.Account.Commands;
-using EvaluationPlatformWebApi.DataAccesors.Account.QueryObjects;
 
 namespace EvaluationPlatformWebApi.Controllers
 {

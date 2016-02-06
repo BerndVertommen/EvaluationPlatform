@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Http.Cors;
-using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Class;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformWebApi.App_Start;
-using EvaluationPlatformWebApi.Authentication;
 using Microsoft.Owin.Security.OAuth;
 
 namespace EvaluationPlatformWebApi

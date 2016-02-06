@@ -2,10 +2,10 @@
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Autofac;
-using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformDomain.Models.Account;
 using EvaluationPlatformDomain.Models.Authentication;
-using EvaluationPlatformWebApi.DataAccesors.Account.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.Account.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
 

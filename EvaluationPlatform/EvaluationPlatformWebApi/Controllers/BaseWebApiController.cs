@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Web.Http;
-using EvaluationPlatformDAL.CommandAndQuery;
-using System.Net.Http;
-using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Account;
-using EvaluationPlatformDomain.Models.Account;
-using EvaluationPlatformWebApi.DataAccesors.Account;
-using EvaluationPlatformWebApi.DataAccesors.Account.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.Account.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using EvaluationPlatformWebApi.Identity;
-using Microsoft.AspNet.Identity;
 
 namespace EvaluationPlatformWebApi.Controllers
 {

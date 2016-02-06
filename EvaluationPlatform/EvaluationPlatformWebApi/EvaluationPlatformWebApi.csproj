@@ -251,52 +251,6 @@
     <Compile Include="Controllers\EvaluationController.cs" />
     <Compile Include="Controllers\GeneralInfoController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
-    <Compile Include="DataAccesors\Account\CommandHandlers\CreateAccountCommandHandler.cs" />
-    <Compile Include="DataAccesors\Account\Commands\CreateAccountCommand.cs" />
-    <Compile Include="DataAccesors\Account\QueryHandlers\GetAccountInfoQueryHandler.cs" />
-    <Compile Include="DataAccesors\Account\QueryHandlers\GetAccountQueryHandler.cs" />
-    <Compile Include="DataAccesors\Account\QueryHandlers\GetAccountsQueryHandler.cs" />
-    <Compile Include="DataAccesors\Account\QueryObjects\GetAccountInfoQueryObject.cs" />
-    <Compile Include="DataAccesors\Account\QueryObjects\GetAccountQueryObject.cs" />
-    <Compile Include="DataAccesors\Account\QueryObjects\GetAccountsQueryObject.cs" />
-    <Compile Include="DataAccesors\Class\QueryHandlers\ClassesAvailableForTeacherQueryHandler.cs" />
-    <Compile Include="DataAccesors\Class\QueryHandlers\ClassesForCourseQueryHandler.cs" />
-    <Compile Include="DataAccesors\Class\QueryHandlers\ClassesForTeacherQueryHandler.cs" />
-    <Compile Include="DataAccesors\Class\QueryObjects\ClassesAvailableForTeacherQueryObject.cs" />
-    <Compile Include="DataAccesors\Class\QueryObjects\ClassesForCourseQueryObject.cs" />
-    <Compile Include="DataAccesors\Class\QueryObjects\ClassesForTeacherQueryObject.cs" />
-    <Compile Include="DataAccesors\Course\QueryHandlers\AllCoursesQueryHandler.cs" />
-    <Compile Include="DataAccesors\Course\QueryHandlers\CoursesForTeacherQueryHandler.cs" />
-    <Compile Include="DataAccesors\Course\QueryObjects\AllCoursesQueryObject.cs" />
-    <Compile Include="DataAccesors\Course\QueryObjects\CoursesForTeacherQueryObject.cs" />
-    <Compile Include="DataAccesors\EvaluationTemplates\CreateEvaluationTemplateCommand.cs" />
-    <Compile Include="DataAccesors\EvaluationTemplates\CreateEvaluationTemplateCommandHandler.cs" />
-    <Compile Include="DataAccesors\EvaluationTemplates\GetCreateEvaluationOptionsQueryObject.cs" />
-    <Compile Include="DataAccesors\EvaluationTemplates\GetCreateEvaluationOptionsQueryHandler.cs" />
-    <Compile Include="DataAccesors\EvaluationTemplates\GetEvaluationsTemplatesQueryHandler.cs" />
-    <Compile Include="DataAccesors\EvaluationTemplates\GetEvaluationTemplatesQueryObject.cs" />
-    <Compile Include="DataAccesors\Evaluation\CommandHandlers\CreateEvaluationCommandHandler.cs" />
-    <Compile Include="DataAccesors\Evaluation\CommandHandlers\UpdateEvaluationItemsCommandHandler.cs" />
-    <Compile Include="DataAccesors\Evaluation\Command\CreateEvaluationCommand.cs" />
-    <Compile Include="DataAccesors\Evaluation\Command\UpdateEvaluationItemsCommandObject.cs" />
-    <Compile Include="DataAccesors\Evaluation\PagedQueryResults\EvaluationsPagedQueryResult.cs" />
-    <Compile Include="DataAccesors\Evaluation\QueryHandlers\EvaluationInfosForBundleQueryHandler.cs" />
-    <Compile Include="DataAccesors\Evaluation\QueryHandlers\EvaluationsPagedQueryHandler.cs" />
-    <Compile Include="DataAccesors\Evaluation\QueryHandlers\EvaluationsQueryHandler.cs" />
-    <Compile Include="DataAccesors\Evaluation\QueryHandlers\PlannedEvaluationBaseInfoQueryHandler.cs" />
-    <Compile Include="DataAccesors\Evaluation\QueryObjects\EvaluationInfosForBundleQueryObject.cs" />
-    <Compile Include="DataAccesors\Evaluation\QueryObjects\EvaluationsQueryObject.cs" />
-    <Compile Include="DataAccesors\Evaluation\QueryObjects\EvaluationsPagedQueryObject.cs" />
-    <Compile Include="DataAccesors\Evaluation\QueryObjects\PlannedEvaluationBaseInfoQueryObject.cs" />
-    <Compile Include="DataAccesors\General\QueryHandlers\GetSchoolYearQueryHandler.cs" />
-    <Compile Include="DataAccesors\General\QueryObjects\GetSchoolYearsQueryObject.cs" />
-    <Compile Include="DataAccesors\Teacher\CommandHandler\AddClassToTeacherCommandHandler.cs" />
-    <Compile Include="DataAccesors\Teacher\CommandHandler\AddCourseToTeacherCommandHandler.cs" />
-    <Compile Include="DataAccesors\Teacher\Command\AddClassToTeacherCommand.cs" />
-    <Compile Include="DataAccesors\Teacher\Command\AddCourseToTeacherCommand.cs" />
-    <Compile Include="DataAccesors\Teacher\QueryHandler\TeachersQueryHandler.cs" />
-    <Compile Include="DataAccesors\Teacher\QueryObject\TeachersQueryObject.cs" />
-    <Compile Include="Exeptions\BusinessExeption.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -331,7 +285,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EvaluationPlatformDAL\EvaluationPlatformDAL.csproj">
-      <Project>{f3d2484e-28f6-4c8b-9421-d1e2a3b741cb}</Project>
+      <Project>{F3D2484E-28F6-4C8B-9421-D1E2A3B741CB}</Project>
       <Name>EvaluationPlatformDAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\EvaluationPlatformDataTransferModels\EvaluationPlatformDataTransferModels.csproj">
@@ -341,6 +295,10 @@
     <ProjectReference Include="..\EvaluationPlatformDomain\EvaluationPlatformDomain.csproj">
       <Project>{C8F2A69B-3B3C-4B8C-A493-E2C13F7C03F8}</Project>
       <Name>EvaluationPlatformDomain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EvaluationPlatformLogic\EvaluationPlatformLogic.csproj">
+      <Project>{FD6E54C0-3560-4C4F-A96A-08CB40A74E2C}</Project>
+      <Name>EvaluationPlatformLogic</Name>
     </ProjectReference>
     <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
       <Project>{B7F8F580-747C-46EC-88F6-AD408AD21698}</Project>

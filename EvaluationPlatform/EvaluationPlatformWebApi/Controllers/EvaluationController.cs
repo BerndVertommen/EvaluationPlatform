@@ -4,12 +4,12 @@ using System.Linq;
 using System.Web.Http;
 using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
-using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformDomain.Models.Authentication;
+using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
+using EvaluationPlatformLogic.CommandAndQuery.Evaluation.Command;
+using EvaluationPlatformLogic.CommandAndQuery.Evaluation.PagedQueryResults;
+using EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryObjects;
 using EvaluationPlatformWebApi.Authentication;
-using EvaluationPlatformWebApi.DataAccesors.Evaluation.Command;
-using EvaluationPlatformWebApi.DataAccesors.Evaluation.PagedQueryResults;
-using EvaluationPlatformWebApi.DataAccesors.Evaluation.QueryObjects;
 
 namespace EvaluationPlatformWebApi.Controllers
 {

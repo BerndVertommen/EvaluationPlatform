@@ -77,19 +77,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandAndQuery\CommandHandler.cs" />
-    <Compile Include="CommandAndQuery\CommandProcessor.cs" />
-    <Compile Include="CommandAndQuery\ICommandHandler.cs" />
-    <Compile Include="CommandAndQuery\ICommandObject.cs" />
-    <Compile Include="CommandAndQuery\ICommandProcessor.cs" />
-    <Compile Include="CommandAndQuery\PagedQueryResult.cs" />
-    <Compile Include="CommandAndQuery\IQueryHandler.cs" />
-    <Compile Include="CommandAndQuery\IQueryObject.cs" />
-    <Compile Include="CommandAndQuery\IQueryProcessor.cs" />
-    <Compile Include="CommandAndQuery\PagedQueryHandler.cs" />
-    <Compile Include="CommandAndQuery\PagedQueryObject.cs" />
-    <Compile Include="CommandAndQuery\QueryHandler.cs" />
-    <Compile Include="CommandAndQuery\QueryProcessor.cs" />
     <Compile Include="EPDatabase.cs" />
     <Compile Include="Generators\ClassGenerator.cs" />
     <Compile Include="Generators\GeneralGoalsGenerator.cs" />
@@ -295,6 +282,9 @@
     <EmbeddedResource Include="Migrations\201512161013472_AddedDescriptionOnEvaluation.resx">
       <DependentUpon>201512161013472_AddedDescriptionOnEvaluation.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CommandAndQuery\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Http;
 using Autofac;
-using EvaluationPlatformDAL.CommandAndQuery;
+using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using EvaluationPlatformWebApi;
 using EvaluationPlatformWebApi.Authentication;
 using Microsoft.Owin;

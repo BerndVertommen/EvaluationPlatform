@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvaluationPlatformWebApi", "EvaluationPlatformWebApi\EvaluationPlatformWebApi.csproj", "{78FA7B9B-B018-4782-8842-2E61965F03E3}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{B7F8F580-747C-46EC-88F6-AD408AD21698}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvaluationPlatformDataTransferModels", "EvaluationPlatformDataTransferModels\EvaluationPlatformDataTransferModels.csproj", "{A39B841D-237A-4635-BC00-1E7ACF41E788}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvaluationPlatformLogic", "EvaluationPlatformLogic\EvaluationPlatformLogic.csproj", "{FD6E54C0-3560-4C4F-A96A-08CB40A74E2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{A39B841D-237A-4635-BC00-1E7ACF41E788}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A39B841D-237A-4635-BC00-1E7ACF41E788}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A39B841D-237A-4635-BC00-1E7ACF41E788}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD6E54C0-3560-4C4F-A96A-08CB40A74E2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD6E54C0-3560-4C4F-A96A-08CB40A74E2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD6E54C0-3560-4C4F-A96A-08CB40A74E2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD6E54C0-3560-4C4F-A96A-08CB40A74E2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

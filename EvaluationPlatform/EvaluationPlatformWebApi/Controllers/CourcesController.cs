@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Web.Http;
 using EvaluationPlatformDataTransferModels.InformationModels.Course;
-using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformDomain.Models.Authentication;
+using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
+using EvaluationPlatformLogic.CommandAndQuery.Course.QueryObjects;
 using EvaluationPlatformWebApi.Authentication;
-using EvaluationPlatformWebApi.DataAccesors.Course.QueryObjects;
 
 namespace EvaluationPlatformWebApi.Controllers
 {

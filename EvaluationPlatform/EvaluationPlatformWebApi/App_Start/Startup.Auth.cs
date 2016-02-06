@@ -1,11 +1,4 @@
-﻿using System;
-using Autofac;
-using EvaluationPlatformDAL;
-using EvaluationPlatformDAL.CommandAndQuery;
-using EvaluationPlatformWebApi.Authentication;
-using Microsoft.Owin;
-using Microsoft.Owin.Cors;
-using Microsoft.Owin.Security.Cookies;
+﻿using Microsoft.Owin.Cors;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
 
