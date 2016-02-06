@@ -15,7 +15,6 @@
             <div class="row">
                 <div class="col-xs-4 col-md-3">
                     <div class="bs-component">
-
                         <table class="table-responsive">
                             <thead>
                                 <tr>
@@ -51,32 +50,33 @@
                         <!--<div class=" bs-component">-->
                         <div class="panel-body">
                             <div ng-repeat="subsection in selectedEvaluation.mappedSubsections">
-                                <h5 class="text-center">{{subsection[0].evaluationSubSection.description}}</h5>
-                                <table class="table table-hover table-responsive">
+                                <h5 class="text-center">{{subsection[0].evaluationSubSection.description}}: {{subsection[0].evaluationSubSection.weight}}</h5>
+                                <table class="table table-hover fixedTable">
                                     <thead>
                                         <tr class="bg-EvaluationSubSection">
-                                            <th>Omschrijving:</th>
-                                            <th class="text-center">Gewicht</th>
+                                            <th class="evaDescription">Omschrijving:</th>
+                                            <!--<th class="text-center">Gewicht</th>-->
                                             <!--<th class="text-center">{{evaluationItem.description}}: {{evaluationSubSection.weight}}%</th>-->
-                                            <th>Score</th>
-                                            <th><i class="fa fa-question-circle"></i></th>
-                                            <th><i class=" fa fa-trophy"></i></th>
-
+                                            <th class="scoreButtons">Score</th>
+                                            <th class="evaNotScored"><i class="fa fa-question-circle"></i></th>
+                                            <th class="evaFinalScore"><i class=" fa fa-trophy"></i></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <!--repeat for all GOALS in EvaluationSubSections-->
                                         <tr ng-repeat="evaluationItem in subsection">
-                                            <td>{{evaluationItem.goal.description}}</td>
-                                            <td>{{evaluationItem.evaluationSubSection.weight}}</td>
-                                            <td class="scoreButtons">
-                                                <a class="btn btn-success btn-sm" ng-click="setScore(evaluationItem, 3)">3</a>
-                                                <a class="btn btn-primary btn-sm" ng-click="setScore(evaluationItem, 2)">2</a>
-                                                <a class="btn btn-warning btn-sm" ng-click="setScore(evaluationItem, 1)">1</a>
-                                                <a class="btn btn-danger  btn-sm" ng-click="setScore(evaluationItem, 0)">0</a>
+                                            <td > <div class="evaDescription" tooltip-placement="left" uib-tooltip="{{evaluationItem.goal.description}}">{{evaluationItem.goal.description}}</div></td>
+                                            <!--<td>{{evaluationItem.evaluationSubSection.weight}}</td>-->
+                                            <td>
+                                                <div class="scoreButtons">
+                                                    <a class="btn btn-success btn-sm" ng-click="setScore(evaluationItem, 3)">3</a>
+                                                    <a class="btn btn-primary btn-sm" ng-click="setScore(evaluationItem, 2)">2</a>
+                                                    <a class="btn btn-warning btn-sm" ng-click="setScore(evaluationItem, 1)">1</a>
+                                                    <a class="btn btn-danger  btn-sm" ng-click="setScore(evaluationItem, 0)">0</a>
+                                                </div>
                                             </td>
                                             <td>
-                                                <div class="btn-group" uib-dropdown is-open="status.isopen">
+                                                <div class="btn-group evaNotScored" uib-dropdown is-open="status.isopen">
                                                     <button id="single-button" type="button" class="btn btn-default btn-sm" ng-class="{'btn-primary': evaluationItem.notScoredReason > 0 && evaluationItem.score == null  }" uib-dropdown-toggle ng-disabled="disabled">
                                                         <span class="caret"></span>
                                                     </button>
@@ -87,17 +87,16 @@
                                                     </ul>
                                                 </div>
                                             </td>
-                                            <td>{{ evaluationItem.score === null ? 'NG' : evaluationItem.score}}</td>
+                                            <td> <div class="evaFinalScore">{{ evaluationItem.score === null ? 'NG' : evaluationItem.score}}</div>  </td>
                                         </tr>
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <td></td>
-                                            <td></td>
+                                            <td class="evaDescription"></td>
+                                            <!--<td ></td>-->
                                             <td class="scoreButtons"></td>
-                                            <td></td>
-                                            <td>{{subsection.totalScore | number:2 }}</td>
-
+                                            <td class="evaNotScored"></td>
+                                            <td class="evaFinalScore">{{subsection.totalScore | number:2 }}</td>
                                         </tr>
                                     </tfoot>
                                 </table>
