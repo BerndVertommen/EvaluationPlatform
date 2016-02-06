@@ -376,6 +376,10 @@ thead {
     width: 50px;
 }
 
+.evaTemplateBtn {
+    width: 85px;
+}
+
 /*End bootstrap overrides*/
 
 /*table*/
