@@ -2,11 +2,10 @@
 using Autofac;
 using Autofac.Integration.WebApi;
 using EvaluationPlatformDAL;
-using EvaluationPlatformDAL.CommandAndQuery;
-using EvaluationPlatformWebApi.DataAccesors.Account;
-using EvaluationPlatformWebApi.DataAccesors.Account.QueryHandlers;
-using EvaluationPlatformWebApi.DataAccesors.Class;
-using EvaluationPlatformWebApi.DataAccesors.Evaluation;
+using EvaluationPlatformLogic.CommandAndQuery.Account.QueryHandlers;
+using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
+using EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates;
+using EvaluationPlatformWebApi.Controllers;
 
 namespace EvaluationPlatformWebApi
 {
@@ -17,7 +16,7 @@ namespace EvaluationPlatformWebApi
             var builder = new ContainerBuilder();
 
             // Register your Web API controllers.
-            builder.RegisterApiControllers(typeof(Controllers.BaseWebApiController).Assembly);
+            builder.RegisterApiControllers(typeof(BaseWebApiController).Assembly);
 
             // OPTIONAL: Register the Autofac filter provider.
             builder.RegisterWebApiFilterProvider(httpConfig);

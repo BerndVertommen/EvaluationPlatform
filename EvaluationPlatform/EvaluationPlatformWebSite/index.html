@@ -37,56 +37,58 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href='/'>SB Admin</a>
+                <a class="navbar-brand" href='#/dashboard'>Evaluatieplatform</a>
+
+                <!-- Top Menu Items -->
+
+                <ul class="nav navbar-right top-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-wrench"></i> Admin tools <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#/manageAccount"><i class="fa fa-user-plus"></i> Accounts beheren</a>
+                            </li>
+                            <li>
+                                <a href="#/manageTeacher"><i class="fa fa-user"></i> Leerkrachten beheren</a>
+                            </li>
+                            <li>
+                                <a href="#/manageCourse"><i class="fa fa-fw fa-book"></i> Cursussen beheren</a>
+                            </li>
+                            <li>
+                                <a href="#/manageClasses"><i class="fa fa-users"></i> Klassen beheren</a>
+                            </li>
+                            <li>
+                                <a href="#/manageStudyPlan"><i class="fa fa-calendar"></i> Jaarplan beheren</a>
+                            </li>
+
+                            <li class="divider"></li>
+                            <li>
+                                <a ng-click="logOut()"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a ng-show="userName" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{userName}} <b class="caret"></b></a>
+                        <a ng-hide="userName" href="#/login" class="dropdown-toggle"><i class="fa fa-fw fa-sign-in"></i> Inloggen </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#/login"><i class="fa fa-fw fa-sign-in"></i> Inloggen</a>
+                            </li>
+                            <li>
+                                <a href="#/changePassword"><i class="fa fa-fw fa-envelope"></i> Wachtwoord</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a ng-click="logOut()"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
             </div>
-            <!-- Top Menu Items -->
-            <ul class="nav navbar-right top-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-wrench"></i> Admin tools <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#/manageAccount"><i class="fa fa-user-plus"></i> Accounts beheren</a>
-                        </li>
-                        <li>
-                            <a href="#/manageTeacher"><i class="fa fa-user"></i> Leerkrachten beheren</a>
-                        </li>
-                        <li>
-                            <a href="#/manageCourse"><i class="fa fa-fw fa-book"></i> Cursussen beheren</a>
-                        </li>
-                        <li>
-                            <a href="#/manageClasses"><i class="fa fa-users"></i> Klassen beheren</a>
-                        </li>
-                        <li>
-                            <a href="#/manageStudyPlan"><i class="fa fa-calendar"></i> Jaarplan beheren</a>
-                        </li>
-
-                        <li class="divider"></li>
-                        <li>
-                            <a ng-click="logOut()"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a ng-show="userName" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{userName}} <b class="caret"></b></a>
-                    <a ng-hide="userName" href="#/login" class="dropdown-toggle"><i class="fa fa-fw fa-sign-in"></i> Inloggen </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#/login"><i class="fa fa-fw fa-sign-in"></i> Inloggen</a>
-                        </li>
-                        <li>
-                            <a href="#/changePassword"><i class="fa fa-fw fa-envelope"></i> Wachtwoord</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a ng-click="logOut()"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                        </li>
-                    </ul>
-                </li>
-
-            </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
@@ -105,8 +107,6 @@
                     <li>
                         <a href="#/evaluations"><i class="fa fa-fw fa-search"></i> Evaluaties</a>
                     </li>
-
-
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

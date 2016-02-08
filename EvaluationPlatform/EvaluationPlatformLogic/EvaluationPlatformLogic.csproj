@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FD6E54C0-3560-4C4F-A96A-08CB40A74E2C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EvaluationPlatformLogic</RootNamespace>
+    <AssemblyName>EvaluationPlatformLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.3.5.0\lib\net40\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Owin.3.1.0\lib\net45\Autofac.Integration.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=3.4.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.3.4.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi.Owin, Version=3.2.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.Owin.3.2.0\lib\net45\Autofac.Integration.WebApi.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=4.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NReco.PdfGenerator, Version=1.1.11.0, Culture=neutral, PublicKeyToken=231663d50a41b451, processorArchitecture=MSIL">
+      <HintPath>..\packages\NReco.PdfGenerator.1.1.11.0\lib\net20\NReco.PdfGenerator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.0\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.abstractions.2.0.0\lib\net35\xunit.abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="xunit.assert, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.assert.2.1.0\lib\dotnet\xunit.assert.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="xunit.core, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.extensibility.core.2.1.0\lib\dotnet\xunit.core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="xunit.execution.desktop, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
+      <HintPath>..\packages\xunit.extensibility.execution.2.1.0\lib\net45\xunit.execution.desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommandAndQuery\Account\CommandHandlers\CreateAccountCommandHandler.cs" />
+    <Compile Include="CommandAndQuery\Account\Commands\CreateAccountCommand.cs" />
+    <Compile Include="CommandAndQuery\Account\QueryHandlers\GetAccountInfoQueryHandler.cs" />
+    <Compile Include="CommandAndQuery\Account\QueryHandlers\GetAccountQueryHandler.cs" />
+    <Compile Include="CommandAndQuery\Account\QueryHandlers\GetAccountsQueryHandler.cs" />
+    <Compile Include="CommandAndQuery\Account\QueryObjects\GetAccountInfoQueryObject.cs" />
+    <Compile Include="CommandAndQuery\Account\QueryObjects\GetAccountQueryObject.cs" />
+    <Compile Include="CommandAndQuery\Account\QueryObjects\GetAccountsQueryObject.cs" />
+    <Compile Include="CommandAndQuery\BaseClasses\CommandHandler.cs" />
+    <Compile Include="CommandAndQuery\BaseClasses\CommandProcessor.cs" />
+    <Compile Include="CommandAndQuery\BaseClasses\ICommandHandler.cs" />
+    <Compile Include="CommandAndQuery\BaseClasses\ICommandObject.cs" />
+    <Compile Include="CommandAndQuery\BaseClasses\ICommandProcessor.cs" />
+    <Compile Include="CommandAndQuery\BaseClasses\IQueryHandler.cs" />
+    <Compile Include="CommandAndQuery\BaseClasses\IQueryObject.cs" />
+    <Compile Include="CommandAndQuery\BaseClasses\IQueryProcessor.cs" />
+    <Compile Include="CommandAndQuery\BaseClasses\PagedQueryHandler.cs" />
+    <Compile Include="CommandAndQuery\BaseClasses\PagedQueryObject.cs" />
+    <Compile Include="CommandAndQuery\BaseClasses\PagedQueryResult.cs" />
+    <Compile Include="CommandAndQuery\BaseClasses\QueryHandler.cs" />
+    <Compile Include="CommandAndQuery\BaseClasses\QueryProcessor.cs" />
+    <Compile Include="CommandAndQuery\Class\QueryHandlers\ClassesAvailableForTeacherQueryHandler.cs" />
+    <Compile Include="CommandAndQuery\Class\QueryHandlers\ClassesForCourseQueryHandler.cs" />
+    <Compile Include="CommandAndQuery\Class\QueryHandlers\ClassesForTeacherQueryHandler.cs" />
+    <Compile Include="CommandAndQuery\Class\QueryObjects\ClassesAvailableForTeacherQueryObject.cs" />
+    <Compile Include="CommandAndQuery\Class\QueryObjects\ClassesForCourseQueryObject.cs" />
+    <Compile Include="CommandAndQuery\Class\QueryObjects\ClassesForTeacherQueryObject.cs" />
+    <Compile Include="CommandAndQuery\Course\QueryHandlers\AllCoursesQueryHandler.cs" />
+    <Compile Include="CommandAndQuery\Course\QueryHandlers\CoursesForTeacherQueryHandler.cs" />
+    <Compile Include="CommandAndQuery\Course\QueryObjects\AllCoursesQueryObject.cs" />
+    <Compile Include="CommandAndQuery\Course\QueryObjects\CoursesForTeacherQueryObject.cs" />
+    <Compile Include="CommandAndQuery\EvaluationTemplates\CreateEvaluationTemplateCommand.cs" />
+    <Compile Include="CommandAndQuery\EvaluationTemplates\CreateEvaluationTemplateCommandHandler.cs" />
+    <Compile Include="CommandAndQuery\EvaluationTemplates\GetCreateEvaluationOptionsQueryHandler.cs" />
+    <Compile Include="CommandAndQuery\EvaluationTemplates\GetCreateEvaluationOptionsQueryObject.cs" />
+    <Compile Include="CommandAndQuery\EvaluationTemplates\GetEvaluationsTemplatesQueryHandler.cs" />
+    <Compile Include="CommandAndQuery\EvaluationTemplates\GetEvaluationTemplatesQueryObject.cs" />
+    <Compile Include="CommandAndQuery\Evaluation\CommandHandlers\CreateEvaluationCommandHandler.cs" />
+    <Compile Include="CommandAndQuery\Evaluation\CommandHandlers\UpdateEvaluationItemsCommandHandler.cs" />
+    <Compile Include="CommandAndQuery\Evaluation\Command\CreateEvaluationCommand.cs" />
+    <Compile Include="CommandAndQuery\Evaluation\Command\UpdateEvaluationItemsCommandObject.cs" />
+    <Compile Include="CommandAndQuery\Evaluation\PagedQueryResults\EvaluationsPagedQueryResult.cs" />
+    <Compile Include="CommandAndQuery\Evaluation\QueryHandlers\EvaluationInfosForBundleQueryHandler.cs" />
+    <Compile Include="CommandAndQuery\Evaluation\QueryHandlers\EvaluationsPagedQueryHandler.cs" />
+    <Compile Include="CommandAndQuery\Evaluation\QueryHandlers\EvaluationsQueryHandler.cs" />
+    <Compile Include="CommandAndQuery\Evaluation\QueryHandlers\PlannedEvaluationBaseInfoQueryHandler.cs" />
+    <Compile Include="CommandAndQuery\Evaluation\QueryObjects\EvaluationInfosForBundleQueryObject.cs" />
+    <Compile Include="CommandAndQuery\Evaluation\QueryObjects\EvaluationsPagedQueryObject.cs" />
+    <Compile Include="CommandAndQuery\Evaluation\QueryObjects\EvaluationsQueryObject.cs" />
+    <Compile Include="CommandAndQuery\Evaluation\QueryObjects\PlannedEvaluationBaseInfoQueryObject.cs" />
+    <Compile Include="CommandAndQuery\General\QueryHandlers\GetSchoolYearQueryHandler.cs" />
+    <Compile Include="CommandAndQuery\General\QueryObjects\GetSchoolYearsQueryObject.cs" />
+    <Compile Include="CommandAndQuery\Teacher\CommandHandler\AddClassToTeacherCommandHandler.cs" />
+    <Compile Include="CommandAndQuery\Teacher\CommandHandler\AddCourseToTeacherCommandHandler.cs" />
+    <Compile Include="CommandAndQuery\Teacher\Command\AddClassToTeacherCommand.cs" />
+    <Compile Include="CommandAndQuery\Teacher\Command\AddCourseToTeacherCommand.cs" />
+    <Compile Include="CommandAndQuery\Teacher\QueryHandler\TeachersQueryHandler.cs" />
+    <Compile Include="CommandAndQuery\Teacher\QueryObject\TeachersQueryObject.cs" />
+    <Compile Include="Exeptions\BusinessExeption.cs" />
+    <Compile Include="Pdf\Evaluation\EvaluationHtmlGenerator.cs" />
+    <Compile Include="Pdf\Evaluation\EvaluationPdfGenerator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\EvaluationPdfTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EvaluationPlatformDAL\EvaluationPlatformDAL.csproj">
+      <Project>{f3d2484e-28f6-4c8b-9421-d1e2a3b741cb}</Project>
+      <Name>EvaluationPlatformDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EvaluationPlatformDataTransferModels\EvaluationPlatformDataTransferModels.csproj">
+      <Project>{a39b841d-237a-4635-bc00-1e7acf41e788}</Project>
+      <Name>EvaluationPlatformDataTransferModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EvaluationPlatformDomain\EvaluationPlatformDomain.csproj">
+      <Project>{c8f2a69b-3b3c-4b8c-a493-e2c13f7c03f8}</Project>
+      <Name>EvaluationPlatformDomain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

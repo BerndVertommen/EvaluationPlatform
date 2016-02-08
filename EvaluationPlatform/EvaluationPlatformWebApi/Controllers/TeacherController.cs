@@ -3,11 +3,11 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using EvaluationPlatformDataTransferModels.InformationModels.Teacher;
-using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformDomain.Models.Authentication;
+using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
+using EvaluationPlatformLogic.CommandAndQuery.Teacher.Command;
+using EvaluationPlatformLogic.CommandAndQuery.Teacher.QueryObject;
 using EvaluationPlatformWebApi.Authentication;
-using EvaluationPlatformWebApi.DataAccesors.Teacher.Command;
-using EvaluationPlatformWebApi.DataAccesors.Teacher.QueryObject;
 
 namespace EvaluationPlatformWebApi.Controllers
 {

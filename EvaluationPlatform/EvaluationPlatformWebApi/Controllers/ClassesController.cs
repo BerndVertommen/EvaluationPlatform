@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Web.Http;
 using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Class;
-using EvaluationPlatformDAL.CommandAndQuery;
 using EvaluationPlatformDomain.Models.Authentication;
+using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
+using EvaluationPlatformLogic.CommandAndQuery.Class.QueryObjects;
 using EvaluationPlatformWebApi.Authentication;
-using EvaluationPlatformWebApi.DataAccesors.Class.QueryObjects;
 
 namespace EvaluationPlatformWebApi.Controllers
 {
