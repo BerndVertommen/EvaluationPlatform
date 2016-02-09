@@ -29,9 +29,16 @@
             });
         };
 
-        thiz.searchEvaluations = function (evaluationsPagedQueryObject) {
-            return $http.post(baseWebApiUrl + 'evaluation/searchEvaluations', evaluationsPagedQueryObject).then(function (result) {
+        thiz.searchEvaluations = function (pdfForEvaluationsQueryObject) {
+            return $http.post(baseWebApiUrl + 'evaluation/searchEvaluations', pdfForEvaluationsQueryObject).then(function (result) {
                 return result.data;
+            });
+        };
+
+        thiz.createPdfForEvaluations = function (evaluationsPagedQueryObject) {
+
+            return $http.post(baseWebApiUrl + 'evaluation/createPdfForEvaluations', evaluationsPagedQueryObject, {responseType:'arraybuffer'}).then(function (result) {
+                return result;
             });
         };
       

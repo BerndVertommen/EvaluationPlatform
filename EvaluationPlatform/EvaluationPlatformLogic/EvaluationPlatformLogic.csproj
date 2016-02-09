@@ -155,10 +155,12 @@
     <Compile Include="CommandAndQuery\Evaluation\QueryHandlers\EvaluationInfosForBundleQueryHandler.cs" />
     <Compile Include="CommandAndQuery\Evaluation\QueryHandlers\EvaluationsPagedQueryHandler.cs" />
     <Compile Include="CommandAndQuery\Evaluation\QueryHandlers\EvaluationsQueryHandler.cs" />
+    <Compile Include="CommandAndQuery\Evaluation\QueryHandlers\PdfForEvaluationsQueryHandler.cs" />
     <Compile Include="CommandAndQuery\Evaluation\QueryHandlers\PlannedEvaluationBaseInfoQueryHandler.cs" />
     <Compile Include="CommandAndQuery\Evaluation\QueryObjects\EvaluationInfosForBundleQueryObject.cs" />
     <Compile Include="CommandAndQuery\Evaluation\QueryObjects\EvaluationsPagedQueryObject.cs" />
     <Compile Include="CommandAndQuery\Evaluation\QueryObjects\EvaluationsQueryObject.cs" />
+    <Compile Include="CommandAndQuery\Evaluation\QueryObjects\PdfForEvaluationsQueryObject.cs" />
     <Compile Include="CommandAndQuery\Evaluation\QueryObjects\PlannedEvaluationBaseInfoQueryObject.cs" />
     <Compile Include="CommandAndQuery\General\QueryHandlers\GetSchoolYearQueryHandler.cs" />
     <Compile Include="CommandAndQuery\General\QueryObjects\GetSchoolYearsQueryObject.cs" />
@@ -169,6 +171,7 @@
     <Compile Include="CommandAndQuery\Teacher\QueryHandler\TeachersQueryHandler.cs" />
     <Compile Include="CommandAndQuery\Teacher\QueryObject\TeachersQueryObject.cs" />
     <Compile Include="Exeptions\BusinessExeption.cs" />
+    <Compile Include="Models\File\FileRepresentationModel.cs" />
     <Compile Include="Pdf\Evaluation\EvaluationHtmlGenerator.cs" />
     <Compile Include="Pdf\Evaluation\EvaluationPdfGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

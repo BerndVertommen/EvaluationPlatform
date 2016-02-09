@@ -1,7 +1,7 @@
 ﻿(function (module) {
     'use strict';
 
-    function evaluationsController($scope, $location, courses, classes, evaluationService) {
+    function evaluationsController($scope, $location, courses, classes, evaluationService, $uibModal) {
         var thiz = this;
        
         //Variables
@@ -44,6 +44,38 @@
 
             });
 
+        };
+
+        $scope.evaluationsToPdf = function() {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: 'app/evaluation/views/evaluationsToPdfModal.html',
+                controller: 'evaluationsToPdfModalController',
+                size: 'lg',
+                resolve: {
+                   evaluations: function () {
+                       return $scope.evaluations; // maybe do a search again with more items paged?
+                   }
+                }
+            });
+            modalInstance.result.then(function (selectedEvaluationIds) {
+                var pdfForEvaluationsQueryObject = {};
+                pdfForEvaluationsQueryObject.EvaluationIds = selectedEvaluationIds;
+
+                evaluationService.createPdfForEvaluations(pdfForEvaluationsQueryObject).then(function (result) {
+
+                   // window.open("data:application/pdf;base64, " + result.data);
+                    var file = new Blob([result.data], { type: 'application/pdf' });
+                    if (window.navigator.msSaveOrOpenBlob) {
+                        navigator.msSaveBlob(file, 'fileName.pdf');
+                    } else {
+                        saveAs(file, 'filename.pdf');
+                    };
+                });
+
+            }, function () {
+                // Console.log('Modal general options dismissed at: ' + new Date());
+            });
         };
 
         //initiations

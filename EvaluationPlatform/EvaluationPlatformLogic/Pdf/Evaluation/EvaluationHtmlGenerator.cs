@@ -29,7 +29,8 @@ namespace EvaluationPlatformLogic.Pdf.Evaluation
                                 <!DOCTYPE html>
                                 <html>
                                 <head>
-                                  <style>
+                                <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+                                          <style>
                                     .category {
                                       background-color: lavender;
                                       font-weight: bold;

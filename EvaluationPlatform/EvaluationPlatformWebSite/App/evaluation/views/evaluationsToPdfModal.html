@@ -1,0 +1,50 @@
+﻿<div class="modal-body">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <!--mainHeading-->
+            <div class="panel-title">
+                titel hiere
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--mainBody-->
+            <div class="form-horizontal">
+                <fieldset>
+                    <form ng-submit="createPdf()">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th><input type="checkbox" ng-model="selectedAll" name="checkall" ng-click="checkAll()"/></th>
+                                        <th>Leerling</th>
+                                        <th>Omschrijving</th>
+                                        <th>Totaal</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="evaluation in evaluations">
+                                        <td> <input type="checkbox" ng-model="evaluation.selected"/> </td>
+                                        <td>{{evaluation.student.person.firstName}} {{evaluation.student.person.lastName}}</td>
+                                        <td>{{evaluation.description}}</td>
+                                        <td>{{evaluation.result.total}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="col-xs-12" style="margin-top: 15px">
+
+                            </div>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" ng-click="ok()">Ok</button>
+            <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</div>
+

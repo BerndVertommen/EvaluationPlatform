@@ -96,8 +96,10 @@
     <Content Include="app\evaluationTemplate\views\generalEvaluationTemplateOptionsModal.html" />
     <Content Include="app\evaluation\controllers\evaluationController.js" />
     <Content Include="app\evaluation\controllers\evaluationsController.js" />
+    <Content Include="app\evaluation\controllers\evaluationsToPdfModalController.js" />
     <Content Include="app\evaluation\views\evaluation.html" />
     <Content Include="app\evaluation\views\evaluations.html" />
+    <Content Include="app\evaluation\views\evaluationsToPdfModal.html" />
     <Content Include="app\home\controllers\homeCtrl.js" />
     <Content Include="app\home\home-module.js" />
     <Content Include="app\home\views\home.html" />
@@ -154,6 +156,7 @@
     <Content Include="scripts\3thParty\Angular-Chart\Chart.js" />
     <Content Include="scripts\3thParty\Angular-loadingBar\loading-bar.min.css" />
     <Content Include="scripts\3thParty\Angular-loadingBar\loading-bar.min.js" />
+    <Content Include="scripts\3thParty\FileSaver.min.js" />
     <Content Include="scripts\angular-animate.js" />
     <Content Include="scripts\angular-animate.min.js" />
     <Content Include="scripts\angular-aria.js" />

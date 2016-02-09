@@ -11,7 +11,7 @@ namespace EvaluationPlatformLogic.Pdf.Evaluation
 
         public IEnumerable<EvaluationPlatformDomain.Models.Evaluation> Evaluations{ get; set; }
 
-        public byte[] GeneratePdf(IEnumerable<EvaluationPlatformDomain.Models.Evaluation> evaluations)
+        public byte[] GeneratePdf(List<EvaluationPlatformDomain.Models.Evaluation> evaluations)
         {
             SetPageSettings(_pdfConverter);         
 
