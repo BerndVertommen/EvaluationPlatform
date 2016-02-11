@@ -68,6 +68,20 @@
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12">
                                 <div class="form-group">
+                                    <label for="studentFirstname" class="control-label">Voornaam:</label>
+                                    <input class="form-control" type="text" id="studentFirstname" ng-model="evaluationsPagedQueryObject.studentFirstname" placeholder="Voornaam student"/>
+
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="studentLastname" class="control-label">Achternaam:</label>
+                                    <input class="form-control" type="text" id="studentLastname" ng-model="evaluationsPagedQueryObject.studentLastname" placeholder="Achternaam student" />
+
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
                                     <label for="complete" class="control-label">Volledig ingevuld?</label>
                                     <input class="checkbox" type="checkbox" id="complete" ng-model="evaluationsPagedQueryObject.finished"/>
                                 </div>

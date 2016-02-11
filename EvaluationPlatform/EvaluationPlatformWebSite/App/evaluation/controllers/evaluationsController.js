@@ -18,7 +18,7 @@
 
         $scope.setCourse = function (course) {
             $scope.selectedCourse = course;
-            $scope.evaluationsPagedQueryObject.classId = $scope.selectedCourse.id;
+            $scope.evaluationsPagedQueryObject.courseId = $scope.selectedCourse.id;
         };
 
         $scope.clearSearch = function () {
@@ -28,6 +28,8 @@
             $scope.evaluationsPagedQueryObject.finished = null;
             $scope.evaluationsPagedQueryObject.classId = null;
             $scope.evaluationsPagedQueryObject.courseId = null;
+            $scope.evaluationsPagedQueryObject.studentFirstname = null;
+            $scope.evaluationsPagedQueryObject.studentLastname = null;
             $scope.selectedClass = null;
             $scope.selectedCourse = null;
 

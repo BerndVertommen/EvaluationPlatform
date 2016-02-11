@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using AutoMapper;
 using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
@@ -25,17 +26,22 @@ namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryHandlers
             {
                evaluations =  evaluations.Where(e => e.Finished == queryObject.Finished.Value);
             }
-
             if (queryObject.ClassId.HasValue)
             {
                 evaluations = evaluations.Where(e => e.CreatedForClass.Id == queryObject.ClassId.Value);
             }
-
             if (queryObject.CourseId.HasValue)
             {
                 evaluations = evaluations.Where(e => e.Course.Id == queryObject.CourseId.Value);
             }
-
+            if (!string.IsNullOrWhiteSpace(queryObject.StudentFirstname))
+            {
+                evaluations = evaluations.Where(e => e.Student.Person.FirstName.Contains(queryObject.StudentFirstname));
+            }
+            if (!string.IsNullOrWhiteSpace(queryObject.StudentLastname))
+            {
+                evaluations = evaluations.Where(e => e.Student.Person.LastName.Contains(queryObject.StudentLastname));
+            }
 
             int totalItems = evaluations.Count();
             var pagedEvaluations = PageResult(evaluations.OrderByDescending(e=> e.EvaluationDate), queryObject);
