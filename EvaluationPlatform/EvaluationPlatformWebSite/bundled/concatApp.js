@@ -2,7 +2,6 @@ var app = angular.module('app', ['ngRoute', "ui.bootstrap", 'LocalStorageModule'
     .config(["$routeProvider", "$httpProvider", function($routeProvider, $httpProvider) {
         "use strict";
 
-
     }]);
 
 
@@ -259,20 +258,6 @@ angular.module('app.student', ['ngRoute'])
 
     }]);
 
-angular.module('app.studyPlan', ['ngRoute'])
-    .config(["$routeProvider", function ($routeProvider) {
-        "use strict";
-        
-        // define routes
-
-        $routeProvider
-          .when('/manageStudyPlan', {
-              templateUrl: 'app/StudyPlan/views/manageStudyPlan.html',
-              controller: 'manageStudyPlanController'
-          });
-
-    }]);
-
 angular.module('app.teacher', ['ngRoute'])
     .config(["$routeProvider", function ($routeProvider) {
         "use strict";
@@ -291,6 +276,20 @@ angular.module('app.teacher', ['ngRoute'])
                   }]
               }
 
+          });
+
+    }]);
+
+angular.module('app.studyPlan', ['ngRoute'])
+    .config(["$routeProvider", function ($routeProvider) {
+        "use strict";
+        
+        // define routes
+
+        $routeProvider
+          .when('/manageStudyPlan', {
+              templateUrl: 'app/StudyPlan/views/manageStudyPlan.html',
+              controller: 'manageStudyPlanController'
           });
 
     }]);
@@ -1667,6 +1666,29 @@ angular.module('app.replace', ['ngRoute'])
 
 
 
+(function(module) {
+
+    indexService.$inject = ["$http", "configurationService"];
+    function indexService($http, configurationService) {
+        var thiz = this;
+        var baseWebApiUrl = configurationService.baseApiPath;
+        //Variables
+
+        //private Functions
+
+        // public functions
+
+        //initiations
+        var init = function() {
+
+        }
+
+        init();
+
+    }
+
+    module.service('serviceName', indexService);
+})(angular.module('app.index'));
 (function (model) {
     'use strict';
 
@@ -1706,29 +1728,6 @@ angular.module('app.replace', ['ngRoute'])
     }
 
     model.controller('indexController', indexController);
-})(angular.module('app.index'));
-(function(module) {
-
-    indexService.$inject = ["$http", "configurationService"];
-    function indexService($http, configurationService) {
-        var thiz = this;
-        var baseWebApiUrl = configurationService.baseApiPath;
-        //Variables
-
-        //private Functions
-
-        // public functions
-
-        //initiations
-        var init = function() {
-
-        }
-
-        init();
-
-    }
-
-    module.service('serviceName', indexService);
 })(angular.module('app.index'));
 (function (model) {
     'use strict';
@@ -1904,53 +1903,6 @@ app.factory('authInterceptorFactory', ['$q', '$location',
 
     module.service('studentService', studentService);
 })(angular.module('app.student'));
-(function (module) {
-    'use strict';
-
-    manageStudyPlanController.$inject = ["$scope", "$location"];
-    function manageStudyPlanController($scope, $location) {
-        var thiz = this;
-       
-        //Variables
-
-        //private Functions
-        
-        // public functions
-
-        //initiations
-        var init = function () {
-
-        }
-
-        init();
-    }
-
-    module.controller('manageStudyPlanController', manageStudyPlanController);
-})(angular.module('app.studyPlan'));
-(function(module) {
-
-    studyPlanService.$inject = ["$http", "configurationService"];
-    function studyPlanService($http, configurationService) {
-        var thiz = this;
-        var baseWebApiUrl = configurationService.baseApiPath;
-
-        // Variables
-
-        //private Functions
-
-        // public functions
-
-        //initiations
-        var init = function() {
-
-        }
-
-        init();
-
-    }
-
-    module.service('studyPlanService', studyPlanService);
-})(angular.module('app.studyPlan'));
 
 (function (module) {
     'use strict';
@@ -2128,6 +2080,53 @@ app.factory('authInterceptorFactory', ['$q', '$location',
 
     module.service('teacherService', teacherService);
 })(angular.module('app.teacher'));
+(function(module) {
+
+    studyPlanService.$inject = ["$http", "configurationService"];
+    function studyPlanService($http, configurationService) {
+        var thiz = this;
+        var baseWebApiUrl = configurationService.baseApiPath;
+
+        // Variables
+
+        //private Functions
+
+        // public functions
+
+        //initiations
+        var init = function() {
+
+        }
+
+        init();
+
+    }
+
+    module.service('studyPlanService', studyPlanService);
+})(angular.module('app.studyPlan'));
+(function (module) {
+    'use strict';
+
+    manageStudyPlanController.$inject = ["$scope", "$location"];
+    function manageStudyPlanController($scope, $location) {
+        var thiz = this;
+       
+        //Variables
+
+        //private Functions
+        
+        // public functions
+
+        //initiations
+        var init = function () {
+
+        }
+
+        init();
+    }
+
+    module.controller('manageStudyPlanController', manageStudyPlanController);
+})(angular.module('app.studyPlan'));
 (function (module) {
     'use strict';
 

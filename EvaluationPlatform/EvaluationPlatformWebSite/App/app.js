@@ -2,7 +2,6 @@
     .config(function($routeProvider, $httpProvider) {
         "use strict";
 
-
     });
 
 
