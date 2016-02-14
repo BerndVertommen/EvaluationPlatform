@@ -3,7 +3,7 @@
 
     function controllerName($scope, $location) {
         var thiz = this;
-       
+       // testgulp
         //Variables
 
         //private Functions

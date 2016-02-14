@@ -1,4 +1,4 @@
-﻿(function (module) {
+﻿(function(module) {
 
     function indexService($http, configurationService) {
         var thiz = this;
@@ -10,7 +10,7 @@
         // public functions
 
         //initiations
-        var init = function () {
+        var init = function() {
 
         }
 
@@ -19,4 +19,4 @@
     }
 
     module.service('serviceName', indexService);
-})(angular.module('app.index'))
+})(angular.module('app.index'));

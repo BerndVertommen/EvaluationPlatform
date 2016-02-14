@@ -1,9 +1,10 @@
-﻿(function (module) {
+﻿(function(module) {
 
     function serviceName($http, configurationService) {
         var thiz = this;
         var baseWebApiUrl = configurationService.baseApiPath;
-        
+
+        //testgulp
         // Variables
 
         //private Functions
@@ -11,7 +12,7 @@
         // public functions
 
         //initiations
-        var init = function () {
+        var init = function() {
 
         }
 
@@ -20,4 +21,4 @@
     }
 
     module.service('serviceName', serviceName);
-})(angular.module('app.replace'))
+})(angular.module('app.replace')); //test

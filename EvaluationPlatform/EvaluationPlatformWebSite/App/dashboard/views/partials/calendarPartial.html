@@ -8,7 +8,6 @@
                 Geplande evaluaties
             </div>
             <div class="btn-group pull-right">
-                <a class="btn btn-default" ng-click="showCalendar = !showCalendar"><i class="fa fa-calendar"></i></a>
                 <a class="btn btn-default" ng-click="startEvaluation()"><i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
@@ -28,21 +27,6 @@
                 </tr>
                 </tbody>
             </table>
-
-            <div ng-show="showCalendar">
-                <mwl-calendar view="calendarView"
-                              current-day="calendarDay"
-                              events="events"
-                              view-title="calendarTitle"
-                              on-event-click="eventClicked(calendarEvent)"
-                              on-event-times-changed="calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd"
-                              edit-event-html="'<i class=\'glyphicon glyphicon-pencil\'></i>'"
-    delete-event-html="'<i class=\'glyphicon glyphicon-remove\'></i>'"
-    on-edit-event-click="eventEdited(calendarEvent)"
-    on-delete-event-click="eventDeleted(calendarEvent)"
-    cell-is-open="false">
-</mwl-calendar>
-            </div>
         </div>
     </div>
 </div>

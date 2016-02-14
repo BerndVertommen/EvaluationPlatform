@@ -1,11 +1,11 @@
-﻿(function (module) {
+﻿(function(module) {
     'use strict';
 
     function authenticationService($http, localStorageService, configurationService, $q, $rootScope) {
         var thiz = this;
 
 
-        thiz.logOut = function () {
+        thiz.logOut = function() {
 
             localStorageService.remove('authorizationData');
 
@@ -17,14 +17,14 @@
             });
         };
 
-        thiz.login = function (loginData) {
+        thiz.login = function(loginData) {
 
             var deferred = $q.defer();
 
             var data = "grant_type=password&username=" +
-            loginData.userName + "&password=" + loginData.password;
+                loginData.userName + "&password=" + loginData.password;
 
-            $http.post(configurationService.tokenPath, data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).then(function (response) {
+            $http.post(configurationService.tokenPath, data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).then(function(response) {
 
                 localStorageService.set('authorizationData', { token: response.data.access_token, userName: loginData.userName, expires: response.data.expires_in });
 
@@ -37,7 +37,7 @@
 
                 deferred.resolve(response);
 
-            }), function (error) {
+            }), function(error) {
                 this.logOut();
                 deferred.reject(error);
             };
@@ -45,7 +45,7 @@
             return deferred.promise;
         };
 
-        thiz.getAuthData = function () {
+        thiz.getAuthData = function() {
 
             var authData = localStorageService.get('authorizationData');
             if (authData) {
@@ -57,4 +57,4 @@
     }
 
     module.service('authenticationService', authenticationService);
-})(angular.module('app'))
+})(angular.module('app.login'));

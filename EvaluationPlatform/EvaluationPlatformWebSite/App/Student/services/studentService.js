@@ -1,4 +1,4 @@
-﻿(function (module) {
+﻿(function(module) {
 
     function studentService($http, configurationService) {
         var thiz = this;
@@ -10,7 +10,7 @@
         // public functions
 
         //initiations
-        var init = function () {
+        var init = function() {
 
         }
 
@@ -19,4 +19,4 @@
     }
 
     module.service('studentService', studentService);
-})(angular.module('app.student'))
+})(angular.module('app.student'));

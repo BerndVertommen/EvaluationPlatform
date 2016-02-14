@@ -1,4 +1,4 @@
-﻿(function (module) {
+﻿(function(module) {
 
     function dashboardService($http, configurationService) {
         var thiz = this;
@@ -15,7 +15,7 @@
         };
 
         //initiations
-        var init = function () {
+        var init = function() {
 
         }
 
@@ -24,4 +24,4 @@
     }
 
     module.service('dashboardService', dashboardService);
-})(angular.module('app.dashboard'))
+})(angular.module('app.dashboard'));

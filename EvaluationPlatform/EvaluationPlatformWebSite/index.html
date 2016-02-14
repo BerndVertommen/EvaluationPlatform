@@ -8,22 +8,8 @@
     <meta name="author" content="">
     <title>Evaluation Platform</title>
     <!--***CSS***-->
-    <!-- Bootstrap Core CSS -->
-    <link href="content/SladeBootstrap/bootstrap.css" rel="stylesheet" />
-    <!--<link href="content/Darkly/bootstrap.css" rel="stylesheet"/>-->
-    <!--<link href="content/Crulean/bootstrap.css" rel="stylesheet" />-->
-    <!-- Custom CSS -->
-    <link href="content/customCss/customCss.css" rel="stylesheet" />
-    <!-- Morris Charts CSS -->
-    <link href="Content/designTemplateCss/morris.css" rel="stylesheet" />
-    <!-- Custom Fonts -->
-    <link href="fonts/designTemplateFonts/font-awesome.min.css" rel="stylesheet" />
-    <!--Angular css-->
-    <link href="scripts/angular-ui/ui-bootstrap-0.14.3-csp.css" rel="stylesheet" />
     <link rel="stylesheet" href="content/font-awesome-4.4.0/css/font-awesome.min.css">
-    <link href="scripts/3thParty/Angular-loadingBar/loading-bar.min.css" rel="stylesheet" />
-    <link href="scripts/3thParty/Angular-Chart/angular-chart.css" rel="stylesheet" />
-    <link href="scripts/angular-ui/calendar/angular-bootstrap-calendar.css" rel="stylesheet" />
+    <link href="bundled/fullCss.css" rel="stylesheet" />
 </head>
 <body>
     <div id="wrapper">
@@ -118,87 +104,11 @@
         </div>
         <!-- /#page-wrapper -->
     </div>
-    <!-- /#wrapper -->
-    <!-- jQuery -->
-    <script src="scripts/jquery-2.1.4.js"></script>
-    <script src="scripts/underscore.js"></script>
-    <script src="scripts/moment.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="scripts/bootstrap.js"></script>
-    <!--***Angular Scripts***-->
-    <script src="scripts/angular.js"></script>
-    <!--packages 3th party-->
-    <script src="scripts/angular-route.js"></script>
-    <script src="scripts/angular-ui.js"></script>
-    <script src="scripts/angular-ui/ui-bootstrap-0.14.3.js"></script>
-    <script src="scripts/angular-ui/ui-bootstrap-tpls-0.14.3.js"></script>
-    <script src="scripts/angular-local-storage.js"></script>
-    <script src="scripts/angular-touch.min.js"></script>
-    <script src="scripts/3thParty/Angular-loadingBar/loading-bar.min.js"></script>
-    <script src="scripts/3thParty/Angular-Chart/Chart.js"></script>
-    <script src="scripts/3thParty/Angular-Chart/angular-chart.js"></script>
-    <script src="scripts/angular-ui/calendar/angular-bootstrap-calendar-tpls.min.js"></script>
-    <script src="scripts/3thParty/FileSaver.min.js"></script>
-    <!--Modules-->
-    <script src="app/app.js"></script>
-    <script src="app/home/home-module.js"></script>
-    <script src="app/classes/classes-module.js"></script>
-    <script src="app/login/login-module.js"></script>
-    <script src="app/Account/account-module.js"></script>
-    <script src="app/Index/index-module.js"></script>
-    <script src="app/evaluationTemplate/evaluationTemplate-module.js"></script>
-    <script src="app/evaluation/evaluation-module.js"></script>
-    <script src="app/Student/student-module.js"></script>
-    <script src="app/dashboard/dashboard-module.js"></script>
-    <script src="app/Teacher/teacher-module.js"></script>
-    <script src="app/Course/course-module.js"></script>
-    <script src="app/StudyPlan/studyPlan-module.js"></script>
-    <!--Services-->
-    <script src="app/configuration/services/configurationService.js"></script>
-    <script src="app/classes/services/classesSvc.js"></script>
-    <script src="app/Account/services/accountService.js"></script>
-    <script src="app/login/factories/authInterceptorFactory.js"></script>
-    <script src="app/login/services/authenticationService.js"></script>
-    <script src="app/Index/services/indexService.js"></script>
-    <script src="app/evaluationTemplate/services/evaluationTemplateService.js"></script>
-    <script src="app/evaluation/services/evaluationService.js"></script>
-    <script src="app/Student/services/studentService.js"></script>
-    <script src="app/dashboard/services/dashboardService.js"></script>
-    <script src="app/Teacher/services/teacherService.js"></script>
-    <script src="app/Course/services/courseService.js"></script>   
-    <script src="app/StudyPlan/services/studyPlanService.js"></script>
-    <script src="app/Course/services/courseService.js"></script>
-    <!--Controllers-->
-    <script src="app/home/controllers/homeCtrl.js"></script>
-    <script src="app/login/controllers/loginCtrl.js"></script>
-    <script src="app/Index/controllers/indexCtrl.js"></script>
-    <script src="app/Student/controllers/createStudentController.js"></script>
-    <script src="app/evaluationTemplate/controllers/createEvaluationTemplateCtrl.js"></script>
-    <script src="app/evaluationTemplate/controllers/evaluationTemplateController.js"></script>
-    <script src="app/Account/controllers/manageAccountController.js"></script>
-    <script src="app/dashboard/controllers/dashboardController.js"></script>
-    <script src="app/evaluation/controllers/evaluationController.js"></script>
-    <script src="app/Teacher/controllers/manageTeacherController.js"></script>
-    <script src="app/classes/controllers/classesController.js"></script>
-    <script src="app/Course/controllers/manageCourseController.js"></script>
-    <script src="app/classes/controllers/manageClassesController.js"></script>  
-    <script src="app/StudyPlan/controllers/manageStudyPlanController.js"></script>  
-    <script src="app/Course/controllers/courseController.js"></script>
-    <script src="app/evaluation/controllers/evaluationsController.js"></script>
-    <script src="app/Course/controllers/createCourseController.js"></script>
-    <script src="app/evaluation/controllers/evaluationsToPdfModalController.js"></script>
-    <!--Modal Controllers-->
-    <script src="app/evaluationTemplate/controllers/generalEvaluationTemplateOptionsModalController.js"></script>
-    <script src="app/evaluationTemplate/controllers/evaluationTemplateSubSectionModalController.js"></script>
-    <script src="app/evaluationTemplate/controllers/evaluationTemplateGoalsModalController.js"></script>
-    <script src="app/evaluationTemplate/controllers/createEvaluationsFromTemplateModalController.js"></script>
-    <script src="app/Account/controllers/createAccountModalController.js"></script>
-    <script src="app/Teacher/controllers/addCourseModalController.js"></script>
-    <script src="app/classes/controllers/selectClassModalController.js"></script>
-    <!--Partials Controllers-->
-    <script src="app/dashboard/controllers/partials/calendarController.js"></script>
-    <!-- Morris Charts JavaScript -->
-    <script src="scripts/designTemplateScripts/morris/morris-data.js"></script>
-    <script src="scripts/designTemplateScripts/morris/morris.js"></script>
+<!--scripts-->
+    <script src="scripts/underscore.min.js"></script>
+    <script src="bundled/concat3thParty.js"></script>
+    <script src="bundled/concatApp.js"></script>
 </body>
+
+
 </html>

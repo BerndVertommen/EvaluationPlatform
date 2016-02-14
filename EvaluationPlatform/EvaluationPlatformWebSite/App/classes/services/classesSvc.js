@@ -23,8 +23,8 @@
             });
         }
 
-        thiz.availableClassesForTeacher = function (teacherId) {
-            return $http.post(baseWebApiUrl + 'class/availableClassesForTeacher', { 'id': teacherId }).then(function (result) {
+        thiz.availableClassesForTeacher = function(teacherId) {
+            return $http.post(baseWebApiUrl + 'class/availableClassesForTeacher', { 'id': teacherId }).then(function(result) {
                 return result.data;
             });
         }
@@ -34,4 +34,4 @@
     };
 
     module.service('classesService', classesService);
-})(angular.module('app.classes'))
+})(angular.module('app.classes'));

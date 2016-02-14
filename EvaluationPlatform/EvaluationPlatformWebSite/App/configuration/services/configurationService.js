@@ -2,7 +2,7 @@
     'use strict';
 
     function configurationService($http) {
-       var thiz = this;
+        var thiz = this;
 
         var apiUrl = 'http://testplatformApi/';
 
@@ -11,7 +11,7 @@
         thiz.tokenPath = apiUrl + 'oauth/token';
 
         thiz.getSchoolYears = function() {
-            return $http.get(thiz.baseApiPath + "/generalInfo/getschoolyears").then(function (result) {
+            return $http.get(thiz.baseApiPath + "/generalInfo/getschoolyears").then(function(result) {
                 return result.data;
             });
         };
@@ -20,4 +20,4 @@
 
 
     module.service('configurationService', configurationService);
-})(angular.module('app'))
+})(angular.module('app'));
