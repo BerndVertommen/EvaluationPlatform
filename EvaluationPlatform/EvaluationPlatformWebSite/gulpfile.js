@@ -25,10 +25,12 @@ gulp.task('concat3thParty', function () {
     return gulp.src(['./scripts/jquery-2.1.4.js',
          '!./scripts/underscore.js',
         './scripts/angular.js',
+        './scripts/angular-ui/ui-bootstrap.js',
+        './scripts/angular-ui/ui-bootstrap-tpls.js',
+        './scripts/angular-ui/*.js',
+        '!./scripts/angular-ui/*.min..js',
         './scripts/loading-bar.js',
         './scripts/angular-touch.js',
-        './scripts/angular-ui/calendar/angular-bootstrap-calendar-tpls.min.js',
-        './scripts/angular-ui/calendar/angular-bootstrap-calendar.min.js',
         './scripts/**/*.js',
         '!./scripts/**/*.min.js',
         '!./scripts/**/*.min.map'])
@@ -36,17 +38,17 @@ gulp.task('concat3thParty', function () {
     .pipe(gulp.dest('./bundled'));
 });
 
-/*Concatenate 3thparty min.js files*/  // update when concat3thParty is working
-gulp.task('concat3thPartyMin', function () {
-    return gulp.src(['./scripts/**/*.min.js', './scripts/**/*.min.map'])
-    .pipe(concat('concat3thParty.js'))  // concat and name it "concat3thParty.js"
-    .pipe(gulp.dest('./bundled'));
+///*Concatenate 3thparty min.js files*/  // update when concat3thParty is working
+//gulp.task('concat3thPartyMin', function () {
+//    return gulp.src(['./scripts/*.min.js','./scripts/**/*.min.js','./scripts/**/*.min.map'])
+//    .pipe(concat('concat3thPartyMin.js')) 
+//    .pipe(gulp.dest('./bundled'));
 
-});
+//});
 
 /*Annotate js files: This removes the need for manualy writing the injection in angular code.*/
 gulp.task('annotate', function () {
-    return gulp.src('./bundled/*.js') // path to your files
+    return gulp.src('./bundled/concatApp.js') // path to your files
      .pipe(ngAnnotate())
      .pipe(gulp.dest('./bundled'));
 
@@ -55,7 +57,14 @@ gulp.task('annotate', function () {
 
 /*App minification of js files*/
 gulp.task('minifyApp', function () {
-    return gulp.src('./bundled/*.js') // path to your files
+    return gulp.src('./bundled/concatApp.js') // path to your files
+      .pipe(minifyJs())
+      .pipe(gulp.dest('./bundled'));
+});
+
+/*App minification of 3thparty js files*/
+gulp.task('minify-3thParty-js', function () {
+    return gulp.src('./bundled/concat3thParty.js') // path to your files
       .pipe(minifyJs())
       .pipe(gulp.dest('./bundled'));
 });
@@ -94,14 +103,16 @@ gulp.task('minify-FulllCss', function () {
 /*Grouped tasks : package run-sequence is used to line up tasks*/
 gulp.task('sequenceBundleRelease', function () {
     runSequence(
+        'concat3thParty',
         'concatApp',
-        ['annotate','concat-FulllCss'],
-        ['minifyApp', 'minify-FulllCss']
+        ['annotate', 'concat-FulllCss'],
+        ['minifyApp', 'minify-FulllCss', 'minify-3thParty-js']
     );
 });
 
 gulp.task('sequenceBundleDevelop', function () {
     runSequence(
+        'concat3thParty',
         'concatApp',
         ['annotate','concat-FulllCss']
     );
