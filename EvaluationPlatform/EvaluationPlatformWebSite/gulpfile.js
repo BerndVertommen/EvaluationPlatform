@@ -10,15 +10,19 @@ var minifyHtml = require("gulp-minify-html");
 var minifyCss = require("gulp-minify-css");
 var minifyJs = require("gulp-uglify");
 var runSequence = require("run-sequence");
+var sourceMaps = require("gulp-sourcemaps");
 
 
 /*Concatenate app js files*/
 gulp.task('concatApp', function () {
     return gulp.src(['./app/app.js', './app/**/*module.js', './app/**/*.js'])
-    .pipe(concat('concatApp.js'))  // concat and name it "concatApp.js"
-    .pipe(gulp.dest('./bundled'));
+     .pipe(sourceMaps.init())
+        .pipe(concat('concatApp.js'))  // concat and name it "concatApp.js"
+     .pipe(sourceMaps.write())
+     .pipe(gulp.dest('./bundled'));
 
 });
+
 
 /*Concatenate 3thparty js files*/
 gulp.task('concat3thParty', function () {
@@ -38,13 +42,7 @@ gulp.task('concat3thParty', function () {
     .pipe(gulp.dest('./bundled'));
 });
 
-///*Concatenate 3thparty min.js files*/  // update when concat3thParty is working
-//gulp.task('concat3thPartyMin', function () {
-//    return gulp.src(['./scripts/*.min.js','./scripts/**/*.min.js','./scripts/**/*.min.map'])
-//    .pipe(concat('concat3thPartyMin.js')) 
-//    .pipe(gulp.dest('./bundled'));
 
-//});
 
 /*Annotate js files: This removes the need for manualy writing the injection in angular code.*/
 gulp.task('annotate', function () {
