@@ -28,7 +28,7 @@ gulp.task('concat3thParty', function () {
         './scripts/angular-ui/ui-bootstrap.js',
         './scripts/angular-ui/ui-bootstrap-tpls.js',
         './scripts/angular-ui/*.js',
-        '!./scripts/angular-ui/*.min..js',
+        '!./scripts/angular-ui/*.min.js',
         './scripts/loading-bar.js',
         './scripts/angular-touch.js',
         './scripts/**/*.js',
@@ -81,11 +81,11 @@ gulp.task('minify-html', function () {
 gulp.task('concat-FulllCss', function () {
     gulp.src(['./content/SladeBootstrap/*.css',
         '!./content/SladeBootstrap/*.min.css',
-        './content/angularCss/*.css',
-        '!./content/angularCss/*.min.css',
-        './content/customCss/*.css',
-        './content/*.css',
-        '!./content/*.min.css']) // path to your file
+         './content/customCss/*.css',
+         './content/angularCss/angular-ui.css',
+        './content/*.css',     
+        '!./content/*.min.css'
+    ]) 
     .pipe(concat('fullCss.css'))
     .pipe(gulp.dest('./bundled'));
 });
@@ -114,12 +114,12 @@ gulp.task('sequenceBundleDevelop', function () {
     runSequence(
         'concat3thParty',
         'concatApp',
-        ['annotate','concat-FulllCss']
+        ['annotate', 'concat-FulllCss']
     );
 });
 
 
 /*Watchers*/
 gulp.task('watch-app', function () {
-    gulp.watch(['./app/**/*.*', './app/*.*','./index.html'], ['sequenceBundleDevelop']);
+    gulp.watch(['./app/**/*.*', './app/*.*', './index.html'], ['sequenceBundleDevelop']);
 });
