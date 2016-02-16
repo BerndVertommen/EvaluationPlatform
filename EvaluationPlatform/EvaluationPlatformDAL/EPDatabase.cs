@@ -25,9 +25,9 @@ namespace EvaluationPlatformDAL
         public IDbSet<Account> Accounts { get; set; }
         public IDbSet<AccountRole> AccountRoles { get; set; }
         public IDbSet<EvaluationTemplate> EvaluationTemplates { get; set; }
+        public IDbSet<Scale> Scales { get; set; }
 
-
-        public IDbSet<Scale> Scales { get; set; } 
+        
 
         public EPDatabase() : base("EPDatabase")
         {

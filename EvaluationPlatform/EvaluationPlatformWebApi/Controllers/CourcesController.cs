@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
+using EvaluationPlatformDataTransferModels.CreationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Course;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
+using EvaluationPlatformLogic.CommandAndQuery.Course.Commands;
 using EvaluationPlatformLogic.CommandAndQuery.Course.QueryObjects;
 using EvaluationPlatformWebApi.Authentication;
 
@@ -34,6 +38,16 @@ namespace EvaluationPlatformWebApi.Controllers
         public IEnumerable<CourseBaseInfo> AllCourses()
         {
             return QueryProccesor.Execute(new AllCoursesQueryObject(SchoolYear.GetStartYearThisSchoolYear()));
+        }
+
+        [CustomAutorize(AccountRoleType.Admin)]
+        [Route("createCourse")]
+        [HttpPost]
+        public HttpResponseMessage CreateCourse(CreateCourseInfo createCourseInfo)
+        {
+            CommandProcessor.Execute(new CreateCourseCommand(createCourseInfo));
+            
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
     }

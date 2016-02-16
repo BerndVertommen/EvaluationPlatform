@@ -21,6 +21,12 @@
             });
         };
 
+        thiz.createCourse = function (createCourseInfo) {
+            return $http.post(baseWebApiUrl + "courses/createCourse", createCourseInfo).then(function(result) {
+                return result.data;
+            });
+        }
+
         //initiations
         var init = function () {
 

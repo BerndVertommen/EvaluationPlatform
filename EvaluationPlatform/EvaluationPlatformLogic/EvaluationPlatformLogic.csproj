@@ -137,6 +137,8 @@
     <Compile Include="CommandAndQuery\Class\QueryObjects\ClassesAvailableForTeacherQueryObject.cs" />
     <Compile Include="CommandAndQuery\Class\QueryObjects\ClassesForCourseQueryObject.cs" />
     <Compile Include="CommandAndQuery\Class\QueryObjects\ClassesForTeacherQueryObject.cs" />
+    <Compile Include="CommandAndQuery\Course\CommandHandlers\CreateCourseCommandHandler.cs" />
+    <Compile Include="CommandAndQuery\Course\Commands\CreateCourseCommand.cs" />
     <Compile Include="CommandAndQuery\Course\QueryHandlers\AllCoursesQueryHandler.cs" />
     <Compile Include="CommandAndQuery\Course\QueryHandlers\CoursesForTeacherQueryHandler.cs" />
     <Compile Include="CommandAndQuery\Course\QueryObjects\AllCoursesQueryObject.cs" />

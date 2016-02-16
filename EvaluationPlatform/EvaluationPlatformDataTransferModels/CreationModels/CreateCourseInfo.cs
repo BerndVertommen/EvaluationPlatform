@@ -12,7 +12,7 @@ namespace EvaluationPlatformDataTransferModels.CreationModels
     {
         public string Description { get; set; }
         public SchoolYearInfo SchoolYear { get; set; }
-        public Guid TeacherID { get; set; }
+        
         //public ScaleInfo Scale { get; set; } nog wel meegeven serverside zo ook studyplans
 
 
