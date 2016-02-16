@@ -6,6 +6,11 @@
         public int MaxScore { get; protected set; }
         public string Description { get; set; }
 
+        public Scale()
+        {
+            
+        }
+
         public Scale(int minScore, int maxScore, string description)
         {
             MinScore = minScore;
