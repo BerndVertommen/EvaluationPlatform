@@ -18,46 +18,28 @@ namespace EvaluationPlatformLogic.CommandAndQuery.Course.CommandHandlers
 
         public override void Handle(CreateCourseCommand commandObject)
         {
+            int currentSchoolyear = EvaluationPlatformDomain.Models.SchoolYear.GetStartYearThisSchoolYear();
+
             // exceptie toegevoegd ofdat deze cursus dit jaar al is aangemaakt
-            // werkt niet nog nazien
-            /*
             var course =
-                Database.Courses.FirstOrDefault(c => c.Description == commandObject.CreateCourseInfo.Description && c.SchoolYear.StartYear == commandObject.CreateCourseInfo.SchoolYear.StartYear);
+                Database.Courses.FirstOrDefault(c => c.Description == commandObject.CreateCourseInfo.Description && c.SchoolYear.StartYear == currentSchoolyear);
             if (course != null)
             {
                 throw new BusinessExeption(BusinessExeption.CourseExists);
             }
-            */
-
-
-
+            
             // Nieuwe cursus aanmaken
             EvaluationPlatformDomain.Models.Course newCourse = new EvaluationPlatformDomain.Models.Course();
             newCourse.Description = commandObject.CreateCourseInfo.Description;
             
             // huidig schooljaar ingeven 
-            int currentSchoolyear = 2015;
             newCourse.SchoolYear =
-                Database.SchoolYears.FirstOrDefault(
-                    x => x.StartYear == currentSchoolyear);
-
-
-            //werkt niet
-            /*
-
-            // scale ophalen
-            var scale = Database.Scales.First();
-
+                Database.SchoolYears.FirstOrDefault(x => x.StartYear == currentSchoolyear);
+            
+            // scale ingeven (enige schaal de we gaan gebruiken)
+            var scale = Database.Scales.FirstOrDefault();
             newCourse.Scale = scale;
-
-            // schooljaar nog juiste kiezen neemt voorlopig eerste
-            var currentyear = Database.SchoolYears.First();
-
-            newCourse.SchoolYear = currentyear;
-
-            */
-
-
+            
             // nog geen studyplan
 
             Database.Courses.Add(newCourse);
