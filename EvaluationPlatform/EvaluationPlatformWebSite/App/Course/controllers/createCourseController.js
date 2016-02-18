@@ -1,7 +1,7 @@
 ﻿(function (module) {
     'use strict';
 
-    function createCourseController($scope, $location, courseService) {
+    function createCourseController($scope, $location, courseService, $uibModal) {
         var thiz = this;
        
         //Variables
@@ -10,22 +10,37 @@
         
         //public functions
         $scope.cancel = function () {
-            // werkt nimeer
-            // $location.path("#/manageCourse");
-            window.location.href = "#/manageCourse";
+            
+            $location.path("/manageCourse");
+            //window.location.href = "#/manageCourse"; //bij location.path geen # bijdoen
         }
 
         $scope.ok = function() {
-            courseService.createCourse($scope.createCourseInfo).then(window.location.href = "#/manageCourse");
+            courseService.createCourse($scope.createCourseInfo).then($location.path("/manageCourse"));
             console.log($scope.createCourseInfo);
+        }
+
+        $scope.openStudyplanModal = function() {
+            $uibModal.open({
+                animation: true,
+                templateUrl: 'app/StudyPlan/views/selectStudyPlanModal.html',
+                controller: 'selectStudyPlanModalController',
+                size: 'lg',
+                resolve: {
+                    // voorlopig nog niks doorgeven
+                }
+                
+
+
+            });
+
         }
 
         //initiations
         var init = function () {
             
             $scope.createCourseInfo = {};
-            $scope.createCourseInfo.schoolYear = null;
-
+            
         }
 
         init();

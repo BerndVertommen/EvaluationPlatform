@@ -4,18 +4,11 @@
         var thiz = this;
         var baseWebApiUrl = configurationService.baseApiPath;
         
-        // Variables
-
-        //private Functions
-
-        // public functions
-
-        //initiations
-        var init = function () {
-
+        thiz.getStudyPlans = function() {
+            return $http.get(baseWebApiUrl + "/studyPlans/allStudyPlans").then(function(result) {
+                return result.data;
+            });
         }
-
-        init();
 
     }
 

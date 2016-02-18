@@ -166,6 +166,8 @@
     <Compile Include="CommandAndQuery\Evaluation\QueryObjects\PlannedEvaluationBaseInfoQueryObject.cs" />
     <Compile Include="CommandAndQuery\General\QueryHandlers\GetSchoolYearQueryHandler.cs" />
     <Compile Include="CommandAndQuery\General\QueryObjects\GetSchoolYearsQueryObject.cs" />
+    <Compile Include="CommandAndQuery\StudyPlan\QueryHandlers\StudyPlanQueryHandler.cs" />
+    <Compile Include="CommandAndQuery\StudyPlan\QueryObjects\StudyPlanQueryObject.cs" />
     <Compile Include="CommandAndQuery\Teacher\CommandHandler\AddClassToTeacherCommandHandler.cs" />
     <Compile Include="CommandAndQuery\Teacher\CommandHandler\AddCourseToTeacherCommandHandler.cs" />
     <Compile Include="CommandAndQuery\Teacher\Command\AddClassToTeacherCommand.cs" />

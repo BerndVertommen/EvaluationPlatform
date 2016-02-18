@@ -248,6 +248,7 @@
     <Compile Include="Controllers\EvaluationTemplateController.cs" />
     <Compile Include="Controllers\EvaluationController.cs" />
     <Compile Include="Controllers\GeneralInfoController.cs" />
+    <Compile Include="Controllers\StudyPlanController.cs" />
     <Compile Include="Controllers\TeacherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
