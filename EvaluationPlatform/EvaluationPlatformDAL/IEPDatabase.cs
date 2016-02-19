@@ -26,5 +26,7 @@ namespace EvaluationPlatformDAL
 
 
         Teacher GetTeacherForAccount(Guid? accountId);
+
+        SchoolYear GetCurrentSchoolyear();
     }
 }

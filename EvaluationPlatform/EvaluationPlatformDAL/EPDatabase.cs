@@ -53,6 +53,12 @@ namespace EvaluationPlatformDAL
            return Teachers.FirstOrDefault(
                     t => t.Person.Id == Accounts.FirstOrDefault(a => a.Id == accountId).Person.Id);
         }
+
+        public SchoolYear GetCurrentSchoolyear()
+        {
+            var startSchoolYear = SchoolYear.GetStartYearThisSchoolYear();
+            return SchoolYears.FirstOrDefault(x => x.StartYear == startSchoolYear );
+        }
     }
 
 

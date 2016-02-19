@@ -1,7 +1,7 @@
 ﻿(function (module) {
     'use strict';
 
-    function selectStudyPlanModalController($scope, $location, $uibModalInstance) {
+    function selectStudyPlanModalController($scope, $location, $uibModalInstance, studyplans) {
         var thiz = this;
        
         //Variables
@@ -9,8 +9,17 @@
         //private Functions
         
         // public functions
-        $scope.ok = function() {
-            
+        $scope.selectedRow = null;
+
+        $scope.setSelectedStudyplan = function (studyplan, index) {
+            $scope.selectedStudyplan = studyplan;
+            $scope.selectedRow = index;
+        };
+
+        $scope.ok = function () {
+            // nog checken op geen resultaat geselecteerd
+            $uibModalInstance.close($scope.selectedStudyplan);
+           
         }
 
         $scope.cancel = function() {
@@ -19,6 +28,8 @@
 
         //initiations
         var init = function () {
+            $scope.studyplans = studyplans;
+            console.log(studyplans);
 
         }
 

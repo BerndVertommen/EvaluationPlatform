@@ -33,14 +33,19 @@ namespace EvaluationPlatformLogic.CommandAndQuery.Course.CommandHandlers
             newCourse.Description = commandObject.CreateCourseInfo.Description;
             
             // huidig schooljaar ingeven 
-            newCourse.SchoolYear =
-                Database.SchoolYears.FirstOrDefault(x => x.StartYear == currentSchoolyear);
-            
+            newCourse.SchoolYear = Database.GetCurrentSchoolyear();
+
             // scale ingeven (enige schaal de we gaan gebruiken)
             var scale = Database.Scales.FirstOrDefault();
             newCourse.Scale = scale;
             
             // nog geen studyplan
+            var studyPlan = Database.StudyPlans.FirstOrDefault(s => s.Id == commandObject.CreateCourseInfo.StudyPlan.Id);
+            if (studyPlan == null)
+            {
+                throw new BusinessExeption(BusinessExeption.NoStudyPlanSelected);
+            }
+            newCourse.StudyPlan = studyPlan;
 
             Database.Courses.Add(newCourse);
 
