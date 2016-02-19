@@ -137,6 +137,8 @@
     <Compile Include="CommandAndQuery\Class\QueryObjects\ClassesAvailableForTeacherQueryObject.cs" />
     <Compile Include="CommandAndQuery\Class\QueryObjects\ClassesForCourseQueryObject.cs" />
     <Compile Include="CommandAndQuery\Class\QueryObjects\ClassesForTeacherQueryObject.cs" />
+    <Compile Include="CommandAndQuery\Course\CommandHandlers\CreateCourseCommandHandler.cs" />
+    <Compile Include="CommandAndQuery\Course\Commands\CreateCourseCommand.cs" />
     <Compile Include="CommandAndQuery\Course\QueryHandlers\AllCoursesQueryHandler.cs" />
     <Compile Include="CommandAndQuery\Course\QueryHandlers\CoursesForTeacherQueryHandler.cs" />
     <Compile Include="CommandAndQuery\Course\QueryObjects\AllCoursesQueryObject.cs" />
@@ -164,6 +166,8 @@
     <Compile Include="CommandAndQuery\Evaluation\QueryObjects\PlannedEvaluationBaseInfoQueryObject.cs" />
     <Compile Include="CommandAndQuery\General\QueryHandlers\GetSchoolYearQueryHandler.cs" />
     <Compile Include="CommandAndQuery\General\QueryObjects\GetSchoolYearsQueryObject.cs" />
+    <Compile Include="CommandAndQuery\StudyPlan\QueryHandlers\StudyPlanQueryHandler.cs" />
+    <Compile Include="CommandAndQuery\StudyPlan\QueryObjects\StudyPlanQueryObject.cs" />
     <Compile Include="CommandAndQuery\Teacher\CommandHandler\AddClassToTeacherCommandHandler.cs" />
     <Compile Include="CommandAndQuery\Teacher\CommandHandler\AddCourseToTeacherCommandHandler.cs" />
     <Compile Include="CommandAndQuery\Teacher\Command\AddClassToTeacherCommand.cs" />

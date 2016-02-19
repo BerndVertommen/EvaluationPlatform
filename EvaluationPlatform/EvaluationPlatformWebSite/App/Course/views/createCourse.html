@@ -10,12 +10,24 @@
             <!--mainBody-->
             <form class="form-horizontal">
                 <fieldset>
-                    <div class="col-xs-12">
+                    <div class="col-md-offset-2 col-md-8 col-sm-12">
                         <div class="form-group">
-                            <label for="inputDescription" class="col-lg-2 control-label">Omschrijving</label>
-                            <div class="col-lg-10">
-                                <input class="form-control" ng-model="createCourseInfo.description" id="inputDescription" placeholder="Omschrijving" type="text">
+                            <label for="inputDescription" class="control-label">Omschrijving</label>
+                            <input class="form-control" ng-model="createCourseInfo.description" id="inputDescription" placeholder="Omschrijving" type="text">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputStudyPlan" class="control-label">Leerplan toevoegen</label>
+
+                            <div class="input-group">
+                                <input type="text" readonly="readonly" class="form-control" ng-model="createCourseInfo.studyPlan.description" placeholder="Selecteer een leerplan" />
+                                <div class="input-group-btn">
+                                    <a class="btn btn-default" ng-click="openStudyplanModal()"><i class="fa fa-plus"></i></a>
+                                </div>
                             </div>
+
+
+                            <label>{{createCourseInfo.studyPlan.description}}</label>
+
                         </div>
 
                         <div class="col-xs-12" style="margin-top: 15px">

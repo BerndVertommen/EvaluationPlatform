@@ -6,6 +6,8 @@ namespace EvaluationPlatformLogic.Exeptions
     {
         public static string EvaluationExitst = "De evaluatie bestaat reeds";
         public static string UsernameExists = "De gebruikersnaam kan niet worden gebruikt";
+        public static string CourseExists = "De cursus bestaat al voor dit schooljaar!";
+        public static string NoStudyPlanSelected = "Er is geen studyplan geselecteerd";
 
 
 
@@ -13,5 +15,6 @@ namespace EvaluationPlatformLogic.Exeptions
         {
         }
 
+        
     }
 }

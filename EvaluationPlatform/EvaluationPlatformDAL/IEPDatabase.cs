@@ -3,6 +3,7 @@ using System.Data.Entity;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformDomain.Models.Account;
 using EvaluationPlatformDomain.Models.Authentication;
+using EvaluationPlatformDomain.Models.Scales;
 
 namespace EvaluationPlatformDAL
 {
@@ -21,8 +22,11 @@ namespace EvaluationPlatformDAL
         IDbSet<Account> Accounts { get; set; } 
         IDbSet<AccountRole> AccountRoles { get; set; }
         IDbSet<EvaluationTemplate> EvaluationTemplates { get; set; }
+        IDbSet<Scale> Scales { get; set; }
 
 
         Teacher GetTeacherForAccount(Guid? accountId);
+
+        SchoolYear GetCurrentSchoolyear();
     }
 }

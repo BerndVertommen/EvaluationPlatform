@@ -229,12 +229,4 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-
-
-# Custom
-# =========================
-/concat3thParty.js
-/concatApp.js
-/fullCss.css
-/EvaluationPlatform/EvaluationPlatformWebSite/bundled/fullCss.css
-/EvaluationPlatform/EvaluationPlatformWebSite/bundled
+EvaluationPlatform/EvaluationPlatformWebSite/bundled/concat3thParty.js

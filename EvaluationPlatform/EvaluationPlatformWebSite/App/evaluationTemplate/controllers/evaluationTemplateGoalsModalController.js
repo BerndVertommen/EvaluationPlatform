@@ -6,8 +6,8 @@
         var thiz = this;
 
         //Variables
-      
-      
+        $scope.goalsFilter = {};
+
         //private Functions
         
         // public functions
@@ -41,19 +41,14 @@
             $uibModalInstance.dismiss('cancel');
         };
 
+
        
         //initiations
         var init = function () {
             $scope.evaluationSubSection = subSection;
             $scope.course = course;
             $scope.availableGoals = availableGoals;
-
-           
             
-            //$scope.selectedGoal = {};
-            //$scope.selectedGoal.Id="noId";
-
-
         }
 
         init();

@@ -8,9 +8,9 @@ namespace EvaluationPlatformDataTransferModels.InformationModels.Teacher
     public class TeacherInfo
     {
         public Guid Id { get; set; }
-        public PersonInfo Person { get; protected set; }
-        public List<ClassInfo> Classes { get; } = new List<ClassInfo>(); // c#6 auto initializers
-        public List<CourseInfo> Courses { get; } = new List<CourseInfo>();
+        public PersonInfo Person { get; set; }
+        public List<ClassInfo> Classes { get; set; } 
+        public List<CourseInfo> Courses { get; set; } 
 
         public TeacherInfo()
         {

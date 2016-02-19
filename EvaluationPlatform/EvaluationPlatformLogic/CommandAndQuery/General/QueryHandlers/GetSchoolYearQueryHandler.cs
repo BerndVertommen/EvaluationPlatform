@@ -17,7 +17,7 @@ namespace EvaluationPlatformLogic.CommandAndQuery.General.QueryHandlers
 
         public override IEnumerable<SchoolYearInfo> Handle(GetSchoolYearsQueryObject queryObject)
         {
-         var schoolyears = Database.SchoolYears.Where(s => s.StartYear == SchoolYear.GetStartYearThisSchoolYear()).ToList();
+         var schoolyears = Database.SchoolYears.ToList();
 
             return Mapper.Map<IEnumerable<SchoolYearInfo>>(schoolyears);
         }

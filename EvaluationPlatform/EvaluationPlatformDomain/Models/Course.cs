@@ -9,7 +9,7 @@ namespace EvaluationPlatformDomain.Models
     {
         public virtual SchoolYear SchoolYear { get; set; }
         public virtual Teacher PrimaryTeacher { get; set; }// leerkracht die het vak initieel geeft (niet de vervanger)
-        public Scale Scale { get; set; } 
+        public virtual Scale Scale { get; set; } 
         public virtual string Description { get; set; }
         public virtual StudyPlan StudyPlan { get; set; }
         public virtual ICollection<Teacher> Teachers { get; } = new List<Teacher>();
