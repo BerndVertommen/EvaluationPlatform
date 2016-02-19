@@ -77,7 +77,7 @@ gulp.task('minify-html', function () {
 
 /*Css concat*/
 gulp.task('concat-FulllCss', function () {
-    gulp.src(['./content/SladeBootstrap/*.css',
+   return gulp.src(['./content/SladeBootstrap/*.css',
         '!./content/SladeBootstrap/*.min.css',
          './content/customCss/*.css',
          './content/angularCss/angular-ui.css',
@@ -91,7 +91,7 @@ gulp.task('concat-FulllCss', function () {
 
 /*Css minification*/
 gulp.task('minify-FulllCss', function () {
-    gulp.src('./bundled/fullCss.css') // path to your file
+   return gulp.src('./bundled/fullCss.css') // path to your file
     .pipe(minifyCss())
     .pipe(gulp.dest('./bundled/'));
 });
@@ -104,7 +104,8 @@ gulp.task('sequenceBundleRelease', function () {
         'concat3thParty',
         'concatApp',
         ['annotate', 'concat-FulllCss'],
-        ['minifyApp', 'minify-FulllCss', 'minify-3thParty-js']
+        ['minifyApp','minify-FulllCss', 'minify-3thParty-js']
+         
     );
 });
 
