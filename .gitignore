@@ -230,3 +230,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 EvaluationPlatform/EvaluationPlatformWebSite/bundled/concat3thParty.js
+EvaluationPlatform/EvaluationPlatformWebSite/bundled/concatApp.js
+EvaluationPlatform/EvaluationPlatformWebSite/bundled/fullCss.css
