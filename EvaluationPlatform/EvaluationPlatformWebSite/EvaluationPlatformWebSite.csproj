@@ -149,6 +149,8 @@
     <Content Include="bundled\concat3thParty.js" />
     <Content Include="bundled\concatApp.js" />
     <Content Include="bundled\fullCss.css" />
+    <Content Include="content\angular-toastr.css" />
+    <Content Include="content\angular-toastr.min.css" />
     <Content Include="content\customCss\customCss.css" />
     <Content Include="content\font-awesome-4.4.0\css\font-awesome.css" />
     <Content Include="content\font-awesome-4.4.0\css\font-awesome.min.css" />
@@ -182,6 +184,10 @@
     <Content Include="scripts\angular-sanitize.js" />
     <Content Include="scripts\angular-sanitize.min.js" />
     <Content Include="scripts\angular-scenario.js" />
+    <Content Include="scripts\angular-toastr.js" />
+    <Content Include="scripts\angular-toastr.min.js" />
+    <Content Include="scripts\angular-toastr.tpls.js" />
+    <Content Include="scripts\angular-toastr.tpls.min.js" />
     <Content Include="scripts\angular-touch.js" />
     <Content Include="scripts\angular-touch.min.js" />
     <Content Include="scripts\angular-ui\ui-bootstrap-tpls.js" />
