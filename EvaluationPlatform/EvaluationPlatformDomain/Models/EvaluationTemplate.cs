@@ -4,9 +4,10 @@ namespace EvaluationPlatformDomain.Models
 {
     public class EvaluationTemplate : Entity
     {
-       public virtual Course Course { get; set; }
-        public virtual string Description { get; set; }
+        public virtual Course Course { get; set; }
+        public string Description { get; set; }
         public virtual ICollection<EvaluationSubSection> EvaluationSubSections { get; set; }
+        public bool Hide { get; set; }
 
         public EvaluationTemplate()
         {
