@@ -1,7 +1,7 @@
 ﻿(function(module) {
     'use strict';
 
-    function configurationService($http) {
+    function configurationService($http, toastrConfig) {
         var thiz = this;
 
         var apiUrl = 'http://testplatformApi/';

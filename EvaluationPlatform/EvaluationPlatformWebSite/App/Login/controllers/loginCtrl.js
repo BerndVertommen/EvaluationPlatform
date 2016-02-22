@@ -1,12 +1,14 @@
 ﻿(function (model) {
     'use strict';
 
-    function loginController($scope, $location, authenticationService) {
+    function loginController($scope, $location, authenticationService,toastr) {
         var init = function () {
             $scope.errorMessage = undefined;
             $scope.userName = undefined;
             $scope.password = undefined;
             $scope.testTitle = "TestTitle";
+
+            toastr.error("Vul alle velden in aub.");
         }
 
         init();
@@ -14,7 +16,7 @@
         $scope.login = function () {
             $scope.errorMessage = undefined;
             if (angular.isUndefined($scope.userName) || angular.isUndefined($scope.password)) {
-                $scope.errorMessage = "Vul alle velden in.";
+              
                 return;
             }
 
