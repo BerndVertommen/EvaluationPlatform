@@ -3,11 +3,14 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using EvaluationPlatformDataTransferModels.CreationModels;
+using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.EvaluationTemplate;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using EvaluationPlatformLogic.CommandAndQuery.Evaluation.Command;
 using EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates;
+using EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.Command;
+using EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.QueryObjects;
 using EvaluationPlatformWebApi.Authentication;
 
 namespace EvaluationPlatformWebApi.Controllers
@@ -50,6 +53,15 @@ namespace EvaluationPlatformWebApi.Controllers
             command.TeacherId = GetAccountInfo().TeacherId;
 
             CommandProcessor.Execute(command);
+
+            return new HttpResponseMessage(HttpStatusCode.OK);
+        }
+
+        [Route("hideTemplates")]
+        [HttpPost]
+        public HttpResponseMessage HideEvaluationTemplates(IEnumerable<EvaluationTemplateInfo> evaluationTemplates)
+        {
+            CommandProcessor.Execute(new HideEvaluationTemplatesCommand(evaluationTemplates));
 
             return new HttpResponseMessage(HttpStatusCode.OK);
         }

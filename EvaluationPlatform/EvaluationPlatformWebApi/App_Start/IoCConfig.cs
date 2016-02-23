@@ -5,6 +5,7 @@ using EvaluationPlatformDAL;
 using EvaluationPlatformLogic.CommandAndQuery.Account.QueryHandlers;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates;
+using EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.CommandHandlers;
 using EvaluationPlatformWebApi.Controllers;
 
 namespace EvaluationPlatformWebApi

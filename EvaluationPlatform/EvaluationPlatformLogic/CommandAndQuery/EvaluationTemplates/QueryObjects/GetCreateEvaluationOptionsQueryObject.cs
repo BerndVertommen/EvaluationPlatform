@@ -2,7 +2,7 @@
 using EvaluationPlatformDataTransferModels.CreationModels;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 
-namespace EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates
+namespace EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.QueryObjects
 {
     public class GetCreateEvaluationOptionsQueryObject : IQueryObject<CreateEvaluationOptions>
     {

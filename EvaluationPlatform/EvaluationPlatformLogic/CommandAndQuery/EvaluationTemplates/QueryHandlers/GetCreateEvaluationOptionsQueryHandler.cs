@@ -3,8 +3,9 @@ using EvaluationPlatformDataTransferModels.CreationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Teacher;
 using EvaluationPlatformDAL;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
+using EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.QueryObjects;
 
-namespace EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates
+namespace EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.QueryHandlers
 {
     public class GetCreateEvaluationOptionsQueryHandler : QueryHandler<GetCreateEvaluationOptionsQueryObject, CreateEvaluationOptions>
     {

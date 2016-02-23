@@ -32,6 +32,12 @@
             });
         };
 
+        thiz.hideSelectedTemplates = function(templates) {
+            return $http.post(baseWebApiUrl + 'evaluationTemplate/hide', templates).then(function (result) {
+                return result.data;
+            });
+        };
+
         //initiations
         var init = function() {
 

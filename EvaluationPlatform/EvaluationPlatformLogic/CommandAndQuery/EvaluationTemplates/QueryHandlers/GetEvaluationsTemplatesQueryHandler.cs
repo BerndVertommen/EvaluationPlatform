@@ -1,11 +1,13 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using AutoMapper;
 using EvaluationPlatformDataTransferModels.InformationModels.EvaluationTemplate;
 using EvaluationPlatformDAL;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
+using EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.QueryObjects;
 
-namespace EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates
+namespace EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.QueryHandlers
 {
     public class GetEvaluationsTemplatesQueryHandler : QueryHandler<GetEvaluationTemplatesQueryObject,IEnumerable<EvaluationTemplateInfo>>
     {
@@ -19,7 +21,7 @@ namespace EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates
 
 
 
-            return Mapper.Map<IEnumerable<EvaluationTemplate>,IEnumerable<EvaluationTemplateInfo>>(teacher.EvaluationTemplates);
+            return Mapper.Map<IEnumerable<EvaluationTemplate>,IEnumerable<EvaluationTemplateInfo>>(teacher.EvaluationTemplates.Where(e=> !e.Hide));
         }
     }
 }

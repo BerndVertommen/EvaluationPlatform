@@ -7690,6 +7690,16 @@ thead {
     text-align: right;
 }
 
+.tcolTrippleSmButton {
+    width: 125px;
+    text-align: right;
+}
+
+.tcolQuadSmButton {
+    width: 165px;
+    text-align: right;
+}
+
 .smallScrolable {
     max-height: 250px;
     overflow: auto;

@@ -4,8 +4,9 @@ using EvaluationPlatformDataTransferModels.InformationModels.EvaluationSubsectio
 using EvaluationPlatformDAL;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
+using EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.Command;
 
-namespace EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates
+namespace EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.CommandHandlers
 {
     public class CreateEvaluationTemplateCommandHandler: CommandHandler<CreateEvaluationTemplateCommand>
     {

@@ -70,7 +70,7 @@ gulp.task('minify-3thParty-js', function () {
 
 /*Html minification*/
 gulp.task('minify-html', function () {
-    gulp.src('./app/**/*.html') // path to your files
+    return gulp.src('./app/**/*.html') // path to your files
     .pipe(minifyHtml())
     .pipe(gulp.dest('./bundled/html'));
 });

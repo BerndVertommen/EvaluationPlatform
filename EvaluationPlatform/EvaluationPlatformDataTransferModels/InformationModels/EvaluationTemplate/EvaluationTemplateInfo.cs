@@ -11,5 +11,6 @@ namespace EvaluationPlatformDataTransferModels.InformationModels.EvaluationTempl
         public  CourseInfo Course { get; set; }
         public string Description { get; set; }
         public List<EvaluationSubSectionInfo> EvaluationSubSections { get; set; }
+        public bool Hide { get; set; }
     }
 }

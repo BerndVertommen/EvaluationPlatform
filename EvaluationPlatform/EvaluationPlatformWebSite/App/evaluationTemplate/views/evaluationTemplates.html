@@ -11,21 +11,24 @@
             <div class="largeScrolable">
                 <table class="table table-hover table-striped">
                     <thead>
-                       <!-- <tr class="bg-greyTitle">-->
-                            <th class="text-center">Sjablonen</th>
-                            <th class="tcolDoubleSmButton">
-                                <div class="btn-group">
-                                    <a class="btn btn-default btn-sm" href="#/createEvaluationTemplate"><i class="fa fa-plus"></i></a>
-                                    <a class="btn btn-primary btn-sm" ng-click="createEvaluations()" ng-disabled="selectedTemplate == undefined"><i class="fa fa-files-o"></i></a>
-                                </div>
-                            </th>
-                        <!--</tr>-->
+                        <!-- <tr class="bg-greyTitle">-->
+                    <th class="text-center">Sjablonen</th>
+                    <th class="tcolQuadSmButton">
+                        <div class="btn-group">
+                            <a class="btn btn-default btn-sm" href="#/createEvaluationTemplate"><i class="fa fa-plus"></i></a>
+                            <a class="btn btn-primary btn-sm" ng-click="createEvaluations()" ng-disabled="selectedTemplate == undefined"><i class="fa fa-files-o"></i></a>
+                            <!--<a class="btn btn-default btn-sm" ng-click="hideSelectedTemplates()"><i class="fa fa-eye"></i> <i class="fa fa-arrow-right"></i></a>-->
+                            <a class="btn btn-default btn-sm" ng-click="hideSelectedTemplates()">T</a>
+
+                        </div>
+                    </th>
+                    <!--</tr>-->
                     </thead>
                     <tbody>
-                    <tr ng-repeat="template in evaluationTemplates" ng-class="{'success': $index == selectedRow}">
-                        <td ng-click="setSelectedTemplate(template, $index)">{{template.description}}</td>
-                        <td></td>
-                    </tr>
+                        <tr ng-repeat="template in evaluationTemplates" ng-class="{'success': $index == selectedRow}" ng-hide="template.hide">
+                            <td ng-click="setSelectedTemplate(template, $index)">{{template.description}}</td>
+                            <td> <input type="checkbox" ng-model="template.checkHidden " /> </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
