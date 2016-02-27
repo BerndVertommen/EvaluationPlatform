@@ -36,6 +36,8 @@
         }
 
         $scope.hideSelectedTemplates = function () {
+            console.log('test');
+
             var templatesToHide = [];
             _.each($scope.evaluationTemplates, function (template) {
                 if (template.checkhidden === true) {
