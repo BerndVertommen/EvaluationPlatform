@@ -10,7 +10,6 @@
 
     });
 
-angular.module('app.login');
 app.run(['authenticationService', function (authenticationService) {
     authenticationService.getAuthData();
 }]);

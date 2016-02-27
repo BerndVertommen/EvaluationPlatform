@@ -39,6 +39,27 @@
 
     });
 
+app.config(function ($provide, $httpProvider) {
+    $provide.factory('errorInterceptor', function ($q, $injector) {
+        return {
+            responseError: function (rejection) {
+
+                //console.log(rejection.data.exceptionMessage);
+                
+               //var toastr = $injector.get('toastr');
+               // toastr.error('Fout', rejection.data.exceptionMessage);
+
+                var errorMessageService = $injector.get('errorMessageService');
+                errorMessageService.handleReject(rejection);
+
+                return $q.reject(rejection);
+            }
+        };
+    });
+
+    $httpProvider.interceptors.push('errorInterceptor');
+});
+
 
 
 
