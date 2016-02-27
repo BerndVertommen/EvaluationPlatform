@@ -17,7 +17,8 @@ var sourceMaps = require("gulp-sourcemaps");
 gulp.task('concatApp', function () {
     return gulp.src(['./app/app.js', './app/**/*module.js', './app/**/*.js'])
      .pipe(sourceMaps.init())
-        .pipe(concat('concatApp.js'))  // concat and name it "concatApp.js"
+     .pipe(ngAnnotate())
+     .pipe(concat('concatApp.js'))  // concat and name it "concatApp.js"
      .pipe(sourceMaps.write())
      .pipe(gulp.dest('./bundled'));
 
@@ -103,7 +104,8 @@ gulp.task('sequenceBundleRelease', function () {
     runSequence(
         'concat3thParty',
         'concatApp',
-        ['annotate', 'concat-FulllCss'],
+        //['annotate', 'concat-FulllCss'],
+        'concat-FulllCss',
         ['minifyApp','minify-FulllCss', 'minify-3thParty-js']
          
     );
@@ -113,7 +115,8 @@ gulp.task('sequenceBundleDevelop', function () {
     runSequence(
         'concat3thParty',
         'concatApp',
-        ['annotate', 'concat-FulllCss']
+       // ['annotate', 'concat-FulllCss']
+        'concat-FulllCss'
     );
 });
 
