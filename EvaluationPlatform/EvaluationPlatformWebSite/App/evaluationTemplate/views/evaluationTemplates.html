@@ -27,7 +27,7 @@
                     <tbody>
                         <tr ng-repeat="template in evaluationTemplates" ng-class="{'success': $index == selectedRow}" ng-hide="template.hide">
                             <td ng-click="setSelectedTemplate(template, $index)">{{template.description}}</td>
-                            <td> <input type="checkbox" ng-model="template.checkHidden " /> </td>
+                            <td> <input type="checkbox" ng-model="template.checkHidden" /> </td>
                         </tr>
                     </tbody>
                 </table>

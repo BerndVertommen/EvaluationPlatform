@@ -32,8 +32,8 @@
             });
         };
 
-        thiz.hideSelectedTemplates = function(templates) {
-            return $http.post(baseWebApiUrl + 'evaluationTemplate/hide', templates).then(function (result) {
+        thiz.hideSelectedTemplates = function(templatesIds) {
+            return $http.post(baseWebApiUrl + 'evaluationTemplate/hideTemplates', templatesIds).then(function (result) {
                 return result.data;
             });
         };

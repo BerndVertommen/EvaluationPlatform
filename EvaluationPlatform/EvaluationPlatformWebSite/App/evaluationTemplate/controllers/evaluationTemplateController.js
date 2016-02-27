@@ -40,14 +40,14 @@
 
             var templatesToHide = [];
             _.each($scope.evaluationTemplates, function (template) {
-                if (template.checkhidden === true) {
+                if (template.checkHidden === true) {
                     templatesToHide.push(template);
                 }
             });
 
             if (templatesToHide.length > 0) {
 
-                evaluationTemplateService.hideSelectedTemplate(templatesToHide).then(function () {
+                evaluationTemplateService.hideSelectedTemplates(templatesToHide).then(function () {
                     _.each(templatesToHide, function (template) {
                         template.hide = true;
                     });

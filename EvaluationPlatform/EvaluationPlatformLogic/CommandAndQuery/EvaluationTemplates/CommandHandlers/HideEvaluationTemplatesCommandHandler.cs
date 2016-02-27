@@ -9,13 +9,14 @@ namespace EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.CommandHan
     public class HideEvaluationTemplatesCommandHandler : CommandHandler<HideEvaluationTemplatesCommand>
     {
         public HideEvaluationTemplatesCommandHandler(IEPDatabase database) : base(database)
-        {
-        }
+        {}
 
         public override void Handle(HideEvaluationTemplatesCommand commandObject)
         {
+            var templateIds = commandObject.EvaluationInfos.Select(e => e.Id);
+
             var evaluations =
-                Database.EvaluationTemplates.Where(e => commandObject.EvaluationInfos.Any(ei => ei.Id == e.Id));
+                Database.EvaluationTemplates.Where(e => templateIds.Any(ei => ei == e.Id));
 
             evaluations.Each(e => e.Hide = true);
         }
