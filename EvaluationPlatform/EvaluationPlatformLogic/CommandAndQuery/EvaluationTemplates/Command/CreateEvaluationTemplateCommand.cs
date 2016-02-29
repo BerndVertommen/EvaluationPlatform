@@ -2,7 +2,7 @@
 using EvaluationPlatformDataTransferModels.InformationModels.EvaluationTemplate;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 
-namespace EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates
+namespace EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.Command
 {
     public class CreateEvaluationTemplateCommand : ICommandObject
     {

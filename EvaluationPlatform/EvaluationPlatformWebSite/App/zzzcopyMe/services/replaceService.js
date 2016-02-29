@@ -1,5 +1,5 @@
 ﻿(function(module) {
-
+    'use strict';
     function serviceName($http, configurationService) {
         var thiz = this;
         var baseWebApiUrl = configurationService.baseApiPath;

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure.Annotations;
 using System.Linq;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformDomain.Models.Account;
@@ -8,7 +10,7 @@ using EvaluationPlatformDomain.Models.Scales;
 
 namespace EvaluationPlatformDAL
 {
-    public class EPDatabase : DbContext , IEPDatabase
+    public class EPDatabase : DbContext, IEPDatabase
     {
         //public IDbSet<Account> Accounts { get; set; } 
         // Project
@@ -27,7 +29,7 @@ namespace EvaluationPlatformDAL
         public IDbSet<EvaluationTemplate> EvaluationTemplates { get; set; }
         public IDbSet<Scale> Scales { get; set; }
 
-        
+
 
         public EPDatabase() : base("EPDatabase")
         {
@@ -41,23 +43,34 @@ namespace EvaluationPlatformDAL
             //modelBuilder.Entity<StudyPlan>().HasMany(c => c.).WithMany(p => p.StudyPlans);
             modelBuilder.Entity<Teacher>().HasMany(c => c.Courses).WithMany(p => p.Teachers);
 
+            // unique value and index for Username on account table
+            modelBuilder
+                .Entity<Account>()
+                .Property(a => a.Username)
+                .IsRequired()
+                .HasMaxLength(60)
+                .HasColumnAnnotation(
+                IndexAnnotation.AnnotationName,
+                new IndexAnnotation(
+                    new IndexAttribute("IX_UserName", 1) { IsUnique = true }));
+
         }
 
         public static EPDatabase Create()
         {
-            return  new EPDatabase();
+            return new EPDatabase();
         }
 
         public Teacher GetTeacherForAccount(Guid? accountId)
         {
-           return Teachers.FirstOrDefault(
-                    t => t.Person.Id == Accounts.FirstOrDefault(a => a.Id == accountId).Person.Id);
+            return Teachers.FirstOrDefault(
+                     t => t.Person.Id == Accounts.FirstOrDefault(a => a.Id == accountId).Person.Id);
         }
 
         public SchoolYear GetCurrentSchoolyear()
         {
             var startSchoolYear = SchoolYear.GetStartYearThisSchoolYear();
-            return SchoolYears.FirstOrDefault(x => x.StartYear == startSchoolYear );
+            return SchoolYears.FirstOrDefault(x => x.StartYear == startSchoolYear);
         }
     }
 

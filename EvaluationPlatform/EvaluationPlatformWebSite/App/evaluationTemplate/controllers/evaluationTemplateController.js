@@ -1,7 +1,7 @@
 ﻿(function (module) {
     'use strict';
 
-    function evaluationTemplatesController($scope, $location, evaluationTemplates, $uibModal, classesService, configurationService) {
+    function evaluationTemplatesController($scope, $location, evaluationTemplates, $uibModal, classesService, evaluationTemplateService) {
         var thiz = this;
 
         //Variables
@@ -23,17 +23,37 @@
                 controller: 'createEvaluationsFromTemplateModalController',
                 size: 'lg',
                 resolve: {
-                    evaluationTemplate: function() {
+                    evaluationTemplate: function () {
                         return $scope.selectedTemplate;
                     },
                     classesForCourse: function () {
-                       return classesService.classesForCourse($scope.selectedTemplate.course.id).then(function (classes) {
+                        return classesService.classesForCourse($scope.selectedTemplate.course.id).then(function (classes) {
                             return classes;
                         });
                     }
                 }
-        });
-        };
+            });
+        }
+
+        $scope.hideSelectedTemplates = function () {
+            console.log('test');
+
+            var templatesToHide = [];
+            _.each($scope.evaluationTemplates, function (template) {
+                if (template.checkHidden === true) {
+                    templatesToHide.push(template);
+                }
+            });
+
+            if (templatesToHide.length > 0) {
+
+                evaluationTemplateService.hideSelectedTemplates(templatesToHide).then(function () {
+                    _.each(templatesToHide, function (template) {
+                        template.hide = true;
+                    });
+                });
+            }
+        }
 
         //initiations
         var init = function () {
