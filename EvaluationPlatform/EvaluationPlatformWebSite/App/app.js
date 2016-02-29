@@ -26,13 +26,13 @@
             onHidden: null,
             onShown: null,
             onTap: null,
-            progressBar: true,
+            progressBar: false,
             tapToDismiss: true,
             templates: {
                 toast: 'directives/toast/toast.html',
                 progressbar: 'directives/progressbar/progressbar.html'
             },
-            timeOut: 2000,
+            timeOut: 4000,
             titleClass: 'toast-title',
             toastClass: 'toast'
         });
