@@ -11,6 +11,7 @@ var minifyCss = require("gulp-minify-css");
 var minifyJs = require("gulp-uglify");
 var runSequence = require("run-sequence");
 var sourceMaps = require("gulp-sourcemaps");
+var replace = require('gulp-replace');
 
 
 /*Concatenate app js files*/
@@ -78,36 +79,55 @@ gulp.task('minify-html', function () {
 
 /*Css concat*/
 gulp.task('concat-FulllCss', function () {
-   return gulp.src(['./content/SladeBootstrap/*.css',
-        '!./content/SladeBootstrap/*.min.css',
-         './content/customCss/*.css',
-         './content/angularCss/angular-ui.css',
-        './content/*.css',     
-        '!./content/*.min.css'
-    ]) 
-    .pipe(concat('fullCss.css'))
-    .pipe(gulp.dest('./bundled'));
+    return gulp.src(['./content/SladeBootstrap/*.css',
+         '!./content/SladeBootstrap/*.min.css',
+          './content/customCss/*.css',
+          './content/angularCss/angular-ui.css',
+         './content/*.css',
+         '!./content/*.min.css'
+    ])
+     .pipe(concat('fullCss.css'))
+     .pipe(gulp.dest('./bundled'));
 });
 
 
 /*Css minification*/
 gulp.task('minify-FulllCss', function () {
-   return gulp.src('./bundled/fullCss.css') // path to your file
-    .pipe(minifyCss())
-    .pipe(gulp.dest('./bundled/'));
+    return gulp.src('./bundled/fullCss.css') // path to your file
+     .pipe(minifyCss())
+     .pipe(gulp.dest('./bundled/'));
+});
+
+/*Change development api url to api url need for server.*/
+gulp.task('setServerApiUrl', function () {
+    return gulp.src(['./bundled/concatApp.js'])
+        .pipe(replace('http://testplatformApi/', 'http://api.testplatformApi/'))
+        .pipe(gulp.dest('./bundled/'));
 });
 
 
-
 /*Grouped tasks : package run-sequence is used to line up tasks*/
-gulp.task('sequenceBundleRelease', function () {
+
+/*Build minified files testable in development*/
+gulp.task('sequenceBundleMinified', function () {
     runSequence(
         'concat3thParty',
         'concatApp',
         //['annotate', 'concat-FulllCss'],
         'concat-FulllCss',
-        ['minifyApp','minify-FulllCss', 'minify-3thParty-js']
-         
+        ['minifyApp', 'minify-FulllCss', 'minify-3thParty-js']
+
+    );
+});
+
+/*Build minified files for production*/
+gulp.task('sequenceBundleRelease', function () {
+    runSequence(
+        'concat3thParty',
+        'concatApp',
+        'setServerApiUrl',
+        'concat-FulllCss',
+        ['minifyApp', 'minify-FulllCss', 'minify-3thParty-js']
     );
 });
 
