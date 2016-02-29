@@ -49,7 +49,7 @@ app.config(function ($provide, $httpProvider) {
                //var toastr = $injector.get('toastr');
                // toastr.error('Fout', rejection.data.exceptionMessage);
 
-                var errorMessageService = $injector.get('errorMessageService');
+                var errorMessageService = $injector.get('messageService');
                 errorMessageService.handleReject(rejection);
 
                 return $q.reject(rejection);

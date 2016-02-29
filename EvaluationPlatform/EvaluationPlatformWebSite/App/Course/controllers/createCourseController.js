@@ -1,7 +1,7 @@
 ﻿(function (module) {
     'use strict';
 
-    function createCourseController($scope, $location, courseService, $uibModal, studyPlanService, toastr) {
+    function createCourseController($scope, $location, courseService, $uibModal, studyPlanService, messageService) {
         var thiz = this;
 
         //Variables
@@ -15,17 +15,12 @@
             //window.location.href = "#/manageCourse"; //bij location.path geen # bijdoen
         }
 
-        $scope.ok = function () {
-            courseService.createCourse($scope.createCourseInfo).then(function () {
-                toastr.success("Cursus aangemaakt.");
+        $scope.ok = function() {
+            courseService.createCourse($scope.createCourseInfo).then(function() {
+                messageService.handleSucces("Cursus aangemaakt!");
                 $location.path("/manageCourse");
 
-            }, function (error) {
-                    toastr.error(error.data.exceptionMessage);
-                    console.log(error);
-
-                }
-            );
+            });
             console.log($scope.createCourseInfo);
 
         }

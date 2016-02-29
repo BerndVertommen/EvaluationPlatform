@@ -1,7 +1,7 @@
 ﻿(function (module) {
     'use strict';
 
-    function createAccountModalController($scope, accountService, $location, $uibModalInstance, toastr) {
+    function createAccountModalController($scope, accountService, $location, $uibModalInstance, messageService) {
         var thiz = this;
 
         //Variables
@@ -19,7 +19,8 @@
             // geef $scope.createAccountInfo mee in in de accountService methode.
             //.then om te wachten totdat de server geantwoord heeft
             accountService.createAccount($scope.createAccountInfo).then(function () {
-                toastr.success("Account aangemaakt!");
+                messageService.handleSucces("Account aangemaakt!");
+                
                 $uibModalInstance.dismiss(); // gebruik dit in the .then functie zodat de modal sluit na de servercall.
             });
             

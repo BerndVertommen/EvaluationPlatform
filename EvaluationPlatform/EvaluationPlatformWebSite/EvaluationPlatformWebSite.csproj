@@ -67,7 +67,7 @@
     <Content Include="app\Account\services\accountService.js" />
     <Content Include="app\Account\views\manageAccount.html" />
     <Content Include="app\Account\views\createAccountModal.html" />
-    <Content Include="app\error\services\errorMessageService.js" />
+    <Content Include="app\message\services\messageService.js" />
     <Content Include="app\evaluation\classes\classes-module.js" />
     <Content Include="app\evaluation\classes\controllers\classesController.js" />
     <Content Include="app\evaluation\classes\controllers\selectClassModalController.js" />
