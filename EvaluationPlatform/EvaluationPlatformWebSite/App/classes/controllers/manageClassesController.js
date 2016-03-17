@@ -10,6 +10,9 @@
         
         // public functions
 
+        //klassen volledig oproepen filteren clientside
+        //studenten 10/10 van server ophalen
+
         //initiations
         var init = function () {
 
