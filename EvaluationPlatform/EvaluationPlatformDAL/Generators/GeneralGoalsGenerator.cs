@@ -44,7 +44,7 @@ namespace EvaluationPlatformDAL.Generators
 
                     foreach (var dis in goals.Split('£'))
                     {
-                        yield return new Goal(dis);
+                        yield return new Goal(dis, "borstelen");
                     }
 
                     break;
@@ -73,7 +73,7 @@ namespace EvaluationPlatformDAL.Generators
 
                     foreach (var dis in goals.Split('£'))
                     {
-                        yield return new Goal(dis);
+                        yield return new Goal(dis, "wassen");
                     }
 
                     break;
@@ -104,7 +104,7 @@ namespace EvaluationPlatformDAL.Generators
 
                     foreach (var dis in goals.Split('£'))
                     {
-                        yield return new Goal(dis);
+                        yield return new Goal(dis, "oprollen");
                     }
 
                     break;
@@ -129,7 +129,7 @@ namespace EvaluationPlatformDAL.Generators
 
                     foreach (var dis in goals.Split('£'))
                     {
-                        yield return new Goal(dis);
+                        yield return new Goal(dis, "producten");
                     }
 
                     break;
@@ -154,7 +154,7 @@ namespace EvaluationPlatformDAL.Generators
 
                     foreach (var dis in goals.Split('£'))
                     {
-                        yield return new Goal(dis);
+                        yield return new Goal(dis, "drogen");
                     }
 
                     break;
@@ -205,7 +205,7 @@ namespace EvaluationPlatformDAL.Generators
 
                     foreach (var dis in goals.Split('£'))
                     {
-                        yield return new Goal(dis);
+                        yield return new Goal(dis, "maskers");
                     }
 
                     break;
@@ -239,7 +239,7 @@ namespace EvaluationPlatformDAL.Generators
 
                     foreach (var dis in goals.Split('£'))
                     {
-                        yield return new Goal(dis);
+                        yield return new Goal(dis, "vlechten");
                     }
 
                     break;
@@ -264,7 +264,7 @@ namespace EvaluationPlatformDAL.Generators
 
                     foreach (var dis in goals.Split('£'))
                     {
-                        yield return new Goal(dis);
+                        yield return new Goal(dis, "orde");
                     }
 
                     break;
@@ -315,7 +315,7 @@ namespace EvaluationPlatformDAL.Generators
 
                     foreach (var dis in goals.Split('£'))
                     {
-                        yield return new Goal(dis);
+                        yield return new Goal(dis, "nagels");
                     }
 
                     break;
