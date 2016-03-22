@@ -8,6 +8,9 @@ namespace EvaluationPlatformDataTransferModels.InformationModels
         public string Description { get; set; }
         public string Groupname { get; set; }
 
+        // retrieved with automapper. Check Mappingconfiguration
+        public int GeneralGoalNumber { get; set; }
+
         public GoalInfo()
         {
             

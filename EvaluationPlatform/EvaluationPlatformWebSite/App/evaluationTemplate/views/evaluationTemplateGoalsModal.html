@@ -18,7 +18,7 @@
                     <div class="panel-body">
                         <div class="form-horizontal">
                             <div class="row">
-                                <div class="col-sm-8 col-xs-12">
+                                <div class="col-sm-6 col-xs-12">
                                     <div>
                                         <label for="text" class="control-label">Omschrijving:</label>
                                         <input class="form-control" type="text" id="text" ng-model="goalFilter.description" placeholder="Zoek op ..."/>
@@ -28,6 +28,12 @@
                                     <div>
                                         <label for="groupname" class="control-label">Groupsnaam:</label>
                                         <input class="form-control" type="text" id="groupname" ng-model="goalFilter.groupname" placeholder="Zoek op ..."/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-2 col-xs-12">
+                                    <div>
+                                        <label for="generalgoalnr" class="control-label">Doelnr:</label>
+                                        <input class="form-control" type="number" id="generalgoalnr" ng-model="goalFilter.generalGoalNumber" placeholder="Zoek op ..." />
                                     </div>
                                 </div>
                             </div>
@@ -45,12 +51,14 @@
                                     <tr>
                                         <th>Omschrijving</th>
                                         <th style="width: 175px">Groepsnaam</th>
+                                        <th style="width: 65px">DoelNr</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr ng-click="setSelectedGoal(goal, $index)" ng-repeat="goal in availableGoals | filter : goalFilter" ng-class="{'success': $index == selectedRow}">
                                         <td>{{goal.description}}</td>
                                         <td>{{goal.groupname}}</td>
+                                        <td>{{goal.generalGoalNumber}}</td>
                                     </tr>
                                 </tbody>
                             </table>

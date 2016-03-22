@@ -2,6 +2,8 @@
 using System.Linq;
 using System.Reflection;
 using AutoMapper;
+using EvaluationPlatformDataTransferModels.InformationModels;
+using EvaluationPlatformDataTransferModels.InformationModels.Course;
 using EvaluationPlatformDataTransferModels.InformationModels.Teacher;
 using EvaluationPlatformDomain.Models;
 
@@ -16,10 +18,20 @@ namespace EvaluationPlatformWebApi.App_Start
             ConfigureOnSuffix(sourceAssembly, destinationAssembly, domainNamespaces);
             // Class Mappings
             Mapper.CreateMap<Teacher, PrimaryTeacherInfo>();
-            //Mapper.CreateMap<Class, ClassViewInfo>();
-            //Mapper.CreateMap<Person, PersonInfo>();
-            //Mapper.CreateMap<SchoolYear, SchoolYearInfo>();
-            //Mapper.CreateMap<Student, StudentInfo>();
+            Mapper.CreateMap<Course, CourseInfo>().ForMember(dest => dest.GoalsForCourse, // fills in GeneralGoalNumber on the goalinfo
+                opts =>
+                    opts.MapFrom(
+                        src =>
+                            src.StudyPlan.GeneralGoals.SelectMany(
+                                gg =>
+                                    gg.Goals.Select(
+                                        g =>
+                                            new GoalInfo()
+                                            {
+                                                Description = g.Description,
+                                                GeneralGoalNumber = gg.GoalNumber,
+                                                Groupname = g.Groupname
+                                            }))));
         }
 
         private static void ConfigureOnSuffix(Assembly sourceAssembly, Assembly destinationAssembly, string[] domainNamespaces)

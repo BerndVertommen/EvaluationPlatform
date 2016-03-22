@@ -26,7 +26,7 @@ namespace EvaluationPlatformDomain.Models
                return StudyPlan.GeneralGoals.SelectMany(g => g.Goals).ToList();
             } 
             
-        } 
+        }
 
         public Course()
         {
