@@ -7,7 +7,7 @@ using Xunit;
 
 namespace EvaluationPlatformLogic.Tests
 {
-    public class EvaluationPdfTests
+    public class EvaluationPdfTests : BaseUnitTest
     {
         [Fact]
         public void A_Pdf_Is_Generated_For_Multiple_Evaluations()
@@ -19,7 +19,7 @@ namespace EvaluationPlatformLogic.Tests
             IEnumerable<Evaluation> evaluations = db.Evaluations.Where(e => e.Finished).Take(5).ToList();
 
             EvaluationPdfGenerator pdfGenerator = new EvaluationPdfGenerator();
-            string filename = @"C:\temp\pdftest2.pdf";
+            string filename = OutputFilePath + "pdftest2.pdf";
 
             //act
             pdfGenerator.GeneratePdfToFile(evaluations,filename);
