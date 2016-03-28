@@ -23,7 +23,6 @@ namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryHandlers
                return GetOneEvaluation(queryObject.Ids.FirstOrDefault());
             }
 
-
             var evaluations = Database.Evaluations.Where(e => queryObject.Ids.Any(i => i == e.Id));
 
             return Mapper.Map<IEnumerable<EvaluationInfo>>(evaluations);

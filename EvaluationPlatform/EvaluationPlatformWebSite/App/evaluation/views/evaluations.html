@@ -113,7 +113,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="evaluation in evaluations">
+                        <tr ng-repeat="evaluation in evaluations" ng-click="openScoredEvaluationModal(evaluation)">
                             <td>{{evaluation.student.person.firstName}} {{evaluation.student.person.lastName}}</td>                            
                             <td>{{evaluation.description}}</td>
                             <td>{{evaluation.result.total | number : 2 }}</td>

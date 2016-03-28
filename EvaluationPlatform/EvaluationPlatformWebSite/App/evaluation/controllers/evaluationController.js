@@ -12,7 +12,7 @@
         // public functions
         $scope.selectEvaluation = function (evaluation) {
             $scope.selectedEvaluation = evaluation;
-            thiz.setSubsectionScores(); // find other solution to map scores not on evry select.
+           // evaluationService.setSubsectionScores(); // find other solution to map scores not on evry select.
             console.log($scope.selectedEvaluation);
         }
 
@@ -49,10 +49,11 @@
         };
 
         thiz.updateAfterChange = function() {
-            thiz.mapItemsToSubSection();
-            thiz.setSubsectionScores();
+            $scope.evaluations = evaluationService.mapItemsToSubSection($scope.evaluations);
+         // evaluationService.setSubsectionScores();
         };
 
+        /*
         thiz.mapItemsToSubSection = function () {
 
             _.each($scope.evaluations, function (evaluation) {
@@ -65,8 +66,9 @@
                 evaluation.mappedSubsections = differentSubsections;
             });
         };
+        */
 
-
+        /*
         thiz.setSubsectionScores = function () {
             //// var value = object[key] => use dictionary from c# this way
             _.each($scope.selectedEvaluation.mappedSubsections, function (subsection) {
@@ -76,15 +78,14 @@
             });
             // map every evaluation not just selected so it can be procesed in int()
         };
+        */
 
         //initiations
         var init = function () {
-            $scope.evaluations = evaluations;
             console.log(evaluations[0]);
             $scope.classTitle = evaluations[0].createdForClass.description;
             $scope.selectEvaluation(evaluations[0]);
-            thiz.mapItemsToSubSection();
-            thiz.setSubsectionScores();
+            $scope.evaluations = evaluationService.mapItemsToSubSection(evaluations);
             console.log($scope.evaluations);
 
         }
