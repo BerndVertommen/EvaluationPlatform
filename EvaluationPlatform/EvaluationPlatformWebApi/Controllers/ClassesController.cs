@@ -5,7 +5,7 @@ using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Class;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
-using EvaluationPlatformLogic.CommandAndQuery.Class.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.Class.QueryDto;
 using EvaluationPlatformWebApi.Authentication;
 
 namespace EvaluationPlatformWebApi.Controllers
@@ -29,7 +29,7 @@ namespace EvaluationPlatformWebApi.Controllers
                 throw new NullReferenceException();
             }
 
-            return QueryProccesor.Execute(new ClassesForTeacherQueryObject(accountInfo.TeacherId.Value));
+            return QueryProccesor.Execute(new ClassesForTeacherQueryDto(accountInfo.TeacherId.Value));
         }
 
 
@@ -38,7 +38,7 @@ namespace EvaluationPlatformWebApi.Controllers
         public IEnumerable<ClassInfo> ClassesForCourse( GuidDto guidDto)
         {
             //var guid = Guid.Parse(courseId);
-            return QueryProccesor.Execute(new ClassesForCourseQueryObject(guidDto.Id));
+            return QueryProccesor.Execute(new ClassesForCourseQueryDto(guidDto.Id));
         }
 
         [CustomAutorize(AccountRoleType.Admin)]

@@ -8,13 +8,13 @@ using EvaluationPlatformLogic.Exeptions;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Account.CommandHandlers
 {
-    public class CreateAccountCommandHandler : CommandHandler<CreateAccountCommand>
+    public class CreateAccountCommandHandler : CommandHandler<CreateAccountCommandDto>
     {
         public CreateAccountCommandHandler(IEPDatabase database) : base(database)
         {
         }
 
-        public override void Handle(CreateAccountCommand commandObject)
+        public override void Handle(CreateAccountCommandDto commandObject)
         {
             var account = Database.Accounts.FirstOrDefault(a => a.Username == commandObject.CreateAccountInfo.Username);
             if (account != null)

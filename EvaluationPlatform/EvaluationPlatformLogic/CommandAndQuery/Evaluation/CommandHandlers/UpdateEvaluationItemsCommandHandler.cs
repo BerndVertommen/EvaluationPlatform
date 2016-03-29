@@ -2,17 +2,17 @@
 using System.Linq;
 using EvaluationPlatformDAL;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
-using EvaluationPlatformLogic.CommandAndQuery.Evaluation.Command;
+using EvaluationPlatformLogic.CommandAndQuery.Evaluation.CommandDto;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.CommandHandlers
 {
-    public class UpdateEvaluationItemsCommandHandler : CommandHandler<UpdateEvaluationItemsCommandObject>
+    public class UpdateEvaluationItemsCommandHandler : CommandHandler<UpdateEvaluationItemsCommandDto>
     {
         public UpdateEvaluationItemsCommandHandler(IEPDatabase database) : base(database)
         {
         }
 
-        public override void Handle(UpdateEvaluationItemsCommandObject commandObject)
+        public override void Handle(UpdateEvaluationItemsCommandDto commandObject)
         {
             var evaluation = Database.Evaluations.FirstOrDefault(e => e.Id == commandObject.EvaluationInfo.Id);
 

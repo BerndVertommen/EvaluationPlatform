@@ -5,7 +5,7 @@ using AutoMapper;
 using EvaluationPlatformDataTransferModels.InformationModels.Class;
 using EvaluationPlatformDAL;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
-using EvaluationPlatformLogic.CommandAndQuery.Class.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.Class.QueryDto;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Class.QueryHandlers
 {

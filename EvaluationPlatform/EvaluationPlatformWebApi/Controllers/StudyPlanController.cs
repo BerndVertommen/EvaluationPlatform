@@ -7,7 +7,7 @@ using System.Web.Http;
 using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
-using EvaluationPlatformLogic.CommandAndQuery.StudyPlan.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.StudyPlan.QueryDto;
 using EvaluationPlatformWebApi.Authentication;
 
 namespace EvaluationPlatformWebApi.Controllers
@@ -27,7 +27,7 @@ namespace EvaluationPlatformWebApi.Controllers
         [HttpGet]
         public IEnumerable<StudyPlanInfo> GetStudyPlans()
         {
-            return QueryProccesor.Execute(new StudyPlanQueryObject());
+            return QueryProccesor.Execute(new StudyPlanQueryDto());
         }
 
        

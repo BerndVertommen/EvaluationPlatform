@@ -6,17 +6,17 @@ using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
 using EvaluationPlatformDAL;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using EvaluationPlatformLogic.CommandAndQuery.Evaluation.PagedQueryResults;
-using EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryDto;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryHandlers
 {
-    public class EvaluationsPagedQueryHandler : PagedQueryHandler<EvaluationsPagedQueryObject, EvaluationsPagedQueryResult, EvaluationPlatformDomain.Models.Evaluation>
+    public class EvaluationsPagedQueryHandler : PagedQueryHandler<EvaluationsPagedQueryDto, EvaluationsPagedQueryResult, EvaluationPlatformDomain.Models.Evaluation>
     {
         public EvaluationsPagedQueryHandler(IEPDatabase database) : base(database)
         {
         }
 
-        public override EvaluationsPagedQueryResult Handle(EvaluationsPagedQueryObject queryObject)
+        public override EvaluationsPagedQueryResult Handle(EvaluationsPagedQueryDto queryObject)
         {
             IQueryable<EvaluationPlatformDomain.Models.Evaluation> evaluations = Database.Evaluations.AsQueryable();
 
@@ -52,7 +52,7 @@ namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryHandlers
             return result;
         }
 
-        private IQueryable<EvaluationPlatformDomain.Models.Evaluation> SearchByDate(IQueryable<EvaluationPlatformDomain.Models.Evaluation> evaluations, EvaluationsPagedQueryObject queryObject)
+        private IQueryable<EvaluationPlatformDomain.Models.Evaluation> SearchByDate(IQueryable<EvaluationPlatformDomain.Models.Evaluation> evaluations, EvaluationsPagedQueryDto queryObject)
         {
             if (queryObject.StartDate.HasValue)
             {

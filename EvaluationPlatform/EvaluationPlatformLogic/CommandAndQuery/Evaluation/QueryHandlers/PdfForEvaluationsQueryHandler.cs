@@ -2,19 +2,19 @@
 using System.Net.Http.Headers;
 using EvaluationPlatformDAL;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
-using EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryDto;
 using EvaluationPlatformLogic.Models.File;
 using EvaluationPlatformLogic.Pdf.Evaluation;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryHandlers
 {
-    public class PdfForEvaluationsQueryHandler : QueryHandler<PdfForEvaluationsQueryObject, FileRepresentationModel>
+    public class PdfForEvaluationsQueryHandler : QueryHandler<PdfForEvaluationsQueryDto, FileRepresentationModel>
     {
         public PdfForEvaluationsQueryHandler(IEPDatabase database) : base(database)
         {
         }
 
-        public override FileRepresentationModel Handle(PdfForEvaluationsQueryObject queryObject)
+        public override FileRepresentationModel Handle(PdfForEvaluationsQueryDto queryObject)
         {
             IQueryable<EvaluationPlatformDomain.Models.Evaluation> evaluations =
                 Database.Evaluations.Where(e => queryObject.EvaluationIds.Contains(e.Id));

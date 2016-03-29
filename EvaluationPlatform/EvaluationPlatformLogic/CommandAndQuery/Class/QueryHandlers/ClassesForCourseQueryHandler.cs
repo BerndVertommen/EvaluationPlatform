@@ -4,18 +4,18 @@ using AutoMapper;
 using EvaluationPlatformDataTransferModels.InformationModels.Class;
 using EvaluationPlatformDAL;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
-using EvaluationPlatformLogic.CommandAndQuery.Class.QueryObjects;
 using EvaluationPlatformDomain.Models;
+using EvaluationPlatformLogic.CommandAndQuery.Class.QueryDto;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Class.QueryHandlers
 {
-    public class ClassesForCourseQueryHandler : QueryHandler<ClassesForCourseQueryObject,IEnumerable<ClassInfo>>
+    public class ClassesForCourseQueryHandler : QueryHandler<ClassesForCourseQueryDto,IEnumerable<ClassInfo>>
     {
         public ClassesForCourseQueryHandler(IEPDatabase database) : base(database)
         {
         }
 
-        public override IEnumerable<ClassInfo> Handle(ClassesForCourseQueryObject queryObject)
+        public override IEnumerable<ClassInfo> Handle(ClassesForCourseQueryDto queryObject)
         {
             var thisYear = SchoolYear.GetStartYearThisSchoolYear();
             var classes =

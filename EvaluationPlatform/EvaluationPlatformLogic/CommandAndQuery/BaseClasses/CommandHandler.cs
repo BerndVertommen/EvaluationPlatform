@@ -2,7 +2,7 @@
 
 namespace EvaluationPlatformLogic.CommandAndQuery.BaseClasses
 {
-    public abstract class CommandHandler<TCommandObject>: ICommandHandler<TCommandObject> where TCommandObject : ICommandObject
+    public abstract class CommandHandler<TCommandObject>: ICommandHandler<TCommandObject> where TCommandObject : ICommandDto
     {
         protected readonly IEPDatabase Database;
 

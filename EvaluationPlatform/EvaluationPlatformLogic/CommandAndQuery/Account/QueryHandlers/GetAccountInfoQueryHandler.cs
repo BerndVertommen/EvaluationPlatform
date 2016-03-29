@@ -3,18 +3,18 @@ using System.Linq;
 using AutoMapper;
 using EvaluationPlatformDataTransferModels.InformationModels.Account;
 using EvaluationPlatformDAL;
-using EvaluationPlatformLogic.CommandAndQuery.Account.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.Account.QueryDto;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Account.QueryHandlers
 {
-    public class GetAccountInfoQueryHandler : QueryHandler<GetAccountInfoQueryObject,AccountInfo>
+    public class GetAccountInfoQueryHandler : QueryHandler<GetAccountInfoQueryDto,AccountInfo>
     {
         public GetAccountInfoQueryHandler(IEPDatabase database) : base(database)
         {
         }
 
-        public override AccountInfo Handle(GetAccountInfoQueryObject queryObject)
+        public override AccountInfo Handle(GetAccountInfoQueryDto queryObject)
         {
             var account = Database.Accounts.FirstOrDefault(a => a.Id == queryObject.AccountId);
             var accountInfo = Mapper.Map<EvaluationPlatformDomain.Models.Account.Account, AccountInfo>(account);

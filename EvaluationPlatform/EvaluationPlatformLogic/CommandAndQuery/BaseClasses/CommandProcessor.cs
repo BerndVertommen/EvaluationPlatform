@@ -12,14 +12,14 @@ namespace EvaluationPlatformLogic.CommandAndQuery.BaseClasses
             _lifetimeScope = lifetimeScope;
         }
 
-        public void Execute(ICommandObject command)
+        public void Execute(ICommandDto command)
         {
             var commandHandler = GetCommandHandler(command);
             commandHandler.Handle((dynamic)command);
             commandHandler.SaveChanges();
             }
 
-        protected dynamic GetCommandHandler(ICommandObject command)
+        protected dynamic GetCommandHandler(ICommandDto command)
         {
             Type commandHandlerImplementationType = typeof(ICommandHandler<>).MakeGenericType(command.GetType());
             dynamic commandHandler = _lifetimeScope.Resolve(commandHandlerImplementationType);
