@@ -5,7 +5,7 @@ using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryDto
 {
-    public class PlannedEvaluationBaseInfoQueryDto : IQueryObject<IEnumerable<EvaluationBaseInfo>>
+    public class PlannedEvaluationBaseInfoQueryDto : IQueryDto<IEnumerable<EvaluationBaseInfo>>
     {
         public Guid AccountId { get; set; }
 

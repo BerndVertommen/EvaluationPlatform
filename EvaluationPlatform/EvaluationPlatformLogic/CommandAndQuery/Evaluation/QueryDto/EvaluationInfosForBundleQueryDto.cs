@@ -5,7 +5,7 @@ using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryDto
 {
-    public class EvaluationInfosForBundleQueryDto : IQueryObject<IEnumerable<EvaluationInfo>>
+    public class EvaluationInfosForBundleQueryDto : IQueryDto<IEnumerable<EvaluationInfo>>
     {
         public Guid BundleId { get; set; }
 

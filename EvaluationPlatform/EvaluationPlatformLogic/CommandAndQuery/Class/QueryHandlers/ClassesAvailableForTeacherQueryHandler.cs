@@ -9,15 +9,15 @@ using EvaluationPlatformLogic.CommandAndQuery.Class.QueryDto;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Class.QueryHandlers
 {
-    public class ClassesAvailableForTeacherQueryHandler : QueryHandler<ClassesAvailableForTeacherQueryObject, IEnumerable<ClassBaseInfo>>
+    public class ClassesAvailableForTeacherQueryHandler : QueryHandler<ClassesAvailableForTeacherQueryDto, IEnumerable<ClassBaseInfo>>
     {
         public ClassesAvailableForTeacherQueryHandler(IEPDatabase database) : base(database)
         {
         }
 
-        public override IEnumerable<ClassBaseInfo> Handle(ClassesAvailableForTeacherQueryObject queryObject)
+        public override IEnumerable<ClassBaseInfo> Handle(ClassesAvailableForTeacherQueryDto queryDto)
         {
-            var teacher = Database.Teachers.FirstOrDefault(t => t.Id == queryObject.TeacherId);
+            var teacher = Database.Teachers.FirstOrDefault(t => t.Id == queryDto.TeacherId);
 
             if (teacher == null)
             {

@@ -2,7 +2,7 @@
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Account.QueryDto
 {
-    public class GetAccountQueryDto : IQueryObject<EvaluationPlatformDomain.Models.Account.Account>
+    public class GetAccountQueryDto : IQueryDto<EvaluationPlatformDomain.Models.Account.Account>
     {
         public string Username { get; set; }
 

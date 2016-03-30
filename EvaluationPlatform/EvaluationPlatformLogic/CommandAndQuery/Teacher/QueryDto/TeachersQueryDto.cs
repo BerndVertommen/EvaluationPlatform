@@ -4,7 +4,7 @@ using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Teacher.QueryDto
 {
-    public class TeachersQueryDto : IQueryObject<IEnumerable<TeacherInfo>>
+    public class TeachersQueryDto : IQueryDto<IEnumerable<TeacherInfo>>
     {
         public TeachersQueryDto()
         {

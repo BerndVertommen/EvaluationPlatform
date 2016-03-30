@@ -2,6 +2,6 @@
 {
     public interface IQueryProccesor
     {
-        TResult Execute<TResult>(IQueryObject<TResult> query);
+        TResult Execute<TResult>(IQueryDto<TResult> query);
     }
 }

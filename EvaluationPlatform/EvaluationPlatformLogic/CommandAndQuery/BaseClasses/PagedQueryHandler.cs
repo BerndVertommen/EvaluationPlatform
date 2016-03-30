@@ -7,10 +7,11 @@ using EvaluationPlatformDomain.Models;
 namespace EvaluationPlatformLogic.CommandAndQuery.BaseClasses
 {
     public abstract class PagedQueryHandler<TQueryDto, TResult, TEntity> : QueryHandler<TQueryDto, TResult> 
-        //where TResult : PagedQueryResult
-        where TQueryDto : PagedQueryObject<TResult>
+        where TResult : PagedQueryResult
+        where TQueryDto : PagedQueryDto<TResult>
         where TEntity : Entity
     {
+        protected int totalItemCount;
         public PagedQueryHandler(IEPDatabase database) : base(database)
         {
         }
@@ -38,6 +39,8 @@ namespace EvaluationPlatformLogic.CommandAndQuery.BaseClasses
 
         protected IEnumerable<TEntity> PageResult(IQueryable<TEntity> queryResultToPage, TQueryDto queryObject)
         {
+            totalItemCount = queryResultToPage.Count();
+
             queryResultToPage = queryResultToPage.Skip((queryObject.Page - 1) * queryObject.ItemCount);
             queryResultToPage = queryResultToPage.Take(queryObject.ItemCount);
 

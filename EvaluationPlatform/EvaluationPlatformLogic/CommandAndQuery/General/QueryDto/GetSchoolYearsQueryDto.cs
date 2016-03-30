@@ -4,7 +4,7 @@ using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.General.QueryDto
 {
-    public class GetSchoolYearsQueryDto : IQueryObject<IEnumerable<SchoolYearInfo>>
+    public class GetSchoolYearsQueryDto : IQueryDto<IEnumerable<SchoolYearInfo>>
     {
         public GetSchoolYearsQueryDto()
         {

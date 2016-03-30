@@ -6,7 +6,7 @@ using EvaluationPlatformLogic.CommandAndQuery.Evaluation.PagedQueryResults;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryDto
 {
-    public class EvaluationsPagedQueryDto : PagedQueryObject<IEnumerable<EvaluationInfo>>
+    public class EvaluationsPagedQueryDto : PagedQueryDto<EvaluationsPagedQueryResult>
     {
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
@@ -17,7 +17,10 @@ namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryDto
         public string StudentLastname { get; set; }
       
 
-        public EvaluationsPagedQueryDto(int? page, int? itemCount, DateTime? startDate, DateTime? endDate, bool? finished, Guid? classId, Guid? courseId, string studentFirstname, string studentLastname) : base(page, itemCount)
+        public EvaluationsPagedQueryDto(int? page, int? itemCount, DateTime? startDate, 
+                                        DateTime? endDate, bool? finished, Guid? classId, 
+                                        Guid? courseId, string studentFirstname, 
+                                        string studentLastname) : base(page, itemCount)
         {
             StartDate = startDate;
             EndDate = endDate;
@@ -28,15 +31,5 @@ namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryDto
             StudentLastname = studentLastname;
            
         }
-
-        //public EvaluationsPagedQueryObject(DateTime? startDate, DateTime? endDate, bool? finished, Guid? classId, Guid? courseId, int? page = null, int? itemCount = null):base(page,itemCount)
-        //{
-        //    StartDate = startDate;
-        //    EndDate = endDate;
-        //    Finished = finished;
-        //    ClassId = classId;
-        //    CourseId = courseId;
-        //}
-
     }
 }

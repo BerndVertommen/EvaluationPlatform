@@ -71,7 +71,7 @@ namespace EvaluationPlatformWebApi.Controllers
 
         [Route("searchEvaluations")]
         [HttpPost]
-        public IEnumerable<EvaluationInfo> SearchEvaluations(EvaluationsPagedQueryDto evaluationsQueryObject)
+        public EvaluationsPagedQueryResult SearchEvaluations(EvaluationsPagedQueryDto evaluationsQueryObject)
         {
             return QueryProccesor.Execute(evaluationsQueryObject);
         }

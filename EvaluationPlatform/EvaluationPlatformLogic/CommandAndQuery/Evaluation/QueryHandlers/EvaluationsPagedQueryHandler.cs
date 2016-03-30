@@ -10,7 +10,7 @@ using EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryDto;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryHandlers
 {
-    public class EvaluationsPagedQueryHandler : PagedQueryHandler<EvaluationsPagedQueryDto, IEnumerable<EvaluationInfo>, EvaluationPlatformDomain.Models.Evaluation>
+    public class EvaluationsPagedQueryHandler : PagedQueryHandler<EvaluationsPagedQueryDto, EvaluationsPagedQueryResult, EvaluationPlatformDomain.Models.Evaluation>
     {
         public EvaluationsPagedQueryHandler(IEPDatabase database) : base(database)
         {
@@ -54,9 +54,11 @@ namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryHandlers
            return entitiesToSort.OrderBy(e => e.EvaluationDate);
         }
 
-        protected override IEnumerable<EvaluationInfo> Map(IEnumerable<EvaluationPlatformDomain.Models.Evaluation> entitiesToMap)
+        protected override EvaluationsPagedQueryResult Map(IEnumerable<EvaluationPlatformDomain.Models.Evaluation> entitiesToMap)
         {
-            return Mapper.Map<IEnumerable<EvaluationInfo>>(entitiesToMap);
+            var mappedEntities = Mapper.Map<IEnumerable<EvaluationInfo>>(entitiesToMap);
+            var result = new EvaluationsPagedQueryResult(mappedEntities, totalItemCount);
+            return result;
         }
 
         private IQueryable<EvaluationPlatformDomain.Models.Evaluation> SearchByDate(IQueryable<EvaluationPlatformDomain.Models.Evaluation> evaluations, EvaluationsPagedQueryDto queryObject)

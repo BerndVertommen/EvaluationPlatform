@@ -9,11 +9,11 @@ namespace EvaluationPlatformLogic.CommandAndQuery.Class.QueryDto
     /// object to carry search parameters for a search on all available classes for a teacher.
     /// These are dependent on the courses the teacher has been assigned
     /// </summary>
-    public class ClassesAvailableForTeacherQueryObject : IQueryObject<IEnumerable<ClassBaseInfo>>
+    public class ClassesAvailableForTeacherQueryDto : IQueryDto<IEnumerable<ClassBaseInfo>>
     {
         public Guid TeacherId { get; set; }
 
-        public ClassesAvailableForTeacherQueryObject(Guid teacherId)
+        public ClassesAvailableForTeacherQueryDto(Guid teacherId)
         {
             TeacherId = teacherId;
         }

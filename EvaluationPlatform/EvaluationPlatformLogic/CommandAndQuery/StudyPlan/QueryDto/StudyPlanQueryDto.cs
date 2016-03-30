@@ -4,7 +4,7 @@ using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.StudyPlan.QueryDto
 {
-    public class StudyPlanQueryDto : IQueryObject<IEnumerable<StudyPlanInfo>>
+    public class StudyPlanQueryDto : IQueryDto<IEnumerable<StudyPlanInfo>>
     {
         public StudyPlanQueryDto()
         {

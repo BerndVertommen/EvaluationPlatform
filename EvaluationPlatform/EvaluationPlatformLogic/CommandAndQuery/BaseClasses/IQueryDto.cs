@@ -1,6 +1,6 @@
 ﻿namespace EvaluationPlatformLogic.CommandAndQuery.BaseClasses
 {
-    public interface IQueryObject<TResult>
+    public interface IQueryDto<TResult>
     {
     }
 }

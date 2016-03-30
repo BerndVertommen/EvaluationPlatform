@@ -4,7 +4,7 @@ using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Account.QueryDto
 {
-    public class GetAccountInfoQueryDto : IQueryObject<AccountInfo>
+    public class GetAccountInfoQueryDto : IQueryDto<AccountInfo>
     {
         public Guid? AccountId { get; set; }
 

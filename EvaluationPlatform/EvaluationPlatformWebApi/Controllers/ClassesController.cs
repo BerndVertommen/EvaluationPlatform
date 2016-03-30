@@ -47,7 +47,7 @@ namespace EvaluationPlatformWebApi.Controllers
         public IEnumerable<ClassBaseInfo> AvailableClassesForTeacher(GuidDto guidDto)
         {
             //var guid = Guid.Parse(courseId);
-            return QueryProccesor.Execute(new ClassesAvailableForTeacherQueryObject(guidDto.Id));
+            return QueryProccesor.Execute(new ClassesAvailableForTeacherQueryDto(guidDto.Id));
         }
         
     }

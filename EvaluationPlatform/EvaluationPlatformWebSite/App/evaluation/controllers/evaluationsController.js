@@ -37,10 +37,10 @@
         };
 
         $scope.search = function() {
-            evaluationService.searchEvaluations($scope.evaluationsPagedQueryObject).then(function (evaluations) {
+            evaluationService.searchEvaluations($scope.evaluationsPagedQueryObject).then(function (evaluationsPagedQueryResult) {
 
-                $scope.evaluations = evaluations;
-                $scope.totalItems = evaluations.length;
+                $scope.evaluations = evaluationsPagedQueryResult.evaluations;
+                $scope.totalItems = evaluationsPagedQueryResult.totalItems;
                 $scope.showpagination = true;
                 console.log($scope.evaluations);
 
