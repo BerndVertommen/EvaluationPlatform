@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using EvaluationPlatformLogic.CommandAndQuery.Evaluation.PagedQueryResults;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryDto
 {
-    public class EvaluationsPagedQueryDto : PagedQueryObject<EvaluationsPagedQueryResult>
+    public class EvaluationsPagedQueryDto : PagedQueryObject<IEnumerable<EvaluationInfo>>
     {
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }

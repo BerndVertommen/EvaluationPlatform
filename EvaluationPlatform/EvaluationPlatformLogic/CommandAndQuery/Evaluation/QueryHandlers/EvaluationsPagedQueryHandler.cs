@@ -10,46 +10,53 @@ using EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryDto;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryHandlers
 {
-    public class EvaluationsPagedQueryHandler : PagedQueryHandler<EvaluationsPagedQueryDto, EvaluationsPagedQueryResult, EvaluationPlatformDomain.Models.Evaluation>
+    public class EvaluationsPagedQueryHandler : PagedQueryHandler<EvaluationsPagedQueryDto, IEnumerable<EvaluationInfo>, EvaluationPlatformDomain.Models.Evaluation>
     {
         public EvaluationsPagedQueryHandler(IEPDatabase database) : base(database)
         {
         }
 
-        public override EvaluationsPagedQueryResult Handle(EvaluationsPagedQueryDto queryObject)
+       protected override IQueryable<EvaluationPlatformDomain.Models.Evaluation> GetEtities()
         {
-            IQueryable<EvaluationPlatformDomain.Models.Evaluation> evaluations = Database.Evaluations.AsQueryable();
+            return Database.Evaluations.AsQueryable();
+        }
 
-            evaluations = SearchByDate(evaluations, queryObject);
+        protected override IQueryable<EvaluationPlatformDomain.Models.Evaluation> Filter(IQueryable<EvaluationPlatformDomain.Models.Evaluation> entitiesToFilter, EvaluationsPagedQueryDto queryObject)
+        {
+            entitiesToFilter = SearchByDate(entitiesToFilter, queryObject);
 
             if (queryObject.Finished.HasValue)
             {
-               evaluations =  evaluations.Where(e => e.Finished == queryObject.Finished.Value);
+                entitiesToFilter = entitiesToFilter.Where(e => e.Finished == queryObject.Finished.Value);
             }
             if (queryObject.ClassId.HasValue)
             {
-                evaluations = evaluations.Where(e => e.CreatedForClass.Id == queryObject.ClassId.Value);
+                entitiesToFilter = entitiesToFilter.Where(e => e.CreatedForClass.Id == queryObject.ClassId.Value);
             }
             if (queryObject.CourseId.HasValue)
             {
-                evaluations = evaluations.Where(e => e.Course.Id == queryObject.CourseId.Value);
+                entitiesToFilter = entitiesToFilter.Where(e => e.Course.Id == queryObject.CourseId.Value);
             }
             if (!string.IsNullOrWhiteSpace(queryObject.StudentFirstname))
             {
-                evaluations = evaluations.Where(e => e.Student.Person.FirstName.Contains(queryObject.StudentFirstname));
+                entitiesToFilter = entitiesToFilter.Where(e => e.Student.Person.FirstName.Contains(queryObject.StudentFirstname));
             }
             if (!string.IsNullOrWhiteSpace(queryObject.StudentLastname))
             {
-                evaluations = evaluations.Where(e => e.Student.Person.LastName.Contains(queryObject.StudentLastname));
+                entitiesToFilter = entitiesToFilter.Where(e => e.Student.Person.LastName.Contains(queryObject.StudentLastname));
             }
 
-            int totalItems = evaluations.Count();
-            var pagedEvaluations = PageResult(evaluations.OrderByDescending(e=> e.EvaluationDate), queryObject);
-            var mappedEvaluations = Mapper.Map<IEnumerable<EvaluationInfo>>(pagedEvaluations);
+            return entitiesToFilter;
+        }
 
-            EvaluationsPagedQueryResult result = new EvaluationsPagedQueryResult(mappedEvaluations,totalItems);
+        protected override IQueryable<EvaluationPlatformDomain.Models.Evaluation> Sort(IQueryable<EvaluationPlatformDomain.Models.Evaluation> entitiesToSort, EvaluationsPagedQueryDto queryObject)
+        {
+           return entitiesToSort.OrderBy(e => e.EvaluationDate);
+        }
 
-            return result;
+        protected override IEnumerable<EvaluationInfo> Map(IEnumerable<EvaluationPlatformDomain.Models.Evaluation> entitiesToMap)
+        {
+            return Mapper.Map<IEnumerable<EvaluationInfo>>(entitiesToMap);
         }
 
         private IQueryable<EvaluationPlatformDomain.Models.Evaluation> SearchByDate(IQueryable<EvaluationPlatformDomain.Models.Evaluation> evaluations, EvaluationsPagedQueryDto queryObject)
