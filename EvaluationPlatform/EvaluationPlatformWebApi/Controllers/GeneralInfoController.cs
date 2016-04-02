@@ -3,7 +3,7 @@ using System.Web.Http;
 using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
-using EvaluationPlatformLogic.CommandAndQuery.General.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.General.QueryDto;
 using EvaluationPlatformWebApi.Authentication;
 
 namespace EvaluationPlatformWebApi.Controllers
@@ -21,7 +21,7 @@ namespace EvaluationPlatformWebApi.Controllers
         [HttpGet]
         public IEnumerable<SchoolYearInfo> GetSchoolYears()
         {
-            return QueryProccesor.Execute(new GetSchoolYearsQueryObject());
+            return QueryProccesor.Execute(new GetSchoolYearsQueryDto());
         }
     }
 }

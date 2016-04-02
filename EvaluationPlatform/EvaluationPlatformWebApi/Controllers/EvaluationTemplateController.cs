@@ -7,10 +7,10 @@ using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.EvaluationTemplate;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
-using EvaluationPlatformLogic.CommandAndQuery.Evaluation.Command;
+using EvaluationPlatformLogic.CommandAndQuery.Evaluation.CommandDto;
 using EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates;
-using EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.Command;
-using EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.CommandDto;
+using EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.QueryDto;
 using EvaluationPlatformWebApi.Authentication;
 
 namespace EvaluationPlatformWebApi.Controllers
@@ -26,14 +26,14 @@ namespace EvaluationPlatformWebApi.Controllers
         [HttpGet]
         public CreateEvaluationOptions GetCreateEvaluationOptions()
         {
-            return QueryProccesor.Execute(new GetCreateEvaluationOptionsQueryObject(AccountId));
+            return QueryProccesor.Execute(new GetCreateEvaluationOptionsQueryDto(AccountId));
         }
 
         [Route("createTemplate")]
         [HttpPost]
         public HttpResponseMessage CreateEvaluationTemplate(EvaluationTemplateInfo evaluationTemplateInfo)
         {
-            CommandProcessor.Execute(new CreateEvaluationTemplateCommand(evaluationTemplateInfo, AccountId));
+            CommandProcessor.Execute(new CreateEvaluationTemplateCommandDto(evaluationTemplateInfo, AccountId));
 
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
@@ -43,12 +43,12 @@ namespace EvaluationPlatformWebApi.Controllers
         public IEnumerable<EvaluationTemplateInfo> GetEvaluationTemplates()
         {
             
-            return QueryProccesor.Execute(new GetEvaluationTemplatesQueryObject(AccountId));
+            return QueryProccesor.Execute(new GetEvaluationTemplatesQueryDto(AccountId));
         }
 
         [Route("createEvaluationFromTemplate")]
         [HttpPost]
-        public HttpResponseMessage CreateEvaluationFromTemplate(CreateEvaluationCommand command)
+        public HttpResponseMessage CreateEvaluationFromTemplate(CreateEvaluationCommandDto command)
         {
             command.TeacherId = GetAccountInfo().TeacherId;
 
@@ -61,7 +61,7 @@ namespace EvaluationPlatformWebApi.Controllers
         [HttpPost]
         public HttpResponseMessage HideEvaluationTemplates(IEnumerable<EvaluationTemplateInfo> evaluationTemplates)
         {
-            CommandProcessor.Execute(new HideEvaluationTemplatesCommand(evaluationTemplates));
+            CommandProcessor.Execute(new HideEvaluationTemplatesCommandDto(evaluationTemplates));
 
             return new HttpResponseMessage(HttpStatusCode.OK);
         }

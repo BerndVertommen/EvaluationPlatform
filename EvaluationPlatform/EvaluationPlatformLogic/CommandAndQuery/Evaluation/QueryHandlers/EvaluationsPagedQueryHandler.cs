@@ -6,53 +6,62 @@ using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
 using EvaluationPlatformDAL;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using EvaluationPlatformLogic.CommandAndQuery.Evaluation.PagedQueryResults;
-using EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryDto;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryHandlers
 {
-    public class EvaluationsPagedQueryHandler : PagedQueryHandler<EvaluationsPagedQueryObject, EvaluationsPagedQueryResult, EvaluationPlatformDomain.Models.Evaluation>
+    public class EvaluationsPagedQueryHandler : PagedQueryHandler<EvaluationsPagedQueryDto, EvaluationsPagedQueryResult, EvaluationPlatformDomain.Models.Evaluation>
     {
         public EvaluationsPagedQueryHandler(IEPDatabase database) : base(database)
         {
         }
 
-        public override EvaluationsPagedQueryResult Handle(EvaluationsPagedQueryObject queryObject)
+       protected override IQueryable<EvaluationPlatformDomain.Models.Evaluation> GetEtities()
         {
-            IQueryable<EvaluationPlatformDomain.Models.Evaluation> evaluations = Database.Evaluations.AsQueryable();
+            return Database.Evaluations.AsQueryable();
+        }
 
-            evaluations = SearchByDate(evaluations, queryObject);
+        protected override IQueryable<EvaluationPlatformDomain.Models.Evaluation> Filter(IQueryable<EvaluationPlatformDomain.Models.Evaluation> entitiesToFilter, EvaluationsPagedQueryDto queryObject)
+        {
+            entitiesToFilter = SearchByDate(entitiesToFilter, queryObject);
 
             if (queryObject.Finished.HasValue)
             {
-               evaluations =  evaluations.Where(e => e.Finished == queryObject.Finished.Value);
+                entitiesToFilter = entitiesToFilter.Where(e => e.Finished == queryObject.Finished.Value);
             }
             if (queryObject.ClassId.HasValue)
             {
-                evaluations = evaluations.Where(e => e.CreatedForClass.Id == queryObject.ClassId.Value);
+                entitiesToFilter = entitiesToFilter.Where(e => e.CreatedForClass.Id == queryObject.ClassId.Value);
             }
             if (queryObject.CourseId.HasValue)
             {
-                evaluations = evaluations.Where(e => e.Course.Id == queryObject.CourseId.Value);
+                entitiesToFilter = entitiesToFilter.Where(e => e.Course.Id == queryObject.CourseId.Value);
             }
             if (!string.IsNullOrWhiteSpace(queryObject.StudentFirstname))
             {
-                evaluations = evaluations.Where(e => e.Student.Person.FirstName.Contains(queryObject.StudentFirstname));
+                entitiesToFilter = entitiesToFilter.Where(e => e.Student.Person.FirstName.Contains(queryObject.StudentFirstname));
             }
             if (!string.IsNullOrWhiteSpace(queryObject.StudentLastname))
             {
-                evaluations = evaluations.Where(e => e.Student.Person.LastName.Contains(queryObject.StudentLastname));
+                entitiesToFilter = entitiesToFilter.Where(e => e.Student.Person.LastName.Contains(queryObject.StudentLastname));
             }
 
-            int totalItems = evaluations.Count();
-            var pagedEvaluations = PageResult(evaluations.OrderByDescending(e=> e.EvaluationDate), queryObject);
-            var mappedEvaluations = Mapper.Map<IEnumerable<EvaluationInfo>>(pagedEvaluations);
+            return entitiesToFilter;
+        }
 
-            EvaluationsPagedQueryResult result = new EvaluationsPagedQueryResult(mappedEvaluations,totalItems);
+        protected override IQueryable<EvaluationPlatformDomain.Models.Evaluation> Sort(IQueryable<EvaluationPlatformDomain.Models.Evaluation> entitiesToSort, EvaluationsPagedQueryDto queryObject)
+        {
+           return entitiesToSort.OrderBy(e => e.EvaluationDate);
+        }
 
+        protected override EvaluationsPagedQueryResult Map(IEnumerable<EvaluationPlatformDomain.Models.Evaluation> entitiesToMap)
+        {
+            var mappedEntities = Mapper.Map<IEnumerable<EvaluationInfo>>(entitiesToMap);
+            var result = new EvaluationsPagedQueryResult(mappedEntities, totalItemCount);
             return result;
         }
 
-        private IQueryable<EvaluationPlatformDomain.Models.Evaluation> SearchByDate(IQueryable<EvaluationPlatformDomain.Models.Evaluation> evaluations, EvaluationsPagedQueryObject queryObject)
+        private IQueryable<EvaluationPlatformDomain.Models.Evaluation> SearchByDate(IQueryable<EvaluationPlatformDomain.Models.Evaluation> evaluations, EvaluationsPagedQueryDto queryObject)
         {
             if (queryObject.StartDate.HasValue)
             {

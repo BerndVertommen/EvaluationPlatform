@@ -2,7 +2,7 @@
 {
     public interface ICommandProcessor
     {
-        void Execute(ICommandObject command);
+        void Execute(ICommandDto command);
 
     }
 }

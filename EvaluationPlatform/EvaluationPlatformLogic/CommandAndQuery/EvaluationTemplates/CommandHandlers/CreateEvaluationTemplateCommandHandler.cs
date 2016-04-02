@@ -4,17 +4,17 @@ using EvaluationPlatformDataTransferModels.InformationModels.EvaluationSubsectio
 using EvaluationPlatformDAL;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
-using EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.Command;
+using EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.CommandDto;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.CommandHandlers
 {
-    public class CreateEvaluationTemplateCommandHandler: CommandHandler<CreateEvaluationTemplateCommand>
+    public class CreateEvaluationTemplateCommandHandler: CommandHandler<CreateEvaluationTemplateCommandDto>
     {
         public CreateEvaluationTemplateCommandHandler(IEPDatabase database) : base(database)
         {
         }
 
-        public override void Handle(CreateEvaluationTemplateCommand command)
+        public override void Handle(CreateEvaluationTemplateCommandDto command)
         {
             var teacher = Database.GetTeacherForAccount(command.AccountId);
             var templateInfo = command.EvaluationTemplateInfo;

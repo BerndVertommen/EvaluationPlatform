@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Http;
 using EvaluationPlatformDataTransferModels.InformationModels.Account;
-using EvaluationPlatformLogic.CommandAndQuery.Account.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.Account.QueryDto;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using EvaluationPlatformWebApi.Identity;
 
@@ -39,7 +39,7 @@ namespace EvaluationPlatformWebApi.Controllers
 
         protected AccountInfo GetAccountInfo()
         {
-          return QueryProccesor.Execute(new GetAccountInfoQueryObject(AccountId));
+          return QueryProccesor.Execute(new GetAccountInfoQueryDto(AccountId));
         }
 
 

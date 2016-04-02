@@ -7,17 +7,17 @@ using AutoMapper;
 using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDAL;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
-using EvaluationPlatformLogic.CommandAndQuery.StudyPlan.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.StudyPlan.QueryDto;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.StudyPlan.QueryHandlers
 {
-    public class StudyPlanQueryHandler : QueryHandler<StudyPlanQueryObject, IEnumerable<StudyPlanInfo>>
+    public class StudyPlanQueryHandler : QueryHandler<StudyPlanQueryDto, IEnumerable<StudyPlanInfo>>
     {
         public StudyPlanQueryHandler(IEPDatabase database) : base(database)
         {
         }
 
-        public override IEnumerable<StudyPlanInfo> Handle(StudyPlanQueryObject queryObject)
+        public override IEnumerable<StudyPlanInfo> Handle(StudyPlanQueryDto queryObject)
         {
             var studyPlans = Database.StudyPlans.ToList();
 

@@ -5,8 +5,8 @@ using System.Web.Http;
 using EvaluationPlatformDataTransferModels.InformationModels.Teacher;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
-using EvaluationPlatformLogic.CommandAndQuery.Teacher.Command;
-using EvaluationPlatformLogic.CommandAndQuery.Teacher.QueryObject;
+using EvaluationPlatformLogic.CommandAndQuery.Teacher.CommandDto;
+using EvaluationPlatformLogic.CommandAndQuery.Teacher.QueryDto;
 using EvaluationPlatformWebApi.Authentication;
 
 namespace EvaluationPlatformWebApi.Controllers
@@ -23,7 +23,7 @@ namespace EvaluationPlatformWebApi.Controllers
         [CustomAutorize(AccountRoleType.Admin)]
         [Route("addCourse")]
         [HttpPost]
-        public HttpResponseMessage AddCourse(AddCourseToTeacherCommand command)
+        public HttpResponseMessage AddCourse(AddCourseToTeacherCommandDto command)
         {
             CommandProcessor.Execute(command);
 
@@ -37,13 +37,13 @@ namespace EvaluationPlatformWebApi.Controllers
         {
             // use query clientside in the future
 
-            return QueryProccesor.Execute(new TeachersQueryObject());
+            return QueryProccesor.Execute(new TeachersQueryDto());
         }
 
         [CustomAutorize(AccountRoleType.Admin)]
         [Route("addClass")]
         [HttpPost] 
-        public HttpResponseMessage AddClass(AddClassToTeacherCommand addClassToTeacherCommand)
+        public HttpResponseMessage AddClass(AddClassToTeacherCommandDto addClassToTeacherCommand)
         {
             CommandProcessor.Execute(addClassToTeacherCommand);
 

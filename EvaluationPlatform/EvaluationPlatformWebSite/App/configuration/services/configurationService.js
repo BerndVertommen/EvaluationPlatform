@@ -16,6 +16,17 @@
             });
         };
 
+        this.handlePdfData = function (data) {
+            var file = new Blob([data], { type: 'application/pdf' });
+            if (window.navigator.msSaveOrOpenBlob) {
+                navigator.msSaveBlob(file, 'fileName.pdf');
+            } else {
+                saveAs(file, 'filename.pdf');
+            };
+
+            return data;
+        }
+
     }
 
 

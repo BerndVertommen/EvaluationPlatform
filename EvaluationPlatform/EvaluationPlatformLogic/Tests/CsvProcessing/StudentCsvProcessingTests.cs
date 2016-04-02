@@ -2,6 +2,7 @@
 using System.Linq;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformLogic.CsvProcessing.Processors;
+using EvaluationPlatformLogic.CsvProcessing.Processors.Student;
 using Xunit;
 
 namespace EvaluationPlatformLogic.Tests.CsvProcessing

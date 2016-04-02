@@ -37,5 +37,10 @@ namespace EvaluationPlatformDomain.Models
         {
             Courses.Add(courseMechanica);
         }
+
+        public void AddStudent(Student student)
+        {
+           Students.Add(student);
+        }
     }
 }

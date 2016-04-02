@@ -8,8 +8,8 @@ using EvaluationPlatformDataTransferModels.InformationModels.Course;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
-using EvaluationPlatformLogic.CommandAndQuery.Course.Commands;
-using EvaluationPlatformLogic.CommandAndQuery.Course.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.Course.CommandDto;
+using EvaluationPlatformLogic.CommandAndQuery.Course.QueryDto;
 using EvaluationPlatformWebApi.Authentication;
 
 namespace EvaluationPlatformWebApi.Controllers
@@ -29,7 +29,7 @@ namespace EvaluationPlatformWebApi.Controllers
         {
             Guid teacherId = GetAccountInfo().TeacherId.Value;
 
-            return QueryProccesor.Execute(new CoursesForTeacherQueryObject(teacherId));
+            return QueryProccesor.Execute(new CoursesForTeacherQueryDto(teacherId));
         }
         
         [CustomAutorize(AccountRoleType.Admin)]
@@ -37,7 +37,7 @@ namespace EvaluationPlatformWebApi.Controllers
         [HttpGet]
         public IEnumerable<CourseBaseInfo> AllCourses()
         {
-            return QueryProccesor.Execute(new AllCoursesQueryObject(SchoolYear.GetStartYearThisSchoolYear()));
+            return QueryProccesor.Execute(new AllCoursesQueryDto(SchoolYear.GetStartYearThisSchoolYear()));
         }
 
         [CustomAutorize(AccountRoleType.Admin)]
@@ -45,7 +45,7 @@ namespace EvaluationPlatformWebApi.Controllers
         [HttpPost]
         public HttpResponseMessage CreateCourse(CreateCourseInfo createCourseInfo)
         {
-            CommandProcessor.Execute(new CreateCourseCommand(createCourseInfo));
+            CommandProcessor.Execute(new CreateCourseCommandDto(createCourseInfo));
             
             return new HttpResponseMessage(HttpStatusCode.OK);
         }

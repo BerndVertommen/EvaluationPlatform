@@ -18,20 +18,22 @@ namespace EvaluationPlatformWebApi.App_Start
             ConfigureOnSuffix(sourceAssembly, destinationAssembly, domainNamespaces);
             // Class Mappings
             Mapper.CreateMap<Teacher, PrimaryTeacherInfo>();
-            Mapper.CreateMap<Course, CourseInfo>().ForMember(dest => dest.GoalsForCourse, // fills in GeneralGoalNumber on the goalinfo
-                opts =>
-                    opts.MapFrom(
-                        src =>
-                            src.StudyPlan.GeneralGoals.SelectMany(
-                                gg =>
-                                    gg.Goals.Select(
-                                        g =>
-                                            new GoalInfo()
-                                            {
-                                                Description = g.Description,
-                                                GeneralGoalNumber = gg.GoalNumber,
-                                                Groupname = g.Groupname
-                                            }))));
+            Mapper.CreateMap<Course, CourseInfo>()
+                .ForMember(dest => dest.GoalsForCourse, // fills in GeneralGoalNumber on the goalinfo
+                    opts =>
+                        opts.MapFrom(
+                            src =>
+                                src.StudyPlan.GeneralGoals.SelectMany(
+                                    gg =>
+                                        gg.Goals.Select(
+                                            g =>
+                                                new GoalInfo()
+                                                {
+                                                    Description = g.Description,
+                                                    GeneralGoalNumber = gg.GoalNumber,
+                                                    Groupname = g.Groupname,
+                                                    Id = g.Id
+                                                }))));
         }
 
         private static void ConfigureOnSuffix(Assembly sourceAssembly, Assembly destinationAssembly, string[] domainNamespaces)

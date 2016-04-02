@@ -82,7 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Basis ClassDiagram.cd" />
+    <None Include="PrimaryClassesDiagram.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

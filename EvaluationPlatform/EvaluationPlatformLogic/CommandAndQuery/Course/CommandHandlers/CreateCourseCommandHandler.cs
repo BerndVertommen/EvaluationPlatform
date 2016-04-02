@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EvaluationPlatformDAL;
-using EvaluationPlatformLogic.CommandAndQuery.Course.Commands;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
+using EvaluationPlatformLogic.CommandAndQuery.Course.CommandDto;
 using EvaluationPlatformLogic.Exeptions;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Course.CommandHandlers
 {
-    public class CreateCourseCommandHandler : CommandHandler<CreateCourseCommand>
+    public class CreateCourseCommandHandler : CommandHandler<CreateCourseCommandDto>
     {
         public CreateCourseCommandHandler(IEPDatabase database) : base(database)
         {
         }
 
-        public override void Handle(CreateCourseCommand commandObject)
+        public override void Handle(CreateCourseCommandDto commandObject)
         {
             int currentSchoolyear = EvaluationPlatformDomain.Models.SchoolYear.GetStartYearThisSchoolYear();
 

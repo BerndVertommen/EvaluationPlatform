@@ -1,11 +1,17 @@
 ﻿using System;
+using System.Data.Entity;
 using System.IO;
 using System.Reflection;
+using EvaluationPlatformDAL;
 
 namespace EvaluationPlatformLogic.Tests
 {
     public abstract class BaseUnitTest
     {
+        public BaseUnitTest()
+        {
+            Database = new EPDatabase();
+        }
         public static string TestDataFilePath
         {
             get
@@ -25,5 +31,7 @@ namespace EvaluationPlatformLogic.Tests
                 return @"C:\temp\";
             }
         }
+        
+        public EPDatabase Database { get; set; }
     }
 }

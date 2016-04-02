@@ -5,17 +5,17 @@ using EvaluationPlatformDataTransferModels.InformationModels.EvaluationTemplate;
 using EvaluationPlatformDAL;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
-using EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.QueryDto;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.QueryHandlers
 {
-    public class GetEvaluationsTemplatesQueryHandler : QueryHandler<GetEvaluationTemplatesQueryObject,IEnumerable<EvaluationTemplateInfo>>
+    public class GetEvaluationsTemplatesQueryHandler : QueryHandler<GetEvaluationTemplatesQueryDto,IEnumerable<EvaluationTemplateInfo>>
     {
         public GetEvaluationsTemplatesQueryHandler(IEPDatabase database) : base(database)
         {
         }
 
-        public override IEnumerable<EvaluationTemplateInfo> Handle(GetEvaluationTemplatesQueryObject queryObject)
+        public override IEnumerable<EvaluationTemplateInfo> Handle(GetEvaluationTemplatesQueryDto queryObject)
         {
             var teacher = Database.GetTeacherForAccount(queryObject.AccountId);
 

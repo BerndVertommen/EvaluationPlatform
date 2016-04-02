@@ -1,18 +1,18 @@
 ﻿using System.Linq;
 using EvaluationPlatformDAL;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
-using EvaluationPlatformLogic.CommandAndQuery.Evaluation.Command;
+using EvaluationPlatformLogic.CommandAndQuery.Evaluation.CommandDto;
 using EvaluationPlatformLogic.Exeptions;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.CommandHandlers
 {
-    public class CreateEvaluationCommandHandler : CommandHandler<CreateEvaluationCommand>
+    public class CreateEvaluationCommandHandler : CommandHandler<CreateEvaluationCommandDto>
     {
         public CreateEvaluationCommandHandler(IEPDatabase database) : base(database)
         {
         }
 
-        public override void Handle(CreateEvaluationCommand commandObject)
+        public override void Handle(CreateEvaluationCommandDto commandObject)
         {
             //check if the template is not already used
             if (Database.Evaluations.Any(e => e.EvaluationTemplate.Id == commandObject.EvaluationTemplateId && e.EvaluationDate == commandObject.EvaluationDate && e.Course.Id == commandObject.CourseId))

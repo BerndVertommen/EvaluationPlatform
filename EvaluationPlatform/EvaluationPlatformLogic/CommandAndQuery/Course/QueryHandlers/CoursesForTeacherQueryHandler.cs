@@ -7,17 +7,17 @@ using EvaluationPlatformDataTransferModels.InformationModels.Teacher;
 using EvaluationPlatformDAL;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
-using EvaluationPlatformLogic.CommandAndQuery.Course.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.Course.QueryDto;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Course.QueryHandlers
 {
-    public class CoursesForTeacherQueryHandler : QueryHandler<CoursesForTeacherQueryObject, IEnumerable<CourseViewInfo>>
+    public class CoursesForTeacherQueryHandler : QueryHandler<CoursesForTeacherQueryDto, IEnumerable<CourseViewInfo>>
     {
         public CoursesForTeacherQueryHandler(IEPDatabase database) : base(database)
         {
         }
 
-        public override IEnumerable<CourseViewInfo> Handle(CoursesForTeacherQueryObject queryObject)
+        public override IEnumerable<CourseViewInfo> Handle(CoursesForTeacherQueryDto queryObject)
         {
             var teacher = Database.Teachers.FirstOrDefault(t => t.Id == queryObject.TeacherId);
 

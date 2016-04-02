@@ -4,12 +4,7 @@
     function evaluationTemplatesController($scope, $location, evaluationTemplates, $uibModal, classesService, evaluationTemplateService) {
         var thiz = this;
 
-        //Variables
-
-        //private Functions
-
-        // public functions
-        $scope.selectedRow = null;
+      $scope.selectedRow = null;
 
         $scope.setSelectedTemplate = function (template, index) {
             $scope.selectedTemplate = template;

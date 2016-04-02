@@ -6,10 +6,12 @@ using EvaluationPlatformDomain.Models;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.BaseClasses
 {
-    public class PagedQueryHandler<TQueryObject, TResult, TEntity> : QueryHandler<TQueryObject, TResult> where TResult : PagedQueryResult
-        where TQueryObject : PagedQueryObject<TResult>
+    public abstract class PagedQueryHandler<TQueryDto, TResult, TEntity> : QueryHandler<TQueryDto, TResult> 
+        where TResult : PagedQueryResult
+        where TQueryDto : PagedQueryDto<TResult>
         where TEntity : Entity
     {
+        protected int totalItemCount;
         public PagedQueryHandler(IEPDatabase database) : base(database)
         {
         }
@@ -20,13 +22,25 @@ namespace EvaluationPlatformLogic.CommandAndQuery.BaseClasses
         /// </summary>
         /// <param name="queryObject">Parameter that inherits forPageQueryObject</param>
         /// <returns></returns>
-        public override TResult Handle(TQueryObject queryObject)
+        public override TResult Handle(TQueryDto queryObject)
         {
-            throw new NotImplementedException();
+            var entities = GetEtities();
+            var entitiesToSort = Filter(entities, queryObject);
+            var entitiesToPage = Sort(entitiesToSort, queryObject);
+            var pagedResult = PageResult(entitiesToPage, queryObject);
+
+            return Map(pagedResult);
         }
 
-        protected IEnumerable<TEntity> PageResult(IQueryable<TEntity> queryResultToPage, TQueryObject queryObject)
+        protected abstract IQueryable<TEntity> GetEtities();
+        protected abstract IQueryable<TEntity> Filter(IQueryable<TEntity> entitiesToFilter, TQueryDto queryObject);
+        protected abstract IQueryable<TEntity> Sort(IQueryable<TEntity> entitiesToSort, TQueryDto queryObject);
+        protected abstract TResult Map(IEnumerable<TEntity> entitiesToMap);
+
+        protected IEnumerable<TEntity> PageResult(IQueryable<TEntity> queryResultToPage, TQueryDto queryObject)
         {
+            totalItemCount = queryResultToPage.Count();
+
             queryResultToPage = queryResultToPage.Skip((queryObject.Page - 1) * queryObject.ItemCount);
             queryResultToPage = queryResultToPage.Take(queryObject.ItemCount);
 
