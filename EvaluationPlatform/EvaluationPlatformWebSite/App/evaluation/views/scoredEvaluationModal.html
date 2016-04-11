@@ -1,0 +1,84 @@
+﻿<div class="modal-body">
+    <div class="panel panel-yellow">
+        <div class="panel-heading">
+            <!--mainHeading-->
+            <div class="panel-title">
+                <h3>{{evaluation.student.person.firstName}} {{evaluation.student.person.lastName}}</h3>
+            </div>
+           
+        </div>
+        <div class="panel-body">
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4>{{evaluation.description}}</h4>
+                </div>
+                <div class="col-xs-6">
+                    <h4>Vak : {{evaluation.course.description}}</h4>
+                </div>
+                <div class="col-xs-6">
+                    <h4>Datum : {{evaluation.evaluationDate | date: 'dd-MM-yyyy'}}</h4>
+                </div>
+            </div>
+            <div ng-repeat="subsection in evaluation.mappedSubsections">
+                <h5 class="text-center">{{subsection[0].evaluationSubSection.description}}: {{subsection[0].evaluationSubSection.weight}}</h5>
+                <table class="table table-hover fixedTable">
+                    <thead>
+                    <tr class="bg-EvaluationSubSection">
+                        <th class="evaDescription">Omschrijving:</th>
+                        <!--<th class="text-center">Gewicht</th>-->
+                        <!--<th class="text-center">{{evaluationItem.description}}: {{evaluationSubSection.weight}}%</th>-->
+                        <th class="scoreButtons">Score</th>
+                        <th class="evaNotScored"><i class="fa fa-question-circle"></i></th>
+                        <th class="evaFinalScore"><i class=" fa fa-trophy"></i></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!--repeat for all GOALS in EvaluationSubSections-->
+                    <tr ng-repeat="evaluationItem in subsection">
+                        <td>
+                            <div class="evaDescription" tooltip-placement="left" uib-tooltip="{{evaluationItem.goal.description}}">{{evaluationItem.goal.description}}</div></td>
+                        <!--<td>{{evaluationItem.evaluationSubSection.weight}}</td>-->
+                        <td>
+                            <div class="scoreButtons">
+                                <a class="btn btn-success btn-sm" ng-show="evaluationItem.score === 3">3</a>
+                                <a class="btn btn-primary btn-sm" ng-show="evaluationItem.score === 2">2</a>
+                                <a class="btn btn-warning btn-sm" ng-show="evaluationItem.score === 1">1</a>
+                                <a class="btn btn-danger  btn-sm" ng-show="evaluationItem.score === 0">0</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="btn-group evaNotScored" uib-dropdown is-open="status.isopen">
+                                <p>{{evaluationItem.notScoredReason}}</p>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="evaFinalScore">{{ evaluationItem.score === null ? 'NG' : evaluationItem.score}}</div> </td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr>
+                        <td class="evaDescription"></td>
+                        <!--<td ></td>-->
+                        <td class="scoreButtons"></td>
+                        <td class="evaNotScored"></td>
+                        <td class="evaFinalScore">{{subsection.totalScore | number:2 }}</td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="pull-right">Totaal: {{evaluation.result.total | number : 2}}</div>
+            <div>
+                <div class="col-md-2 col-xs-12"> Opmerking:</div>
+                <div class="col-md-10 col-xs-12">
+                    <p style="width: inherit" ng-model="evaluation.generalComment"></p>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+                <button type="button" class="btn btn-success" ng-click="ok()">Ok</button>
+                <a class="btn btn-default" ng-click="evaluationToPdf()"><i class="fa fa-file-pdf-o"></i></a>
+        </div>
+    </div>
+</div>
+

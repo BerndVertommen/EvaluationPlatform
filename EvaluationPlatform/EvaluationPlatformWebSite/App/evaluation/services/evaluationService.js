@@ -36,10 +36,18 @@
         };
 
         thiz.createPdfForEvaluations = function(evaluationsPagedQueryObject) {
-
             return $http.post(baseWebApiUrl + 'evaluation/createPdfForEvaluations', evaluationsPagedQueryObject, { responseType: 'arraybuffer' }).then(function(result) {
-                return result;
+                return configurationService.handlePdfData(result.data).then(function(data) {
+                    return data;
+                });
             });
+        };
+
+        thiz.createPdfForEvaluation = function (evaluation) {
+            var pdfForEvaluationsQueryObject = {};
+            pdfForEvaluationsQueryObject.EvaluationIds = [evaluation.id];
+
+            return thiz.createPdfForEvaluations(pdfForEvaluationsQueryObject);
         };
 
 
@@ -49,6 +57,39 @@
         }
 
         init();
+
+        // calculation functions
+        thiz.mapSubsectionToEvaluation = function (evaluation) {
+                var differentSubsections = _.groupBy(evaluation.evaluationItems, function (item) {
+                    return item.evaluationSubSection.description;
+                });
+                differentSubsections = _.sortBy(differentSubsections, function (sub) {
+                    return sub[0].evaluationSubSection.weight;
+                });
+                evaluation.mappedSubsections = differentSubsections;
+
+                thiz.setSubsectionScores(evaluation);
+        };
+
+        /*Maps subsections to evaluationitems*/
+        thiz.mapItemsToSubSection = function (evaluations) {
+            _.each(evaluations, function (evaluation) {
+                thiz.mapSubsectionToEvaluation(evaluation);
+            });
+            
+            return evaluations;
+        };
+
+        /*Use this to map the scores to the mapped subsections of a evaluation*/
+        thiz.setSubsectionScores = function (evaluation) {
+            //// var value = object[key] => use dictionary from c# this way
+            _.each(evaluation.mappedSubsections, function (subsection) {
+                if (angular.isDefined(evaluation.result) && evaluation.result !== null) {
+                    subsection.totalScore = evaluation.result.totalsPercategory[subsection[0].evaluationSubSection.id];
+                }
+            });
+            // map every evaluation not just selected so it can be procesed in int()
+        };
 
     }
 

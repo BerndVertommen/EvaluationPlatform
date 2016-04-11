@@ -2,17 +2,17 @@
 using System.Linq;
 using EvaluationPlatformDAL;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
-using EvaluationPlatformLogic.CommandAndQuery.Teacher.Command;
+using EvaluationPlatformLogic.CommandAndQuery.Teacher.CommandDto;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Teacher.CommandHandler
 {
-    public class AddClassToTeacherCommandHandler : CommandHandler<AddClassToTeacherCommand>
+    public class AddClassToTeacherCommandHandler : CommandHandler<AddClassToTeacherCommandDto>
     {
         public AddClassToTeacherCommandHandler(IEPDatabase database) : base(database)
         {
         }
 
-        public override void Handle(AddClassToTeacherCommand commandObject)
+        public override void Handle(AddClassToTeacherCommandDto commandObject)
         {
             var klas = Database.Classes.FirstOrDefault(k => k.Id == commandObject.ClassId);
 

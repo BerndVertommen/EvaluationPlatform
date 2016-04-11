@@ -6,7 +6,7 @@ using EvaluationPlatformDataTransferModels.CreationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Account;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformLogic.CommandAndQuery.Account.Commands;
-using EvaluationPlatformLogic.CommandAndQuery.Account.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.Account.QueryDto;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using EvaluationPlatformWebApi.Authentication;
 
@@ -27,7 +27,7 @@ namespace EvaluationPlatformWebApi.Controllers
         public List<AccountInfo> GetAccounts()
         {
 
-            return QueryProccesor.Execute(new GetAccountsQueryObject());
+            return QueryProccesor.Execute(new GetAccountsQueryDto());
         }
 
         [CustomAutorize(AccountRoleType.Admin)]
@@ -35,7 +35,7 @@ namespace EvaluationPlatformWebApi.Controllers
         [HttpPost]
         public HttpResponseMessage CreateAccount(CreateAccountInfo createAccountInfo)
         {
-            CommandProcessor.Execute(new CreateAccountCommand(createAccountInfo));
+            CommandProcessor.Execute(new CreateAccountCommandDto(createAccountInfo));
 
             return new HttpResponseMessage(HttpStatusCode.OK); 
         }

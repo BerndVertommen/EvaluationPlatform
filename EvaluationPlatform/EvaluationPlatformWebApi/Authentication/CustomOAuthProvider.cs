@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Autofac;
 using EvaluationPlatformDomain.Models.Account;
 using EvaluationPlatformDomain.Models.Authentication;
-using EvaluationPlatformLogic.CommandAndQuery.Account.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.Account.QueryDto;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
@@ -30,7 +30,7 @@ namespace EvaluationPlatformWebApi.Authentication
             using (var lifeTimeScope = _lifetimeScope.BeginLifetimeScope())
             {
 
-                Account user = _queryProcessor.Execute(new GetAccountQueryObject(context.UserName));
+                Account user = _queryProcessor.Execute(new GetAccountQueryDto(context.UserName));
 
                 if (user == null)
                 {

@@ -12,12 +12,12 @@ namespace EvaluationPlatformLogic.CommandAndQuery.BaseClasses
             _lifetimeScope = lifetimeScope;
         }
 
-        public virtual TResult Execute<TResult>(IQueryObject<TResult> query)
+        public virtual TResult Execute<TResult>(IQueryDto<TResult> query)
         {
             return GetQueryHandler(query).Handle((dynamic)query);
         }
 
-        protected dynamic GetQueryHandler<TResult>(IQueryObject<TResult> query)
+        protected dynamic GetQueryHandler<TResult>(IQueryDto<TResult> query)
         {
             Type queryHandlerImplementationType = typeof(IQueryHandler<,>).MakeGenericType(query.GetType(), typeof(TResult));
             dynamic queryHandler = _lifetimeScope.Resolve(queryHandlerImplementationType);

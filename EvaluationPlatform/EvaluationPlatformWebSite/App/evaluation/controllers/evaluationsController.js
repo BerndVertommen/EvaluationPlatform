@@ -64,19 +64,22 @@
                 var pdfForEvaluationsQueryObject = {};
                 pdfForEvaluationsQueryObject.EvaluationIds = selectedEvaluationIds;
 
-                evaluationService.createPdfForEvaluations(pdfForEvaluationsQueryObject).then(function (result) {
-
-                   // window.open("data:application/pdf;base64, " + result.data);
-                    var file = new Blob([result.data], { type: 'application/pdf' });
-                    if (window.navigator.msSaveOrOpenBlob) {
-                        navigator.msSaveBlob(file, 'fileName.pdf');
-                    } else {
-                        saveAs(file, 'filename.pdf');
-                    };
-                });
+                evaluationService.createPdfForEvaluations(pdfForEvaluationsQueryObject);
 
             }, function () {
                 // Console.log('Modal general options dismissed at: ' + new Date());
+            });
+        };
+
+        $scope.openScoredEvaluationModal = function (evaluation) {
+            $uibModal.open({
+                animation: true,
+                templateUrl: 'app/evaluation/views/scoredEvaluationModal.html',
+                controller: 'scoredEvaluationModalController',
+                size: 'lg',
+                resolve: {
+                    evaluation: evaluation
+                }
             });
         };
 

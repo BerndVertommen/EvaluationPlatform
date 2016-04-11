@@ -76,6 +76,8 @@
     <Content Include="app\classes\views\classes.html" />
     <Content Include="app\classes\views\manageClasses.html" />
     <Content Include="app\classes\views\selectClassesModal.html" />
+    <Content Include="app\evaluation\controllers\scoredEvaluationModalController.js" />
+    <Content Include="app\evaluation\views\scoredEvaluationModal.html" />
     <Content Include="app\message\messageConfig.js" />
     <Content Include="app\message\services\messageService.js" />
     <Content Include="app\configuration\services\configurationService.js" />

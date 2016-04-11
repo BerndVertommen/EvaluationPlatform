@@ -5,17 +5,17 @@ using AutoMapper;
 using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
 using EvaluationPlatformDAL;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
-using EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryDto;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryHandlers
 {
-    public class PlannedEvaluationBaseInfoQueryHandler : QueryHandler<PlannedEvaluationBaseInfoQueryObject, IEnumerable<EvaluationBaseInfo>>
+    public class PlannedEvaluationBaseInfoQueryHandler : QueryHandler<PlannedEvaluationBaseInfoQueryDto, IEnumerable<EvaluationBaseInfo>>
     {
         public PlannedEvaluationBaseInfoQueryHandler(IEPDatabase database) : base(database)
         {
         }
 
-        public override IEnumerable<EvaluationBaseInfo> Handle(PlannedEvaluationBaseInfoQueryObject queryObject)
+        public override IEnumerable<EvaluationBaseInfo> Handle(PlannedEvaluationBaseInfoQueryDto queryObject)
         {
             var teacher = Database.GetTeacherForAccount(queryObject.AccountId);
 

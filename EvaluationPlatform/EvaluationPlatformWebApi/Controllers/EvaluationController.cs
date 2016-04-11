@@ -9,9 +9,9 @@ using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
-using EvaluationPlatformLogic.CommandAndQuery.Evaluation.Command;
+using EvaluationPlatformLogic.CommandAndQuery.Evaluation.CommandDto;
 using EvaluationPlatformLogic.CommandAndQuery.Evaluation.PagedQueryResults;
-using EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryDto;
 using EvaluationPlatformLogic.Models.File;
 using EvaluationPlatformWebApi.Authentication;
 
@@ -32,24 +32,24 @@ namespace EvaluationPlatformWebApi.Controllers
         [HttpGet]
         public IEnumerable<EvaluationBaseInfo> PlannedEvaluations()
         {
-            return QueryProccesor.Execute(new PlannedEvaluationBaseInfoQueryObject(AccountId));
+            return QueryProccesor.Execute(new PlannedEvaluationBaseInfoQueryDto(AccountId));
         }
 
         [Route("evaluationsForBundle")]
         [HttpPost]
         public IEnumerable<EvaluationInfo> EvaluationsForbundle(GuidDto bundleIdDto)
         {
-            return QueryProccesor.Execute(new EvaluationInfosForBundleQueryObject(bundleIdDto.Id));
+            return QueryProccesor.Execute(new EvaluationInfosForBundleQueryDto(bundleIdDto.Id));
         }
 
         [Route("updateEvaluation")]
         [HttpPost]
         public EvaluationInfo UpdateEvaluation(EvaluationInfo evaluationInfo)
         {
-            CommandProcessor.Execute(new UpdateEvaluationItemsCommandObject(evaluationInfo));
+            CommandProcessor.Execute(new UpdateEvaluationItemsCommandDto(evaluationInfo));
 
 
-            return QueryProccesor.Execute(new EvaluationsQueryObject(new List<Guid>() {evaluationInfo.Id})).FirstOrDefault();
+            return QueryProccesor.Execute(new EvaluationsQueryDto(new List<Guid>() {evaluationInfo.Id})).FirstOrDefault();
         }
 
         [Route("updateEvaluations")]
@@ -60,25 +60,25 @@ namespace EvaluationPlatformWebApi.Controllers
             {
                 foreach (var evaluationinfo in evaluationInfos)
                 {
-                    CommandProcessor.Execute(new UpdateEvaluationItemsCommandObject(evaluationinfo));
+                    CommandProcessor.Execute(new UpdateEvaluationItemsCommandDto(evaluationinfo));
                 }
             }
 
             var infoIds = evaluationInfos.Select(evaluationInfo => evaluationInfo.Id).ToList();
 
-            return QueryProccesor.Execute(new EvaluationsQueryObject(infoIds));
+            return QueryProccesor.Execute(new EvaluationsQueryDto(infoIds));
         }
 
         [Route("searchEvaluations")]
         [HttpPost]
-        public EvaluationsPagedQueryResult SearchEvaluations(EvaluationsPagedQueryObject evaluationsQueryObject)
+        public EvaluationsPagedQueryResult SearchEvaluations(EvaluationsPagedQueryDto evaluationsQueryObject)
         {
             return QueryProccesor.Execute(evaluationsQueryObject);
         }
 
         [Route("createPdfForEvaluations")]
         [HttpPost]
-        public HttpResponseMessage CreatePdfForEvaluations(PdfForEvaluationsQueryObject pdfForEvaluationsQueryObject)
+        public HttpResponseMessage CreatePdfForEvaluations(PdfForEvaluationsQueryDto pdfForEvaluationsQueryObject)
         {
             FileRepresentationModel fileRepresentationModel = QueryProccesor.Execute(pdfForEvaluationsQueryObject);
 

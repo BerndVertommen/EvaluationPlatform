@@ -2,7 +2,7 @@
 
 namespace EvaluationPlatformLogic.CommandAndQuery.BaseClasses
 {
-    public abstract class QueryHandler<TQueryObject, TResult> : IQueryHandler<TQueryObject, TResult> where TQueryObject : IQueryObject<TResult>
+    public abstract class QueryHandler<TQueryObject, TResult> : IQueryHandler<TQueryObject, TResult> where TQueryObject : IQueryDto<TResult>
     {
         protected readonly IEPDatabase _database;
 
@@ -17,7 +17,5 @@ namespace EvaluationPlatformLogic.CommandAndQuery.BaseClasses
         }
 
         public abstract TResult Handle(TQueryObject queryObject);
-
-
     }
 }

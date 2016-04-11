@@ -5,24 +5,23 @@ using AutoMapper;
 using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
 using EvaluationPlatformDAL;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
-using EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryDto;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryHandlers
 {
-    public class EvaluationsQueryHandler : QueryHandler<EvaluationsQueryObject, IEnumerable<EvaluationInfo>>
+    public class EvaluationsQueryHandler : QueryHandler<EvaluationsQueryDto, IEnumerable<EvaluationInfo>>
     {
         public EvaluationsQueryHandler(IEPDatabase database) : base(database)
         {
         }
 
-        public override IEnumerable<EvaluationInfo> Handle(EvaluationsQueryObject queryObject)
+        public override IEnumerable<EvaluationInfo> Handle(EvaluationsQueryDto queryObject)
         {
             // check to make query lighter
             if (queryObject.Ids.Count() ==1)
             {
                return GetOneEvaluation(queryObject.Ids.FirstOrDefault());
             }
-
 
             var evaluations = Database.Evaluations.Where(e => queryObject.Ids.Any(i => i == e.Id));
 

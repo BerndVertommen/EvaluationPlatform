@@ -3,17 +3,17 @@ using EvaluationPlatformDataTransferModels.CreationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Teacher;
 using EvaluationPlatformDAL;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
-using EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.QueryObjects;
+using EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.QueryDto;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.QueryHandlers
 {
-    public class GetCreateEvaluationOptionsQueryHandler : QueryHandler<GetCreateEvaluationOptionsQueryObject, CreateEvaluationOptions>
+    public class GetCreateEvaluationOptionsQueryHandler : QueryHandler<GetCreateEvaluationOptionsQueryDto, CreateEvaluationOptions>
     {
         public GetCreateEvaluationOptionsQueryHandler(IEPDatabase database) : base(database)
         {
         }
 
-        public override CreateEvaluationOptions Handle(GetCreateEvaluationOptionsQueryObject queryObject)
+        public override CreateEvaluationOptions Handle(GetCreateEvaluationOptionsQueryDto queryObject)
         {
             CreateEvaluationOptions createEvaluationOptions = new CreateEvaluationOptions();
 
@@ -22,7 +22,7 @@ namespace EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.QueryHandl
             return createEvaluationOptions;
         }
 
-        private CreateEvaluationOptions SetTeacher(GetCreateEvaluationOptionsQueryObject queryObject, CreateEvaluationOptions createEvaluationOptions)
+        private CreateEvaluationOptions SetTeacher(GetCreateEvaluationOptionsQueryDto queryObject, CreateEvaluationOptions createEvaluationOptions)
         {
             EvaluationPlatformDomain.Models.Teacher teacher = Database.GetTeacherForAccount(queryObject.AccountId);
 

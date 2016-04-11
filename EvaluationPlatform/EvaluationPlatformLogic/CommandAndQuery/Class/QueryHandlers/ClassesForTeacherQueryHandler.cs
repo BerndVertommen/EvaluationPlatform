@@ -5,17 +5,18 @@ using AutoMapper;
 using EvaluationPlatformDataTransferModels.InformationModels.Class;
 using EvaluationPlatformDAL;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
-using EvaluationPlatformLogic.CommandAndQuery.Class.QueryObjects;
 using EvaluationPlatformDomain;
+using EvaluationPlatformLogic.CommandAndQuery.Class.QueryDto;
+
 namespace EvaluationPlatformLogic.CommandAndQuery.Class.QueryHandlers
 {
-    public class ClassesForTeacherQueryHandler : QueryHandler<ClassesForTeacherQueryObject, IEnumerable<ClassInfo>>
+    public class ClassesForTeacherQueryHandler : QueryHandler<ClassesForTeacherQueryDto, IEnumerable<ClassInfo>>
     {
         public ClassesForTeacherQueryHandler(IEPDatabase database) : base(database)
         {
         }
 
-        public override IEnumerable<ClassInfo> Handle(ClassesForTeacherQueryObject queryObject)
+        public override IEnumerable<ClassInfo> Handle(ClassesForTeacherQueryDto queryObject)
         {
             var teacher = Database.Teachers.FirstOrDefault(t => t.Id == queryObject.TeacherId);
 

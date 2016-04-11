@@ -8,7 +8,7 @@ namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.PagedQueryResults
     {
         public IEnumerable<EvaluationInfo> Evaluations { get; set; }
 
-        public EvaluationsPagedQueryResult(IEnumerable<EvaluationInfo> evaluations,int totalItems)
+        public EvaluationsPagedQueryResult(IEnumerable<EvaluationInfo> evaluations, int totalItems)
         {
             Evaluations = evaluations;
             TotalItems = totalItems;
