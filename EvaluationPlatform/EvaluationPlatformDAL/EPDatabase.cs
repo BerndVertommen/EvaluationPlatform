@@ -72,6 +72,11 @@ namespace EvaluationPlatformDAL
             var startSchoolYear = SchoolYear.GetStartYearThisSchoolYear();
             return SchoolYears.FirstOrDefault(x => x.StartYear == startSchoolYear);
         }
+
+        public override int SaveChanges()
+        {
+           return SaveChanges();
+        }
     }
 
 

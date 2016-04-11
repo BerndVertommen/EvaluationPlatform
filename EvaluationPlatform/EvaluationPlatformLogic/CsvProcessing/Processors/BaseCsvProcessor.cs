@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using EvaluationPlatformLogic.CsvProcessing.RecordMappings;
 using FileHelpers;
 
@@ -13,6 +14,20 @@ namespace EvaluationPlatformLogic.CsvProcessing.Processors
             var output = new List<TOutputModel>();
 
             foreach (var studentRecord in engine.ReadFile(fullFilePath))
+            {
+               
+                output.Add(MapToOutputModel(studentRecord));
+            }
+
+            return output;
+        }
+
+        public IEnumerable<TOutputModel> Process(TextReader stream)
+        {
+            var engine = new FileHelperEngine<TRecordMapping>();
+            var output = new List<TOutputModel>();
+
+            foreach (var studentRecord in engine.ReadStream(stream))
             {
                 output.Add(MapToOutputModel(studentRecord));
             }

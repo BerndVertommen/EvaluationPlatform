@@ -14,7 +14,7 @@ namespace EvaluationPlatformLogic.CsvProcessing.ResultHandlers.Student
     {
         private readonly SchoolYear _schoolYear;
 
-        public StudentWithClassResultHandler(EPDatabase database, SchoolYear schoolYear) : base(database)
+        public StudentWithClassResultHandler(IEPDatabase database, SchoolYear schoolYear) : base(database)
         {
             _schoolYear = schoolYear;
         }

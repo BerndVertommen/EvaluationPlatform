@@ -5,10 +5,10 @@ namespace EvaluationPlatformLogic.CsvProcessing.ResultHandlers
 {
     public abstract class BaseRecordResultHandler<TInput, TRecordProcessor>
     {
-        protected EPDatabase Database {  get; private set; }
+        protected IEPDatabase Database {  get; private set; }
 
 
-        public BaseRecordResultHandler(EPDatabase database)
+        public BaseRecordResultHandler(IEPDatabase database)
         {
             Database = database;
         }

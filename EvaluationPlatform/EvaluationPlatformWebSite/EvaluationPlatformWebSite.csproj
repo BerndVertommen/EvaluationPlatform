@@ -252,6 +252,9 @@
     <None Include="Properties\PublishProfiles\evalautionplatform.be.pubxml" />
     <None Include="Properties\PublishProfiles\website publish package.pubxml" />
     <None Include="scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="scripts\FileAPI.flash.swf" />
+    <Content Include="scripts\FileAPI.js" />
+    <Content Include="scripts\FileAPI.min.js" />
     <Content Include="scripts\FileSaver.js" />
     <Content Include="scripts\FileSaver.min.js" />
     <Content Include="scripts\i18n\angular-locale_aa-dj.js" />
@@ -1003,6 +1006,10 @@
     <Content Include="scripts\loading-bar.js" />
     <Content Include="scripts\loading-bar.min.js" />
     <Content Include="scripts\moment.js" />
+    <Content Include="scripts\ng-file-upload-all.js" />
+    <Content Include="scripts\ng-file-upload-all.min.js" />
+    <Content Include="scripts\ng-file-upload.js" />
+    <Content Include="scripts\ng-file-upload.min.js" />
     <Content Include="scripts\underscore.js" />
     <Content Include="scripts\underscore.min.js" />
     <Content Include="packages.config">

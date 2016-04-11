@@ -29,6 +29,12 @@
             });
         }
 
+        thiz.uploadClassCsv = function(file) {
+            return $http.post(baseWebApiUrl + 'class/uploadClassCsv', { file: file }).then(function(result) {
+                return result;
+            });
+        };
+
         //initiations
 
     };

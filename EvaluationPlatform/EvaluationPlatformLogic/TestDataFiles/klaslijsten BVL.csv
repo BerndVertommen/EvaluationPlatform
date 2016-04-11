@@ -1,46 +1,236 @@
-Klasnummer,Naam,Voornaam,Nr. Leerling,Geboortedatum,Klascode
-1,Baelus,Demi,27.06.2002,2BVLe
-2,Chambers,Rohan,12.02.2001,2BVLe
-3,Deckx,Yoni,11.01.2002,2BVLe
-4,Geentjens,Femke,19.03.2001,2BVLe
-5,Haepers,Kayna,27.12.2001,2BVLe
-6,Janssens,Imke,06.11.2001,2BVLe
-7,Keysers,Lotte,06.11.2002,2BVLe
-8,Litwinowicz,Klaudia,20.08.2001,2BVLe
-9,Peeters,Chelnicia,12.12.2002,2BVLe
-10,Roofthooft,Shayenne,06.12.2002,2BVLe
-11,Schmitz,Katharina,12.11.2002,2BVLe
-12,Sirisoodtho,Nattida,18.08.2001,2BVLe
-13,Torfs,Luana,17.09.2002,2BVLe
-14,Verschueren,Jitske,14.06.2002,2BVLe
-15,Waegemans,Jana,22.10.2001,2BVLe
-1,Custers,Julie,14.03.2001,2BVLf
-2,Devoght,Lisa,13.11.2002,2BVLf
-3,Eyskens,Rune,07.10.2002,2BVLf
-4,Frickelo Lopez,Jondy,20.07.2002,2BVLf
-5,Geyskens,Winnie,20.09.2002,2BVLf
-6,Gommers,Jenny,11.01.2002,2BVLf
-7,Horemans,Lindsey,01.03.2001,2BVLf
-8,Mans,Bente,12.08.2002,2BVLf
-9,Mols,Elise,01.11.2002,2BVLf
-10,Mols,Linde,01.11.2002,2BVLf
-11,Roodhooft,Charissa,14.10.2002,2BVLf
-12,Schepers,Iris,08.01.2002,2BVLf
-13,van Goor,Zazou,05.05.2002,2BVLf
-14,Van Loy,Amber,11.01.2001,2BVLf
-15,Daneels,Stien,21.07.2002,2BVLf
-1,Aimable,Shaquane,06.11.2000,2BVLg
-2,Cools,Marthe,04.05.2001,2BVLg
-3,Croonenborghs,Britt,20.02.2002,2BVLg
-4,Croonenborghs,Zoë,20.02.2002,2BVLg
-5,Eelen,Emma,07.03.2002,2BVLg
-6,Keuppens,Britt,31.05.2002,2BVLg
-7,Labro,Laïs,16.08.2002,2BVLg
-8,Lessent,Xena,11.09.2001,2BVLg
-9,Schellens,Jana,21.06.2002,2BVLg
-10,Van Geel,Kim,19.12.2001,2BVLg
-11,van Hattem,Morgane,24.04.2001,2BVLg
-12,Van Houdt,Sherley,08.02.2002,2BVLg
-13,Van Looy,Rani,07.11.2002,2BVLg
-14,Verhaert,Jill,30.07.2002,2BVLg
-15,Cuypers,Mariska,02.04.2001,2BVLg
+Klasnummer,Naam,Voornaam,Geboortedatum,Klascode
+1,Leten,Tinne,01.03.2000,3BE
+2,Luyten,Britt,06.11.2000,3BE
+3,Van Asbroeck,Anoushka,20.07.2001,3BE
+4,van de Cruijs,Sanne,17.05.2000,3BE
+5,Van der Elst,Lore,18.05.2001,3BE
+6,Van Uytven,Emma,19.07.2001,3BE
+7,Vercammen,Sanne,19.08.2001,3BE
+8,Wouters,Silke,02.03.2000,3BE
+9,Konings,Fran,21.09.2001,3BE
+10,Laenen,Yinthe,18.02.2001,3BE
+11,Verhaegen,Revati,27.06.2001,3BE
+12,Martufi,Bicetta,11.07.2001,3BE
+1,Bertels,Emily,22.06.2001,3HZa
+2,Dams,Yarto,05.09.2000,3HZa
+3,Daneels,Jill,22.04.2001,3HZa
+4,Guldentops,Amber,12.07.2001,3HZa
+5,Jansen,Melissa,01.03.2001,3HZa
+6,Kentie,Silke,14.10.2001,3HZa
+7,Renne,Jana,18.10.2000,3HZa
+8,Van Den Berghe,Steffie,08.12.2000,3HZa
+9,Vanheuckelom,Kinga,28.06.2001,3HZa
+10,Van Hoof,Lore,21.04.2001,3HZa
+11,Van Roie,Silke,20.04.2001,3HZa
+12,Baeten,Femke,29.05.2001,3HZa
+13,Dierckx,Zo‰,03.05.2000,3HZa
+14,Debeuckelaer,Bianca,12.07.1999,3HZa
+15,Van den Broeck,Mie,08.07.2000,3HZa
+16,Alptekin,Dicle,21.09.2000,3HZa
+1,Avonds,Kobe,03.11.2001,3VVa
+2,De Wolf,Evelien,13.04.2000,3VVa
+3,Eeckhout-De Vries,Jasmin,13.11.2001,3VVa
+4,Gommers,Jana,13.05.2000,3VVa
+6,Machielsen,Atze,04.09.2000,3VVa
+7,Peeters,Anke,18.10.2000,3VVa
+8,Thijs,Flore,07.03.2001,3VVa
+9,Vanheuckelom,Caro,16.05.2001,3VVa
+10,Van Rompaye,Louise,26.04.2001,3VVa
+11,Verschueren,Femke,10.07.2001,3VVa
+12,Willems,Lenny,28.07.2001,3VVa
+1,Goysens,Yorick,05.09.2000,3VVb
+2,Haesendonckx,Britt,24.12.2001,3VVb
+3,Huysmans,Xari,20.07.2000,3VVb
+4,Jacobs,Carolien,13.01.2000,3VVb
+5,Lemmens,Elke,22.07.2000,3VVb
+6,Van den Broeck,Liana,11.07.2001,3VVb
+7,Van de Perre,Lana,14.09.2001,3VVb
+8,Van Echelpoel,Amber,21.02.2001,3VVb
+9,Van Springel,Leen,06.03.2001,3VVb
+10,Van Sweevelt,Joni,23.08.2001,3VVb
+11,Vlassenbroeck,Liam,23.11.2000,3VVb
+1,Dieltjens,Jolien,01.10.1999,4BE
+2,Mari‰n,Zo‰,04.01.2000,4BE
+3,Tops,Rikke,03.08.2000,4BE
+4,Van de Wouwer,Mira,07.04.2000,4BE
+5,Vissers,Christina,04.10.1999,4BE
+1,Bauweraerts,Hanna,21.04.2000,4HZa
+2,Caeymaex,Robin,05.02.1998,4HZa
+3,De Borger,Julie,12.01.2000,4HZa
+4,Hermans,Sarah,02.07.1999,4HZa
+5,Labro,Janelle,24.04.2000,4HZa
+6,Leirs,Chanel,22.10.1999,4HZa
+7,Luyckx,Jody,30.06.1999,4HZa
+8,Mannaerts,Silke,26.05.2000,4HZa
+9,Robert,Shelley,19.07.1999,4HZa
+10,Roex,Julie,27.07.2000,4HZa
+11,S'Jegers,Anouk,11.05.2000,4HZa
+12,Vanheuckelom,Kiara,25.06.2000,4HZa
+13,Van Rooy,Robin,03.02.1999,4HZa
+14,Vrijdags,Kiana,19.08.2000,4HZa
+1,Aerts,Silke,01.09.2000,4HZb
+2,Brochoven,Marie,21.03.2000,4HZb
+3,Dierckx,Britt,20.05.2000,4HZb
+4,Engels,Aline,16.08.2000,4HZb
+5,Gonthier,Melissa,06.03.2000,4HZb
+6,Lambrechts,Femke,01.02.2000,4HZb
+7,Luyten,Emily,23.02.2000,4HZb
+8,Peeters,Xena,02.02.2000,4HZb
+9,Roegies,Frauke,28.01.2000,4HZb
+10,Rottiers,Indra,16.12.2000,4HZb
+11,Silverio Cruz,Paola,17.04.1998,4HZb
+12,Smekens,Xenia,27.07.1999,4HZb
+13,Brandzelewska,Natalia,28.10.1998,4HZb
+1,Aerts,Chinouk,05.07.2000,4STW
+2,Dens,Dana,17.12.2000,4STW
+3,Lemmens,Dant‚,09.05.2000,4STW
+4,Op de Beeck,Cato,12.04.2000,4STW
+5,Sabister,Demi,13.10.2000,4STW
+6,Van Bylen,Anke,19.12.2000,4STW
+7,Vanderspikken,Ruben,07.11.2000,4STW
+8,Van Opstal,Milan,03.11.2000,4STW
+9,Verwimp,Saar,12.02.2000,4STW
+10,Van den Bergh,Shari,24.02.2000,4STW
+11,Bertels,Zo‰,14.09.2000,4STW
+12,Claes,Yassine,07.03.1999,4STW
+13,Matthys,Sien,21.12.1999,4STW
+14,Wouters,Stephanie,11.01.2000,4STW
+1,Aerts,Lissa,24.07.2000,4VVa
+2,Daems,Jill,13.03.2000,4VVa
+3,Horemans,Femke,22.06.2000,4VVa
+4,Jeyakumar,Susika,15.03.1999,4VVa
+5,Merschout,Tess,15.11.1999,4VVa
+6,Pauwels,Evelien,11.12.2000,4VVa
+7,van Hees,Julie,22.03.2000,4VVa
+8,Van Staeyen,Morgane,10.04.2000,4VVa
+10,Willems,Irris,26.01.2000,4VVa
+11,Wyns,Britt,21.12.2000,4VVa
+12,Thys,Lien,07.08.2000,4VVa
+1,Geerts,Itske,14.08.2000,4VVb
+2,Oost,Sien,21.12.2000,4VVb
+3,Schoenmaekers,Elien,05.06.1999,4VVb
+5,Van Bael,Liena,17.11.1999,4VVb
+6,Van de paer,Femke,15.12.2000,4VVb
+7,Van Loy,Lindsey,26.04.1998,4VVb
+8,Van Mol,Celine,08.06.2000,4VVb
+9,Verbraeken,Kimberly,17.05.2000,4VVb
+10,Lavrijssen,Brent,02.01.2000,4VVb
+11,Vertommen,Marie,16.07.2000,4VVb
+1,Daneels,Jens,11.12.1999,5GW
+2,De Maere,Femke,12.10.1997,5GW
+3,Helsen,Lindsey,20.10.1998,5GW
+4,Hermans,Kaat,01.07.1999,5GW
+5,Lemmens,Chlo‰,12.02.1999,5GW
+6,Meeusen,Lien,01.12.1999,5GW
+7,Rymen,Laura,01.12.1998,5GW
+8,Sameys,Evi,26.03.1999,5GW
+9,Smits,Kiani,02.04.1999,5GW
+10,Van der Plas,Bo,31.07.1999,5GW
+11,Van de Schoor,Sarina,09.03.1999,5GW
+12,Van Haesbroeck,Joni,08.01.1998,5GW
+13,Vermeylen,Femke,22.04.1999,5GW
+14,Verscheure,Nicky,22.08.1999,5GW
+1,Verdonck,Yoni,02.03.1999,5OH
+2,Holemans,Daan,11.09.1999,5OH
+1,Alaerts,Jolien,20.10.1999,5VZa
+2,Beerens,Jade,29.09.1999,5VZa
+3,Celis,Jessy,18.07.1999,5VZa
+4,De GrŠve,Julie,17.07.1998,5VZa
+5,De Voeght,Robyne,11.09.1998,5VZa
+6,Geentjens,Jessica,07.05.1999,5VZa
+7,Haest,Karo,05.10.1999,5VZa
+8,Li,Pui Yu,30.09.1998,5VZa
+9,Martins Santos,Ana,06.03.1998,5VZa
+10,Moelans,Lisa,05.08.1999,5VZa
+11,Onyema,Ogochukwu,20.07.1998,5VZa
+12,Peeters,Joke,18.11.1999,5VZa
+13,Obbels,Ferre,20.10.1999,5VZa
+1,Calaerts,Tha‹s,04.07.1998,5VZb
+2,Raets,Cara,25.01.1999,5VZb
+3,Renders,Amber,31.01.1999,5VZb
+4,Sahin,Busra,20.08.1997,5VZb
+5,Stessens,Dave,20.05.1998,5VZb
+6,Truyts,Joke,06.09.1999,5VZb
+7,Van de Poel,Gitte,23.06.1999,5VZb
+8,Van der Linden,Zohra,01.04.1998,5VZb
+9,Vangeel,Janelle,15.07.1999,5VZb
+10,Van Rompaey,Jolien,07.12.1998,5VZb
+11,Verdonck,Jente,02.03.1999,5VZb
+12,Xhenseval,Lisa,19.08.1999,5VZb
+13,Gelens,Ans,13.12.1999,5VZb
+1,Boeckmans,Evelien,10.12.1997,6GW
+2,Bruynseels,Marte,30.11.1998,6GW
+3,De Sobrie,Jolien,17.01.1998,6GW
+4,Frederix,Katrijn,06.07.1998,6GW
+5,Heylen,Emma,07.07.1998,6GW
+6,Janssens,Gloria,23.04.1998,6GW
+7,Mertens,Kelly,17.07.1996,6GW
+8,Peeters,Ruben,11.03.1997,6GW
+9,Poortmans,Michelle,01.10.1997,6GW
+10,Van den Bruel,Jolien,20.03.1997,6GW
+11,Van Giel,Lisa,04.06.1997,6GW
+12,Vanroelen,Joy,05.02.1997,6GW
+13,Vercammen,Charlien,24.01.1998,6GW
+14,Vleugels,Odile,17.03.1998,6GW
+1,Cornelis,Len,12.02.1997,6OH
+2,Daems,Charissa,01.02.1998,6OH
+3,Fransen,Jonas,14.05.1998,6OH
+4,Laenen,Kimberly,16.07.1997,6OH
+5,Lembrechts,Bert,15.04.1998,6OH
+6,Van Mol,Brenda,14.03.1997,6OH
+1,Cools,Kimberley,11.11.1998,6VZa
+2,Cuylaerts,Lotte,20.10.1997,6VZa
+3,Deckers,Keith,20.06.1997,6VZa
+4,Dens,Amber,27.10.1998,6VZa
+5,De Pooter,Melissa,15.10.1997,6VZa
+6,Hooybergs,Axelle,02.11.1998,6VZa
+7,Janssens,Rik,16.09.1998,6VZa
+8,Mohammed Abdella,Ephrah,15.03.1996,6VZa
+9,Peleriaux,Sarah,13.08.1998,6VZa
+10,Perdaen,Kimberly,01.10.1998,6VZa
+11,Roelants,Jill,22.08.1997,6VZa
+12,Van Den Bergh,Valerie,15.04.1998,6VZa
+13,Van Gorp,Jolien,17.09.1998,6VZa
+14,Vanlerberghe,Laetitia,09.11.1998,6VZa
+15,Wijgerde,Shari,11.07.1998,6VZa
+1,Baisipont,Clara,11.09.1997,6VZb
+2,Cornelis,Chiara,29.05.1998,6VZb
+3,Dekort,Jari,03.10.1997,6VZb
+4,De Laet,Lotte,03.02.1997,6VZb
+5,Hufkens,Jasmina,01.04.1997,6VZb
+6,Janssens,Lissa,08.11.1997,6VZb
+7,Maes,Stephanie,17.04.1996,6VZb
+8,Masselus,Kimberly,03.02.1996,6VZb
+9,Sali‰n,Lander,02.11.1998,6VZb
+10,Sprengers,Nanou,29.12.1998,6VZb
+11,Torfs,Siel,16.07.1997,6VZb
+12,Van Bulck,Amber,12.05.1998,6VZb
+13,Van den Brande,Lore,11.05.1998,6VZb
+14,Van Doninck,Phoebe,30.08.1997,6VZb
+15,Van Eester,Charry,07.03.1998,6VZb
+16,Van Looy,Emily,24.07.1997,6VZb
+17,Verboven,Jarek,20.07.1998,6VZb
+1,Augustynen,Laura,08.11.1996,7KZ
+2,Boonen,Samantha,06.07.1996,7KZ
+3,Callebaut,Tula,25.06.1996,7KZ
+4,De Bie,Klaartje,13.01.1996,7KZ
+5,Dergent,Kelsey,01.01.1996,7KZ
+6,De Smedt,Astrid,12.12.1996,7KZ
+7,De Vleeshouwer,Jana,20.03.1995,7KZ
+8,Goos,Viebe,16.04.1997,7KZ
+9,Heylen,Hanne,20.10.1997,7KZ
+10,Mertens,Bieke,14.12.1996,7KZ
+11,Moons,Hanne,26.08.1997,7KZ
+12,Moris,Jamie,27.06.1997,7KZ
+13,Nicasi,Jenthe,25.02.1997,7KZ
+14,Schellens,Jill,11.08.1997,7KZ
+15,Van Cauter,Morgane,31.10.1996,7KZ
+16,Witvrouwen,Yannick,24.07.1996,7KZ
+17,Vanlommel,Julie,30.01.1997,7KZ
+1,De Pooter,Lorance,02.12.1996,7TBZ
+2,Peeters,Emmelie,24.08.1997,7TBZ
+3,Raeymaeckers,Anne-Marie,01.10.1997,7TBZ
+4,Rynders,Julie,11.07.1997,7TBZ
+5,Salaets,Hanne,21.06.1997,7TBZ
+6,Van Aelst,Charlotte,26.06.1997,7TBZ
+7,Verlinden,Larissa,29.09.1995,7TBZ

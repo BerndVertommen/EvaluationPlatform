@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Security.Cryptography.X509Certificates;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformDomain.Models.Account;
 using EvaluationPlatformDomain.Models.Authentication;
@@ -28,5 +29,9 @@ namespace EvaluationPlatformDAL
         Teacher GetTeacherForAccount(Guid? accountId);
 
         SchoolYear GetCurrentSchoolyear();
+
+        int SaveChanges();
+
+
     }
 }
