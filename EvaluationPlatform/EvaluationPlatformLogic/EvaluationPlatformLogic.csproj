@@ -131,6 +131,8 @@
     <Compile Include="CommandAndQuery\BaseClasses\PagedQueryResult.cs" />
     <Compile Include="CommandAndQuery\BaseClasses\QueryHandler.cs" />
     <Compile Include="CommandAndQuery\BaseClasses\QueryProcessor.cs" />
+    <Compile Include="CommandAndQuery\Class\CommandDto\CreateClassCommandDto.cs" />
+    <Compile Include="CommandAndQuery\Class\CommandHandlers\CreateClassCommandHandler.cs" />
     <Compile Include="CommandAndQuery\Class\QueryDto\AllClassesDto.cs" />
     <Compile Include="CommandAndQuery\Class\QueryHandlers\AllClassesQueryHandler.cs" />
     <Compile Include="CommandAndQuery\Class\QueryHandlers\ClassesAvailableForTeacherQueryHandler.cs" />

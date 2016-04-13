@@ -29,5 +29,12 @@ angular.module('app.classes', ['ngRoute'])
                   }
               }
           });
-        
+
+        $routeProvider
+        .when('/createClass', {
+            templateUrl: 'app/classes/views/createClass.html',
+            controller: 'createClassController'
+
+        });
+
     });

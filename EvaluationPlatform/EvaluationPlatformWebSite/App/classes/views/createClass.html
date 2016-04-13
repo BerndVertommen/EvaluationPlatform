@@ -1,0 +1,42 @@
+﻿<div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <!--mainHeading-->
+            <div class="panel-title">
+                Creëer klas
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--mainBody-->
+            <form class="form-horizontal">
+                <fieldset>
+                    <div class="col-md-offset-2 col-md-8 col-sm-12">
+                        <div class="form-group">
+                            <label for="inputDescription" class="control-label">Omschrijving</label>
+                            <input class="form-control" ng-model="createClassInfo.description" id="inputDescription" placeholder="Omschrijving" type="text">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputCurrentSchoolYear" class="control-label">Vink aan als de klas voor het volgend schooljaar is.</label>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" ng-model="createClassInfo.nextYear" readonly />Volgend schooljaar
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12" style="margin-top: 15px">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+
+        </div>
+        <div class="modal-footer">
+            <!--mainFooter-->
+            <button type="button" class="btn btn-success" ng-click="ok()">Ok</button>
+            <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+
+        </div>
+    </div>
+</div>

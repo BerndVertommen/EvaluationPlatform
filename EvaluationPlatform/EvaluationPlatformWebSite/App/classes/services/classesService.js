@@ -35,6 +35,12 @@
             });
         }
 
+        thiz.createClass = function(createClassInfo) {
+            return $http.post(baseWebApiUrl + "class/createClass", createClassInfo).then(function(result) {
+                return result.data;
+            });
+        }
+
         //initiations
 
     };
