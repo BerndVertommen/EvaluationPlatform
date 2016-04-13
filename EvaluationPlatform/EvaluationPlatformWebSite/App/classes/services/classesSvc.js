@@ -29,6 +29,12 @@
             });
         }
 
+        thiz.allClasses = function() {
+            return $http.get(baseWebApiUrl + "class/allClasses").then(function(result) {
+                return result.data;
+            });
+        }
+
         //initiations
 
     };

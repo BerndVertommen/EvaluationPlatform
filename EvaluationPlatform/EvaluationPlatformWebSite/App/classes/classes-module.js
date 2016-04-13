@@ -20,6 +20,14 @@ angular.module('app.classes', ['ngRoute'])
         $routeProvider
           .when('/manageClasses', {
               templateUrl: 'app/classes/views/manageClasses.html',
-              controller: 'manageClassesController'
+              controller: 'manageClassesController',
+              resolve: {
+                  allClasses: function(classesService) {
+                      return classesService.allClasses().then(function (allClasses) {
+                          return allClasses;
+                      });
+                  }
+              }
           });
+        
     });
