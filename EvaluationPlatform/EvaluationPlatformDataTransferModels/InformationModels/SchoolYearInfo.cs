@@ -1,4 +1,5 @@
-﻿using System.Reflection.Emit;
+﻿using System;
+using System.Reflection.Emit;
 
 namespace EvaluationPlatformDataTransferModels.InformationModels
 {
@@ -7,7 +8,8 @@ namespace EvaluationPlatformDataTransferModels.InformationModels
         public int StartYear { get; set; }
         public int EndYear { get; set; }
 
-        public string Notation => $"{StartYear} - {EndYear}"; 
+        public string Notation => $"{StartYear} - {EndYear}";
+        public Guid Id { get; set; }
 
         public SchoolYearInfo()
         {

@@ -120,6 +120,8 @@
     <Content Include="app\login\views\login.html" />
     <Content Include="app\evaluation\evaluation-module.js" />
     <Content Include="app\evaluation\services\evaluationService.js" />
+    <Content Include="app\schoolyear\schoolyear-module.js" />
+    <Content Include="app\schoolyear\services\schoolyearService.js" />
     <Content Include="app\Student\controllers\createStudentController.js" />
     <Content Include="app\Student\student-module.js" />
     <Content Include="app\Student\services\studentService.js" />
@@ -1008,6 +1010,8 @@
     <Content Include="scripts\moment.js" />
     <Content Include="scripts\ng-file-upload-all.js" />
     <Content Include="scripts\ng-file-upload-all.min.js" />
+    <Content Include="scripts\ng-file-upload-shim.js" />
+    <Content Include="scripts\ng-file-upload-shim.min.js" />
     <Content Include="scripts\ng-file-upload.js" />
     <Content Include="scripts\ng-file-upload.min.js" />
     <Content Include="scripts\underscore.js" />

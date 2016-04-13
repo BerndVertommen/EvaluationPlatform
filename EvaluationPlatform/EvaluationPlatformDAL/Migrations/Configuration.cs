@@ -20,6 +20,9 @@ namespace EvaluationPlatformDAL.Migrations
 
         protected override void Seed(EPDatabase context)
         {
+            //if (System.Diagnostics.Debugger.IsAttached == false)
+            //    System.Diagnostics.Debugger.Launch();
+
             // seed students
             StudentGenerator studentGenerator = new StudentGenerator();
             GeneralGoalsGenerator generalGoalsGenerator = new GeneralGoalsGenerator();

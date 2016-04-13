@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
 using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Class;
@@ -41,7 +42,7 @@ namespace EvaluationPlatformWebApi.Controllers
 
         [Route("classesForCourse")]
         [HttpPost]
-        public IEnumerable<ClassInfo> ClassesForCourse( GuidDto guidDto)
+        public IEnumerable<ClassInfo> ClassesForCourse(GuidDto guidDto)
         {
             //var guid = Guid.Parse(courseId);
             return QueryProccesor.Execute(new ClassesForCourseQueryDto(guidDto.Id));
@@ -57,19 +58,33 @@ namespace EvaluationPlatformWebApi.Controllers
         }
 
         [CustomAutorize(AccountRoleType.Admin)]
-        [Route("uploadClassCsv")]
+        [Route("uploadClassCsv/{schoolYearID}")]
         [HttpPost]
-        public HttpResponseMessage UploadClassCsv()
+        public HttpResponseMessage UploadClassCsv(string schoolYearID)
         {
             if (!Request.Content.IsMimeMultipartContent())
             {
                 return new HttpResponseMessage(HttpStatusCode.NoContent);
             }
-           
-            Stream stream =  Request.Content.ReadAsStreamAsync().Result;
-            TextReader textReader = new StreamReader(stream);
 
-           CommandProcessor.Execute(new UploadClassCsvCommandDto(textReader, new Guid("785ca37c-d017-4012-b0b5-7cd9d7b2b26e")));
+            if (HttpContext.Current.Request.Files.Count > 0)
+            {
+                try
+                {
+                    Stream stream = HttpContext.Current.Request.Files[0].InputStream;
+                    //this.Request.Content.ReadAsStreamAsync();
+                    //task.Wait();
+                    //Stream stream = task.Result;
+
+                    TextReader textReader = new StreamReader(stream);
+
+                    CommandProcessor.Execute(new UploadClassCsvCommandDto(textReader, new Guid(schoolYearID)));
+                }
+                catch (Exception)
+                {
+                    return new HttpResponseMessage(HttpStatusCode.InternalServerError);
+                }
+            }
 
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
