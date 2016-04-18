@@ -13,8 +13,6 @@ using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using EvaluationPlatformLogic.CommandAndQuery.Class.CommandDto;
 using EvaluationPlatformLogic.CommandAndQuery.Class.QueryDto;
-using EvaluationPlatformLogic.CsvProcessing.Processors.Student;
-using EvaluationPlatformLogic.CsvProcessing.ResultHandlers.Student;
 using EvaluationPlatformWebApi.Authentication;
 
 namespace EvaluationPlatformWebApi.Controllers
