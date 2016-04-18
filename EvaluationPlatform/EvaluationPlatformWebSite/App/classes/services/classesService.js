@@ -45,6 +45,18 @@
             });
         };
 
+        thiz.allClasses = function() {
+            return $http.get(baseWebApiUrl + "class/allClasses").then(function(result) {
+                return result.data;
+            });
+        }
+
+        thiz.createClass = function(createClassInfo) {
+            return $http.post(baseWebApiUrl + "class/createClass", createClassInfo).then(function(result) {
+                return result.data;
+            });
+        }
+
         //initiations
 
     };

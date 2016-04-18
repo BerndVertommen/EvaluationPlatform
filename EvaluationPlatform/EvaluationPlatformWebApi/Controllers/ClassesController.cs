@@ -5,8 +5,10 @@ using System.Net;
 using System.Net.Http;
 using System.Web;
 using System.Web.Http;
+using EvaluationPlatformDataTransferModels.CreationModels;
 using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Class;
+using EvaluationPlatformDomain.Models;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using EvaluationPlatformLogic.CommandAndQuery.Class.CommandDto;
@@ -89,6 +91,23 @@ namespace EvaluationPlatformWebApi.Controllers
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
+        [CustomAutorize(AccountRoleType.Admin)]
+        [Route("allClasses")]
+        [HttpGet]
+        public IEnumerable<ClassInfo> AllClasses()
+        {
+            return QueryProccesor.Execute(new AllClassesDto(SchoolYear.GetStartYearThisSchoolYear()));
+        }
 
+        [CustomAutorize(AccountRoleType.Admin)]
+        [Route("createClass")]
+        [HttpPost]
+        public HttpResponseMessage CreateClass(CreateClassInfo createClassInfo)
+        {
+            CommandProcessor.Execute(new CreateClassCommandDto(createClassInfo));
+
+            return new HttpResponseMessage(HttpStatusCode.OK);
+        }
+        
     }
 }
