@@ -21,18 +21,18 @@ namespace EvaluationPlatformLogic.CommandAndQuery.Class.CommandHandlers
         public override void Handle(CreateClassCommandDto commandObject)
         {
             //schooljaar check
-            int currentSchoolYearStartYear = EvaluationPlatformDomain.Models.SchoolYear.GetStartYearThisSchoolYear();
+            int selectedSchoolYearStartYear = EvaluationPlatformDomain.Models.SchoolYear.GetStartYearThisSchoolYear();
 
             if (commandObject.CreateClassInfo.NextYear)
             {
-                currentSchoolYearStartYear += 1; 
+                selectedSchoolYearStartYear += 1; 
 
                 var checkSchoolYear =
-                Database.SchoolYears.FirstOrDefault(s => s.StartYear == currentSchoolYearStartYear);
+                Database.SchoolYears.FirstOrDefault(s => s.StartYear == selectedSchoolYearStartYear);
 
                 if (checkSchoolYear == null)
                 {
-                    EvaluationPlatformDomain.Models.SchoolYear newSchoolYear = new SchoolYear(currentSchoolYearStartYear, currentSchoolYearStartYear +1);
+                    EvaluationPlatformDomain.Models.SchoolYear newSchoolYear = new SchoolYear(selectedSchoolYearStartYear, selectedSchoolYearStartYear +1);
                     Database.SchoolYears.Add(newSchoolYear);
                 }
                 
@@ -42,7 +42,7 @@ namespace EvaluationPlatformLogic.CommandAndQuery.Class.CommandHandlers
             var classX =
             Database.Classes.FirstOrDefault(c =>
                 c.Description == commandObject.CreateClassInfo.Description &&
-                c.SchoolYear.StartYear == currentSchoolYearStartYear);
+                c.SchoolYear.StartYear == selectedSchoolYearStartYear);
             if (classX != null)
             {
                 throw new BusinessExeption(BusinessExeption.ClassExists);
@@ -53,7 +53,7 @@ namespace EvaluationPlatformLogic.CommandAndQuery.Class.CommandHandlers
             newClass.Description = commandObject.CreateClassInfo.Description;
             newClass.SchoolYear =
                 Database.SchoolYears.FirstOrDefault(
-                    s => s.StartYear == currentSchoolYearStartYear);
+                    s => s.StartYear == selectedSchoolYearStartYear);
 
             // klas aanmaken
             Database.Classes.Add(newClass);
