@@ -6,7 +6,6 @@ using EvaluationPlatformDAL;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformLogic.CsvProcessing.Processors.Student;
 using EvaluationPlatformLogic.CsvProcessing.ProcessResultDto;
-using EvaluationPlatformLogic.CsvProcessing.RecordMappings.Student;
 
 namespace EvaluationPlatformLogic.CsvProcessing.ResultHandlers.Student
 {
@@ -70,7 +69,7 @@ namespace EvaluationPlatformLogic.CsvProcessing.ResultHandlers.Student
 
         private IEnumerable<Class> CreateNewClasses(IEnumerable<Class> existingClasses, IEnumerable<ClassInfo> resultGroupedByClass)
         {
-            IEnumerable<Class> newClasses = new List<Class>();
+            List<Class> newClasses = new List<Class>();
             IEnumerable<ClassInfo> newClassesToCreate;
             if (existingClasses.Any())
             {
@@ -87,6 +86,7 @@ namespace EvaluationPlatformLogic.CsvProcessing.ResultHandlers.Student
             {
                 var newClass = new Class(classInfo.Description, _schoolYear, new List<EvaluationPlatformDomain.Models.Student>());
 
+                newClasses.Add(newClass);
                 Database.Classes.Add(newClass);
             }
 
@@ -94,6 +94,7 @@ namespace EvaluationPlatformLogic.CsvProcessing.ResultHandlers.Student
             {
                 Database.SaveChanges();
             }
+
             return newClasses;
         }
 
