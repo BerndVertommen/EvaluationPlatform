@@ -17,7 +17,7 @@
             });
         }
 
-        thiz.teachers = function() { // use query object in future change method to post then probably
+        thiz.getTeachers = function() { // use query object in future change method to post then probably
             return $http.get(basePath + '/teacher/teachers').then(function(result) {
                 return result.data;
             });

@@ -1,10 +1,11 @@
 ﻿(function (module) {
     'use strict';
 
-    function createClassController($scope, $location, classesService, messageService) {
+    function createClassController($scope, $location, classesService, messageService, teacherService) {
         var thiz = this;
        
         //Variables
+        $scope.selectedTeacher = null;
 
         //private Functions
         
@@ -21,10 +22,23 @@
 
         }
 
+        // todo remove this 
+        $scope.$watch('selectedTeacher', function (value) {
+            if (value == null) {
+                return null;
+            }
+            console.log('Geselecteerde leerkacht :' + value.person.firstName + ' ' + value.person.lastName);
+        });
+
+
         //initiations
         var init = function () {
             $scope.createClassInfo = {};
             $scope.createClassInfo.nextYear = false;
+
+            teacherService.getTeachers().then(function (result) {
+                $scope.teachers = result;
+            });
         }
 
         init();

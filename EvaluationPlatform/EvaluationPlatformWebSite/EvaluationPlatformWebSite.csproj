@@ -78,6 +78,10 @@
     <Content Include="app\classes\views\createClass.html" />
     <Content Include="app\classes\views\manageClasses.html" />
     <Content Include="app\classes\views\selectClassesModal.html" />
+    <Content Include="app\customDirectives\customDirectives-module.js" />
+    <Content Include="app\customDirectives\selectModalDirective\searchTeachersModal\selectTeacherModal.html" />
+    <Content Include="app\customDirectives\selectModalDirective\generalControllers\selectItemModalController.js" />
+    <Content Include="app\customDirectives\selectModalDirective\selectModalDirective.js" />
     <Content Include="app\evaluation\controllers\scoredEvaluationModalController.js" />
     <Content Include="app\evaluation\views\scoredEvaluationModal.html" />
     <Content Include="app\message\messageConfig.js" />
@@ -150,11 +154,12 @@
     <Content Include="app\StudyPlan\services\studyPlanService.js" />
     <Content Include="app\StudyPlan\views\manageStudyPlan.html" />
     <Content Include="app\StudyPlan\views\viewModal.html" />
-    <Content Include="app\zzzcopyMe\replace-module.js" />
-    <Content Include="app\zzzcopyMe\controllers\replaceCtrl.js" />
-    <Content Include="app\zzzcopyMe\services\replaceService.js" />
-    <Content Include="app\zzzcopyMe\views\viewModal.html" />
-    <Content Include="app\zzzcopyMe\views\view.html" />
+    <Content Include="copyFolder\selectModals\selectZZZModal.html" />
+    <Content Include="copyFolder\zzzcopyMe\replace-module.js" />
+    <Content Include="copyFolder\zzzcopyMe\controllers\replaceCtrl.js" />
+    <Content Include="app\customDirectives\selectModalDirective\selectModalService.js" />
+    <Content Include="copyFolder\zzzcopyMe\views\viewModal.html" />
+    <Content Include="copyFolder\zzzcopyMe\views\view.html" />
     <Content Include="bundled\concat3thParty.js" />
     <Content Include="bundled\concatApp.js" />
     <Content Include="bundled\fullCss.css" />
@@ -1052,6 +1057,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\home\services\" />
+    <Folder Include="copyFolder\zzzcopyMe\services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,71 @@
+﻿<div class="modal-body">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <!--mainHeading-->
+            <div class="panel-title">
+                {{content.title}}
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--mainBody-->
+            <div class="col-xs-12">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            Filter
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <div class="row">
+                                <div class="col-sm-6 col-xs-12">
+                                    <div>
+                                        <label for="text" class="control-label">Voornaam:</label>
+                                        <input class="form-control" type="text" id="text" ng-model="itemFilter.person.firstName" placeholder="Zoek op ..." />
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-xs-12">
+                                    <div>
+                                        <label for="groupname" class="control-label">Achternaam:</label>
+                                        <input class="form-control" type="text" id="groupname" ng-model="itemFilter.person.lastName" placeholder="Zoek op ..." />
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 ">
+                <div class="form-horizontal">
+                    <fieldset>
+                        <legend>{{content.itemsDescription}}</legend>
+                        <div class="smallScrolable">
+                            <table class="table table-hover table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>Voornaam</th>
+                                        <th>Achternaam</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <!--Item = teacherInfo-->
+                                <tr ng-click="setSelectedItem(item, $index)" ng-repeat="item in items | filter : itemFilter" ng-class="{'success': $index == selectedRow}">
+                                    <td>{{item.person.firstName}}</td>
+                                    <td>{{item.person.lastName}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" ng-click="ok()">Ok</button>
+            <button type="button" class="btn btn-danger" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+
