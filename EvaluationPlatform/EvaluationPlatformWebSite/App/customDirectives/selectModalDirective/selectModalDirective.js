@@ -7,13 +7,13 @@
             scope: {
                 modalname: '@',
                 items: '=',
-                selecteditem:'='
+                selection:'='
             },
             link: function (scope, element) {
 
                 element.bind('click', function() {
                     selectModalService.openModal(scope.modalname, scope.items).then(function (result) {
-                        scope.selecteditem = result;
+                        scope.selection = result;
                     });
                 });
             }
