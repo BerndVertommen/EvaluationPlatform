@@ -24,8 +24,13 @@
                                 </label>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <select-modal modalname="selectTeacherModal" items="teachers" selection="selectedTeacher"></select-modal>
+                        <div class="form-group"> <!--single teacher-->
+                            <label for="selecteerEenLeerkracht"> Selecteer een leerkracht : </label>
+                            <select-modal id="selecteerEenLeerkracht" modalname="selectTeacherModal" items="teachers" selection="selectedTeacher"></select-modal>
+                        </div>
+                        <div class="form-group"> <!--multiple teachers-->
+                            <label for="selecteerLeerkrachten"> Selecteer leerkrachten : </label>
+                            <select-modal id="selecteerLeerkrachten" modalname="selectTeachersModal" items="teachers" selection="selectedTeachers"></select-modal>
                         </div>
 
                         <div class="col-xs-12" style="margin-top: 15px">

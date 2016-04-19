@@ -9,6 +9,11 @@
                modalName: "selectTeacherModal", template: "app/customDirectives/selectModalDirective/searchTeachersModal/selectTeacherModal.html", controller: "selectItemModalController",
                content: { title: "Leerkrachten", itemDescription: "Selecteer een leerkracht" }
            },
+           /*selectTeachersModalSetting  => multiple teachers*/
+           {
+               modalName: "selectTeachersModal", template: "app/customDirectives/selectModalDirective/searchTeachersModal/selectTeachersModal.html", controller: "selectItemsModalController",
+               content: { title: "Leerkrachten", itemDescription: "Selecteer leerkrachten" }
+           },
            /*Other settings*/
         ];
 

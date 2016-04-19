@@ -6,6 +6,7 @@
        
         //Variables
         $scope.selectedTeacher = null;
+        $scope.selectedTeachers = [];
 
         //private Functions
         
@@ -28,6 +29,16 @@
                 return null;
             }
             console.log('Geselecteerde leerkacht :' + value.person.firstName + ' ' + value.person.lastName);
+        });
+
+        // todo remove this 
+        $scope.$watch('selectedTeachers', function (teachers) {
+            if (teachers.length < 1 ) {
+                return null;
+            }
+            _.each(teachers, function(teacher) {
+                console.log('Leerkracht :' + teacher.person.firstName + ' ' + teacher.person.lastName);
+            });
         });
 
 

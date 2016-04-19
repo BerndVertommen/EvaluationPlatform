@@ -1,0 +1,80 @@
+﻿<div class="modal-body">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <!--mainHeading-->
+            <div class="panel-title">
+                {{content.title}}
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--mainBody-->
+            <div class="col-xs-12">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            Filter
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <div class="row">
+                                <div class="col-sm-6 col-xs-12">
+                                    <div>
+                                        <label for="text" class="control-label">Omschrijving:</label>
+                                        <input class="form-control" type="text" id="text" ng-model="itemFilter.description" placeholder="Zoek op ..." />
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-xs-12">
+                                    <div>
+                                        <label for="groupname" class="control-label">Groupsnaam:</label>
+                                        <input class="form-control" type="text" id="groupname" ng-model="itemFilter.groupname" placeholder="Zoek op ..." />
+                                    </div>
+                                </div>
+                                <div class="col-sm-2 col-xs-12">
+                                    <div>
+                                        <label for="generalgoalnr" class="control-label">Doelnr:</label>
+                                        <input class="form-control" type="number" id="generalgoalnr" ng-model="itemFilter.generalGoalNumber" placeholder="Zoek op ..." />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 ">
+                <div class="form-horizontal">
+                    <fieldset>
+                        <legend>Lesdoelen voor {{course.description}}</legend>
+                        <div class="smallScrolable">
+                            <table class="table table-hover table-responsive">
+                                <thead>
+                                <tr>
+                                    <th><input type="checkbox" ng-model="selectedAll" name="checkall" ng-click="checkAll()" /></th>
+                                    <th>Omschrijving</th>
+                                    <th>Groepsnaam</th>
+                                    <th>DoelNr</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <!--Items = unknown-->
+                                <tr ng-repeat="item in items | filter : itemFilter">
+                                    <td> <input type="checkbox" ng-model="evaluation.selected" /> </td>
+                                    <td>{{item.description}}</td>
+                                    <td>{{item.groupname}}</td>
+                                    <td>{{item.generalGoalNumber}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" ng-click="ok()">Ok</button>
+            <button type="button" class="btn btn-danger" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+
