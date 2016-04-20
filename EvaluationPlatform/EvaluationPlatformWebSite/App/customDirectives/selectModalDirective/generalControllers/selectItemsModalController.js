@@ -3,6 +3,8 @@
 
     function selectItemsModalController($scope, $uibModalInstance, toastr, items, content) {
         var thiz = this;
+        $scope.itemFilter = {};
+        $scope.items = [];
 
         //private Functions
         var getSelectedItems = function () {
@@ -24,6 +26,31 @@
                 item.selected = $scope.selectedAll;
             });
 
+        };
+
+        $scope.clearFilter = function () {
+            var keys = Object.keys($scope.itemFilter);
+            for (var i = 0; i < keys.length; i++) {
+                $scope.itemFilter[keys[i]] = undefined;
+            }
+        };
+
+        $scope.clearSelected = function () {
+            _.each($scope.items, function (item) {
+                item.selected = false;
+            });
+
+        };
+
+        $scope.clearSelectedFilter = function () {
+            /*Set the checkbox to no value instead of false when checked.*/
+            if ($scope.itemFilter.selected === false) {
+                $scope.itemFilter.selected = undefined;
+                return;
+            }
+
+            $scope.clearFilter();
+            $scope.itemFilter.selected = true;
         };
 
         // modal functions

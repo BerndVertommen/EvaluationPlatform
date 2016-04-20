@@ -14,6 +14,9 @@
                         <div class="panel-title">
                             Filter
                         </div>
+                        <div class="btn-group pull-right">
+                            <a class="btn btn-default" ng-click="clearFilter()"><i class="fa fa-eraser"></i></a>
+                        </div>
                     </div>
                     <div class="panel-body">
                         <div class="form-horizontal">
@@ -24,16 +27,10 @@
                                         <input class="form-control" type="text" id="text" ng-model="itemFilter.description" placeholder="Zoek op ..." />
                                     </div>
                                 </div>
-                                <div class="col-sm-4 col-xs-12">
+                                <div class="col-sm-6 col-xs-12">
                                     <div>
                                         <label for="groupname" class="control-label">Groupsnaam:</label>
                                         <input class="form-control" type="text" id="groupname" ng-model="itemFilter.groupname" placeholder="Zoek op ..." />
-                                    </div>
-                                </div>
-                                <div class="col-sm-2 col-xs-12">
-                                    <div>
-                                        <label for="generalgoalnr" class="control-label">Doelnr:</label>
-                                        <input class="form-control" type="number" id="generalgoalnr" ng-model="itemFilter.generalGoalNumber" placeholder="Zoek op ..." />
                                     </div>
                                 </div>
                             </div>
@@ -49,7 +46,14 @@
                             <table class="table table-hover table-responsive">
                                 <thead>
                                 <tr>
-                                    <th><input type="checkbox" ng-model="selectedAll" name="checkall" ng-click="checkAll()" /></th>
+                                    <th width="30px">
+                                        <a class="btn btn-default btn-xs" id="clearSelected" ng-click="clearSelected()">
+                                            <span class="icon-stack">
+                                                <i class="icon-check-empty icon-stack-base"></i>
+                                                <i class="fa fa-trash"></i>
+                                            </span>
+                                        </a>
+                                    </th>
                                     <th>Omschrijving</th>
                                     <th>Groepsnaam</th>
                                     <th>DoelNr</th>
@@ -58,13 +62,17 @@
                                 <tbody>
                                 <!--Items = unknown-->
                                 <tr ng-repeat="item in items | filter : itemFilter">
-                                    <td> <input type="checkbox" ng-model="evaluation.selected" /> </td>
+                                    <td> <input type="checkbox" ng-model="evaluation.selected"/> </td>
                                     <td>{{item.description}}</td>
                                     <td>{{item.groupname}}</td>
                                     <td>{{item.generalGoalNumber}}</td>
                                 </tr>
                                 </tbody>
                             </table>
+                            <div class="pull-right">
+                                <label for="selected" class="control-label">Toon enkel selectie:</label>
+                                <input type="checkbox" id="selected" ng-model="itemFilter.selected" ng-change="clearSelectedFilter()" />
+                            </div>
                         </div>
                     </fieldset>
                 </div>
