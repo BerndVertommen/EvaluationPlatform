@@ -20,15 +20,29 @@
                             <label for="inputCurrentSchoolYear" class="control-label">Vink aan als de klas voor het volgend schooljaar is.</label>
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" ng-model="createClassInfo.nextYear" readonly/>Volgend schooljaar
+                                    <input type="checkbox" ng-model="createClassInfo.nextYear" readonly />Volgend schooljaar
                                 </label>
                             </div>
                         </div>
-                        <div class="form-group"> <!--single teacher-->
+                        <!--<div class="form-group">
                             <label for="selecteerEenLeerkracht"> Selecteer een leerkracht : </label>
-                            <select-modal id="selecteerEenLeerkracht" modalname="selectTeacherModal" items="teachers" selection="selectedTeacher"></select-modal>
+                           
+                                
+                                <input type="text" readonly="readonly" class="form-control" ng-model="selectedTeacher.person.lastName" placeholder="Selecteer een leraar"/>
+                                <select-modal id="selecteerEenLeerkracht" modalname="selectTeacherModal" items="teachers" selection="selectedTeacher"></select-modal>
+                           
+                        </div>-->
+                        <div class="form-group">
+                            <label for="selecteerCursussen"> Selecteer cursussen : </label>
+
+                            <select-modal id="selecteerCursussen" modalname="selectCoursesModal" items="courses" selection="createClassInfo.courses"></select-modal>
+
+                            <ul>
+                                <li ng-repeat="course in selectedCourses">{{course.description}}</li>
+                            </ul>
+
                         </div>
-                        
+
                         <div class="col-xs-12" style="margin-top: 15px">
                         </div>
                     </div>

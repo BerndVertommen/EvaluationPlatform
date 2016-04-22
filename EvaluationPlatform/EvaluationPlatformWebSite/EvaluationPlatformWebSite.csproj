@@ -80,6 +80,7 @@
     <Content Include="app\classes\views\selectClassesModal.html" />
     <Content Include="app\customDirectives\customDirectives-module.js" />
     <Content Include="app\customDirectives\selectModalDirective\generalControllers\selectItemsModalController.js" />
+    <Content Include="app\customDirectives\selectModalDirective\searchCoursesModal\selectCoursesModal.html" />
     <Content Include="app\customDirectives\selectModalDirective\searchTeachersModal\selectTeachersModal.html" />
     <Content Include="app\customDirectives\selectModalDirective\searchTeachersModal\selectTeacherModal.html" />
     <Content Include="app\customDirectives\selectModalDirective\generalControllers\selectItemModalController.js" />

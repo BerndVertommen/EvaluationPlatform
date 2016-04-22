@@ -26,6 +26,7 @@ namespace EvaluationPlatformDomain.Models
             Courses = new List<Course>();
         }
 
+        // Is this acceptable for domain?
         public Class(string description, SchoolYear schoolYear, ICollection<Student> students) : this()
         {
             Description = description;
@@ -33,6 +34,13 @@ namespace EvaluationPlatformDomain.Models
             Students = students;
         }
 
+        public Class(SchoolYear schoolYear, string description, List<Course> courses) : this()
+        {
+            SchoolYear = schoolYear;
+            Description = description;
+            Courses = courses;
+        }
+        
         public void AddCourse(Course courseMechanica)
         {
             Courses.Add(courseMechanica);
@@ -42,5 +50,6 @@ namespace EvaluationPlatformDomain.Models
         {
            Students.Add(student);
         }
+        
     }
 }

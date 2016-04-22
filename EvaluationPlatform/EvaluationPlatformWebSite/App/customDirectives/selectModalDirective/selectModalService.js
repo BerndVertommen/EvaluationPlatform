@@ -15,6 +15,11 @@
                content: { title: "Leerkrachten", itemDescription: "Selecteer leerkrachten" }
            },
            /*Other settings*/
+           //selectCoursesModal
+        {
+            modalName: "selectCoursesModal", template: "app/customDirectives/selectModalDirective/searchCoursesModal/selectCoursesModal.html", controller: "selectItemsModalController",
+            content: { title: "Cursussen", itemDescription: "Selecteer cursussen" }
+        }
         ];
 
         var getModalSetting = function (modalName) {

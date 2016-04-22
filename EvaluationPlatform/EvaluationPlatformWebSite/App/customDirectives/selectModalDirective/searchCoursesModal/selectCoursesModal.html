@@ -1,0 +1,97 @@
+﻿<div class="modal-body">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <!--mainHeading-->
+            <div class="panel-title">
+                {{content.title}}
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--mainBody-->
+            <div class="col-xs-12">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            Filter
+                        </div>
+                        <div class="btn-group pull-right">
+                            <a class="btn btn-default" ng-click="clearFilter()"><i class="fa fa-eraser"></i></a>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <div class="row">
+                                <div class="col-sm-6 col-xs-12">
+                                    <div>
+                                        <label for="text" class="control-label">Omschrijving:</label>
+                                        <input class="form-control" type="text" id="text" ng-model="itemFilter.description" placeholder="Zoek op ..."/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <div>
+                                        <label for="startjaar" min="2015" max="3000" class="control-label">Startjaar:</label>
+                                        <input class="form-control" type="number" id="startjaar" ng-model="itemFilter.schoolYear.startYear" placeholder="Zoek op startjaar"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-6">
+                                    <div>
+                                        <label for="eindjaar" min="2015" max="3000" class="control-label">Eindjaar:</label>
+                                        <input class="form-control" type="number" id="eindjaar" ng-model="itemFilter.schoolYear.endYear" placeholder="Zoek op eindjaar" />
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 ">
+                <div class="form-horizontal">
+                    <fieldset>
+                        <legend>{{content.itemsDescription}}</legend>
+                        <div class="smallScrolable">
+                            <table class="table table-hover table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th width="30px">
+                                            <a class="btn btn-default btn-xs" id="clearSelected" ng-click="clearSelected()">
+                                                <span class="icon-stack">
+                                                    <i class="icon-check-empty icon-stack-base"></i>
+                                                    <i class="fa fa-trash"></i>
+                                                </span>
+                                            </a>
+                                        </th>
+                                        <th>Omschrijving</th>
+                                        <th>Schooljaar</th>
+                                        
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!--Items = unknown-->
+                                    <tr ng-repeat="item in items | filter : itemFilter">
+                                        <td> <input type="checkbox" ng-model="item.selected" /> </td>
+                                        <td>{{item.description}}</td>
+                                        <td>{{item.schoolYear.notation}}</td>
+                                       
+                                        
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="pull-right">
+                                <label for="selected" class="control-label">Toon enkel selectie:</label>
+                                <input type="checkbox" id="selected" ng-model="itemFilter.selected" ng-change="clearSelectedFilter()" />
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" ng-click="ok()">Ok</button>
+            <button type="button" class="btn btn-danger" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+

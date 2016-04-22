@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EvaluationPlatformDataTransferModels.InformationModels;
+using EvaluationPlatformDataTransferModels.InformationModels.Course;
+using EvaluationPlatformDataTransferModels.InformationModels.Teacher;
 
 namespace EvaluationPlatformDataTransferModels.CreationModels
 {
@@ -11,6 +13,7 @@ namespace EvaluationPlatformDataTransferModels.CreationModels
     {
         public string Description;
         public bool NextYear;
+        public ICollection<CourseBaseInfo> Courses;
 
         public CreateClassInfo()
         {
