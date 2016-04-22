@@ -26,7 +26,7 @@
         $scope.selectedRow = null;
 
         $scope.setSelectedClass = function (classX, index) {
-            $scope.setSelectedClass = classX;
+            $scope.selectedClass = classX;
             $scope.selectedRow = index;
         }
 

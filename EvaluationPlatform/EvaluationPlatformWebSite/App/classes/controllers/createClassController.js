@@ -50,6 +50,8 @@
             teacherService.getTeachers().then(function (result) {
                 $scope.teachers = result;
             });
+
+            console.log($scope.selectedTeacher);
         }
 
         init();
