@@ -10,7 +10,7 @@
               controller: 'manageTeacherController',
               resolve: {
                   teachers : function(teacherService) {
-                      return teacherService.teachers().then(function(result) {
+                      return teacherService.getTeachers().then(function(result) {
                           return result;
                       });
                   }

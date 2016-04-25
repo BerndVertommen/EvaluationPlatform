@@ -34,8 +34,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="class in allClasses" ng-click="setSelectedClass(classX,$index)" ng-class="{'succes':$indew == selectedRow}">
-                        <td>{{class.description}}</td>
+                    <tr ng-repeat="classX in allClasses" ng-class="{'success': $index == selectedRow}">
+                        <td ng-click="setSelectedClass(classX,$index)">{{classX.description}}</td>
                         <td><!--buttonspace--></td>
                     </tr>
                 </tbody>
