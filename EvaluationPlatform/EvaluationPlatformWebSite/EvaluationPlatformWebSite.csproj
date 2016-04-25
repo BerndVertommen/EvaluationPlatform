@@ -84,6 +84,8 @@
     <Content Include="app\customDirectives\selectModalDirective\searchTeachersModal\selectTeacherModal.html" />
     <Content Include="app\customDirectives\selectModalDirective\generalControllers\selectItemModalController.js" />
     <Content Include="app\customDirectives\selectModalDirective\selectModalDirective.js" />
+    <Content Include="app\customDirectives\selectSchoolyearDirective\selectSchoolyearDirective.js" />
+    <Content Include="app\customDirectives\selectSchoolyearDirective\selectSchoolyearTemplate.html" />
     <Content Include="app\evaluation\controllers\scoredEvaluationModalController.js" />
     <Content Include="app\evaluation\views\scoredEvaluationModal.html" />
     <Content Include="app\message\messageConfig.js" />

@@ -6,7 +6,8 @@
                 Klassen beheren
             </div>
         </div>
-        <div class="panel-body"> <!--mainBody-->
+        <div class="panel-body">
+            <!--mainBody-->
             <!--Upload on form submit or button click-->
             <form ng-app="fileUpload" name="form">
                 <!--Single Image with validations
@@ -14,16 +15,8 @@
                      ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100"
                      ngf-resize="{width: 100, height: 100}">Select</div>-->
                 <div class="well well-sm" style="width: 300px">
-                    <div class="input-group-btn" uib-dropdown>
-                        <a class="btn btn-default" uib-dropdown-toggle>{{selectedSchoolYear.notation}} <i  class="fa fa-caret-down"></i></a>
-                        <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
-                            <li ng-repeat="schoolYear in schoolYears | orderBy:'startYear'" role="menuitem" ng-click="setSelectedSchoolYear(schoolYear)">
-                                {{schoolYear.notation}}
-                            </li>
-                        </ul>
-                    </div>
-                  
-                    <p>Bestand : {{file.name}}</p>
+                    <select-schoolyear selected="selectedSchoolYear"></select-schoolyear>
+                    <div class="control-label">Schooljaar:</div>
                     <div class="btn btn-default" ngf-select ng-model="file" name="file">Select</div>
                     <button type="button" class="btn btn-success" ng-click="uploadCsv()">Uploaden</button>
                 </div>
@@ -48,11 +41,11 @@
                 </tbody>
 
             </table>
-            
+
         </div>
         <div class="panel-footer">
             <!--mainFooter-->
-            
+
         </div>
     </div>
 </div>
