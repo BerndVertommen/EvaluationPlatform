@@ -1,4 +1,10 @@
-﻿(function (module) {
+﻿/* Guide :
+Use the directive by adding the folowing html code to your page :
+<select-schoolyear selected="selectedSchoolYear"></select-schoolyear>
+Adjust the value of the selected attribute to the one link to the views controller scope.
+ */
+
+(function (module) {
     'use strict';
     function selectSchoolyear($rootScope, schoolyearService) {
         var setupScope = function (scope,schoolyears) {
