@@ -29,26 +29,6 @@
 
         }
 
-        $scope.openStudyplanModal = function () {
-            var modalInstance = $uibModal.open({
-                animation: true,
-                templateUrl: 'app/StudyPlan/views/selectStudyPlanModal.html',
-                controller: 'selectStudyPlanModalController',
-                size: 'lg',
-                resolve: {
-                    studyplans: studyPlanService.getStudyPlans().then(function (result) {
-                        return result;
-                    })
-                }
-            });
-            modalInstance.result.then(function (selectedStudyPlan) {
-                $scope.createCourseInfo.studyPlan = selectedStudyPlan;
-            }, function () {
-                // geen Studyplan geselecteerd error? hier kom je in als je niks selecteerd
-            }
-            );
-        }
-
         $scope.setSelectedSchoolYear = function (schoolyear) {
             $scope.createCourseInfo.schoolYear = schoolyear;
         }

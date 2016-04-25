@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EvaluationPlatformDataTransferModels.CreationModels;
 using EvaluationPlatformDAL;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
@@ -25,7 +22,7 @@ namespace EvaluationPlatformLogic.CommandAndQuery.Class.CommandHandlers
             //exceptie bestaat deze klas al?
             var classX =
             Database.Classes.FirstOrDefault(c =>
-                c.Description == commandObject.CreateClassInfo.Description &&
+                c.Description.Equals(commandObject.CreateClassInfo.Description, StringComparison.CurrentCultureIgnoreCase) &&
                 c.SchoolYear.StartYear == selectedSchoolYearStartYear);
             if (classX != null)
             {
@@ -43,21 +40,14 @@ namespace EvaluationPlatformLogic.CommandAndQuery.Class.CommandHandlers
             // nieuwe klas aanmaken
             EvaluationPlatformDomain.Models.Class newClass = new EvaluationPlatformDomain.Models.Class(schoolyear, description, courses);
 
-
-
-
-
             // klas aanmaken
             Database.Classes.Add(newClass);
-
-
-
         }
 
         public int CheckSchoolYear(CreateClassCommandDto commandObject)
         {
             //schooljaar check
-            int selectedSchoolYearStartYear = EvaluationPlatformDomain.Models.SchoolYear.GetStartYearThisSchoolYear();
+            int selectedSchoolYearStartYear = SchoolYear.GetStartYearThisSchoolYear();
 
             if (commandObject.CreateClassInfo.NextYear)
             {
@@ -68,11 +58,9 @@ namespace EvaluationPlatformLogic.CommandAndQuery.Class.CommandHandlers
 
                 if (checkSchoolYear == null)
                 {
-                    EvaluationPlatformDomain.Models.SchoolYear newSchoolYear = new SchoolYear(selectedSchoolYearStartYear, selectedSchoolYearStartYear + 1);
+                    SchoolYear newSchoolYear = new SchoolYear(selectedSchoolYearStartYear, selectedSchoolYearStartYear + 1);
                     Database.SchoolYears.Add(newSchoolYear);
                 }
-
-
             }
 
             return selectedSchoolYearStartYear;

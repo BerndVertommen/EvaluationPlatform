@@ -62,7 +62,7 @@
     <Compile Include="InformationModels\ScaleInfo.cs" />
     <Compile Include="InformationModels\SchoolYearInfo.cs" />
     <Compile Include="InformationModels\StudentInfo.cs" />
-    <Compile Include="InformationModels\StudyPlanInfo.cs" />
+    <Compile Include="InformationModels\StudyPlan\StudyPlanInfo.cs" />
     <Compile Include="InformationModels\Teacher\PrimaryTeacherInfo.cs" />
     <Compile Include="InformationModels\Teacher\TeacherBaseInfo.cs" />
     <Compile Include="InformationModels\Teacher\TeacherInfo.cs" />
