@@ -8,40 +8,47 @@
         </div>
         <div class="panel-body">
             <!--mainBody-->
-            <!--Upload on form submit or button click-->
-            <form ng-app="fileUpload" name="form">
-                <!--Single Image with validations
-                <div class="button" ngf-select ng-model="file" name="file" ngf-pattern="'image/*'"
-                     ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100"
-                     ngf-resize="{width: 100, height: 100}">Select</div>-->
-                <div class="well well-sm" style="width: 300px">
-                    <select-schoolyear selected="selectedSchoolYear"></select-schoolyear>
-                    <div class="control-label">Selecteer bestand:</div>
-                    <div class="btn btn-default" ngf-select ng-model="file" name="file">Select</div>
-                    <button type="button" class="btn btn-success" ng-click="uploadCsv()" ng-hide="file === undefined">Uploaden</button>
-                </div>
-                <!--Drop files: <div ngf-drop ng-model="file" class="drop-box">Drop</div>-->
-            </form>
-            <table class="table table-hover table-striped">
-                <thead>
-                    <tr>
-                        <th>Klassen overzicht</th>
-                        <th class="tcolDoubleSmButton">
-                            <div class="btn-group">
-                                <a class="btn btn-default btn-sm" href="#/createClass"><i class="fa fa-users"></i> <i class="fa fa-plus"></i></a>
+            <uib-tabset active="activeJustified" justified="true">
+                <!--Tab Overzicht-->
+                <uib-tab index="0" heading="Overzicht">
+                    <div class="smallScrolable">
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Klassen overzicht</th>
+                                    <th class="tcolDoubleSmButton">
+                                        <div class="btn-group">
+                                            <a class="btn btn-default btn-sm" href="#/createClass"><i class="fa fa-users"></i> <i class="fa fa-plus"></i></a>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="classX in allClasses" ng-class="{'success': $index == selectedRow}">
+                                    <td ng-click="setSelectedClass(classX,$index)">{{classX.description}}</td>
+                                    <td><!--buttonspace--></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </uib-tab>
+                <!--Tab Bestand-->
+                <uib-tab index="1" heading="Bestand">
+                    <form class="form-horizontal" ng-app="fileUpload" name="form">
+                        <div class="well-lg">
+                            <div class="form-group">
+                                <select-schoolyear selected="selectedSchoolYear"></select-schoolyear>
                             </div>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="classX in allClasses" ng-class="{'success': $index == selectedRow}">
-                        <td ng-click="setSelectedClass(classX,$index)">{{classX.description}}</td>
-                        <td><!--buttonspace--></td>
-                    </tr>
-                </tbody>
-
-            </table>
-
+                            <div class="form-group">
+                                <label for="fileSelector" class="control-label">Selecteer bestand:</label>
+                                <div id="fileSelector" class="btn btn-default" ngf-select ng-model="file" name="file">Select</div>
+                                <button type="button" class="btn btn-success" ng-click="uploadCsv()" ng-hide="file === undefined">Uploaden</button>
+                            </div>
+                           
+                        </div>
+                    </form>
+                </uib-tab>
+            </uib-tabset>
         </div>
         <div class="panel-footer">
             <!--mainFooter-->

@@ -10,17 +10,9 @@
             <!--mainBody-->
             <form class="form-horizontal">
                 <fieldset>
-
-                    <div class="col-md-offset-2 col-md-8 col-sm-12">
-                        <div class="form-control">
-                            <div class="input-group-btn" uib-dropdown>
-                                <a class="btn btn-default" uib-dropdown-toggle>{{selectedSchoolYear.notation}} <i class="fa fa-caret-down"></i></a>
-                                <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
-                                    <li ng-repeat="schoolYear in schoolYears | orderBy:'startYear'" role="menuitem" ng-click="setSelectedSchoolYear(schoolYear)">
-                                        {{schoolYear.notation}}
-                                    </li>
-                                </ul>
-                            </div>
+                    <div class="col-md-8 col-sm-12">
+                        <div class="form-group">
+                            <select-schoolyear selected="schoolYear"></select-schoolyear>
                         </div>
                         <div class="form-group">
                             <label for="inputDescription" class="control-label">Omschrijving</label>
@@ -30,15 +22,14 @@
                             <label for="inputStudyPlan" class="control-label">Leerplan toevoegen</label>
 
                             <div class="input-group">
-                                <input type="text" readonly="readonly" class="form-control" ng-model="createCourseInfo.studyPlan.description" placeholder="Selecteer een leerplan"/>
+                                <input type="text" readonly="readonly" class="form-control" ng-model="createCourseInfo.studyPlan.description" placeholder="Selecteer een leerplan" />
                                 <div class="input-group-btn">
                                     <a class="btn btn-default" ng-click="openStudyplanModal()"><i class="fa fa-plus"></i></a>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="col-xs-12" style="margin-top: 15px">
-                        </div>
+                    </div>
+                    <div class="col-xs-12" style="margin-top: 15px">
                     </div>
                 </fieldset>
             </form>

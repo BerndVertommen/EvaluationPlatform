@@ -34,11 +34,6 @@
         var init = function () {
           schoolyearService.getFutureSchoolYears().then(function (schoolyears) {
               $scope.schoolYears = schoolyears;
-
-              $scope.selectedSchoolYear = $scope.schoolYears[0];
-
-              console.log($scope.schoolYears);
-              console.log($scope.selectedSchoolyear);
             });
            
 
