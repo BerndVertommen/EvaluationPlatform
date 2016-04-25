@@ -16,9 +16,9 @@
                      ngf-resize="{width: 100, height: 100}">Select</div>-->
                 <div class="well well-sm" style="width: 300px">
                     <select-schoolyear selected="selectedSchoolYear"></select-schoolyear>
-                    <div class="control-label">Schooljaar:</div>
+                    <div class="control-label">Selecteer bestand:</div>
                     <div class="btn btn-default" ngf-select ng-model="file" name="file">Select</div>
-                    <button type="button" class="btn btn-success" ng-click="uploadCsv()">Uploaden</button>
+                    <button type="button" class="btn btn-success" ng-click="uploadCsv()" ng-hide="file === undefined">Uploaden</button>
                 </div>
                 <!--Drop files: <div ngf-drop ng-model="file" class="drop-box">Drop</div>-->
             </form>
