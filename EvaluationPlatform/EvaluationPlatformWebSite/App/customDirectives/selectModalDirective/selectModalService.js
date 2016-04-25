@@ -6,20 +6,26 @@
         var modalSettings = [
            /*selectTeacherModalSetting*/
            {
-               modalName: "selectTeacherModal", template: "app/customDirectives/selectModalDirective/searchTeachersModal/selectTeacherModal.html", controller: "selectItemModalController",
+               modalName: "selectTeacherModal", template: "app/customDirectives/selectModalDirective/teacher/selectTeacherModal.html", controller: "selectItemModalController",
                content: { title: "Leerkrachten", itemDescription: "Selecteer een leerkracht" }
            },
+
            /*selectTeachersModalSetting  => multiple teachers*/
            {
-               modalName: "selectTeachersModal", template: "app/customDirectives/selectModalDirective/searchTeachersModal/selectTeachersModal.html", controller: "selectItemsModalController",
+               modalName: "selectTeachersModal", template: "app/customDirectives/selectModalDirective/teacher/selectTeachersModal.html", controller: "selectItemsModalController",
                content: { title: "Leerkrachten", itemDescription: "Selecteer leerkrachten" }
            },
-           /*Other settings*/
+             /*selectStudyplanModalSetting*/
+           {
+               modalName: "selectStudyplanModal", template: "app/customDirectives/selectModalDirective/studyplan/selectStudyplanModal.html", controller: "selectItemModalController",
+               content: { title: "Leerplannen", itemDescription: "Selecteer een leerplan" }
+           },
            //selectCoursesModal
-        {
-            modalName: "selectCoursesModal", template: "app/customDirectives/selectModalDirective/searchCoursesModal/selectCoursesModal.html", controller: "selectItemsModalController",
-            content: { title: "Cursussen", itemDescription: "Selecteer cursussen" }
-        }
+            {
+                modalName: "selectCoursesModal", template: "app/customDirectives/selectModalDirective/courses/selectCoursesModal.html", controller: "selectItemsModalController",
+                content: { title: "Cursussen", itemDescription: "Selecteer cursussen" }
+            }
+              /*Other settings*/
         ];
 
         var getModalSetting = function (modalName) {

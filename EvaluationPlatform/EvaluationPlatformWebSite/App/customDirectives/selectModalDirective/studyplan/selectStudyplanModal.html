@@ -1,0 +1,62 @@
+﻿<div class="modal-body">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <!--mainHeading-->
+            <div class="panel-title">
+                {{content.title}}
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--mainBody-->
+            <div class="col-xs-12">
+                <div class="panel panel-warning">
+                    <div class="panel-heading">
+                        <div class="panel-title">
+                            Filter
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div>
+                                        <label for="text" class="control-label">Omschrijving:</label>
+                                        <input class="form-control" type="text" id="text" ng-model="itemFilter.description" placeholder="Zoek op ..." />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 ">
+                <div class="form-horizontal">
+                    <fieldset>
+                        <legend>Lesdoelen voor {{course.description}}</legend>
+                        <div class="smallScrolable">
+                            <table class="table table-hover table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>Omschrijving</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <!--Item = unknown-->
+                                <tr ng-click="setSelectedItem(item, $index)" ng-repeat="item in items | filter : itemFilter" ng-class="{'success': $index == selectedRow}">
+                                    <td>{{item.description}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" ng-click="ok()">Ok</button>
+            <button type="button" class="btn btn-danger" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+

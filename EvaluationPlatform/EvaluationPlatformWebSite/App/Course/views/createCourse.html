@@ -23,9 +23,9 @@
 
                             <div class="input-group">
                                 <input type="text" readonly="readonly" class="form-control" ng-model="createCourseInfo.studyPlan.description" placeholder="Selecteer een leerplan" />
-                                <div class="input-group-btn">
-                                    <a class="btn btn-default" ng-click="openStudyplanModal()"><i class="fa fa-plus"></i></a>
-                                </div>
+                                <span class="input-group-btn">
+                                    <select-modal id="selectStudyplan" modalname="selectStudyplanModal" items="studyplans" selection="createCourseInfo.studyPlan"></select-modal>
+                                </span>
                             </div>
                         </div>
                     </div>

@@ -5,6 +5,7 @@
         var thiz = this;
 
         $scope.createCourseInfo = {};
+        $scope.studyplans = [];
 
         //Variables
 
@@ -63,7 +64,11 @@
                 $scope.createCourseInfo.schoolYear = $scope.schoolYears[0];
                 
             });
-           
+
+            studyPlanService.getStudyPlans().then(function(result) {
+                $scope.studyplans = result;
+            });
+
         }
 
         init();

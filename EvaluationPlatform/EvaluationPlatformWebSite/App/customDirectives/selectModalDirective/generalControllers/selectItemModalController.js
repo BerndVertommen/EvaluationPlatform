@@ -28,13 +28,13 @@
             $uibModalInstance.dismiss('cancel');
         };
 
-
-
         //initiations
         var init = function () {
             $scope.items = items;
             $scope.content = content;
 
+            console.log("selectItemModal's items:");
+            console.log($scope.items);
         }
 
         init();

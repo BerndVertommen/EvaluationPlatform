@@ -3,7 +3,7 @@
     function selectModal(selectModalService) {
         return {
             restrict: 'E',
-            template: "<a class='btn btn-default btn-sm' ><i class='fa fa-plus-square'></i></a>",
+            template: "<a class='btn btn-default' ><i class='fa fa-plus-square'></i></a>",
             scope: {
                 modalname: '@',
                 items: '=',
