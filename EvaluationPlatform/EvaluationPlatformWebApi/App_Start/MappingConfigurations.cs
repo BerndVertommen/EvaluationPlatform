@@ -56,7 +56,5 @@ namespace EvaluationPlatformWebApi.App_Start
         {
             return t.Namespace != null && domainNamespaces.Any(dns => t.Namespace.StartsWith(dns));
         }
-
-
     }
 }

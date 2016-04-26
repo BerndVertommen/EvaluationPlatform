@@ -102,7 +102,7 @@ namespace EvaluationPlatformLogic.Pdf.Evaluation
                                         <table style='width:100%'>
                                         <thead>
                                           <tr>
-                                            <th class='columnDescription'>Omschrijving:</th>
+                                            <th class='columnDescription'>Omschrijving: {evaluation.Description}</th>
                                             <th class='columnScore'>Score</th>
                                             <th class='columnNote'></th>
                                           </tr>
@@ -130,7 +130,7 @@ namespace EvaluationPlatformLogic.Pdf.Evaluation
             {
                 htmlStringBuilder.AppendLine($@"
                                             <tr>
-                                              <td colspan='3' class='columnDescription category'>{subsection.Description}: {subsection.Weight}</td>
+                                              <td colspan='3' class='columnDescription category'>{subsection.Description}: {subsection.Weight}%</td>
                                             </tr>
                                     ");
 
