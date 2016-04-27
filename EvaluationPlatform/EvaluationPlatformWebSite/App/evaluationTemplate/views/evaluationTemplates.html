@@ -15,10 +15,19 @@
                     <th class="text-center">Sjablonen</th>
                     <th class="tcolQuadSmButton">
                         <div class="btn-group">
-                            <a class="btn btn-default btn-sm" href="#/createEvaluationTemplate"><i class="fa fa-plus"></i></a>
-                            <a class="btn btn-primary btn-sm" ng-click="createEvaluations()" ng-disabled="selectedTemplate == undefined"><i class="fa fa-files-o"></i></a>
+                            <a class="btn btn-default btn-sm" href="#/createEvaluationTemplate"
+                               popover-append-to-body="true" popover-placement="left" uib-popover="Nieuw Sjabloon" popover-trigger="mouseenter">
+                                <i class="fa fa-plus"></i>
+                            </a>
+                            <a class="btn btn-default btn-sm" ng-click="createEvaluations()" ng-disabled="selectedTemplate == undefined"
+                               popover-append-to-body="true" popover-placement="left" uib-popover="Nieuwe Evaluatie" popover-trigger="mouseenter">
+                                <i class="fa fa-files-o"></i>
+                            </a>
                             <!--<a class="btn btn-default btn-sm" ng-click="hideSelectedTemplates()"><i class="fa fa-eye"></i> <i class="fa fa-arrow-right"></i></a>-->
-                            <button class="btn btn-default btn-sm" ng-click="hideSelectedTemplates()">T</button>
+                            <button class="btn btn-default btn-sm" ng-click="hideSelectedTemplates()"
+                                    popover-append-to-body="true" popover-placement="left" uib-popover="Verberg de geselecteerd sjablonen" popover-trigger="mouseenter">
+                                <i class="fa fa-eye-slash"></i>
+                            </button>
 
                         </div>
                     </th>

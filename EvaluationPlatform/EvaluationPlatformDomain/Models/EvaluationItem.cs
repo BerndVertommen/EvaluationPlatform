@@ -30,11 +30,19 @@ namespace EvaluationPlatformDomain.Models
         public void Update(string comment, int? score, int notScoredReason)
         {
             Comment = comment;
-            Score = score ?? Score; // equal to the parameter if it has a value;
-            if (!Score.HasValue)
+            if (score.HasValue)
+            {
+                Score = score;
+                NotScoredReason = NotScoredReason.NotProvided;
+            }
+            else
             {
                 NotScoredReason = (NotScoredReason)notScoredReason;
             }
+          
+
+
+
         }
     }
 }

@@ -18,6 +18,7 @@
 
         $scope.setScore = function (evaluationItem, score) {
             evaluationItem.score = score;
+            evaluationItem.notScoredReason = 0;
         };
 
         $scope.updateEvaluation = function () {
@@ -50,7 +51,7 @@
 
         thiz.updateAfterChange = function() {
             $scope.evaluations = evaluationService.mapItemsToSubSection($scope.evaluations);
-         // evaluationService.setSubsectionScores();
+            evaluationService.setSubsectionScores();
         };
 
         /*

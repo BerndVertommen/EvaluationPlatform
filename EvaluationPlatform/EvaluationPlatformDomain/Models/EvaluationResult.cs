@@ -18,28 +18,56 @@ namespace EvaluationPlatformDomain.Models
         public static EvaluationResult GetEvaluationResult(Evaluation eva)
         {
             EvaluationResult result = new EvaluationResult();
+            var percentageCalculationNeeded = false; // if this bool is set the percentage needs to be recalculated. This happens when a category is completly unscored.
 
             foreach (var subsection in eva.EvaluationTemplate.EvaluationSubSections)
             {
                 var evaluationitems = eva.EvaluationItems.Where(e => e.EvaluationSubSection.Id == subsection.Id);
 
-                decimal scorePerSubsection = TotalEvaluationPointsPercategory(evaluationitems, subsection.Weight, eva.Course.Scale);
+                int scaleMax = eva.Course.Scale?.MaxScore ?? 3;
+                int max = evaluationitems.Count(i => i.Score != null) * scaleMax;
+
+                if (max == 0)
+                {
+                    percentageCalculationNeeded = true;
+                }
+
+                decimal scorePerSubsection = TotalEvaluationPointsPercategory(evaluationitems, subsection.Weight, max);
 
                 result.TotalsPercategory.Add(subsection.Id, scorePerSubsection);
                 result.Total += scorePerSubsection;
             }
 
+            if (percentageCalculationNeeded)
+            {
+                CalculateTotalPercent(eva, result);
+            }
 
             return result;
         }
 
-        private static decimal TotalEvaluationPointsPercategory(IEnumerable<EvaluationItem> items, int weight, Scale scale)
+        private static void CalculateTotalPercent(Evaluation eva, EvaluationResult result)
+        {
+            // this method is called whe the percentage needs to be recalculated because a categry is completly unscored.
+            var scoredCategories =
+                eva.EvaluationTemplate.EvaluationSubSections.Where(
+                    es =>
+                        eva.EvaluationItems.Where(ei => ei.EvaluationSubSection.Id == es.Id)
+                            .Any(ei => ei.Score.HasValue));
+            if (scoredCategories.Any())
+            {
+                var totalWeight = scoredCategories.Sum(f => f.Weight);
+                result.Total = (result.Total /totalWeight)*100;
+            }
+
+
+        }
+
+        private static decimal TotalEvaluationPointsPercategory(IEnumerable<EvaluationItem> items, int weight, int max)
         {
             int totalAchieved = items.Sum(e => e.Score).Value;
-            int scaleMax = scale?.MaxScore ?? 3;
-            int max = items.Count(i => i.Score != null) * scaleMax;
 
-            return totalAchieved == 0 ?  0 : Decimal.Divide(totalAchieved, max) * weight ;
+            return totalAchieved == 0 || max  == 0 ?  0 : Decimal.Divide(totalAchieved, max) * weight ;
         }
     }
 }

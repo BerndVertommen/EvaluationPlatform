@@ -86,7 +86,18 @@
             _.each(evaluation.mappedSubsections, function (subsection) {
                 if (angular.isDefined(evaluation.result) && evaluation.result !== null) {
                     subsection.totalScore = evaluation.result.totalsPercategory[subsection[0].evaluationSubSection.id];
+                    console.log("subsection");
+                    console.log(subsection);
+
+                   var completlyUnscored = _.every(subsection, function(evaluationItem) {
+                       return angular.isUndefined(evaluationItem.score) || evaluationItem.score == null;
+                   });
+                    if (completlyUnscored === true) {
+                        subsection.unScored = true;
+                    }
                 }
+
+
             });
             // map every evaluation not just selected so it can be procesed in int()
         };

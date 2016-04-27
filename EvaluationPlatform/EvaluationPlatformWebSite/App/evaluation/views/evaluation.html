@@ -49,7 +49,7 @@
                             <!--mainBody-->
                         <!--<div class=" bs-component">-->
                         <div class="panel-body">
-                            <div ng-repeat="subsection in selectedEvaluation.mappedSubsections">
+                            <div ng-repeat="subsection in selectedEvaluation.mappedSubsections" >
                                 <h5 class="text-center">{{subsection[0].evaluationSubSection.description}}: {{subsection[0].evaluationSubSection.weight}}</h5>
                                 <table class="table table-hover fixedTable">
                                     <thead>
@@ -59,7 +59,7 @@
                                             <!--<th class="text-center">{{evaluationItem.description}}: {{evaluationSubSection.weight}}%</th>-->
                                             <th class="scoreButtons">Score</th>
                                             <th class="evaNotScored"><i class="fa fa-question-circle"></i></th>
-                                            <th class="evaFinalScore"><i class=" fa fa-trophy"></i></th>
+                                            <th class="evaFinalScore"><i class="fa fa-trophy"  ng-class="{'warning' : subsection.unScored === true}" ></i></th>
                                         </tr>
                                     </thead>
                                     <tbody>

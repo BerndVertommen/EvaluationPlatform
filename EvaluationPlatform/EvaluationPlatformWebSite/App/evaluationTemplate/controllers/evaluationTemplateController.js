@@ -1,7 +1,7 @@
 ﻿(function (module) {
     'use strict';
 
-    function evaluationTemplatesController($scope, $location, evaluationTemplates, $uibModal, classesService, evaluationTemplateService) {
+    function evaluationTemplatesController($scope, $location, evaluationTemplates, $uibModal, classesService, evaluationTemplateService, messageService) {
         var thiz = this;
 
       $scope.selectedRow = null;
@@ -42,11 +42,13 @@
 
             if (templatesToHide.length > 0) {
 
-                evaluationTemplateService.hideSelectedTemplates(templatesToHide).then(function () {
-                    _.each(templatesToHide, function (template) {
+                evaluationTemplateService.hideSelectedTemplates(templatesToHide).then(function() {
+                    _.each(templatesToHide, function(template) {
                         template.hide = true;
                     });
                 });
+            } else {
+                messageService.handleWarning("Er werden geen sjablonen verborgen.", "Geen selectie");
             }
         }
 
