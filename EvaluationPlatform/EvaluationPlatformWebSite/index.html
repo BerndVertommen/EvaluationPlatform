@@ -91,7 +91,17 @@
                         <a href="#/courses"><i class="fa fa-fw fa-book"></i> Vakken</a>
                     </li>
                     <li>
-                        <a href="#/evaluations"><i class="fa fa-fw fa-search"></i> Evaluaties</a>
+                        <a href="" ng-click="isCollapsed = !isCollapsed"><i class="fa fa-fw fa-search"></i> Evaluaties Opzoeken  <i class="fa fa-caret-down"></i></a>
+                        <div uib-collapse="isCollapsed">
+                            <ul class="">
+                                <li>
+                                    <a href="" ng-click="collapseMe('/searchEvaluationsForStudent')">Per leerling</a>
+                                </li>
+                                <li>
+                                    <a href="" ng-click="collapseMe('/searchEvaluationForClass')">Per klas</a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
             </div>

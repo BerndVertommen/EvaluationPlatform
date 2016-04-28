@@ -1,7 +1,7 @@
 ﻿(function (module) {
     'use strict';
 
-    function calendarController($scope, $location, dashboardService) {
+    function calendarController($scope, $location, evaluationService) {
         var thiz = this;
 
         //Variables
@@ -23,7 +23,7 @@
 
         //initiations
         var init = function() {
-            dashboardService.plannedEvaluations().then(function(evaluations) {
+            evaluationService.plannedEvaluations().then(function (evaluations) {
                 $scope.plannedEvaluations = evaluations;
             });
         }

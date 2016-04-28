@@ -12,6 +12,8 @@ namespace EvaluationPlatformLogic.CommandAndQuery.BaseClasses
         where TEntity : Entity
     {
         protected int totalItemCount;
+
+        public bool IgnorePage { get; set; }
         public PagedQueryHandler(IEPDatabase database) : base(database)
         {
         }
@@ -39,11 +41,13 @@ namespace EvaluationPlatformLogic.CommandAndQuery.BaseClasses
 
         protected IEnumerable<TEntity> PageResult(IQueryable<TEntity> queryResultToPage, TQueryDto queryObject)
         {
-            totalItemCount = queryResultToPage.Count();
+            if (!IgnorePage)
+            {
+                totalItemCount = queryResultToPage.Count();
 
-            queryResultToPage = queryResultToPage.Skip((queryObject.Page - 1) * queryObject.ItemCount);
-            queryResultToPage = queryResultToPage.Take(queryObject.ItemCount);
-
+                queryResultToPage = queryResultToPage.Skip((queryObject.Page - 1) * queryObject.ItemCount);
+                queryResultToPage = queryResultToPage.Take(queryObject.ItemCount);
+            }
 
             return queryResultToPage.ToList();
         }

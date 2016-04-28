@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using AutoMapper;
 using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
@@ -7,8 +6,9 @@ using EvaluationPlatformDAL;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using EvaluationPlatformLogic.CommandAndQuery.Evaluation.PagedQueryResults;
 using EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryDto;
+using EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryDto.Paged;
 
-namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryHandlers
+namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryHandlers.Paged
 {
     public class EvaluationsPagedQueryHandler : PagedQueryHandler<EvaluationsPagedQueryDto, EvaluationsPagedQueryResult, EvaluationPlatformDomain.Models.Evaluation>
     {

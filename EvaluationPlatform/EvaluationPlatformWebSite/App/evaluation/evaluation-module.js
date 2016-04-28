@@ -20,9 +20,9 @@
             });
 
         $routeProvider
-           .when('/evaluations', {
-               templateUrl: 'app/evaluation/views/evaluations.html',
-               controller: 'evaluationsController',
+           .when('/searchEvaluationForClass', {
+               templateUrl: 'app/evaluation/views/searchEvaluationForClass.html',
+               controller: 'searchEvaluationForClassController',
                resolve: {
                    /*ngInject*/
                    classes: function (classesService) {
@@ -38,6 +38,23 @@
                }
            });
 
-
-
+        $routeProvider
+          .when('/searchEvaluationsForStudent', {
+              templateUrl: 'app/evaluation/views/searchEvaluationsForStudent.html',
+              controller: 'searchEvaluationsForStudentController',
+              resolve: {
+                  /*ngInject*/
+                  classes: function (classesService) {
+                      return classesService.classesForTeacher().then(function (classes) {
+                          return classes;
+                      });
+                  },
+                  courses: function (courseService) {
+                      return courseService.getCourses().then(function (courses) {
+                          return courses;
+                      });
+                  }
+              }
+          });
     });
+

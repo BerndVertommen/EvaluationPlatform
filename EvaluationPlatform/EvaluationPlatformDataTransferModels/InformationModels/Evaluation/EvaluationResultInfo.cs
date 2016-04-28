@@ -7,5 +7,7 @@ namespace EvaluationPlatformDataTransferModels.InformationModels.Evaluation
     {
         public decimal Total { get; set; }
         public Dictionary<Guid, decimal> TotalsPercategory { get; set; }
+        public StudentInfo Student { get; set; }
+        public DateTime EvaluationDate { get; set; }
     }
 }

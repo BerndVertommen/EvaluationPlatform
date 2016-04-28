@@ -8,11 +8,7 @@
         //private Functions
 
         // public functions
-        thiz.plannedEvaluations = function() {
-            return $http.get(baseWebApiUrl + "evaluation/plannedEvaluations").then(function(result) {
-                return result.data;
-            });
-        };
+       
 
         //initiations
         var init = function() {

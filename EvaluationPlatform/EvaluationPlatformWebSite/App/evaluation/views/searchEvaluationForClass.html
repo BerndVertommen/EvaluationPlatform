@@ -1,17 +1,19 @@
-﻿<div>
+﻿<style>
+    
+</style>
+<div>
     <div class="panel panel-default">
         <div class="panel-heading">
             <!--mainHeading-->
             <div class="panel-title">
-                Evaluaties
+                Evaluatie totalen per klas
             </div>
         </div>
         <div class="panel-body">
-            <!--mainBody-->
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="panel-title">
-                        Zoeken
+                        Zoek filter
                     </div>
                     <div class="btn-group pull-right">
                         <a class="btn btn-default" ng-click="clearSearch()"><i class="fa fa-eraser"></i></a>
@@ -24,13 +26,13 @@
                             <div class="col-md-4 col-sm-6 col-xs-12">
                                 <div class="form-group">
                                     <label for="startDate" class="control-label">Begin datum:</label>
-                                    <input class="form-control" type="date" id="startDate" ng-model="evaluationsPagedQueryObject.startDate" placeholder="01/05/2015"/>
+                                    <input class="form-control" type="date" id="startDate" ng-model="queryObject.startDate" placeholder="01/05/2015" />
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12">
                                 <div class="form-group">
                                     <label for="endDate" class="control-label">Eind datum:</label>
-                                    <input class="form-control" type="date" id="endDate" ng-model="evaluationsPagedQueryObject.endDate" placeholder="10/05/2015"/>
+                                    <input class="form-control" type="date" id="endDate" ng-model="queryObject.endDate" placeholder="10/05/2015" />
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12">
@@ -45,7 +47,7 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <input class="form-control" id="classID" readonly="readonly" ng-model="selectedClass.description" placeholder="Selecteer een klas."/>
+                                        <input class="form-control" id="classID" readonly="readonly" ng-model="selectedClass.description" placeholder="Selecteer een klas." />
                                     </div>
                                 </div>
                             </div>
@@ -61,29 +63,14 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <input class="form-control" id="courseID" readonly="readonly" ng-model="selectedCourse.description" placeholder="Selecteer een vak."/>
+                                        <input class="form-control" id="courseID" readonly="readonly" ng-model="selectedCourse.description" placeholder="Selecteer een vak." />
                                     </div>
-
                                 </div>
                             </div>
                             <div class="col-md-4 col-sm-6 col-xs-12">
                                 <div class="form-group">
-                                    <label for="studentFirstname" class="control-label">Voornaam:</label>
-                                    <input class="form-control" type="text" id="studentFirstname" ng-model="evaluationsPagedQueryObject.studentFirstname" placeholder="Voornaam student"/>
-
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                    <label for="studentLastname" class="control-label">Achternaam:</label>
-                                    <input class="form-control" type="text" id="studentLastname" ng-model="evaluationsPagedQueryObject.studentLastname" placeholder="Achternaam student" />
-
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 col-xs-12">
-                                <div class="form-group">
-                                    <label for="complete" class="control-label">Volledig ingevuld?</label>
-                                    <input class="checkbox" type="checkbox" id="complete" ng-model="evaluationsPagedQueryObject.finished"/>
+                                    <label for="description" class="control-label">Titel:</label>
+                                    <input class="form-control" type="text" id="description" ng-model="queryObject.description" placeholder="Titel" />
                                 </div>
                             </div>
                         </div>
@@ -92,41 +79,43 @@
 
                     </div>
                 </div>
-              
             </div>
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <div class="panel-title">
-                        Evaluaties
+                        Zoek resultaten
                     </div>
-                    <div class="btn-group pull-right">
-                        <a class="btn btn-default" ng-click="evaluationsToPdf()"><i class="fa fa-file-pdf-o"></i></a>
-                    </div>
+                    <!--<div class="btn-group pull-right">
+                        <a class="btn btn-default" ng-click="toPdf()"><i class="fa fa-file-pdf-o"></i></a>
+                    </div>-->
                 </div>
                 <div class="panel-body">
-                    <table class="table table-responsive table-striped table-bordered table-hover">
-                        <thead>
-                        <tr>
-                            <th>Leerling</th>
-                            <th>Omschrijving</th>
-                            <th>Totaal</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr ng-repeat="evaluation in evaluations" ng-click="openScoredEvaluationModal(evaluation)">
-                            <td>{{evaluation.student.person.firstName}} {{evaluation.student.person.lastName}}</td>                            
-                            <td>{{evaluation.description}}</td>
-                            <td>{{evaluation.result.total | number : 2 }}</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <uib-pagination ng-if="showpagination" total-items="totalItems" ng-model="evaluationsPagedQueryObject.page" ng-change="search()"></uib-pagination>
+                    <div class="largeScrolable" id="overviewTable">
+                        <table class="table-responsive table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th class="rotate" ng-repeat="overview in tableParams.allEvaluations">
+                                        <div>
+                                            <div>{{overview.description}}</div>
+                                            <div>{{overview.evaluationDate | date: 'dd-MM-yyyy' }}</div>
+                                        </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="resultForStudent in tableParams.resultsForStudents" ng-click="openScoredEvaluationModal(evaluation)">
+                                    <td>{{resultForStudent.student.person.firstName}} {{resultForStudent.student.person.lastName}}</td>
+                                    <td ng-repeat="total in resultForStudent.totals"
+                                        popover-append-to-body="true" popover-placement="left" uib-popover="{{total.generalComment}}" popover-trigger="mouseenter">
+                                        {{total.total}}
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="panel-footer">
-            <!--mainFooter-->
-
         </div>
     </div>
 </div>

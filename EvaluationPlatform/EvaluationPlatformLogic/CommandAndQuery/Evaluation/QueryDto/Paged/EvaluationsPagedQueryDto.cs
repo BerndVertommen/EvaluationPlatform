@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using EvaluationPlatformLogic.CommandAndQuery.Evaluation.PagedQueryResults;
 
-namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryDto
+namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryDto.Paged
 {
     public class EvaluationsPagedQueryDto : PagedQueryDto<EvaluationsPagedQueryResult>
     {

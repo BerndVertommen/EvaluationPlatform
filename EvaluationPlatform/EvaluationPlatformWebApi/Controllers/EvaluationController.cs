@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Web.Http;
+using EvaluationPlatformDataTransferModels.DataTransferModels;
 using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
 using EvaluationPlatformDomain.Models.Authentication;
@@ -12,6 +13,7 @@ using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using EvaluationPlatformLogic.CommandAndQuery.Evaluation.CommandDto;
 using EvaluationPlatformLogic.CommandAndQuery.Evaluation.PagedQueryResults;
 using EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryDto;
+using EvaluationPlatformLogic.CommandAndQuery.Evaluation.QueryDto.Paged;
 using EvaluationPlatformLogic.Models.File;
 using EvaluationPlatformWebApi.Authentication;
 
@@ -74,6 +76,13 @@ namespace EvaluationPlatformWebApi.Controllers
         public EvaluationsPagedQueryResult SearchEvaluations(EvaluationsPagedQueryDto evaluationsQueryObject)
         {
             return QueryProccesor.Execute(evaluationsQueryObject);
+        }
+
+        [Route("searchEvaluationForClassTotalOverviews")]
+        [HttpPost]
+        public IEnumerable<EvaluationTotalsForClassOverview> SearchEvaluationForClassTotalOverviews(EvaluationTotalsForClassOverviewQueryDto evaluationTotalsForClassOverviewPagedQueryDto)
+        {
+            return QueryProccesor.Execute(evaluationTotalsForClassOverviewPagedQueryDto);
         }
 
         [Route("createPdfForEvaluations")]

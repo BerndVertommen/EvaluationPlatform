@@ -3,12 +3,19 @@
 
     function indexController($scope, $location, authenticationService, $rootScope) {
         var thiz = this;
+
+        $scope.isCollapsed = true;
        
         //Variables
 
         //private Functions
         
         // public functions
+
+        $scope.collapseMe = function(redirectTo) {
+            $scope.isCollapsed = true;
+            $location.path(redirectTo);
+        }
        
         $scope.logOut = function() {
             authenticationService.logOut();
@@ -21,6 +28,8 @@
             if (angular.isDefined(userName) && userName !== "") {
                 $scope.userName = userName;
             }
+
+            $scope.isCollapsed = true;
 
         };
 

@@ -88,7 +88,9 @@
     <Content Include="app\customDirectives\selectModalDirective\selectModalDirective.js" />
     <Content Include="app\customDirectives\selectSchoolyearDirective\selectSchoolyearDirective.js" />
     <Content Include="app\evaluation\controllers\scoredEvaluationModalController.js" />
+    <Content Include="app\evaluation\controllers\searchEvaluationsForStudentController.js" />
     <Content Include="app\evaluation\views\scoredEvaluationModal.html" />
+    <Content Include="app\evaluation\views\searchEvaluationForClass.html" />
     <Content Include="app\message\messageConfig.js" />
     <Content Include="app\message\services\messageService.js" />
     <Content Include="app\configuration\services\configurationService.js" />
@@ -113,10 +115,10 @@
     <Content Include="app\evaluationTemplate\views\evaluationTemplates.html" />
     <Content Include="app\evaluationTemplate\views\generalEvaluationTemplateOptionsModal.html" />
     <Content Include="app\evaluation\controllers\evaluationController.js" />
-    <Content Include="app\evaluation\controllers\evaluationsController.js" />
+    <Content Include="app\evaluation\controllers\searchEvaluationForClassController.js" />
     <Content Include="app\evaluation\controllers\evaluationsToPdfModalController.js" />
     <Content Include="app\evaluation\views\evaluation.html" />
-    <Content Include="app\evaluation\views\evaluations.html" />
+    <Content Include="app\evaluation\views\searchEvaluationsForStudent.html" />
     <Content Include="app\evaluation\views\evaluationsToPdfModal.html" />
     <Content Include="app\home\controllers\homeCtrl.js" />
     <Content Include="app\home\home-module.js" />

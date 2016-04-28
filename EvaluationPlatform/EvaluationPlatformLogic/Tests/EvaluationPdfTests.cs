@@ -2,7 +2,9 @@
 using System.Linq;
 using EvaluationPlatformDAL;
 using EvaluationPlatformDomain.Models;
+using EvaluationPlatformLogic.Pdf;
 using EvaluationPlatformLogic.Pdf.Evaluation;
+using NReco.PdfGenerator;
 using Xunit;
 
 namespace EvaluationPlatformLogic.Tests
@@ -22,9 +24,9 @@ namespace EvaluationPlatformLogic.Tests
             string filename = OutputFilePath + "pdftest2.pdf";
 
             //act
-            pdfGenerator.GeneratePdfToFile(evaluations,filename);
-           
-            
+            pdfGenerator.GeneratePdfToFile(evaluations, filename);
+
+
         }
     }
 }

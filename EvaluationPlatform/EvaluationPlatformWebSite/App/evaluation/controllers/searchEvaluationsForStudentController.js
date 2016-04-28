@@ -1,14 +1,13 @@
 ﻿(function (module) {
     'use strict';
 
-    function evaluationsController($scope, $location, courses, classes, evaluationService, $uibModal) {
+    function searchEvaluationsForStudentController($scope, $location, courses, classes, evaluationService, $uibModal) {
         var thiz = this;
        
         //Variables
         $scope.evaluationsPagedQueryObject = {};
-        $scope.evaluations = {};
+        $scope.evaluations = [];
 
-        //private Functions
         
         // public functions
         $scope.setClass = function(klas) {
@@ -94,5 +93,5 @@
         init();
     }
 
-    module.controller('evaluationsController', evaluationsController);
+    module.controller('searchEvaluationsForStudentController', searchEvaluationsForStudentController);
 })(angular.module('app.evaluation'));

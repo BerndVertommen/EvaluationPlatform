@@ -51,7 +51,7 @@
 
         thiz.updateAfterChange = function() {
             $scope.evaluations = evaluationService.mapItemsToSubSection($scope.evaluations);
-            evaluationService.setSubsectionScores();
+           // evaluationService.setSubsectionScores();
         };
 
         /*

@@ -39,10 +39,6 @@ namespace EvaluationPlatformDomain.Models
             {
                 NotScoredReason = (NotScoredReason)notScoredReason;
             }
-          
-
-
-
         }
     }
 }

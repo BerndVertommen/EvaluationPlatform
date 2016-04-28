@@ -44,6 +44,7 @@
     <Compile Include="CreationModels\CreateClassInfo.cs" />
     <Compile Include="CreationModels\CreateCourseInfo.cs" />
     <Compile Include="CreationModels\CreateEvaluationOptions.cs" />
+    <Compile Include="DataTransferModels\EvaluationTotalsForClassOverview.cs" />
     <Compile Include="InformationModels\Account\AccountInfo.cs" />
     <Compile Include="InformationModels\Class\ClassBaseInfo.cs" />
     <Compile Include="InformationModels\Class\ClassInfo.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="InformationModels\Evaluation\EvaluationBaseInfo.cs" />
     <Compile Include="InformationModels\Evaluation\EvaluationInfo.cs" />
     <Compile Include="InformationModels\Evaluation\EvaluationResultInfo.cs" />
+    <Compile Include="InformationModels\Evaluation\EvaluationSummaryInfo.cs" />
     <Compile Include="InformationModels\GoalInfo.cs" />
     <Compile Include="InformationModels\GuidDto.cs" />
     <Compile Include="InformationModels\PersonInfo.cs" />

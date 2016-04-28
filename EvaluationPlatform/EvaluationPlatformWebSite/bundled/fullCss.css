@@ -7628,6 +7628,34 @@ ul.alert-dropdown {
     top: -8px;
 }
 
+/*Rotate classes to rotate table headers*/
+
+th.rotate {
+    /* Something you can count on */
+    height: 140px;
+    width: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+    th.rotate > div {
+        transform:
+        /* Magic Numbers */
+        translate(5px, 51px)
+        /* 45 is really 360 - 45 */
+        rotate(270deg);
+        width: 30px;
+        padding: 5px;
+    }
+
+        th.rotate > div > span {
+            border-bottom: 1px solid #ccc;
+            padding: 5px 10px;
+        }
+
+/*End rotate classes*/
+
 table {
     border-collapse: separate;
 }
