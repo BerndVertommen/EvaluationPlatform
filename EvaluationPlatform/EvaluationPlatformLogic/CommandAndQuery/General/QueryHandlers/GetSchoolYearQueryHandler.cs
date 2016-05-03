@@ -17,7 +17,7 @@ namespace EvaluationPlatformLogic.CommandAndQuery.General.QueryHandlers
 
         public override IEnumerable<SchoolYearInfo> Handle(GetSchoolYearsQueryDto queryObject)
         {
-         var schoolyears = Database.SchoolYears.ToList();
+         var schoolyears = Database.SchoolYears.OrderBy(s => s.StartYear).ToList();
 
             return Mapper.Map<IEnumerable<SchoolYearInfo>>(schoolyears);
         }

@@ -11,7 +11,7 @@ namespace EvaluationPlatformDAL.Generators
     {
         public void AddVerzorginGoalsToStudyPlan(StudyPlan studyPlan)
         {
-            for (int i = 1; i < 12; i++)
+            for (int i = 1; i < 13; i++)
             {
                 studyPlan.AddGeneralGoal(new GeneralGoal(i, "Leerplandoel " + i, GetgoalsforGeneralGoal(i)));
             }
@@ -312,10 +312,46 @@ namespace EvaluationPlatformDAL.Generators
                        £ Je kan de nagellak op een correcte manier verwijderen. 		
 
                         ";
+                    break;
+
+                case 12:
+                    goals =
+                        @"
+                       De leerlingen ontdekken een kapsalon in werking en nemen waar welke activiteiten er plaatsvinden.
+                        £ De leerlingen herkennen en benoemen de uitrustingbinnen het kapsalon.
+                        £ De leerlingen duiden op een eenvoudig grondplan van een salon de verschillende ruimtes aan en benoemen ze.
+                        £ De leerlingen documenteren zich in verband met uitrus­ting en inrichting en ordenen die documen­tatie.
+                        £ De leerlingen noemen eigenschappen van een goede kapper op en verklaren waarom deze be­lang­rijk zijn.
+                        £ De leerlingen verwerven sociale en communicatieve vaardigheden en zien het belang ervan in voor de kapper.
+                        £ De leerlingen tonen aandacht voor een aantal houdingen en proberen het eigen gedrag daarop af te stemmen.
+                        £ De leerlingen zeggen in eigen woorden waarvoor verscheidene kappersbenodigdheden dienen.
+                        £ De leerlingen kunnen elementaire materialen, producten en apparaten benoemen en juist gebruiken.
+                        £ De leerlingen kunnen basisvaardigheden vlot toepas­sen, dit wil zeggen:
+                        verwerven van handigheid en soepel­heid bij hanteren van materiaal;
+                        lichten te volgen stappen bij de aan­geleer­de vaardigheden toe;
+                        maken duidelijk waar de aange­leerde basisvaardigheden toegepast worden in het kappersvak;
+                        herkennen en herstellen van fouten die ze gemaakt hebben in hun opdracht;
+                        de aangeleerde basisvaardigheden toepassen in eenvoudige kapsels;
+                        het haar wassen en verzorgen;
+                        verdelingen maken in functie van het kapsel;
+                        brushingstechnieken toepassen in eenvoudige kapsels;
+                        de techniek van het plaatsen van haarrollers inoefenen in eenvoudige kapsels;
+                        de techniek van het oprollen in functie van permanent inoefenen op een deel van het hoofd.
+                        £ De leerlingen houden een knipselmap bij rond haarzorg, geordend volgens door de leraar aangege­ven principes, met eigen bedenkingen in  eenvoudige zinnen geformuleerd.
+                        £ De leerlingen voeren persoonlijke elementaire hand- en nagelverzorging uit en lichten hiervan het belang toe.
+                        £ De leerlingen noemen de belangrijkste uitwendige delen van haar en nagel op en duiden deze aan.
+                        £ De leerlingen herkennen de meest voorkomende haar- en nagelsoorten, kunnen de juiste benamingen en de voornaamste eigenschappen geven.
+                        £ De leerlingen komen tot een juiste gelaats- en lichaamsverzorging en -houding.
+                        £ De leerlingen gebruiken elektrische apparaten op een veilige wijze.
+                        £ De leerlingen handelen volgens veiligheids-, hygiënische en milieubewuste normen.
+                        £ De leerlingen noemen enkele producten en materialen op die irritatie kunnen veroorzaken.
+                        £ De leerlingen lezen de gebruiksaanwijzing op verpakking of op bijsluiters van apparaten en producten (eenvoudig voorbeeld)
+                        £ De leerlingen voorkomen, sorteren en recycleren afval.
+                        ";
 
                     foreach (var dis in goals.Split('£'))
                     {
-                        yield return new Goal(dis, "nagels");
+                        yield return new Goal(dis, "extra1");
                     }
 
                     break;

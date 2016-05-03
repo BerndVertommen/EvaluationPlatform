@@ -101,7 +101,7 @@ gulp.task('minify-FulllCss', function () {
 /*Change development api url to api url need for server.*/
 gulp.task('setServerApiUrl', function () {
     return gulp.src(['./bundled/concatApp.js'])
-        .pipe(replace('http://testplatformApi/', 'http://api.testplatformApi/'))
+        .pipe(replace('http://testplatformApi/', 'http://api.evaluationplatform.bearit.be/'))
         .pipe(gulp.dest('./bundled/'));
 });
 

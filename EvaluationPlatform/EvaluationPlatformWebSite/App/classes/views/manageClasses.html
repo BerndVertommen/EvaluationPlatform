@@ -41,7 +41,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="fileSelector" class="control-label">Selecteer bestand:</label>
-                                <div id="fileSelector" class="btn btn-default" ngf-select ng-model="file" name="file">Select</div>
+                                <div id="fileSelector" class="btn btn-default" ngf-select ng-model="file" name="fileSelector" ngf-change="fileUpdated($files, $event)">Select</div>
                                 <button type="button" class="btn btn-success" ng-click="uploadCsv()" ng-hide="file === undefined">Uploaden</button>
                             </div>
                            

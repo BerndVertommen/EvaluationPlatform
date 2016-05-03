@@ -42,7 +42,7 @@ namespace EvaluationPlatformDAL
         {
             //modelBuilder.Entity<StudyPlan>().HasMany(c => c.).WithMany(p => p.StudyPlans);
             modelBuilder.Entity<Teacher>().HasMany(c => c.Courses).WithMany(p => p.Teachers);
-
+            modelBuilder.Entity<AccountRole>().HasMany(ar => ar.Accounts).WithMany(a => a.AccountRoles);
             // unique value and index for Username on account table
             modelBuilder
                 .Entity<Account>()

@@ -9,12 +9,15 @@
         //private Functions
         
         // public functions
-        $scope.setSelectedSchoolYear = function(schoolyear) {
-            $scope.selectedSchoolYear = schoolyear;
-        }
+        //$scope.setSelectedSchoolYear = function(schoolyear) {
+        //    $scope.selectedSchoolYear = schoolyear;
+        //}
+        $scope.fileUpdated = function($files, $event) {
+            $scope.file = $event.target.files[0];
+        };
 
         $scope.uploadCsv = function() {
-            classesService.uploadClassCsv($scope.file, $scope.selectedSchoolYear).then(function(parameters) {
+            classesService.uploadClassCsv($scope.file, $scope.selectedSchoolYear).then(function (parameters) {
                 toastr.success('Het CSV bestand is met success opgeslagen.');
             });
 
@@ -34,7 +37,8 @@
         var init = function () {
           schoolyearService.getFutureSchoolYears().then(function (schoolyears) {
               $scope.schoolYears = schoolyears;
-            });
+              $scope.selectedSchoolYear = schoolyears[0];
+          });
            
 
             $scope.allClasses = allClasses;
