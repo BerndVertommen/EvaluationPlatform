@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Calculators\ICalculator.cs" />
     <Compile Include="Calculators\ICalculatorInfo.cs" />
+    <Compile Include="Calculators\KoshResultTransformator.cs" />
     <Compile Include="Models\Account\Account.cs" />
     <Compile Include="Models\Account\AccountRole.cs" />
     <Compile Include="Models\Account\AccountRoleType.cs" />

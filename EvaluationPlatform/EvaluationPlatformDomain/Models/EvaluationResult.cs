@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using EvaluationPlatformDomain.Calculators;
 using EvaluationPlatformDomain.Models.Scales;
 
 namespace EvaluationPlatformDomain.Models
@@ -67,7 +68,11 @@ namespace EvaluationPlatformDomain.Models
         {
             int totalAchieved = items.Sum(e => e.Score).Value;
 
-            return totalAchieved == 0 || max  == 0 ?  0 : Decimal.Divide(totalAchieved, max) * weight ;
+            decimal percentage = KoshResultTransformator.CalculatePercentage(items.Count(i => i.Score.HasValue), totalAchieved); //Kosh related
+
+            return (percentage / 100)*weight; //Kosh related
+
+            //  return totalAchieved == 0 || max  == 0 ?  0 : Decimal.Divide(totalAchieved, max) * weight ; // commented out for kosh
         }
     }
 }
