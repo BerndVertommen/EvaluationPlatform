@@ -25,20 +25,30 @@
         var init = function () {
            
             var userName = authenticationService.userName;
+            var adminMenuInvisible = true;
+
+            if (authenticationService.isAuth) {
+                adminMenuInvisible = false;
+            }
+
             if (angular.isDefined(userName) && userName !== "") {
                 $scope.userName = userName;
             }
 
             $scope.isCollapsed = true;
+            $scope.adminMenuInvisible = adminMenuInvisible;
 
         };
 
         $rootScope.$on('userLoggedIn',function (event,data) {
             $scope.userName = data.userName;
+            $scope.adminMenuInvisible = false;
         });
         
         $rootScope.$on('userLoggedOut', function (event, data) {
             $scope.userName = undefined;
+            $scope.adminMenuInvisible = true;
+
         });
 
         init();
