@@ -382,6 +382,29 @@ thead {
     }
 
 
+    /*Scrollable Table*/
+        table.tableScrollableBody {
+        display: table;
+        width: 100%;
+    }
+    table.tableScrollableBody thead, table.tableScrollableBody tbody {
+        float: left;
+        width: 100%;
+    }
+    table.tableScrollableBody tbody {
+        overflow: auto;
+        height: 350px;
+    }
+    table.tableScrollableBody tr {
+        width: 100%;
+        display: table;
+        text-align: left;
+    }
+    table.tableScrollableBody th, table.tableScrollableBody td {
+        width: 33%;
+    }
+    /*End scrollable table*/
+
 .evaDescription {
     text-overflow: ellipsis;
     overflow: hidden;

@@ -11,26 +11,25 @@
             <uib-tabset active="activeJustified" justified="true">
                 <!--Tab Overzicht-->
                 <uib-tab index="0" heading="Overzicht">
-                    <div class="smallScrolable">
-                        <table class="table table-hover table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Klassen overzicht</th>
-                                    <th class="tcolDoubleSmButton">
-                                        <div class="btn-group">
-                                            <a class="btn btn-default btn-sm" href="#/createClass"><i class="fa fa-users"></i> <i class="fa fa-plus"></i></a>
-                                        </div>
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat="classX in allClasses" ng-class="{'success': $index == selectedRow}">
-                                    <td ng-click="setSelectedClass(classX,$index)">{{classX.description}}</td>
-                                    <td><!--buttonspace--></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+
+                    <table class="table table-hover table-striped tableScrollableBody">
+                        <thead>
+                            <tr>
+                                <th>Klassen overzicht</th>
+                                <th class="tcolDoubleSmButton">
+                                    <div class="btn-group">
+                                        <a class="btn btn-default btn-sm" href="#/createClass"><i class="fa fa-users"></i> <i class="fa fa-plus"></i></a>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody >
+                            <tr ng-repeat="classX in allClasses" ng-class="{'success': $index == selectedRow}">
+                                <td ng-click="setSelectedClass(classX,$index)">{{classX.description}}</td>
+                                <td><!--buttonspace--></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </uib-tab>
                 <!--Tab Bestand-->
                 <uib-tab index="1" heading="Bestand">
@@ -44,7 +43,7 @@
                                 <div id="fileSelector" class="btn btn-default" ngf-select ng-model="file" name="fileSelector" ngf-change="fileUpdated($files, $event)">Select</div>
                                 <button type="button" class="btn btn-success" ng-click="uploadCsv()" ng-hide="file === undefined">Uploaden</button>
                             </div>
-                           
+
                         </div>
                     </form>
                 </uib-tab>
