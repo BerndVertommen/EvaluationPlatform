@@ -136,6 +136,7 @@
     <Compile Include="CommandAndQuery\BaseClasses\QueryHandler.cs" />
     <Compile Include="CommandAndQuery\BaseClasses\QueryProcessor.cs" />
     <Compile Include="CommandAndQuery\Class\CommandDto\CreateClassCommandDto.cs" />
+    <Compile Include="CommandAndQuery\Class\CommandHandlers\AddCourseToClassCommandHandler.cs" />
     <Compile Include="CommandAndQuery\Class\CommandHandlers\CreateClassCommandHandler.cs" />
     <Compile Include="CommandAndQuery\Class\QueryDto\AllClassesDto.cs" />
     <Compile Include="CommandAndQuery\Class\QueryHandlers\AllClassesQueryHandler.cs" />
@@ -147,6 +148,7 @@
     <Compile Include="CommandAndQuery\Class\QueryDto\ClassesAvailableForTeacherQueryDto.cs" />
     <Compile Include="CommandAndQuery\Class\QueryDto\ClassesForCourseQueryDto.cs" />
     <Compile Include="CommandAndQuery\Class\QueryDto\ClassesForTeacherQueryDto.cs" />
+    <Compile Include="CommandAndQuery\Class\CommandDto\AddCourseToClassCommandDto.cs" />
     <Compile Include="CommandAndQuery\Course\CommandHandlers\CreateCourseCommandHandler.cs" />
     <Compile Include="CommandAndQuery\Course\CommandDto\CreateCourseCommandDto.cs" />
     <Compile Include="CommandAndQuery\Course\QueryHandlers\AllCoursesQueryHandler.cs" />

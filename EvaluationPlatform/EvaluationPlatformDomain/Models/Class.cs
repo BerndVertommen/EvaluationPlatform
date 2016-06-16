@@ -40,16 +40,21 @@ namespace EvaluationPlatformDomain.Models
             Description = description;
             Courses = courses;
         }
-        
-        public void AddCourse(Course courseMechanica)
+
+        public void AddCourse(Course course)
         {
-            Courses.Add(courseMechanica);
+            if (Courses.Any(c => c.Id == course.Id))
+            {
+                throw new InvalidOperationException($"Het vak {course.Description} is reeds toegevoegd.");
+            }
+
+            Courses.Add(course);
         }
 
         public void AddStudent(Student student)
         {
-           Students.Add(student);
+            Students.Add(student);
         }
-        
+
     }
 }

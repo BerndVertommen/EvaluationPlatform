@@ -18,7 +18,8 @@
                                 <th>Klassen overzicht</th>
                                 <th class="tcolDoubleSmButton">
                                     <div class="btn-group">
-                                        <a class="btn btn-default btn-sm" href="#/createClass"><i class="fa fa-users"></i> <i class="fa fa-plus"></i></a>
+                                        <a class="btn btn-default btn-sm" href="#/createClass"><i class="fa fa-users"></i> <i class="fa fa-plus" ng-disabled="selectedClass === undefined"></i></a>
+                                        <a class="btn btn-default btn-sm" ng-click="addCourse()"><i class="fa fa-fw fa-book" ng-disabled="selectedClass === undefined"></i> <i class="fa fa-plus"></i></a>
                                     </div>
                                 </th>
                             </tr>

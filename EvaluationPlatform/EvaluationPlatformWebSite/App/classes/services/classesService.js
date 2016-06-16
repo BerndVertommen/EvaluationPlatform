@@ -57,6 +57,12 @@
             });
         }
 
+        thiz.addCourses = function(classId, courses) {
+            return $http.post(baseWebApiUrl + "class/" + classId + "/addCourse", courses).then(function(result) {
+                return result.data;
+            });
+        }
+
         //initiations
 
     };
