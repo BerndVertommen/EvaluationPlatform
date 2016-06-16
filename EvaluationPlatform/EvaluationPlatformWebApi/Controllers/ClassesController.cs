@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web;
@@ -8,6 +9,7 @@ using System.Web.Http;
 using EvaluationPlatformDataTransferModels.CreationModels;
 using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Class;
+using EvaluationPlatformDataTransferModels.InformationModels.Course;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
@@ -106,6 +108,16 @@ namespace EvaluationPlatformWebApi.Controllers
 
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
-        
+
+        [CustomAutorize(AccountRoleType.Admin)]
+        [Route("{classId}/addCourse")]
+        [HttpPost]
+        public HttpResponseMessage AddCourse(Guid classId, IEnumerable<CourseBaseInfo> courses)
+        {
+            CommandProcessor.Execute(new AddCourseToClassCommandDto(classId,courses.Select(c => c.Id)));
+
+            return new HttpResponseMessage(HttpStatusCode.OK);
+        }
+
     }
 }

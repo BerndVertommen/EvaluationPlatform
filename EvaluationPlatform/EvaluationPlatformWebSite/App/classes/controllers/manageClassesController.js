@@ -1,11 +1,11 @@
 ﻿(function (module) {
     'use strict';
 
-    function manageClassesController($scope, classesService,schoolyearService, toastr, $location, allClasses) {
+    function manageClassesController($scope, classesService,courseService, messageService, schoolyearService, toastr, $location, allClasses, selectModalService) {
         var thiz = this;
        
         //Variables
-
+        var allCourses = null;
         //private Functions
         
         // public functions
@@ -33,13 +33,26 @@
             $scope.selectedRow = index;
         }
 
+        $scope.addCourse = function () {
+                selectModalService.openModal('selectCoursesModal', allCourses).then(function (result) {
+                    classesService.addCourses($scope.selectedClass.id, result).then(function() {
+                        messageService.handleSucces("De vakken zijn toegevoegd.");
+                    });
+                });       
+        }
+
         //initiations
         var init = function () {
           schoolyearService.getFutureSchoolYears().then(function (schoolyears) {
               $scope.schoolYears = schoolyears;
               $scope.selectedSchoolYear = schoolyears[0];
           });
-           
+
+          courseService.allCourses().then(function (courses) {             
+              allCourses = courses;
+          });
+
+
 
             $scope.allClasses = allClasses;
             console.log($scope.allClasses);
