@@ -3,6 +3,7 @@
 
     function indexController($scope, $location, authenticationService, accountService, $rootScope) {
         var thiz = this;
+        $scope.loggedIn = authenticationService.isAuth;
 
         $scope.isCollapsed = true;
        
@@ -51,13 +52,14 @@
 
         $rootScope.$on('userLoggedIn', function (event, data) {
             $scope.userName = data.userName;
-
+            $scope.loggedIn = authenticationService.isAuth;
             handleMenus();
 
         });
         
         $rootScope.$on('userLoggedOut', function (event, data) {
             $scope.userName = undefined;
+            $scope.loggedIn = false;
             $scope.adminMenuInvisible = true;
 
         });
