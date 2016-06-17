@@ -20,7 +20,7 @@
                 <th>Vak</th>
                 </thead>
                 <tbody>
-                <tr ng-repeat="evaluation in plannedEvaluations" ng-click="setSelectedEvaluation(evaluation, $index)" ng-class="{'success': $index == selectedRow}">
+                <tr ng-repeat="evaluation in plannedEvaluations  | orderBy: 'evaluationDate'" ng-click="setSelectedEvaluation(evaluation, $index)" ng-class="{'success': $index == selectedRow}">
                     <td>{{evaluation.evaluationDate | date }}</td>
                     <td>{{evaluation.description}}</td>
                     <td>{{evaluation.course.description }}</td>

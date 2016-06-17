@@ -2,7 +2,7 @@
 (function (module) {
     'use strict';
 
-    function createEvaluationsFromTemplateModalController($scope, $uibModalInstance,evaluationTemplateService, evaluationTemplate, classesForCourse) {
+    function createEvaluationsFromTemplateModalController($scope,configurationService, $uibModalInstance,evaluationTemplateService, evaluationTemplate, classesForCourse) {
         var thiz = this;
 
         //Variables
@@ -48,6 +48,7 @@
 
       $scope.ok = function () {
           //make call here
+          $scope.createCommand.evaluationDate = configurationService.converToUtc($scope.createCommand.evaluationDate);
           evaluationTemplateService.createEvaluationFromTemplate($scope.createCommand).then(function() {
               $uibModalInstance.dismiss('ok');
           });

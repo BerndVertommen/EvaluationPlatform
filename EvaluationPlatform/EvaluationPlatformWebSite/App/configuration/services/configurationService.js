@@ -27,6 +27,12 @@
             return data;
         }
 
+        thiz.converToUtc = function (time) {
+            var offset = new Date().getTimezoneOffset();
+            time.setMinutes(time.getMinutes() - offset);
+            return time;
+        };
+
     }
 
 

@@ -9,34 +9,34 @@
         <div class="panel-body">
             <!--mainBody-->
             <div class="largeScrolable">
-                <table class="table table-hover table-striped">
+                <table class="table table-hover table-striped table-responsive">
                     <thead>
-                        <!-- <tr class="bg-greyTitle">-->
-                    <th class="text-center">Sjablonen</th>
-                    <th class="tcolQuadSmButton">
-                        <div class="btn-group">
-                            <a class="btn btn-default btn-sm" href="#/createEvaluationTemplate"
-                               popover-append-to-body="true" popover-placement="left" uib-popover="Nieuw Sjabloon" popover-trigger="mouseenter">
-                                <i class="fa fa-plus"></i>
-                            </a>
-                            <a class="btn btn-default btn-sm" ng-click="createEvaluations()" ng-disabled="selectedTemplate == undefined"
-                               popover-append-to-body="true" popover-placement="left" uib-popover="Nieuwe Evaluatie" popover-trigger="mouseenter">
-                                <i class="fa fa-files-o"></i>
-                            </a>
-                            <!--<a class="btn btn-default btn-sm" ng-click="hideSelectedTemplates()"><i class="fa fa-eye"></i> <i class="fa fa-arrow-right"></i></a>-->
-                            <button class="btn btn-default btn-sm" ng-click="hideSelectedTemplates()"
-                                    popover-append-to-body="true" popover-placement="left" uib-popover="Verberg de geselecteerd sjablonen" popover-trigger="mouseenter">
-                                <i class="fa fa-eye-slash"></i>
-                            </button>
-
-                        </div>
-                    </th>
-                    <!--</tr>-->
+                        <tr>
+                            <th class="text-center">Omschrijving</th>
+                            <th>Vak</th>
+                            <th class="tcolQuadSmButton">
+                                <div class="btn-group">
+                                    <a class="btn btn-default btn-sm" href="#/createEvaluationTemplate"
+                                       popover-append-to-body="true" popover-placement="left" uib-popover="Nieuw Sjabloon" popover-trigger="mouseenter">
+                                        <i class="fa fa-plus"></i>
+                                    </a>
+                                    <a class="btn btn-default btn-sm" ng-click="createEvaluations()" ng-disabled="selectedTemplate == undefined"
+                                       popover-append-to-body="true" popover-placement="left" uib-popover="Nieuwe Evaluatie" popover-trigger="mouseenter">
+                                        <i class="fa fa-files-o"></i>
+                                    </a>
+                                    <button class="btn btn-default btn-sm" ng-click="hideSelectedTemplates()"
+                                            popover-append-to-body="true" popover-placement="left" uib-popover="Verberg de geselecteerd sjablonen" popover-trigger="mouseenter">
+                                        <i class="fa fa-eye-slash"></i>
+                                    </button>
+                                </div>
+                            </th>
+                        </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="template in evaluationTemplates" ng-class="{'success': $index == selectedRow}" ng-hide="template.hide">
-                            <td ng-click="setSelectedTemplate(template, $index)">{{template.description}}</td>
-                            <td> <input type="checkbox" ng-model="template.checkHidden" /> </td>
+                        <tr ng-repeat="template in evaluationTemplates" ng-class="{'success': $index == selectedRow}" ng-hide="template.hide" ng-click="setSelectedTemplate(template, $index)">
+                            <td>{{template.description}}</td>
+                            <td> {{template.course.description}} </td>
+                            <td> <input class="pull-right" type="checkbox" ng-model="template.checkHidden" /> </td>
                         </tr>
                     </tbody>
                 </table>
