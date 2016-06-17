@@ -29,6 +29,7 @@
             addCourseToTeacherCommand.courseId= $scope.selectedCourse.id ;
 
             teacherService.addCourse(addCourseToTeacherCommand).then(function (result) {
+                teacher.courses.push($scope.selectedCourse); // dirty
                 $uibModalInstance.close();
 
             });
