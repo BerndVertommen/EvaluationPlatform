@@ -7316,6 +7316,10 @@ a.list-group-item-danger.active:focus {
 
 /* Global Styles */
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
 body {
     margin-top: 100px;
     /*background-color: #222;
