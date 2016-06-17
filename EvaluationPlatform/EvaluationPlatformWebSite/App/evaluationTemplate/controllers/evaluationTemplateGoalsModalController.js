@@ -41,6 +41,12 @@
             $uibModalInstance.dismiss('cancel');
         };
 
+        $scope.clearFilter = function () {
+            var keys = Object.keys($scope.goalFilter);
+            for (var i = 0; i < keys.length; i++) {
+                $scope.goalFilter[keys[i]] = undefined;
+            }
+        };
 
        
         //initiations
