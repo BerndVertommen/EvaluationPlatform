@@ -42,7 +42,6 @@ namespace EvaluationPlatformWebApi.Controllers
             return new HttpResponseMessage(HttpStatusCode.OK); 
         }
 
-        [CustomAutorize(AccountRoleType.Admin)]
         [Route("getAccount/{username}")]
         [HttpGet]
         public AccountInfo GetAccount(string username)
