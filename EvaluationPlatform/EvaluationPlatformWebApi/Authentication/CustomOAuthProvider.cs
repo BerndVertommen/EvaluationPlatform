@@ -69,6 +69,7 @@ namespace EvaluationPlatformWebApi.Authentication
                     ExpiresUtc = DateTime.UtcNow.AddHours(24),
                     IsPersistent = true,
                 };
+
                 claimsIdentity.AddClaim(new Claim(ClaimTypes.Expiration, authenticationProperties.ExpiresUtc.ToString()));
 
 

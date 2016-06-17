@@ -2,6 +2,7 @@
 using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using EvaluationPlatformDomain.Models.Authentication;
 using Infrastructure.Security;
 
@@ -28,8 +29,13 @@ namespace EvaluationPlatformDomain.Models.Account
         public virtual string Email { get; protected set; }
         public virtual string HashedPassword { get; protected set; }
         public virtual Person Person { get; protected set; }
-
         public virtual string Salt { get; protected set; }
+
+        public bool IsAdministrator
+        {
+            get { return AccountRoles.Any(a => a.IsAdministratorRole); }
+        }
+
 
         public void SetPassword(string newPassword)
         {

@@ -2,8 +2,10 @@
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using AutoMapper;
 using EvaluationPlatformDataTransferModels.CreationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Account;
+using EvaluationPlatformDomain.Models.Account;
 using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformLogic.CommandAndQuery.Account.Commands;
 using EvaluationPlatformLogic.CommandAndQuery.Account.QueryDto;
@@ -38,6 +40,15 @@ namespace EvaluationPlatformWebApi.Controllers
             CommandProcessor.Execute(new CreateAccountCommandDto(createAccountInfo));
 
             return new HttpResponseMessage(HttpStatusCode.OK); 
+        }
+
+        [CustomAutorize(AccountRoleType.Admin)]
+        [Route("getAccount/{username}")]
+        [HttpGet]
+        public AccountInfo GetAccount(string username)
+        {
+            var account = QueryProccesor.Execute(new GetAccountQueryDto(username));
+            return Mapper.Map<Account, AccountInfo>(account);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿(function (model) {
     'use strict';
 
-    function indexController($scope, $location, authenticationService, $rootScope) {
+    function indexController($scope, $location, authenticationService, accountService, $rootScope) {
         var thiz = this;
 
         $scope.isCollapsed = true;
@@ -21,18 +21,27 @@
             authenticationService.logOut();
         };
 
+        var handleMenus = function() {
+            accountService.getAccountInfo($scope.userName).then(function (result) {
+                if (result.isAdministrator === true) {
+                    $scope.adminMenuInvisible = false;
+                }
+            });
+        }
+
         //initiations
         var init = function () {
            
             var userName = authenticationService.userName;
             var adminMenuInvisible = true;
 
-            if (authenticationService.isAuth) {
-                adminMenuInvisible = false;
+            var usernameIsKnown = function() {
+                return angular.isDefined(authenticationService.userName) && authenticationService.userName !== "";
             }
 
-            if (angular.isDefined(userName) && userName !== "") {
+            if (authenticationService.isAuth && authenticationService.userName !== usernameIsKnown()) {
                 $scope.userName = userName;
+                handleMenus();
             }
 
             $scope.isCollapsed = true;
@@ -40,9 +49,11 @@
 
         };
 
-        $rootScope.$on('userLoggedIn',function (event,data) {
+        $rootScope.$on('userLoggedIn', function (event, data) {
             $scope.userName = data.userName;
-            $scope.adminMenuInvisible = false;
+
+            handleMenus();
+
         });
         
         $rootScope.$on('userLoggedOut', function (event, data) {

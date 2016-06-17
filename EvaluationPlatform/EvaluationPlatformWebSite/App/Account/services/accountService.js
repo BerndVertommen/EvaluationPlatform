@@ -1,44 +1,27 @@
-﻿(function(module) {
+﻿(function (module) {
 
     function accountService($http, configurationService) {
         var thiz = this;
         var basePath = configurationService.baseApiPath;
 
-        //thiz.changePassword = function (changePasswordBindingModel) {
-        //    return $http.post(basePath + 'accounts/changepassword', changePasswordBindingModel).then(function (data) {
-        //        return data;
-        //    });
-        //}
-
-        //thiz.createTestAccount = function () {
-        //    var createUserModel = {
-        //        username: "Tester",
-        //        email: "berndvertommen@msn.com",
-        //        firstName: "Test",
-        //        lastname: "er",
-        //        password: "@Dmin123",
-        //        confirmPassword :"@Dmin123"
-        //}
-
-        //    return $http.post(configurationService.baseApiPath + 'accounts/createTester', createUserModel).then(function (data) {
-        //        return data;
-        //    });
-        //}
-
-        thiz.getAccounts = function() {
-            return $http.get(basePath + 'accounts/getAccounts').then(function(result) {
+        thiz.getAccounts = function () {
+            return $http.get(basePath + 'accounts/getAccounts').then(function (result) {
                 return result.data;
             });
         }
 
         //nieuwe methode om account te creeeren aangemaakt
-        thiz.createAccount = function(createAccountInfo) {
-            return $http.post(basePath + 'accounts/createAccount', createAccountInfo).then(function(result) {
+        thiz.createAccount = function (createAccountInfo) {
+            return $http.post(basePath + 'accounts/createAccount', createAccountInfo).then(function (result) {
                 return result.data;
             });
         }
 
-        //creeer hier de methode die naar bij de accountcontroller createAccount gebruikt.
+        thiz.getAccountInfo = function(username) {
+            return $http.get(basePath + 'accounts/getAccount/'+ username ).then(function(result) {
+                return result.data;
+            });
+        }
     }
 
     module.service('accountService', accountService);
