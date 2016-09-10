@@ -197,6 +197,10 @@
     <Compile Include="Migrations\201605031920387_MadeAccountAndRoleMany2Many.Designer.cs">
       <DependentUpon>201605031920387_MadeAccountAndRoleMany2Many.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609100952076_CreatedEditableState.cs" />
+    <Compile Include="Migrations\201609100952076_CreatedEditableState.Designer.cs">
+      <DependentUpon>201609100952076_CreatedEditableState.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Generators\StudentGenerator.cs" />
@@ -305,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605031920387_MadeAccountAndRoleMany2Many.resx">
       <DependentUpon>201605031920387_MadeAccountAndRoleMany2Many.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609100952076_CreatedEditableState.resx">
+      <DependentUpon>201609100952076_CreatedEditableState.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

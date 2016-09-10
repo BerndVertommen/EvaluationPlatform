@@ -6,7 +6,7 @@
                 Evaluatie
             </div>
             <div class="btn-group pull-right">
-                <a class="btn btn-default" ng-click="updateEvaluations()"><i class="fa fa-save"></i></a>
+                <button type="button" class="btn btn-default" ng-click="updateEvaluations()"><i class="fa fa-save"></i></button>
             </div>
         </div>
         <div class="panel-body">
@@ -42,7 +42,10 @@
                                 {{selectedEvaluation.student.person.firstName}} {{selectedEvaluation.student.person.lastName}}
                             </div>
                             <div class="btn-group pull-right">
-                                <a class="btn btn-default" ng-click="updateEvaluation()"><i class="fa fa-save"></i></a>
+
+                                <button type="button" class="btn btn-default" ng-if="selectedEvaluation.editAbleState.canEdit===true" ng-click="updateEvaluation()"><i class="fa fa-save"></i></button>
+                                <button type="button" class="btn btn-danger" ng-if="selectedEvaluation.editAbleState.canEdit===false" ng-click="unLock(selectedEvaluation)"><i class="fa fa-unlock-alt"></i></button>
+
                             </div>
                         </div>
                         <!--<div class="panel-body">
@@ -69,21 +72,21 @@
                                             <!--<td>{{evaluationItem.evaluationSubSection.weight}}</td>-->
                                             <td>
                                                 <div class="scoreButtons">
-                                                    <a class="btn btn-success btn-sm" ng-click="setScore(evaluationItem, 3)">3</a>
-                                                    <a class="btn btn-primary btn-sm" ng-click="setScore(evaluationItem, 2)">2</a>
-                                                    <a class="btn btn-warning btn-sm" ng-click="setScore(evaluationItem, 1)">1</a>
-                                                    <a class="btn btn-danger  btn-sm" ng-click="setScore(evaluationItem, 0)">0</a>
+                                                    <button ng-disabled="selectedEvaluation.editAbleState.canEdit===false" class="btn btn-success btn-sm" ng-click="setScore(evaluationItem, 3)">3</button>
+                                                    <button ng-disabled="selectedEvaluation.editAbleState.canEdit===false" class="btn btn-primary btn-sm" ng-click="setScore(evaluationItem, 2)">2</button>
+                                                    <button ng-disabled="selectedEvaluation.editAbleState.canEdit===false" class="btn btn-warning btn-sm" ng-click="setScore(evaluationItem, 1)">1</button>
+                                                    <button ng-disabled="selectedEvaluation.editAbleState.canEdit===false" class="btn btn-danger  btn-sm" ng-click="setScore(evaluationItem, 0)">0</button>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="btn-group evaNotScored" uib-dropdown is-open="status.isopen">
-                                                    <button id="single-button" type="button" class="btn btn-default btn-sm" ng-class="{'btn-primary': evaluationItem.notScoredReason > 0 && evaluationItem.score == null  }" uib-dropdown-toggle ng-disabled="disabled">
+                                                    <button id="single-button" type="button" ng-disabled="selectedEvaluation.editAbleState.canEdit===false" class="btn btn-default btn-sm" ng-class="{'btn-primary': evaluationItem.notScoredReason > 0 && evaluationItem.score == null  }" uib-dropdown-toggle ng-disabled="disabled">
                                                         <span class="caret"></span>
                                                     </button>
                                                     <ul uib-dropdown-menu role="menu" aria-labelledby="single-button">
-                                                        <li role="menuitem"><a ng-click="setNotScoredReason(evaluationItem,1)">?</a></li>
-                                                        <li role="menuitem"><a ng-click="setNotScoredReason(evaluationItem,2)">Afwezig</a></li>
-                                                        <li role="menuitem"><a ng-click="setNotScoredReason(evaluationItem,3)">Andere taak</a></li>
+                                                        <li role="menuitem"><button ng-disabled="selectedEvaluation.editAbleState.canEdit===false" ng-click="setNotScoredReason(evaluationItem,1)">?</button></li>
+                                                        <li role="menuitem"><button ng-disabled="selectedEvaluation.editAbleState.canEdit===false" ng-click="setNotScoredReason(evaluationItem,2)">Afwezig</button></li>
+                                                        <li role="menuitem"><button ng-disabled="selectedEvaluation.editAbleState.canEdit===false" ng-click="setNotScoredReason(evaluationItem,3)">Andere taak</button></li>
                                                     </ul>
                                                 </div>
                                             </td>
@@ -105,7 +108,7 @@
                             <div>
                                 <div class="col-md-2 col-xs-12"> Opmerking:</div>
                                 <div class="col-md-10 col-xs-12">
-                                    <textarea style="width: inherit" ng-model="selectedEvaluation.generalComment"></textarea>
+                                    <textarea ng-readonly="selectedEvaluation.editAbleState.canEdit===false" style="width: inherit" ng-model="selectedEvaluation.generalComment"></textarea>
                                 </div>
                             </div>
                         </div>

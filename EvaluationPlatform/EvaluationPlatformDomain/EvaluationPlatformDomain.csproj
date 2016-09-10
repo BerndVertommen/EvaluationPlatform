@@ -61,9 +61,13 @@
     <Compile Include="Models\Account\Account.cs" />
     <Compile Include="Models\Account\AccountRole.cs" />
     <Compile Include="Models\Account\AccountRoleType.cs" />
+    <Compile Include="Models\BaseEntities\EditableState.cs" />
+    <Compile Include="Models\BaseEntities\Entity.cs" />
+    <Compile Include="Models\EditChangeHistoryRecord.cs" />
+    <Compile Include="Models\ChangeState.cs" />
     <Compile Include="Models\Class.cs" />
     <Compile Include="Models\Course.cs" />
-    <Compile Include="Models\Entity.cs" />
+    <Compile Include="Models\EditState.cs" />
     <Compile Include="Models\Evaluation.cs" />
     <Compile Include="Models\EvaluationItem.cs" />
     <Compile Include="Models\EvaluationResult.cs" />

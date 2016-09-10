@@ -1,4 +1,6 @@
-﻿namespace EvaluationPlatformDomain.Models
+﻿using EvaluationPlatformDomain.Models.BaseEntities;
+
+namespace EvaluationPlatformDomain.Models
 {
     public class Student : Entity
     {

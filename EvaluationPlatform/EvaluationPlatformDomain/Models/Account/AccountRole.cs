@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using EvaluationPlatformDomain.Models.BaseEntities;
 using Microsoft.AspNet.Identity;
 
 namespace EvaluationPlatformDomain.Models.Authentication

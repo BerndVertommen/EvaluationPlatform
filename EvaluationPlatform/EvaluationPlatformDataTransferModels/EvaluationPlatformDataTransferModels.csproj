@@ -51,6 +51,8 @@
     <Compile Include="InformationModels\Course\CourseBaseInfo.cs" />
     <Compile Include="InformationModels\Course\CourseInfo.cs" />
     <Compile Include="InformationModels\Course\CourseViewInfo.cs" />
+    <Compile Include="InformationModels\EditableStateInfo.cs" />
+    <Compile Include="InformationModels\EditChangeHistoryRecordInfo.cs" />
     <Compile Include="InformationModels\EvaluationItem\EvaluationItemInfo.cs" />
     <Compile Include="InformationModels\EvaluationSubsection\EvaluationSubSectionInfo.cs" />
     <Compile Include="InformationModels\EvaluationTemplate\EvaluationTemplateInfo.cs" />

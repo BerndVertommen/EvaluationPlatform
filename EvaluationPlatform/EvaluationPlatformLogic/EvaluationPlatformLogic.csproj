@@ -163,7 +163,9 @@
     <Compile Include="CommandAndQuery\EvaluationTemplates\QueryHandlers\GetEvaluationsTemplatesQueryHandler.cs" />
     <Compile Include="CommandAndQuery\EvaluationTemplates\QueryDto\GetCreateEvaluationOptionsQueryDto.cs" />
     <Compile Include="CommandAndQuery\EvaluationTemplates\QueryDto\GetEvaluationTemplatesQueryDto.cs" />
+    <Compile Include="CommandAndQuery\Evaluation\CommandDto\UnlockEvaluationCommandDto.cs" />
     <Compile Include="CommandAndQuery\Evaluation\CommandHandlers\CreateEvaluationCommandHandler.cs" />
+    <Compile Include="CommandAndQuery\Evaluation\CommandHandlers\UnlockEvaluationCommandHandler.cs" />
     <Compile Include="CommandAndQuery\Evaluation\CommandHandlers\UpdateEvaluationItemsCommandHandler.cs" />
     <Compile Include="CommandAndQuery\Evaluation\CommandDto\CreateEvaluationCommandDto.cs" />
     <Compile Include="CommandAndQuery\Evaluation\CommandDto\UpdateEvaluationItemsCommandDto.cs" />

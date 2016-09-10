@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using EvaluationPlatformDAL;
 using EvaluationPlatformDomain.Models;
+using EvaluationPlatformDomain.Models.BaseEntities;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.BaseClasses
 {

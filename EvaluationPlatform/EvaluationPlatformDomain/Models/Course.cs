@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using EvaluationPlatformDomain.Models.BaseEntities;
 using EvaluationPlatformDomain.Models.Scales;
 
 namespace EvaluationPlatformDomain.Models

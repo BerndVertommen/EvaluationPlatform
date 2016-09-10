@@ -1,4 +1,6 @@
-﻿namespace EvaluationPlatformDomain.Models.Scales
+﻿using EvaluationPlatformDomain.Models.BaseEntities;
+
+namespace EvaluationPlatformDomain.Models.Scales
 {
     public class Scale : Entity, IScale
     {

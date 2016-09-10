@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using EvaluationPlatformDomain.Models.BaseEntities;
 
 namespace EvaluationPlatformDomain.Models
 {

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using EvaluationPlatformDomain.Models.Authentication;
+using EvaluationPlatformDomain.Models.BaseEntities;
 using Infrastructure.Security;
 
 namespace EvaluationPlatformDomain.Models.Account

@@ -8,6 +8,7 @@ namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.CommandHandlers
 {
     public class UpdateEvaluationItemsCommandHandler : CommandHandler<UpdateEvaluationItemsCommandDto>
     {
+
         public UpdateEvaluationItemsCommandHandler(IEPDatabase database) : base(database)
         {
         }
@@ -15,6 +16,7 @@ namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.CommandHandlers
         public override void Handle(UpdateEvaluationItemsCommandDto commandObject)
         {
             var evaluation = Database.Evaluations.FirstOrDefault(e => e.Id == commandObject.EvaluationInfo.Id);
+            var executor = Database.Accounts.FirstOrDefault(a => a.Id == commandObject.ExecutingAccountId);
 
             if (evaluation == null)
             {
@@ -30,7 +32,7 @@ namespace EvaluationPlatformLogic.CommandAndQuery.Evaluation.CommandHandlers
                 evaluationitem.Update(evaluationItem.Comment, evaluationItem.Score, evaluationItem.NotScoredReason);
             }
 
-            evaluation.UpdateGeneralcomment(commandObject.EvaluationInfo.GeneralComment);
+            evaluation.UpdateGeneralcomment(executor, commandObject.EvaluationInfo.GeneralComment);
 
             //evaluation.SetUpdated();
         }

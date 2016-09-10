@@ -1,5 +1,6 @@
 ﻿using System.CodeDom;
 using System.Data.Entity.Infrastructure.Annotations;
+using EvaluationPlatformDomain.Models.BaseEntities;
 
 namespace EvaluationPlatformDomain.Models
 {

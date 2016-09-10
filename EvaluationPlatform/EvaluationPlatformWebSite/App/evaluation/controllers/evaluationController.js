@@ -31,7 +31,7 @@
                 //var hashkey = $scope.selectedEvaluation.$$hashKey;
                 //$scope.selectedEvaluation = evaluation;
                 //$scope.selectedEvaluation.$$hashKey = hashkey;
-                thiz.updateAfterChange();
+               thiz.updateAfterChange();
 
             });
         };
@@ -49,10 +49,21 @@
             evaluationitem.score = null;
         };
 
+        $scope.unLock = function (selectedEvaluation) {
+            // do server side logic
+            console.log("Unlocking selected evaluation");
+
+            evaluationService.unlockEditable(selectedEvaluation.id).then(function (parameters) {
+                selectedEvaluation.editAbleState.canEdit = true;
+            });
+        }
+
         thiz.updateAfterChange = function() {
             $scope.evaluations = evaluationService.mapItemsToSubSection($scope.evaluations);
-           // evaluationService.setSubsectionScores();
+            // evaluationService.setSubsectionScores();
         };
+
+
 
         /*
         thiz.mapItemsToSubSection = function () {

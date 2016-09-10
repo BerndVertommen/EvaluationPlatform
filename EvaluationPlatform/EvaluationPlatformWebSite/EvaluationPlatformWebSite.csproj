@@ -266,6 +266,7 @@
     <None Include=".bin\git.cmd" />
     <None Include=".bin\node.cmd" />
     <None Include="Properties\PublishProfiles\evalautionplatform.be.pubxml" />
+    <None Include="Properties\PublishProfiles\PlatformWebsite.pubxml" />
     <None Include="Properties\PublishProfiles\website publish package.pubxml" />
     <None Include="scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="scripts\FileAPI.flash.swf" />
@@ -1065,6 +1066,9 @@
   <ItemGroup>
     <Folder Include="app\home\services\" />
     <Folder Include="copyFolder\zzzcopyMe\services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

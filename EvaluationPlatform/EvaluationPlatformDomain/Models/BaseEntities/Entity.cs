@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EvaluationPlatformDomain.Models
+namespace EvaluationPlatformDomain.Models.BaseEntities
 {
     public abstract class Entity
     {

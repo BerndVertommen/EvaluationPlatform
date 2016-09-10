@@ -48,7 +48,7 @@ namespace EvaluationPlatformWebApi.Controllers
         [HttpPost]
         public EvaluationInfo UpdateEvaluation(EvaluationInfo evaluationInfo)
         {
-            CommandProcessor.Execute(new UpdateEvaluationItemsCommandDto(evaluationInfo));
+            CommandProcessor.Execute(new UpdateEvaluationItemsCommandDto(evaluationInfo,AccountId));
 
 
             return QueryProccesor.Execute(new EvaluationsQueryDto(new List<Guid>() {evaluationInfo.Id})).FirstOrDefault();
@@ -62,7 +62,7 @@ namespace EvaluationPlatformWebApi.Controllers
             {
                 foreach (var evaluationinfo in evaluationInfos)
                 {
-                    CommandProcessor.Execute(new UpdateEvaluationItemsCommandDto(evaluationinfo));
+                    CommandProcessor.Execute(new UpdateEvaluationItemsCommandDto(evaluationinfo,AccountId));
                 }
             }
 
@@ -99,6 +99,16 @@ namespace EvaluationPlatformWebApi.Controllers
 
             return response;
         }
-    }
 
+
+        [Route("unlockEvaluation")]
+        [HttpPost]
+        public HttpResponseMessage UnlockEvaluation(GuidDto guidDto)
+        {
+            CommandProcessor.Execute(new UnlockEvaluationCommandDto(guidDto.Id,AccountId));
+
+            return new HttpResponseMessage(HttpStatusCode.OK);
+        }
+
+    }
 }

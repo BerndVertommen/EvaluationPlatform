@@ -18,6 +18,8 @@ namespace EvaluationPlatformDataTransferModels.InformationModels.Evaluation
         public bool Finished { get; set; }
         public EvaluationResultInfo Result { get; set; }
         public string Description { get; set; }
+        public EditableStateInfo EditAbleState { get; set; }
+
 
         public EvaluationInfo()
         {

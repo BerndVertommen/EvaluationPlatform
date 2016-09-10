@@ -34,6 +34,9 @@ namespace EvaluationPlatformWebApi.App_Start
                                                     Groupname = g.Groupname,
                                                     Id = g.Id
                                                 }))));
+
+            Mapper.CreateMap<EditChangeHistoryRecord, EditChangeHistoryRecordInfo>()
+                .ForMember(dest => dest.ChangeState, opt => opt.MapFrom(r => r.ChangeState.ToString()));
         }
 
         private static void ConfigureOnSuffix(Assembly sourceAssembly, Assembly destinationAssembly, string[] domainNamespaces)

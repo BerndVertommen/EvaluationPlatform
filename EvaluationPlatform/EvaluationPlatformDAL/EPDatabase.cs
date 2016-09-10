@@ -6,6 +6,7 @@ using System.Linq;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformDomain.Models.Account;
 using EvaluationPlatformDomain.Models.Authentication;
+using EvaluationPlatformDomain.Models.BaseEntities;
 using EvaluationPlatformDomain.Models.Scales;
 
 namespace EvaluationPlatformDAL
@@ -53,7 +54,6 @@ namespace EvaluationPlatformDAL
                 IndexAnnotation.AnnotationName,
                 new IndexAnnotation(
                     new IndexAttribute("IX_UserName", 1) { IsUnique = true }));
-
         }
 
         public static EPDatabase Create()

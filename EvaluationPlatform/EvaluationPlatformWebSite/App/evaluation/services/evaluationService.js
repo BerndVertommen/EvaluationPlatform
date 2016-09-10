@@ -1,6 +1,6 @@
 ﻿(function (module) {
 
-    function evaluationService($http, configurationService, messageService, $filter) {
+    function evaluationService($http, configurationService, messageService, $filter, $q) {
         var thiz = this;
         var baseWebApiUrl = configurationService.baseApiPath;
         //Variables
@@ -115,6 +115,14 @@
             return true;
         };
 
+        thiz.unlockEditable = function(evaluationId) {
+            var guidDto = { 'id': evaluationId };
+
+            return $http.post(baseWebApiUrl + 'evaluation/unlockEvaluation', guidDto).then(function (result) {
+                    return result.data;
+            });
+        };
+
         //initiations
         var init = function () {
 
@@ -137,9 +145,14 @@
 
         /*Maps subsections to evaluationitems*/
         thiz.mapItemsToSubSection = function (evaluations) {
-            _.each(evaluations, function (evaluation) {
+
+            angular.forEach(evaluations, function (evaluation) {
                 thiz.mapSubsectionToEvaluation(evaluation);
             });
+
+            //_.each(evaluations, function (evaluation) {
+            //        thiz.mapSubsectionToEvaluation(evaluation);
+            //});
 
             return evaluations;
         };
@@ -160,8 +173,6 @@
                         subsection.unScored = true;
                     }
                 }
-
-
             });
             // map every evaluation not just selected so it can be procesed in int()
         };

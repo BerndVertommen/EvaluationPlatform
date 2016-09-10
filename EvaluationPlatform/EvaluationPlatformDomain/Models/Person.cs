@@ -1,4 +1,5 @@
 ﻿using System;
+using EvaluationPlatformDomain.Models.BaseEntities;
 
 namespace EvaluationPlatformDomain.Models
 {
