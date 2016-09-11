@@ -201,6 +201,10 @@
     <Compile Include="Migrations\201609100952076_CreatedEditableState.Designer.cs">
       <DependentUpon>201609100952076_CreatedEditableState.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609111520592_AddedSequenceNumberToEvaSub.cs" />
+    <Compile Include="Migrations\201609111520592_AddedSequenceNumberToEvaSub.Designer.cs">
+      <DependentUpon>201609111520592_AddedSequenceNumberToEvaSub.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Generators\StudentGenerator.cs" />
@@ -312,6 +316,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609100952076_CreatedEditableState.resx">
       <DependentUpon>201609100952076_CreatedEditableState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609111520592_AddedSequenceNumberToEvaSub.resx">
+      <DependentUpon>201609111520592_AddedSequenceNumberToEvaSub.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

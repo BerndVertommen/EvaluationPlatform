@@ -136,7 +136,7 @@
                 return item.evaluationSubSection.description;
             });
             differentSubsections = _.sortBy(differentSubsections, function (sub) {
-                return sub[0].evaluationSubSection.weight;
+                return sub[0].evaluationSubSection.sequenceNumber;
             });
             evaluation.mappedSubsections = differentSubsections;
 

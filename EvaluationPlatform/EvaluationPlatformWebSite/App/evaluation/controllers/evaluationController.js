@@ -10,6 +10,7 @@
         //private Functions
 
         // public functions
+
         $scope.selectEvaluation = function (evaluation) {
             $scope.selectedEvaluation = evaluation;
            // evaluationService.setSubsectionScores(); // find other solution to map scores not on evry select.
@@ -19,6 +20,8 @@
         $scope.setScore = function (evaluationItem, score) {
             evaluationItem.score = score;
             evaluationItem.notScoredReason = 0;
+
+            thiz.actionTaken();
         };
 
         $scope.updateEvaluation = function () {
@@ -26,6 +29,8 @@
                 var indexEva = _.findIndex($scope.evaluations, function (eva) {
                     return eva.id === evaluation.id;
                 });
+
+                $scope.selectedEvaluation.unsaved = false;
 
                 $scope.evaluations[indexEva] = evaluation;
                 //var hashkey = $scope.selectedEvaluation.$$hashKey;
@@ -40,6 +45,9 @@
             evaluationService.updateEvaluations($scope.evaluations).then(function(evaluations) {
                 $scope.evaluations = evaluations;
 
+                angular.forEach($scope.evaluations, function(evaluation) {
+                    evaluations.unsaved = false;
+                });
                 thiz.updateAfterChange();
             });
         };
@@ -47,6 +55,8 @@
         $scope.setNotScoredReason = function(evaluationitem, number) {
             evaluationitem.notScoredReason = number;
             evaluationitem.score = null;
+
+            thiz.actionTaken();
         };
 
         $scope.unLock = function (selectedEvaluation) {
@@ -91,7 +101,15 @@
             // map every evaluation not just selected so it can be procesed in int()
         };
         */
+        thiz.actionTaken = function () {
+            $scope.selectedEvaluation.unsaved = true;
+        };
 
+        $scope.anyUnsavedEvaluations = function () {
+            return $scope.evaluations.some(function (evaluation) {
+                return evaluation.unsaved === true;
+            });
+        };
         //initiations
         var init = function () {
             console.log(evaluations[0]);
@@ -101,6 +119,9 @@
             console.log($scope.evaluations);
 
         }
+
+      
+
 
         init();
     }

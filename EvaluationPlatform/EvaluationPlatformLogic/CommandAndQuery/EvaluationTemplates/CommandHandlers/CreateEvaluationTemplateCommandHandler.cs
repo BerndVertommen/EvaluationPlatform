@@ -28,7 +28,7 @@ namespace EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.CommandHan
                 var goals = GetGoalsForSubSection(subSection).ToList();
                 subsSections.Add(new EvaluationSubSection( subSection.Description,
                                                             subSection.Weight,
-                                                            goals));
+                                                            goals,subSection.SequenceNumber));
 
             }
 

@@ -8,6 +8,13 @@
         $scope.evaluationTemplate = {};
         $scope.evaluationTemplate.evaluationSubSections = [];
         $scope.tabs = 1;
+        $scope.sequenceNumber = function() {
+            var lastIndex = $scope.evaluationTemplate.evaluationSubSections.length - 1;
+            if (lastIndex > -1) {
+                return $scope.evaluationTemplate.evaluationSubSections[lastIndex].sequenceNumber;
+            }
+            return 0;
+        }
 
         //private Functions
 
@@ -63,6 +70,9 @@
                     },
                     currentTotalWeight: function() {
                         return thiz.getTotalSubSectionPercentage();
+                    },
+                    sequenceNumber: function() {
+                        return $scope.sequenceNumber();
                     }
                 }
             });

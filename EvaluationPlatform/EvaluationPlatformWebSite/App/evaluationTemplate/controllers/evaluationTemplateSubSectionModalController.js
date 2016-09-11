@@ -2,7 +2,7 @@
 (function (module) {
     'use strict';
 
-    function evaluationTemplateSubSectionModalController($scope, $uibModalInstance, evaluationSubSections, currentTotalWeight, course, subSection) {
+    function evaluationTemplateSubSectionModalController($scope, $uibModalInstance, evaluationSubSections, currentTotalWeight, course, subSection, sequenceNumber) {
         var thiz = this;
 
         //Variables
@@ -13,6 +13,7 @@
         // public functions
        
         thiz.addnewEvaluationSubSection = function () {
+            $scope.newEvaluationSubSection.sequenceNumber = sequenceNumber +1;
             $scope.evaluationSubSections.push(angular.copy($scope.newEvaluationSubSection));
         }
         

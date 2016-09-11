@@ -126,7 +126,7 @@ namespace EvaluationPlatformLogic.Pdf.Evaluation
 
         private static void GenerateSubsections(StringBuilder htmlStringBuilder, EvaluationPlatformDomain.Models.Evaluation evaluation)
         {
-            foreach (var subsection in evaluation.EvaluationTemplate.EvaluationSubSections.OrderByDescending(e => e.Weight))
+            foreach (var subsection in evaluation.EvaluationTemplate.EvaluationSubSections.OrderByDescending(e => e.SequenceNumber))
             {
                 htmlStringBuilder.AppendLine($@"
                                             <tr>

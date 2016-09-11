@@ -9,5 +9,6 @@ namespace EvaluationPlatformDataTransferModels.InformationModels.EvaluationSubse
         public string Description { get; set; }
         public int Weight { get; set; }
         public List<GoalInfo> Goals{ get; set; }
+        public int SequenceNumber { get; set; }
     }
 }

@@ -41,13 +41,13 @@
                                         <tr ng-repeat="evaluationSubSection in evaluationTemplate.evaluationSubSections">
                                             <td>
                                                 <div class="bs-component">
-                                                    <table class="table table-hover fixedTable ">
+                                                    <table class="table table-hover fixedTable">
                                                         <thead>
                                                             <tr class="bg-EvaluationSubSection">
-                                                                <th class="evaDescription">{{evaluationSubSection.description}}: {{evaluationSubSection.weight}}%</th>
+                                                                <th class="evaDescription"><span class="badge">{{evaluationSubSection.sequenceNumber}}</span> {{evaluationSubSection.description}}: {{evaluationSubSection.weight}}%</th>
                                                                 <th class="scoreButtons">Score</th>
                                                                 <th class="evaNotScored"><i class="fa fa-question-circle"></i></th>
-                                                                <th class="evaFinalScore"><i class=" fa fa-trophy"></i></th>
+                                                                <th class="evaFinalScore"><i class="fa fa-trophy"></i></th>
                                                                 <th class="evaTemplateBtn">
                                                                     <div class="btn-group">
                                                                         <a class="btn btn-default btn-sm" ng-click="openSubSections(evaluationSubSection)"><i class="fa fa-edit"></i></a>
