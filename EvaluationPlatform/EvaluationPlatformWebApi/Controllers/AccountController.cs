@@ -6,7 +6,6 @@ using AutoMapper;
 using EvaluationPlatformDataTransferModels.CreationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Account;
 using EvaluationPlatformDomain.Models.Account;
-using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformLogic.CommandAndQuery.Account.Commands;
 using EvaluationPlatformLogic.CommandAndQuery.Account.QueryDto;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;

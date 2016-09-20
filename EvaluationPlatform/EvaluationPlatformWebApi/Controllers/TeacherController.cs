@@ -3,7 +3,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using EvaluationPlatformDataTransferModels.InformationModels.Teacher;
-using EvaluationPlatformDomain.Models.Authentication;
+using EvaluationPlatformDomain.Models.Account;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using EvaluationPlatformLogic.CommandAndQuery.Teacher.CommandDto;
 using EvaluationPlatformLogic.CommandAndQuery.Teacher.QueryDto;

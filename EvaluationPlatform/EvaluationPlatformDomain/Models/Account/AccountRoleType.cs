@@ -1,4 +1,4 @@
-﻿namespace EvaluationPlatformDomain.Models.Authentication
+﻿namespace EvaluationPlatformDomain.Models.Account
 {
     public enum AccountRoleType
     {

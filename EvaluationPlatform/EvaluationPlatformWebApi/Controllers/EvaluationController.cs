@@ -8,7 +8,7 @@ using System.Web.Http;
 using EvaluationPlatformDataTransferModels.DataTransferModels;
 using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Evaluation;
-using EvaluationPlatformDomain.Models.Authentication;
+using EvaluationPlatformDomain.Models.Account;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using EvaluationPlatformLogic.CommandAndQuery.Evaluation.CommandDto;
 using EvaluationPlatformLogic.CommandAndQuery.Evaluation.PagedQueryResults;

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
 using EvaluationPlatformDataTransferModels.InformationModels;
-using EvaluationPlatformDomain.Models.Authentication;
+using EvaluationPlatformDomain.Models.Account;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using EvaluationPlatformLogic.CommandAndQuery.General.QueryDto;
 using EvaluationPlatformWebApi.Authentication;

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using EvaluationPlatformDAL;
-using EvaluationPlatformDomain.Models.Authentication;
+using EvaluationPlatformDomain.Models.Account;
 using EvaluationPlatformLogic.CommandAndQuery.Account.Commands;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using EvaluationPlatformLogic.Exeptions;

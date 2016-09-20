@@ -3,7 +3,6 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Autofac;
 using EvaluationPlatformDomain.Models.Account;
-using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformLogic.CommandAndQuery.Account.QueryDto;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using Microsoft.Owin.Security;

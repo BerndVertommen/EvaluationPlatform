@@ -5,7 +5,6 @@ using System.Data.Entity.Infrastructure.Annotations;
 using System.Linq;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformDomain.Models.Account;
-using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformDomain.Models.BaseEntities;
 using EvaluationPlatformDomain.Models.Scales;
 

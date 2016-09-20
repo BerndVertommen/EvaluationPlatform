@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EvaluationPlatformDataTransferModels.InformationModels;
+using EvaluationPlatformDataTransferModels.InformationModels.StudyPlan;
 using EvaluationPlatformDataTransferModels.InformationModels.Teacher;
 
 namespace EvaluationPlatformDataTransferModels.CreationModels

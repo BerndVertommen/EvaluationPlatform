@@ -5,7 +5,6 @@ using System.Linq;
 using EvaluationPlatformDAL.Generators;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformDomain.Models.Account;
-using EvaluationPlatformDomain.Models.Authentication;
 using EvaluationPlatformDomain.Models.Scales;
 
 namespace EvaluationPlatformDAL.Migrations

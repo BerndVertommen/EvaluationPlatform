@@ -11,7 +11,7 @@ using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Class;
 using EvaluationPlatformDataTransferModels.InformationModels.Course;
 using EvaluationPlatformDomain.Models;
-using EvaluationPlatformDomain.Models.Authentication;
+using EvaluationPlatformDomain.Models.Account;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using EvaluationPlatformLogic.CommandAndQuery.Class.CommandDto;
 using EvaluationPlatformLogic.CommandAndQuery.Class.QueryDto;

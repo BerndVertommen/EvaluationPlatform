@@ -6,7 +6,7 @@ using System.Web.Http;
 using EvaluationPlatformDataTransferModels.CreationModels;
 using EvaluationPlatformDataTransferModels.InformationModels.Course;
 using EvaluationPlatformDomain.Models;
-using EvaluationPlatformDomain.Models.Authentication;
+using EvaluationPlatformDomain.Models.Account;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using EvaluationPlatformLogic.CommandAndQuery.Course.CommandDto;
 using EvaluationPlatformLogic.CommandAndQuery.Course.QueryDto;

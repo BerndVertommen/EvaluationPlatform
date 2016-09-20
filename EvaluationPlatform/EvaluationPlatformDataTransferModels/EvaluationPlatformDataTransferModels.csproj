@@ -34,7 +34,6 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
@@ -66,7 +65,9 @@
     <Compile Include="InformationModels\ScaleInfo.cs" />
     <Compile Include="InformationModels\SchoolYearInfo.cs" />
     <Compile Include="InformationModels\StudentInfo.cs" />
+    <Compile Include="InformationModels\GeneralGoalInfo.cs" />
     <Compile Include="InformationModels\StudyPlan\StudyPlanInfo.cs" />
+    <Compile Include="InformationModels\StudyPlan\StudyPlanSummaryInfo.cs" />
     <Compile Include="InformationModels\Teacher\PrimaryTeacherInfo.cs" />
     <Compile Include="InformationModels\Teacher\TeacherBaseInfo.cs" />
     <Compile Include="InformationModels\Teacher\TeacherInfo.cs" />
