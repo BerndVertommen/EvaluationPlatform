@@ -26,5 +26,17 @@ namespace EvaluationPlatformDomain.Models
         {
             GeneralGoals.Add(generalGoal);
         }
+
+        public void RemoveGeneralGoal(Guid generalGoalId)
+        {
+            var generalGoal = GeneralGoals.FirstOrDefault(g => g.Id == generalGoalId);
+
+            if (generalGoal != null && generalGoal.Goals.Any())
+            {
+                throw new InvalidOperationException("Het leerplandoel kan niet worden verwijderd. Er zijn reeds lesdoelen aan gekoppeld.");
+            }
+
+            GeneralGoals.Remove(generalGoal);
+        }
     }
 }

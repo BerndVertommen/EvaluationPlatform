@@ -43,6 +43,8 @@
     <Compile Include="CreationModels\CreateClassInfo.cs" />
     <Compile Include="CreationModels\CreateCourseInfo.cs" />
     <Compile Include="CreationModels\CreateEvaluationOptions.cs" />
+    <Compile Include="CreationModels\CreateStudyPlanInfo.cs" />
+    <Compile Include="CreationModels\CreateGeneralGoalInfo.cs" />
     <Compile Include="DataTransferModels\EvaluationTotalsForClassOverview.cs" />
     <Compile Include="InformationModels\Account\AccountInfo.cs" />
     <Compile Include="InformationModels\Class\ClassBaseInfo.cs" />

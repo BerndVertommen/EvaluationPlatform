@@ -152,6 +152,12 @@
     <Compile Include="CommandAndQuery\Evaluation\QueryDto\PlannedEvaluationBaseInfoQueryDto.cs" />
     <Compile Include="CommandAndQuery\General\QueryHandlers\GetSchoolYearQueryHandler.cs" />
     <Compile Include="CommandAndQuery\General\QueryDto\GetSchoolYearsQueryDto.cs" />
+    <Compile Include="CommandAndQuery\StudyPlan\CommandDto\AddGeneralGoalToStudyPlanCommandDto.cs" />
+    <Compile Include="CommandAndQuery\StudyPlan\CommandDto\CreateStudyPlanCommandDto.cs" />
+    <Compile Include="CommandAndQuery\StudyPlan\CommandDto\RemoveGeneralGoalFromStudyPlanCommandDto.cs" />
+    <Compile Include="CommandAndQuery\StudyPlan\CommandHandlers\AddGeneralGoalToStudyPlanCommandHandler.cs" />
+    <Compile Include="CommandAndQuery\StudyPlan\CommandHandlers\CreateStudyPlanCommandHandler.cs" />
+    <Compile Include="CommandAndQuery\StudyPlan\CommandHandlers\RemoveGeneralGoalFromStudyPlanCommandHandler.cs" />
     <Compile Include="CommandAndQuery\StudyPlan\QueryHandlers\StudyPlanQueryHandler.cs" />
     <Compile Include="CommandAndQuery\StudyPlan\QueryDto\StudyPlanQueryDto.cs" />
     <Compile Include="CommandAndQuery\Teacher\CommandHandler\AddClassToTeacherCommandHandler.cs" />
