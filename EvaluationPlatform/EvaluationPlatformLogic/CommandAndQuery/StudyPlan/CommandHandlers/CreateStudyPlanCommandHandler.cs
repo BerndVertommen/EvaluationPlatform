@@ -28,7 +28,7 @@ namespace EvaluationPlatformLogic.CommandAndQuery.StudyPlan.CommandHandlers
 
             if (commandObject.CreateStudyPlanInfo.GeneralGoals.Any())
             {
-                commandObject.CreateStudyPlanInfo.GeneralGoals.ForEach(g => newStudyplan.AddGeneralGoal(new GeneralGoal(newStudyplan.GeneralGoals.Count + 1, g.Description)));
+                commandObject.CreateStudyPlanInfo.GeneralGoals.ForEach(g => newStudyplan.AddGeneralGoal(new GeneralGoal(g.GoalNumber, g.Description)));
             }
 
             Database.StudyPlans.Add(newStudyplan);

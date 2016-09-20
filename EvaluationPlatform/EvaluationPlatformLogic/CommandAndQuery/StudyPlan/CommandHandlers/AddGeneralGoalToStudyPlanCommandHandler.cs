@@ -25,7 +25,7 @@ namespace EvaluationPlatformLogic.CommandAndQuery.StudyPlan.CommandHandlers
                 throw new InvalidOperationException("Geen Leerplan gevonden. Het Leerplan doel kan niet worden toegevoegd.");
             }
 
-            studyPlan.AddGeneralGoal(new GeneralGoal(studyPlan.GeneralGoals.Count +1,commandObject.GeneralGoalInfo.Description));
+            studyPlan.AddGeneralGoal(new GeneralGoal(commandObject.CreateGeneralGoalInfo.GoalNumber,commandObject.CreateGeneralGoalInfo.Description));
         }
     }
 }
