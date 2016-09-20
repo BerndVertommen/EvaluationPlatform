@@ -158,6 +158,8 @@
     <Compile Include="CommandAndQuery\StudyPlan\CommandHandlers\AddGeneralGoalToStudyPlanCommandHandler.cs" />
     <Compile Include="CommandAndQuery\StudyPlan\CommandHandlers\CreateStudyPlanCommandHandler.cs" />
     <Compile Include="CommandAndQuery\StudyPlan\CommandHandlers\RemoveGeneralGoalFromStudyPlanCommandHandler.cs" />
+    <Compile Include="CommandAndQuery\StudyPlan\QueryDto\GetStudyPlanInfoQueryDto.cs" />
+    <Compile Include="CommandAndQuery\StudyPlan\QueryHandlers\GetStudyPlanInfoQueryHandler.cs" />
     <Compile Include="CommandAndQuery\StudyPlan\QueryHandlers\StudyPlanQueryHandler.cs" />
     <Compile Include="CommandAndQuery\StudyPlan\QueryDto\StudyPlanQueryDto.cs" />
     <Compile Include="CommandAndQuery\Teacher\CommandHandler\AddClassToTeacherCommandHandler.cs" />

@@ -1,15 +1,45 @@
 ﻿<div>
     <div class="panel panel-default">
-        <div class="panel-heading"> <!--mainHeading-->
+        <div class="panel-heading">
+            <!--mainHeading-->
             <div class="panel-title">
                 Leerplan beheren
             </div>
         </div>
-        <div class="panel-body"> <!--mainBody-->
-        Leerplan inlezen met behulp van excel file.
+        <div class="panel-body">
+            <!--mainBody-->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <!--mainHeading-->
+                    <div class="panel-title">
+                        Leerplan : 
+                    </div>
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default" ng-click="createNewStudyPlan()"><i class="fa fa-plus-square"></i></button>
+                        <button type="button" class="btn btn-default" ng-click="getStudyPlanInfo()"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal">
+                        <fieldset>
+                            <legend>{{selectedStudyPlan.description}}</legend>
+                            <div class="list-group">
+                                <a href="#" class="list-group-item" ng-repeat="generalgoal in selectedStudyPlan.generalGoals | orderBy : 'goalNumber' ">
+                                    <h4 class="list-group-item-heading">{{generalgoal.description}}</h4>
+                                    <p class="list-group-item-text">Doelnummer: {{generalgoal.goalNumber}} Gekoppelde lesdoelen: <span class="badge">{{generalgoal.goals.length}}</span></p>
+                                </a>
+                              
+                            </div>
+                        </fieldset>
+                    </form>
+
+                </div>
+            </div>
+
         </div>
-        <div class="panel-footer"> <!--mainFooter-->
-            
+        <div class="panel-footer">
+            <!--mainFooter-->
+
         </div>
     </div>
 </div>

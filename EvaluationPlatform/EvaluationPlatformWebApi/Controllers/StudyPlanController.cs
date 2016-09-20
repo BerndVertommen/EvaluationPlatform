@@ -30,12 +30,20 @@ namespace EvaluationPlatformWebApi.Controllers
         [CustomAutorize(AccountRoleType.Admin)]
         [Route("allStudyPlans")]
         [HttpGet]
-        public IEnumerable<StudyPlanInfo> GetStudyPlans()
+        public IEnumerable<StudyPlanSummaryInfo> GetStudyPlans()
         {
             return QueryProccesor.Execute(new StudyPlanQueryDto());
         }
 
-        [CustomAutorize(AccountRoleType.UserRole)]
+        [CustomAutorize(AccountRoleType.Admin)]
+        [Route("getStudyPlanInfo")]
+        [HttpPost]
+        public StudyPlanInfo GetStudyPlanInfo( GuidDto guidDto)
+        {
+            return QueryProccesor.Execute(new GetStudyPlanInfoQueryDto(guidDto.Id));
+        }
+
+        [CustomAutorize(AccountRoleType.Admin)]
         [Route("createStudyPlan")]
         [HttpPost]
         public HttpResponseMessage CreateStudyPlan(CreateStudyPlanInfo createStudyPlanInfo)
@@ -45,7 +53,7 @@ namespace EvaluationPlatformWebApi.Controllers
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
-        [CustomAutorize(AccountRoleType.UserRole)]
+        [CustomAutorize(AccountRoleType.Admin)]
         [Route("addGeneralGoal")]
         [HttpPost]
         public HttpResponseMessage AddGeneralGoal(CreateGeneralGoalInfo createGeneralGoalInfo, GuidDto guidDto)
@@ -55,7 +63,7 @@ namespace EvaluationPlatformWebApi.Controllers
             return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
-        [CustomAutorize(AccountRoleType.UserRole)]
+        [CustomAutorize(AccountRoleType.Admin)]
         [Route("removeGeneralGoal")]
         [HttpPost]
         public HttpResponseMessage RemoveGeneralGoal(GuidDto guidDto)

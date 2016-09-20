@@ -12,17 +12,17 @@ using EvaluationPlatformLogic.CommandAndQuery.StudyPlan.QueryDto;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.StudyPlan.QueryHandlers
 {
-    public class StudyPlanQueryHandler : QueryHandler<StudyPlanQueryDto, IEnumerable<StudyPlanInfo>>
+    public class StudyPlanQueryHandler : QueryHandler<StudyPlanQueryDto, IEnumerable<StudyPlanSummaryInfo>>
     {
         public StudyPlanQueryHandler(IEPDatabase database) : base(database)
         {
         }
 
-        public override IEnumerable<StudyPlanInfo> Handle(StudyPlanQueryDto queryObject)
+        public override IEnumerable<StudyPlanSummaryInfo> Handle(StudyPlanQueryDto queryObject)
         {
             var studyPlans = Database.StudyPlans.ToList();
 
-            return Mapper.Map<IEnumerable<StudyPlanInfo>>(studyPlans);
+            return Mapper.Map<IEnumerable<StudyPlanSummaryInfo>>(studyPlans);
             // geen ID in studyplaninfo kijken of dit geen probleem geeft
         }
     }
