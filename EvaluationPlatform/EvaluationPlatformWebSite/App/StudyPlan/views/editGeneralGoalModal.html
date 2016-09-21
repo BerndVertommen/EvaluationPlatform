@@ -1,0 +1,34 @@
+﻿<div class="modal-body">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <!--mainHeading-->
+            <div class="panel-title">
+                New Laarplan
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--mainBody-->
+            <div class="form-horizontal">
+                <fieldset>
+                    <div class="row">
+                        <div class="col-xs-offset-3 col-xs-6 ">
+                            <div class="form-group">
+                                <label for="description" class="control-label">Omschrijving:</label>
+                                <textarea id="description" class="form-control" type="text" autofocus tabindex="0" ng-model="generealGoal.description"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="goalNumber" class="control-label">Omschrijving:</label>
+                                <input id="goalNumber" class="form-control" type="number" autofocus tabindex="1" ng-model="generealGoal.goalNumber" />
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success" ng-click="ok()">Toevoegen <i class="fa fa-plus-square"></i></button>
+            <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
+        </div>
+    </div>
+</div>
+

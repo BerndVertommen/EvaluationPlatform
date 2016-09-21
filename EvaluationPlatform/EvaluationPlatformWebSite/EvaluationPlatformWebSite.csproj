@@ -142,7 +142,9 @@
     <Content Include="app\dashboard\dashboard-module.js" />
     <Content Include="app\dashboard\services\dashboardService.js" />
     <Content Include="app\dashboard\views\dashboard.html" />
+    <Content Include="app\StudyPlan\controllers\editGeneralGoalModalController.js" />
     <Content Include="app\StudyPlan\controllers\newStudyPlanModalController.js" />
+    <Content Include="app\StudyPlan\views\editGeneralGoalModal.html" />
     <Content Include="app\Teacher\controllers\addCourseModalController.js" />
     <Content Include="app\Teacher\controllers\manageTeacherController.js" />
     <Content Include="app\Teacher\teacher-module.js" />

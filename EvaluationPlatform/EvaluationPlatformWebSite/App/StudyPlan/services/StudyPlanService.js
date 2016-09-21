@@ -32,6 +32,25 @@
             });
         }
 
+
+        thiz.openEditGeneralGoalModal = function (generalGoalToEdit) {
+            var modalInstance = $uibModal.open({
+                animation: true,
+                templateUrl: "app/StudyPlan/views/editGeneralGoalModal.html",
+                controller: "editGeneralGoalModalController",
+                size: 'lg',
+                resolve: {
+                    generalGoal : function() {
+                        return generalGoalToEdit;
+                    }
+                }
+            });
+
+            return modalInstance.result.then(function (newStudyPlan) {
+                return newStudyPlan;
+            });
+        }
+
     }
 
     module.service('studyPlanService', studyPlanService);

@@ -28,8 +28,18 @@
             });
         }
 
-        $scope.addGeneralGoal = function(parameters) {
-            // create method on studyplanservice to open modal 
+        $scope.addGeneralGoal = function (parameters) {
+            var currentGoalsInStudyPlan = $scope.selectedStudyPlan.generalGoals.length;
+            var newGeneralGoal = {
+                'description': "",
+                'goalNumber': currentGoalsInStudyPlan + 1
+            }
+
+            studyPlanService.openEditGeneralGoalModal(newGeneralGoal).then(function(editedGeneralGoal) {
+
+                $scope.selectedStudyPlan.generalGoals.push(editedGeneralGoal);
+
+            });
         }
 
         //initiations
