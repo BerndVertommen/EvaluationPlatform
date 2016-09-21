@@ -3,7 +3,7 @@
         <div class="panel-heading">
             <!--mainHeading-->
             <div class="panel-title">
-                titel hiere
+                New Laarplan
             </div>
         </div>
         <div class="panel-body">
@@ -11,19 +11,18 @@
             <div class="form-horizontal">
                 <fieldset>
                     <div class="row">
-                        <div class="col-xs-12">
-
-                        </div>
-
-                        <div class="col-xs-12" style="margin-top: 15px">
-
+                        <div class="col-xs-offset-3 col-xs-6 ">
+                            <div class="form-group">
+                                <label for="description" class="control-label">Omschrijving:</label>
+                                <input id="description" class="form-control" type="text" autofocus ng-model="newStudyPlan.description" />
+                            </div>
                         </div>
                     </div>
                 </fieldset>
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-success" ng-click="ok()">Ok</button>
+            <button type="button" class="btn btn-success" ng-click="ok()">Verder gaan <i class="fa fa-angle-right"></i></button>
             <button type="button" class="btn btn-default" ng-click="cancel()">Cancel</button>
         </div>
     </div>

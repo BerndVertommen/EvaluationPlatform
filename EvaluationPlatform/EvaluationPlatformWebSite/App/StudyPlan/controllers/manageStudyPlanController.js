@@ -5,14 +5,19 @@
         var thiz = this;
 
         $scope.studyplans = [];
-        $scope.selectedStudyPlan = {};
+        $scope.selectedStudyPlan = null;
         //Variables
 
         //private Functions
         
         // public functions
         $scope.createNewStudyPlan = function() {
-            $scope.selectedStudyPlan = {};
+            $scope.selectedStudyPlan = null;
+
+            studyPlanService.openNewStudyPlanModal().then(function (newStudyPlan) {
+                newStudyPlan.creating = true;
+                $scope.selectedStudyPlan = newStudyPlan;
+            });
         }
 
         $scope.getStudyPlanInfo = function() {
@@ -21,6 +26,10 @@
                     $scope.selectedStudyPlan = studyPlan;
                 });
             });
+        }
+
+        $scope.addGeneralGoal = function(parameters) {
+            // create method on studyplanservice to open modal 
         }
 
         //initiations

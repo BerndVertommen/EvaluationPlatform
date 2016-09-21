@@ -142,7 +142,7 @@
     <Content Include="app\dashboard\dashboard-module.js" />
     <Content Include="app\dashboard\services\dashboardService.js" />
     <Content Include="app\dashboard\views\dashboard.html" />
-    <Content Include="app\StudyPlan\controllers\selectStudyPlanModalController.js" />
+    <Content Include="app\StudyPlan\controllers\newStudyPlanModalController.js" />
     <Content Include="app\Teacher\controllers\addCourseModalController.js" />
     <Content Include="app\Teacher\controllers\manageTeacherController.js" />
     <Content Include="app\Teacher\teacher-module.js" />
@@ -158,7 +158,7 @@
     <Content Include="app\StudyPlan\studyPlan-module.js" />
     <Content Include="app\StudyPlan\services\studyPlanService.js" />
     <Content Include="app\StudyPlan\views\manageStudyPlan.html" />
-    <Content Include="app\StudyPlan\views\viewModal.html" />
+    <Content Include="app\StudyPlan\views\newStudtPlanModal.html" />
     <Content Include="copyFolder\selectModals\selectMultipleItemsModal.html" />
     <Content Include="copyFolder\selectModals\selectOneItemModal.html" />
     <Content Include="copyFolder\zzzcopyMe\replace-module.js" />

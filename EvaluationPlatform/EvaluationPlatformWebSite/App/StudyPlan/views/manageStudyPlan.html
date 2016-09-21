@@ -12,7 +12,7 @@
                 <div class="panel-heading">
                     <!--mainHeading-->
                     <div class="panel-title">
-                        Leerplan : 
+                        Leerplan :
                     </div>
                     <div class="btn-group pull-right">
                         <button type="button" class="btn btn-default" ng-click="createNewStudyPlan()"><i class="fa fa-plus-square"></i></button>
@@ -24,11 +24,19 @@
                         <fieldset>
                             <legend>{{selectedStudyPlan.description}}</legend>
                             <div class="list-group">
-                                <a href="#" class="list-group-item" ng-repeat="generalgoal in selectedStudyPlan.generalGoals | orderBy : 'goalNumber' ">
-                                    <h4 class="list-group-item-heading">{{generalgoal.description}}</h4>
-                                    <p class="list-group-item-text">Doelnummer: {{generalgoal.goalNumber}} Gekoppelde lesdoelen: <span class="badge">{{generalgoal.goals.length}}</span></p>
-                                </a>
-                              
+                                <uib-accordion close-others="true">
+                                    <div class="list-group-item" ng-repeat="generalgoal in selectedStudyPlan.generalGoals | orderBy : 'goalNumber' ">
+                                        <div uib-accordion-group class="panel-default">
+                                            <uib-accordion-heading>
+                                                <i class="fa fa-info-circle text-info"></i> {{generalgoal.description}}
+                                            </uib-accordion-heading>
+                                            <p class="list-group-item-text">Doelnummer: {{generalgoal.goalNumber}} Gekoppelde lesdoelen: <span class="badge">{{generalgoal.goals.length}}</span></p>
+                                        </div>
+                                    </div>
+                                </uib-accordion>
+                            </div>
+                            <div class="pull-right"> 
+                                <button ng-show="selectedStudyPlan" type="button" ng-click="addGeneralGoal()" class="btn btn-primary">Doel toevoegen<i class="fa fa-plus-square"></i></button>
                             </div>
                         </fieldset>
                     </form>
