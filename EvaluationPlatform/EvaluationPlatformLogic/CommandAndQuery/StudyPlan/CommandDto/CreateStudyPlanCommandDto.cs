@@ -1,9 +1,10 @@
 ﻿using EvaluationPlatformDataTransferModels.CreationModels;
+using EvaluationPlatformDataTransferModels.InformationModels.StudyPlan;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.StudyPlan.CommandDto
 {
-    public class CreateStudyPlanCommandDto : ICommandDto
+    public class CreateStudyPlanCommandDto : ICommandDto<StudyPlanInfo>
     {
         public CreateStudyPlanInfo CreateStudyPlanInfo { get; set; }
 

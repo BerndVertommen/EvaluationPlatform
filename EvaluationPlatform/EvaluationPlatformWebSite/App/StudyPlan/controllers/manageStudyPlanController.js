@@ -9,20 +9,23 @@
         //Variables
 
         //private Functions
-        
+
         // public functions
-        $scope.createNewStudyPlan = function() {
+        $scope.createNewStudyPlan = function () {
             $scope.selectedStudyPlan = null;
 
             studyPlanService.openNewStudyPlanModal().then(function (newStudyPlan) {
                 newStudyPlan.creating = true;
-                $scope.selectedStudyPlan = newStudyPlan;
+
+                studyPlanService.createNewStudyPlan(newStudyPlan).then(function (result) {
+                    $scope.selectedStudyPlan = result;
+                });
             });
         }
 
-        $scope.getStudyPlanInfo = function() {
-            selectModalService.openModal("selectStudyplanModal", $scope.studyplans).then(function(studyPlanSummary) {
-                studyPlanService.getStudyPlanInfo(studyPlanSummary.id).then(function(studyPlan) {
+        $scope.getStudyPlanInfo = function () {
+            selectModalService.openModal("selectStudyplanModal", $scope.studyplans).then(function (studyPlanSummary) {
+                studyPlanService.getStudyPlanInfo(studyPlanSummary.id).then(function (studyPlan) {
                     $scope.selectedStudyPlan = studyPlan;
                 });
             });
@@ -31,14 +34,15 @@
         $scope.addGeneralGoal = function (parameters) {
             var currentGoalsInStudyPlan = $scope.selectedStudyPlan.generalGoals.length;
             var newGeneralGoal = {
+                'studyPlanId': $scope.selectedStudyPlan.id,
                 'description': "",
                 'goalNumber': currentGoalsInStudyPlan + 1
             }
 
-            studyPlanService.openEditGeneralGoalModal(newGeneralGoal).then(function(editedGeneralGoal) {
-
-                $scope.selectedStudyPlan.generalGoals.push(editedGeneralGoal);
-
+            studyPlanService.openEditGeneralGoalModal(newGeneralGoal).then(function (editedGeneralGoal) {
+                studyPlanService.addGeneralGoal(editedGeneralGoal).then(function (updatedGeneralGoal) {
+                    $scope.selectedStudyPlan.generalGoals.push(editedGeneralGoal);
+                });
             });
         }
 

@@ -38,7 +38,7 @@ namespace EvaluationPlatformWebApi.Controllers
         [CustomAutorize(AccountRoleType.Admin)]
         [Route("getStudyPlanInfo")]
         [HttpPost]
-        public StudyPlanInfo GetStudyPlanInfo( GuidDto guidDto)
+        public StudyPlanInfo GetStudyPlanInfo(GuidDto guidDto)
         {
             return QueryProccesor.Execute(new GetStudyPlanInfoQueryDto(guidDto.Id));
         }
@@ -46,21 +46,21 @@ namespace EvaluationPlatformWebApi.Controllers
         [CustomAutorize(AccountRoleType.Admin)]
         [Route("createStudyPlan")]
         [HttpPost]
-        public HttpResponseMessage CreateStudyPlan(CreateStudyPlanInfo createStudyPlanInfo)
+        public StudyPlanInfo CreateStudyPlan(CreateStudyPlanInfo createStudyPlanInfo)
         {
-           CommandProcessor.Execute(new CreateStudyPlanCommandDto(createStudyPlanInfo));
+            var result = CommandProcessor.Execute(new CreateStudyPlanCommandDto(createStudyPlanInfo));
 
-            return new HttpResponseMessage(HttpStatusCode.OK);
+            return result;
         }
 
         [CustomAutorize(AccountRoleType.Admin)]
         [Route("addGeneralGoal")]
         [HttpPost]
-        public HttpResponseMessage AddGeneralGoal(CreateGeneralGoalInfo createGeneralGoalInfo, GuidDto guidDto)
+        public GeneralGoalInfo AddGeneralGoal(CreateGeneralGoalInfo createGeneralGoalInfo)
         {
-            CommandProcessor.Execute(new AddGeneralGoalToStudyPlanCommandDto(guidDto.Id, createGeneralGoalInfo));
+           var result = CommandProcessor.Execute(new AddGeneralGoalToStudyPlanCommandDto(createGeneralGoalInfo));
 
-            return new HttpResponseMessage(HttpStatusCode.OK);
+            return result;
         }
 
         [CustomAutorize(AccountRoleType.Admin)]

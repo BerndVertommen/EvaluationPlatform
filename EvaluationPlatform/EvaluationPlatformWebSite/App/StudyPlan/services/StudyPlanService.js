@@ -10,6 +10,18 @@
             });
         }
 
+        thiz.createNewStudyPlan = function (createStudyPlanInfo) {
+            return $http.post(baseWebApiUrl + "/studyPlans/createStudyPlan", createStudyPlanInfo).then(function(result) {
+                return result.data;
+            });
+        }
+
+        thiz.addGeneralGoal = function (editedGeneralGoal) {
+            return $http.post(baseWebApiUrl + "/studyPlans/addGeneralGoal", editedGeneralGoal).then(function (result) {
+                return result.data;
+            });
+        }
+
         thiz.getStudyPlanInfo = function (studyPlanId) {
             var guidDto = { 'id': studyPlanId };
             return $http.post(baseWebApiUrl + "/studyPlans/getStudyPlanInfo", guidDto ).then(function (result) {
@@ -28,10 +40,10 @@
             });
 
             return modalInstance.result.then(function (newStudyPlan) {
+
                 return newStudyPlan;
             });
         }
-
 
         thiz.openEditGeneralGoalModal = function (generalGoalToEdit) {
             var modalInstance = $uibModal.open({

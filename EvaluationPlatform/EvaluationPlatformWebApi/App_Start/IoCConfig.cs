@@ -6,6 +6,8 @@ using EvaluationPlatformLogic.CommandAndQuery.Account.QueryHandlers;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 using EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates;
 using EvaluationPlatformLogic.CommandAndQuery.EvaluationTemplates.CommandHandlers;
+using EvaluationPlatformLogic.CommandAndQuery.StudyPlan.CommandDto;
+using EvaluationPlatformLogic.CommandAndQuery.StudyPlan.CommandHandlers;
 using EvaluationPlatformWebApi.Controllers;
 
 namespace EvaluationPlatformWebApi
@@ -35,6 +37,10 @@ namespace EvaluationPlatformWebApi
             builder.RegisterAssemblyTypes(typeof(CreateEvaluationTemplateCommandHandler).Assembly)
                 .Where(t => t.GetInterface(typeof(ICommandHandler<>).Name) != null)
                 .AsSelf().AsImplementedInterfaces().InstancePerLifetimeScope();
+
+            builder.RegisterAssemblyTypes(typeof(CreateStudyPlanCommandHandler).Assembly)
+                      .Where(t => t.GetInterface(typeof(ICommandHandler<,>).Name) != null)
+                      .AsSelf().AsImplementedInterfaces().InstancePerLifetimeScope();
 
             IContainer container = builder.Build();
             //DependencyResolver.SetResolver(new AutofacWebApiDependencyResolver(container));

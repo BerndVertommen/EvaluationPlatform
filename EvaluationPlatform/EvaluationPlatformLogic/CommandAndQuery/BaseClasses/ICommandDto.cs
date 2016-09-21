@@ -3,4 +3,8 @@
     public interface ICommandDto
     {
     }
+
+    public interface ICommandDto<TResult>
+    {
+    }
 }

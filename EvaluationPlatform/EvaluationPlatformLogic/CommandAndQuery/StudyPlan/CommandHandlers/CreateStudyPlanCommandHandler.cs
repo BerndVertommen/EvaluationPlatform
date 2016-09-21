@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
+using EvaluationPlatformDataTransferModels.InformationModels.StudyPlan;
 using EvaluationPlatformDAL;
 using EvaluationPlatformDomain.Models;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
@@ -10,13 +12,13 @@ using EvaluationPlatformLogic.CommandAndQuery.StudyPlan.CommandDto;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.StudyPlan.CommandHandlers
 {
-    public class CreateStudyPlanCommandHandler : CommandHandler<CreateStudyPlanCommandDto>
+    public class CreateStudyPlanCommandHandler : CommandHandler<CreateStudyPlanCommandDto,StudyPlanInfo>
     {
         public CreateStudyPlanCommandHandler(IEPDatabase database) : base(database)
         {
         }
 
-        public override void Handle(CreateStudyPlanCommandDto commandObject)
+        public override StudyPlanInfo Handle(CreateStudyPlanCommandDto commandObject)
         {
             if (string.IsNullOrEmpty(commandObject.CreateStudyPlanInfo.Description))
             {
@@ -32,6 +34,8 @@ namespace EvaluationPlatformLogic.CommandAndQuery.StudyPlan.CommandHandlers
             }
 
             Database.StudyPlans.Add(newStudyplan);
+
+            return Mapper.Map<StudyPlanInfo>(newStudyplan);
         }
     }
 }

@@ -7,4 +7,12 @@
         void SaveChanges();
 
     }
+
+    public interface ICommandHandler<TCommandObject, TResult>
+    {
+        TResult Handle(TCommandObject commandObject);
+
+        void SaveChanges();
+
+    }
 }

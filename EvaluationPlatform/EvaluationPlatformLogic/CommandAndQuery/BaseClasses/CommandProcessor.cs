@@ -19,9 +19,26 @@ namespace EvaluationPlatformLogic.CommandAndQuery.BaseClasses
             commandHandler.SaveChanges();
             }
 
+        public TResult Execute<TResult>(ICommandDto<TResult> commandDto)
+        {
+            var commandHandler = GetCommandHandler(commandDto);
+            var returnValue = commandHandler.Handle((dynamic)commandDto);
+            commandHandler.SaveChanges();
+
+            return returnValue;
+        }
+    
         protected dynamic GetCommandHandler(ICommandDto command)
         {
             Type commandHandlerImplementationType = typeof(ICommandHandler<>).MakeGenericType(command.GetType());
+            dynamic commandHandler = _lifetimeScope.Resolve(commandHandlerImplementationType);
+
+            return commandHandler;
+        }
+
+        protected dynamic GetCommandHandler<TResult>(ICommandDto<TResult> command)
+        {
+            Type commandHandlerImplementationType = typeof(ICommandHandler<,>).MakeGenericType(command.GetType(), typeof(TResult));
             dynamic commandHandler = _lifetimeScope.Resolve(commandHandlerImplementationType);
 
             return commandHandler;

@@ -1,17 +1,16 @@
 ﻿using System;
 using EvaluationPlatformDataTransferModels.CreationModels;
+using EvaluationPlatformDataTransferModels.InformationModels;
 using EvaluationPlatformLogic.CommandAndQuery.BaseClasses;
 
 namespace EvaluationPlatformLogic.CommandAndQuery.StudyPlan.CommandDto
 {
-    public class AddGeneralGoalToStudyPlanCommandDto : ICommandDto
+    public class AddGeneralGoalToStudyPlanCommandDto : ICommandDto<GeneralGoalInfo>
     {
-        public Guid StudyPlanId { get; set; }
         public CreateGeneralGoalInfo CreateGeneralGoalInfo { get; set; }
 
-        public AddGeneralGoalToStudyPlanCommandDto(Guid studyPlanId, CreateGeneralGoalInfo createGeneralGoalInfo)
+        public AddGeneralGoalToStudyPlanCommandDto( CreateGeneralGoalInfo createGeneralGoalInfo)
         {
-            StudyPlanId = studyPlanId;
             CreateGeneralGoalInfo = createGeneralGoalInfo;
         }
     }
