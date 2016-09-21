@@ -158,7 +158,7 @@
     <Content Include="app\StudyPlan\studyPlan-module.js" />
     <Content Include="app\StudyPlan\services\studyPlanService.js" />
     <Content Include="app\StudyPlan\views\manageStudyPlan.html" />
-    <Content Include="app\StudyPlan\views\newStudtPlanModal.html" />
+    <Content Include="app\StudyPlan\views\newStudyPlanModal.html" />
     <Content Include="copyFolder\selectModals\selectMultipleItemsModal.html" />
     <Content Include="copyFolder\selectModals\selectOneItemModal.html" />
     <Content Include="copyFolder\zzzcopyMe\replace-module.js" />
